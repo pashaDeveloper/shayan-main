@@ -1,0 +1,157 @@
+{
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "certificates": "Certificates",
+    "gallery": "Gallery",
+    "news": "News",
+    "contact": "Contact",
+    "search": "Search",
+    "popularSearches": "Popular Searches",
+    "popularTerms": [
+      "Immigration to Turkey",
+      "Investment",
+      "Residence in Germany"
+    ],
+    "freeConsultation": "Free Consultation",
+    "callNow": "Call Now",
+    "contactUs": "📞 Contact Us",
+    "mainMenu": "Main Menu",
+    "support": "Online Support"
+  },
+  
+  "hero": {
+    "startNow": "Start Now",
+    "freeConsultation": "Free Consultation",
+    "stats": {
+      "customers": "Successful Clients",
+      "successRate": "Success Rate",
+      "support": "Support"
+    },
+    "slide1": {
+      "title": "Easy Immigration with Shayesteh & Shayan Group",
+      "subtitle": "Professional Immigration Services",
+      "description": "We offer immigration consultation, residency, permits, and full case tracking.",
+      "features": ["Free Consultation", "Full Follow-up", "Success Guarantee"]
+    },
+    "slide2": {
+      "title": "Secure Investment Worldwide",
+      "subtitle": "Golden Investment Opportunities",
+      "description": "Offering exclusive investment and employment opportunities in top countries.",
+      "features": ["Secure Investment", "High Returns", "Expert Advice"]
+    },
+    "slide3": {
+      "title": "Worry-Free Travel & Tourism",
+      "subtitle": "Travel & Leisure Agency",
+      "description": "Travel anywhere in the world quickly with excellent services.",
+      "features": ["Luxury Tours", "Affordable Prices", "Comprehensive Services"]
+    },
+    "slide4": {
+      "title": "Travel & Leisure Agency",
+      "subtitle": "Shayesteh & Shayan with You Even on Travel",
+      "description": "Travel anywhere in the world quickly with excellent services.",
+      "features": ["Travel Support", "Precise Planning", "Unique Experience"]
+    },
+    "slide5": {
+      "title": "Commerce & Online Store",
+      "subtitle": "Unmatched Trade with Shayesteh & Shayan",
+      "description": "Get the best options for buying, selling, and sourcing quality goods online.",
+      "features": ["Fast Delivery", "Wide Variety", "Competitive Pricing"]
+    },
+    "slide6": {
+      "title": "Real Estate Buying, Selling, & Renting",
+      "subtitle": "Shayesteh & Shayan with You in Real Estate",
+      "description": "With our expert consultation and assessments, get the best real estate options.",
+      "features": ["Legal Advice", "Accurate Valuation", "Support Until Contract"]
+    },
+    "slide7": {
+      "title": "Vehicles Buying, Selling, & Renting",
+      "subtitle": "Shayesteh & Shayan in Auto Trade",
+      "description": "Find the best options for buying, selling, or renting vehicles.",
+      "features": ["Vehicle Variety", "Technical Inspection", "Fair Pricing"]
+    },
+    "slide8": {
+      "title": "Surveying Services",
+      "subtitle": "Shayesteh & Shayan in Analysis & Surveying",
+      "description": "Best project options for surveying and design analysis.",
+      "features": ["High Accuracy", "Modern Equipment", "Professional Reporting"]
+    },
+    "slide9": {
+      "title": "Construction & Contracting",
+      "subtitle": "Shayesteh & Shayan with You in Construction",
+      "description": "Get the best contracting services for your construction projects.",
+      "features": ["Project Management", "Quality Assurance", "Precise Scheduling"]
+    },
+    "slide10": {
+      "title": "Agencies",
+      "subtitle": "Shayesteh & Shayan’s Official Agencies Info",
+      "description": "Get updated and accurate info from experienced representatives.",
+      "features": ["Wide Access", "Official Agents", "Fast Response"]
+    },
+    "slide11": {
+      "title": "Advertising",
+      "subtitle": "Shayesteh & Shayan Meets Your Marketing Needs",
+      "description": "Get the best options for effective advertising and marketing strategies.",
+      "features": ["Targeted Strategy", "Media Ads", "Quick Results"]
+    },
+    "slide12": {
+      "title": "Education",
+      "subtitle": "Shayesteh & Shayan Meets Your Learning Needs",
+      "description": "Get the best courses and learning programs available.",
+      "features": ["Professional Instructors", "Online Access", "Accredited Certificates"]
+    }
+  },
+  "heroTitle": "Easy Immigration with Shaisteh va Shayan Group",
+  "heroSubtitle": "Immigration",
+  "heroDescription": "We are at your service with services including immigration consulting, residence permits, licensing and more.",
+  "startNow": "Get Started",
+  "servicesTitle": "Shaisteh va Shayan International Group Services",
+  "immigration": "Immigration",
+  "investment": "Investment & Employment",
+  "travel": "Travel & Tourism Agency",
+  "commerce": "Commerce & Online Store",
+  "realEstate": "Real Estate Buy, Sell & Rent",
+  "vehicles": "Vehicle Buy, Sell & Rent",
+  "generalServices": "Services",
+  "surveying": "Surveying",
+  "construction": "Construction & Contracting",
+  "representatives": "Representatives",
+  "advertising": "Advertising",
+  "education": "Education",
+  "moreInfo": "More Information",
+  "featuresTitle": "Features of Shaisteh va Shayan International Group",
+  "featuresSubtitle": "Committed to providing the best services",
+  "feature1Title": "Modern International Services & Support",
+  "feature1Description": "With global services and continuous support, we provide you with a different experience wherever you are.",
+  "feature2Title": "Professional & Expert Team",
+  "feature2Description": "Our team is a group of experienced specialists who are always by your side to provide the best solutions.",
+  "feature3Title": "Modern Equipment & Technology",
+  "feature3Description": "Using the latest innovations and modern equipment, we maximize quality and efficiency.",
+  "feature4Title": "Customer Focus & Satisfaction",
+  "feature4Description": "Your satisfaction is our priority; we respect you with personalized services and an unparalleled shopping experience.",
+  "aboutTitle": "About Our Company",
+  "aboutSubtitle": "We help to meet your needs!",
+  "servicesCount": "Services Completed",
+  "customersCount": "Satisfied Customers",
+  "countriesCount": "Countries Covered",
+  "experienceYears": "Years of Experience",
+  "contactTitle": "We Are At Your Service",
+  "contactSubtitle": "Contact Us",
+  "phone": "Direct Contact",
+  "sendMessage": "Send Message",
+  "fullName": "Full Name",
+  "phoneNumber": "Phone Number",
+  "email": "Email Address",
+  "message": "Leave your message:",
+  "messagePlaceholder": "Enter your message here",
+  "send": "Send Message to 2SHIGROUP",
+  "support247": "24/7 Support Center is available",
+  "footerTitle": "Shaisteh va Shayan International Group",
+  "serviceLinks": "Shaisteh va Shayan Services",
+  "usefulLinks": "Useful Links",
+  "contactUs": "Contact Us",
+  "address": "Address:",
+  "addressText": "Turkey, Istanbul, West Istanbul, E5 Highway, Guzel Yurt Metrobus Station, Administrative Building, 3rd Floor",
+  "phoneNumbers": "Phone Numbers:"
+}

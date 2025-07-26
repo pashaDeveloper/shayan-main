@@ -1,0 +1,163 @@
+{
+  "header": {
+    "home": "Ana Sayfa",
+    "about": "Hakkımızda",
+    "services": "Hizmetler",
+    "certificates": "Sertifikalar",
+    "gallery": "Galeri",
+    "news": "Haberler",
+    "contact": "İletişim",
+    "search": "Ara",
+    "popularSearches": "Popüler Aramalar",
+    "popularTerms": ["Türkiye'ye Göç", "Yatırım", "Almanya'da Oturum"],
+    "freeConsultation": "Ücretsiz Danışmanlık",
+    "callNow": "Hemen Ara",
+    "contactUs": "📞 Bize Ulaşın",
+    "mainMenu": "Ana Menü",
+    "support": "Canlı Destek"
+  },
+  "hero": {
+    "startNow": "Hemen Başla",
+    "freeConsultation": "Ücretsiz Danışmanlık",
+    "stats": {
+      "customers": "Başarılı Müşteriler",
+      "successRate": "Başarı Oranı",
+      "support": "Destek"
+    },
+    "slide1": {
+      "title": "Şayeste ve Şayan Grubu ile Kolay Göç",
+      "subtitle": "Profesyonel Göç Hizmetleri",
+      "description": "Göç danışmanlığı, oturma izni, ruhsat alımı ve dosya takibi dahil hizmetlerimizle yanınızdayız.",
+      "features": ["Ücretsiz Danışmanlık", "Tam Takip", "Başarı Garantisi"]
+    },
+    "slide2": {
+      "title": "Dünyanın Her Yerinde Güvenli Yatırım",
+      "subtitle": "Altın Yatırım Fırsatları",
+      "description": "Dünyanın en iyi ülkelerinde özel yatırım ve istihdam fırsatları sunuyoruz.",
+      "features": ["Güvenli Yatırım", "Yüksek Getiri", "Uzman Danışmanlık"]
+    },
+    "slide3": {
+      "title": "Sorunsuz Seyahat ve Turizm",
+      "subtitle": "Seyahat ve Eğlence Acentesi",
+      "description": "Dünyanın her yerine en hızlı şekilde seyahat edin ve kaliteli hizmet alın.",
+      "features": ["Lüks Turlar", "Uygun Fiyat", "Eksiksiz Hizmet"]
+    },
+    "slide4": {
+      "title": "Seyahat ve Eğlence Acentesi",
+      "subtitle": "Seyahatlerinizde Şayeste ve Şayan Yanınızda",
+      "description": "Dünyanın her yerine en hızlı şekilde seyahat edin ve kaliteli hizmet alın.",
+      "features": ["Seyahat Desteği", "Detaylı Planlama", "Farklı Bir Deneyim"]
+    },
+    "slide5": {
+      "title": "Ticaret ve Online Mağaza",
+      "subtitle": "Şayeste ve Şayan ile Eşsiz Ticaret",
+      "description": "Online pazarlarda kaliteli ürünlerin alım, satım ve temininde en iyi seçenekleri sunuyoruz.",
+      "features": ["Hızlı Teslimat", "Geniş Çeşitlilik", "Rekabetçi Fiyatlar"]
+    },
+    "slide6": {
+      "title": "Gayrimenkul Alım, Satım ve Kiralama",
+      "subtitle": "Gayrimenkulde Yanınızda Şayeste ve Şayan",
+      "description": "Profesyonel danışmanlık ve ekspertiz hizmetlerimizle en iyi seçenekler sizin için.",
+      "features": [
+        "Hukuki Danışmanlık",
+        "Doğru Değerlendirme",
+        "Sözleşmeye Kadar Destek"
+      ]
+    },
+    "slide7": {
+      "title": "Araç Alım, Satım ve Kiralama",
+      "subtitle": "Araç Alım Satımında Yanınızda Şayeste ve Şayan",
+      "description": "İstediğiniz araçların en iyi alım, satım ve kiralama seçeneklerini sunuyoruz.",
+      "features": ["Araç Çeşitliliği", "Teknik Kontrol", "Adil Fiyatlandırma"]
+    },
+    "slide8": {
+      "title": "Haritalama",
+      "subtitle": "Şayeste ve Şayan ile Haritalama ve İnceleme",
+      "description": "Analiz ve tasarım için en iyi haritalama proje çözümlerini sunuyoruz.",
+      "features": [
+        "Yüksek Hassasiyet",
+        "Modern Ekipmanlar",
+        "Profesyonel Raporlama"
+      ]
+    },
+    "slide9": {
+      "title": "İnşaat ve Müteahhitlik",
+      "subtitle": "İnşaatta Yanınızda Şayeste ve Şayan",
+      "description": "İnşaat projelerinde en iyi müteahhitlik hizmetlerini sunuyoruz.",
+      "features": ["Proje Yönetimi", "Kalite Garantisi", "Doğru Zamanlama"]
+    },
+    "slide10": {
+      "title": "Temsilcilikler",
+      "subtitle": "Şayeste ve Şayan Temsilci Bilgileri",
+      "description": "Uzman temsilcilerimizden güncel ve doğru bilgileri edinin.",
+      "features": ["Geniş Erişim", "Resmi Temsilciler", "Hızlı Yanıt"]
+    },
+    "slide11": {
+      "title": "Reklam",
+      "subtitle": "Şayeste ve Şayan ile Etkili Reklam",
+      "description": "Etkili reklam çözümleri ve pazarlama stratejileri sunuyoruz.",
+      "features": ["Hedef Odaklı Strateji", "Medya Reklamları", "Hızlı Sonuç"]
+    },
+    "slide12": {
+      "title": "Eğitim",
+      "subtitle": "Şayeste ve Şayan ile Eğitim İhtiyaçlarınıza Çözüm",
+      "description": "En iyi eğitim programları ve öğrenim fırsatlarını sunuyoruz.",
+      "features": [
+        "Profesyonel Eğitmenler",
+        "Çevrimiçi Erişim",
+        "Geçerli Sertifikalar"
+      ]
+    },
+    "heroTitle": "Şayeste ve Şayan Grubu ile Kolay Göç",
+    "heroSubtitle": "Göç",
+    "heroDescription": "Göç danışmanlığı, oturma izni, lisans alma ve daha fazlası dahil hizmetlerle hizmetinizdeyiz.",
+    "servicesTitle": "Şayeste ve Şayan Uluslararası Grup Hizmetleri",
+    "immigration": "Göç",
+    "investment": "Yatırım ve İstihdam",
+    "travel": "Seyahat ve Turizm Acentesi",
+    "commerce": "Ticaret ve Online Mağaza",
+    "realEstate": "Gayrimenkul Alım, Satım ve Kiralama",
+    "vehicles": "Araç Alım, Satım ve Kiralama",
+    "generalServices": "Hizmetler",
+    "surveying": "Haritacılık",
+    "construction": "İnşaat ve Müteahhitlik",
+    "representatives": "Temsilcilikler",
+    "advertising": "Reklam",
+    "education": "Eğitim",
+    "moreInfo": "Daha Fazla Bilgi",
+    "featuresTitle": "Şayeste ve Şayan Uluslararası Grup Özellikleri",
+    "featuresSubtitle": "En iyi hizmetleri sunmaya kararlıyız",
+    "feature1Title": "Modern Uluslararası Hizmetler ve Destek",
+    "feature1Description": "Küresel hizmetler ve sürekli destekle, nerede olursanız olun size farklı bir deneyim sunuyoruz.",
+    "feature2Title": "Profesyonel ve Uzman Ekip",
+    "feature2Description": "Ekibimiz, en iyi çözümleri sunmak için her zaman yanınızda olan deneyimli uzmanlardan oluşur.",
+    "feature3Title": "Modern Ekipman ve Teknoloji",
+    "feature3Description": "En son yenilikleri ve modern ekipmanları kullanarak kalite ve verimliliği maksimuma çıkarıyoruz.",
+    "feature4Title": "Müşteri Odaklılık ve Memnuniyet",
+    "feature4Description": "Memnuniyetiniz önceliğimizdir; kişiselleştirilmiş hizmetler ve benzersiz bir alışveriş deneyimi ile size saygı gösteriyoruz.",
+    "aboutTitle": "Şirketimiz Hakkında",
+    "aboutSubtitle": "İhtiyaçlarınızı karşılamanıza yardımcı oluyoruz!",
+    "servicesCount": "Tamamlanan Hizmetler",
+    "customersCount": "Memnun Müşteriler",
+    "countriesCount": "Kapsanan Ülkeler",
+    "experienceYears": "Yıllık Deneyim",
+    "contactTitle": "Hizmetinizdeyiz",
+    "contactSubtitle": "Bizimle İletişime Geçin",
+    "phone": "Direkt İletişim",
+    "sendMessage": "Mesaj Gönder",
+    "fullName": "Ad ve Soyad",
+    "phoneNumber": "Telefon Numarası",
+    "email": "E-posta Adresi",
+    "message": "Mesajınızı bırakın:",
+    "messagePlaceholder": "Mesajınızı buraya girin",
+    "send": "2SHIGROUP'a Mesaj Gönder",
+    "support247": "7/24 Destek Merkezi mevcuttur",
+    "footerTitle": "Şayeste ve Şayan Uluslararası Grup",
+    "serviceLinks": "Şayeste ve Şayan Hizmetleri",
+    "usefulLinks": "Faydalı Bağlantılar",
+    "contactUs": "Bizimle İletişime Geçin",
+    "address": "Adres:",
+    "addressText": "Türkiye, İstanbul, Batı İstanbul, E5 Otoyolu, Güzel Yurt Metrobüs Durağı, İdari Bina, 3. Kat",
+    "phoneNumbers": "Telefon Numaraları:"
+  }
+}
