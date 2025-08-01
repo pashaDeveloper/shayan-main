@@ -1,7 +1,7 @@
 {
   "header": {
-    "home": "الصفحة الرئيسية",
-    "about": "معلومات عنا",
+    "home": "الرئيسية",
+    "about": "معلومات ",
     "services": "الخدمات",
     "certificates": "الشهادات",
     "gallery": "المعرض",
@@ -16,7 +16,7 @@
     "mainMenu": "القائمة الرئيسية",
     "support": "الدعم المباشر"
   },
-  
+
   "hero": {
     "startNow": "ابدأ الآن",
     "freeConsultation": "استشارة مجانية",
@@ -89,7 +89,11 @@
       "title": "الإعلانات",
       "subtitle": "شايسته وشايان تلبي احتياجاتك الإعلانية",
       "description": "احصل على أفضل خيارات الإعلانات الفعالة واستراتيجيات التسويق.",
-      "features": ["استراتيجية موجهة", "إعلانات في وسائل الإعلام", "نتائج سريعة"]
+      "features": [
+        "استراتيجية موجهة",
+        "إعلانات في وسائل الإعلام",
+        "نتائج سريعة"
+      ]
     },
     "slide12": {
       "title": "التعليم",
@@ -102,20 +106,39 @@
   "heroSubtitle": "الهجرة",
   "heroDescription": "نحن في خدمتكم بخدمات تشمل استشارات الهجرة وتصاريح الإقامة والترخيص والمزيد.",
   "startNow": "ابدأ الآن",
-  "servicesTitle": "خدمات مجموعة شايستي وشايان الدولية",
-  "immigration": "الهجرة",
-  "investment": "الاستثمار والعمالة",
-  "travel": "وكالة السفر والسياحة",
-  "commerce": "التجارة والمتجر الإلكتروني",
-  "realEstate": "شراء وبيع وإيجار العقارات",
-  "vehicles": "شراء وبيع وإيجار المركبات",
-  "generalServices": "الخدمات",
-  "surveying": "المساحة",
-  "construction": "البناء والمقاولات",
-  "representatives": "الوكالات",
-  "advertising": "الإعلان",
-  "education": "التعليم",
-  "moreInfo": "معلومات أكثر",
+
+  "story": {
+    "migration": "الهجرة",
+    "introduction": "مقدمة",
+    "residency": "الإقامة",
+    "visa": "تأشيرة",
+    "tourism": "السياحة",
+    "business": "الأعمال"
+  },
+  
+  "service": {
+    "servicesTitle": "خدمات مجموعة شايستي وشايان الدولية",
+    "immigration": "الهجرة",
+    "investment": "الاستثمار والعمالة",
+    "travel": "وكالة السفر والسياحة",
+    "commerce": "التجارة والمتجر الإلكتروني",
+    "realEstate": "شراء وبيع وإيجار العقارات",
+    "vehicles": "شراء وبيع وإيجار المركبات",
+    "generalServices": "الخدمات",
+    "surveying": "المساحة",
+    "construction": "البناء والمقاولات",
+    "representatives": "الوكالات",
+    "advertising": "الإعلان",
+    "education": "التعليم",
+    "moreInfo": "معلومات أكثر",
+    "notFound": "الخدمة المطلوبة غير موجودة",
+    "about": "حول هذه الخدمة",
+    "features": "ميزات خدماتنا",
+    "ready": "هل أنت مستعد للبدء؟",
+    "contactNow": "تواصل معنا الآن واحصل على استشارة مجانية",
+    "contactUs": "اتصل بنا",
+    "sendEmail": "إرسال بريد إلكتروني"
+  },
   "featuresTitle": "مميزات مجموعة شايستي وشايان الدولية",
   "featuresSubtitle": "ملتزمون بتقديم أفضل الخدمات",
   "feature1Title": "خدمات ودعم دولي حديث",
@@ -132,22 +155,114 @@
   "customersCount": "العملاء الراضون",
   "countriesCount": "البلدان المغطاة",
   "experienceYears": "سنوات الخبرة",
-  "contactTitle": "نحن في خدمتكم",
-  "contactSubtitle": "اتصل بنا",
-  "phone": "اتصال مباشر",
-  "sendMessage": "إرسال رسالة",
-  "fullName": "الاسم الكامل",
-  "phoneNumber": "رقم الهاتف",
-  "email": "عنوان البريد الإلكتروني",
-  "message": "اترك رسالتك:",
-  "messagePlaceholder": "أدخل رسالتك هنا",
-  "send": "إرسال رسالة إلى 2SHIGROUP",
-  "support247": "مركز الدعم 24/7 متاح",
-  "footerTitle": "مجموعة شايستي وشايان الدولية",
-  "serviceLinks": "خدمات شايستي وشايان",
+
+  "gallery": {
+    "sectionTitle": "معرض الصور",
+    "sectionSubtitle": "مجموعة من الصور المتعلقة بالهجرة والاستثمار",
+    "loadMore": "عرض المزيد",
+    "allImagesLoaded": "تم عرض جميع الصور",
+    "share": "مشاركة",
+    "download": "تحميل"
+  },
+  "about": {
+    "aboutTitle": "عن شايسته وشايان",
+    "aboutSubtitle": "نحن بجانبكم لتقديم أفضل تجربة",
+    "featuresTitle": "لماذا شايسته وشايان؟",
+    "servicesCount": "الخدمات المنجزة",
+    "customersCount": "العملاء الراضين",
+    "countriesCount": "الدول المغطاة",
+    "experienceYears": "سنوات الخبرة"
+  },
+  "instagram": {
+    "sectionTitle": "إنستغرامنا",
+    "sectionSubtitle": "إنستغرامنا يحتوي على محتوى مفيد",
+    "accountName": "2SH IGROUP",
+    "accountHandle": "@2shigroup",
+    "accountDescription": "إنستغرام مجموعة شايسته وشايان الدولية",
+    "viewOnInstagram": "عرض على إنستغرام",
+    "followOnInstagram": "متابعة على إنستغرام"
+  },
+  "testimonials": {
+    "sectionTitle": "آراء العملاء حول مجموعتنا",
+    "sectionSubtitle": "ماذا يقول عملاؤنا؟",
+    "viewAll": "عرض جميع شهادات العملاء",
+    "services": {
+      "work_visa": "تأشيرة عمل",
+      "real_estate": "العقارات",
+      "company_registration": "تسجيل شركة",
+      "student_visa": "تأشيرة طالب"
+    }
+  },
+  "representatives": {
+    "sectionTitle": "ممثلونا العالميون",
+    "sectionSubtitle": "حضور عالمي لتقديم خدمات أفضل",
+    "servicesLabel": "الخدمات:",
+    "clientsLabel": "عميل",
+    "stats": {
+      "countries": "دول",
+      "activeClients": "عملاء نشطون",
+      "support": "دعم",
+      "experience": "سنوات من الخبرة"
+    },
+    "services": {
+      "immigration": "الهجرة",
+      "investment": "الاستثمار",
+      "work_visa": "تأشيرة عمل",
+      "education": "التعليم",
+      "residence": "الإقامة",
+      "real_estate": "العقارات",
+      "consultation": "الاستشارات",
+      "documentation": "الوثائق",
+      "business": "الأعمال",
+      "tourism": "السياحة",
+      "work_permit": "تصريح عمل",
+      "family_reunion": "لم شمل الأسرة",
+      "skilled_migration": "الهجرة الماهرة",
+      "student_visa": "تأشيرة طالب",
+      "business_visa": "تأشيرة أعمال",
+      "trade": "التجارة",
+      "citizenship": "الجنسية"
+    }
+  },
+  "news": {
+    "sectionTitle": "آخر الأخبار",
+    "sectionSubtitle": "ابقَ على اطلاع بآخر أخبار فريقنا",
+    "readMore": "اقرأ المزيد",
+    "viewAll": "عرض جميع الأخبار",
+    "about": "حول الأخبار",
+    "features": "الميزات"
+  },
+  "contact": {
+    "contactTitle": "نحن في خدمتكم",
+    "contactSubtitle": "اتصل بنا",
+    "phone": "اتصال مباشر",
+    "sendMessage": "إرسال رسالة",
+    "fullName": "الاسم الكامل",
+    "phoneNumber": "رقم الهاتف",
+    "email": "عنوان البريد الإلكتروني",
+    "message": "اترك رسالتك:",
+    "messagePlaceholder": "أدخل رسالتك هنا",
+    "send": "إرسال رسالة إلى 2SHIGROUP",
+    "support247": "مركز الدعم 24/7 متاح",
+    "address": "العنوان:",
+    "addressText": "تركيا، إسطنبول، غرب إسطنبول، طريق E5 السريع، محطة مترو جوزل يورت، المبنى الإداري، الطابق الثالث",
+      "submit": "إرسال"
+  },
+  "footer": {
+  "footerTitle": "مجموعة شايسته وشايان الدولية",
+  "intro": "تقدم مجموعة شايسته وشايان الدولية خدمات متنوعة في مجالات الهجرة، والاستثمار، والسفر، وغيرها من الخدمات المتخصصة، لمساعدتكم في تحقيق أهدافكم.",
+  "serviceLinks": "خدماتنا",
   "usefulLinks": "روابط مفيدة",
   "contactUs": "اتصل بنا",
   "address": "العنوان:",
-  "addressText": "تركيا، إسطنبول، غرب إسطنبول، طريق E5 السريع، محطة مترو جوزل يورت، المبنى الإداري، الطابق الثالث",
-  "phoneNumbers": "أرقام الهاتف:"
+  "addressText": "تركيا، إسطنبول، غرب إسطنبول، طريق E5 السريع، محطة متروبوس غوزل يورت، المبنى الإداري، الطابق الثالث",
+  "phoneNumbers": "أرقام الهواتف:",
+  "ourRepresentatives": "ممثّلونا",
+  "moreServices": "خدمات إضافية",
+  "privacy": "سياسة الخصوصية",
+  "terms": "شروط الاستخدام",
+  "website": "2shigroup.com",
+  "copyright": "© 2025 مجموعة شايسته وشايان الدولية. جميع الحقوق محفوظة."
+}
+
 }

@@ -1,0 +1,418 @@
+{
+  "fa": {
+    "representatives": [
+      {
+        "id": 1,
+        "country": "آمریکا",
+        "flag": "https://flagcdn.com/w40/us.png",
+        "city": "نیویورک",
+        "position": { "top": "35%", "left": "20%" },
+        "services": ["immigration", "investment"],
+        "contact": "+1-555-0123",
+        "clients": 150
+      },
+      {
+        "id": 2,
+        "country": "آلمان",
+        "flag": "https://flagcdn.com/w40/de.png",
+        "city": "برلین",
+        "position": { "top": "25%", "left": "52%" },
+        "services": ["work_visa", "education"],
+        "contact": "+49-30-12345",
+        "clients": 200
+      },
+      {
+        "id": 3,
+        "country": "ترکیه",
+        "flag": "https://flagcdn.com/w40/tr.png",
+        "city": "استانبول",
+        "position": { "top": "35%", "left": "58%" },
+        "services": ["residence", "real_estate"],
+        "contact": "+90-501-1308483",
+        "clients": 500
+      },
+      {
+        "id": 4,
+        "country": "ایران",
+        "flag": "https://flagcdn.com/w40/ir.png",
+        "city": "تهران",
+        "position": { "top": "32%", "left": "65%" },
+        "services": ["consultation", "documentation"],
+        "contact": "+98-933-5813533",
+        "clients": 300
+      },
+      {
+        "id": 5,
+        "country": "امارات متحده عربی",
+        "flag": "https://flagcdn.com/w40/ae.png",
+        "city": "دبی",
+        "position": { "top": "40%", "left": "68%" },
+        "services": ["business", "investment"],
+        "contact": "+971-4-1234567",
+        "clients": 180
+      },
+      {
+        "id": 6,
+        "country": "فرانسه",
+        "flag": "https://flagcdn.com/w40/fr.png",
+        "city": "پاریس",
+        "position": { "top": "28%", "left": "48%" },
+        "services": ["education", "tourism"],
+        "contact": "+33-1-12345678",
+        "clients": 120
+      },
+      {
+        "id": 7,
+        "country": "سوئد",
+        "flag": "https://flagcdn.com/w40/se.png",
+        "city": "استکهلم",
+        "position": { "top": "15%", "left": "55%" },
+        "services": ["work_permit", "family_reunion"],
+        "contact": "+46-8-1234567",
+        "clients": 90
+      },
+      {
+        "id": 8,
+        "country": "استرالیا",
+        "flag": "https://flagcdn.com/w40/au.png",
+        "city": "سیدنی",
+        "position": { "top": "75%", "left": "85%" },
+        "services": ["skilled_migration", "student_visa"],
+        "contact": "+61-2-12345678",
+        "clients": 160
+      },
+      {
+        "id": 9,
+        "country": "چین",
+        "flag": "https://flagcdn.com/w40/cn.png",
+        "city": "پکن",
+        "position": { "top": "30%", "left": "78%" },
+        "services": ["business_visa", "trade"],
+        "contact": "+86-10-12345678",
+        "clients": 110
+      },
+      {
+        "id": 10,
+        "country": "قبرس",
+        "flag": "https://flagcdn.com/w40/cy.png",
+        "city": "نیکوزیا",
+        "position": { "top": "38%", "left": "60%" },
+        "services": ["citizenship", "investment"],
+        "contact": "+357-22-123456",
+        "clients": 80
+      }
+    ]
+  },
+  "en": {
+    "representatives": [
+      {
+        "id": 1,
+        "country": "USA",
+        "flag": "https://flagcdn.com/w40/us.png",
+        "city": "New York",
+        "position": { "top": "35%", "left": "20%" },
+        "services": ["immigration", "investment"],
+        "contact": "+1-555-0123",
+        "clients": 150
+      },
+      {
+        "id": 2,
+        "country": "Germany",
+        "flag": "https://flagcdn.com/w40/de.png",
+        "city": "Berlin",
+        "position": { "top": "25%", "left": "52%" },
+        "services": ["work_visa", "education"],
+        "contact": "+49-30-12345",
+        "clients": 200
+      },
+      {
+        "id": 3,
+        "country": "Turkey",
+        "flag": "https://flagcdn.com/w40/tr.png",
+        "city": "Istanbul",
+        "position": { "top": "35%", "left": "58%" },
+        "services": ["residence", "real_estate"],
+        "contact": "+90-501-1308483",
+        "clients": 500
+      },
+      {
+        "id": 4,
+        "country": "Iran",
+        "flag": "https://flagcdn.com/w40/ir.png",
+        "city": "Tehran",
+        "position": { "top": "32%", "left": "65%" },
+        "services": ["consultation", "documentation"],
+        "contact": "+98-933-5813533",
+        "clients": 300
+      },
+      {
+        "id": 5,
+        "country": "UAE",
+        "flag": "https://flagcdn.com/w40/ae.png",
+        "city": "Dubai",
+        "position": { "top": "40%", "left": "68%" },
+        "services": ["business", "investment"],
+        "contact": "+971-4-1234567",
+        "clients": 180
+      },
+      {
+        "id": 6,
+        "country": "France",
+        "flag": "https://flagcdn.com/w40/fr.png",
+        "city": "Paris",
+        "position": { "top": "28%", "left": "48%" },
+        "services": ["education", "tourism"],
+        "contact": "+33-1-12345678",
+        "clients": 120
+      },
+      {
+        "id": 7,
+        "country": "Sweden",
+        "flag": "https://flagcdn.com/w40/se.png",
+        "city": "Stockholm",
+        "position": { "top": "15%", "left": "55%" },
+        "services": ["work_permit", "family_reunion"],
+        "contact": "+46-8-1234567",
+        "clients": 90
+      },
+      {
+        "id": 8,
+        "country": "Australia",
+        "flag": "https://flagcdn.com/w40/au.png",
+        "city": "Sydney",
+        "position": { "top": "75%", "left": "85%" },
+        "services": ["skilled_migration", "student_visa"],
+        "contact": "+61-2-12345678",
+        "clients": 160
+      },
+      {
+        "id": 9,
+        "country": "China",
+        "flag": "https://flagcdn.com/w40/cn.png",
+        "city": "Beijing",
+        "position": { "top": "30%", "left": "78%" },
+        "services": ["business_visa", "trade"],
+        "contact": "+86-10-12345678",
+        "clients": 110
+      },
+      {
+        "id": 10,
+        "country": "Cyprus",
+        "flag": "https://flagcdn.com/w40/cy.png",
+        "city": "Nicosia",
+        "position": { "top": "38%", "left": "60%" },
+        "services": ["citizenship", "investment"],
+        "contact": "+357-22-123456",
+        "clients": 80
+      }
+    ]
+  },
+  "ar": {
+    "representatives": [
+      {
+        "id": 1,
+        "country": "الولايات المتحدة",
+        "flag": "https://flagcdn.com/w40/us.png",
+        "city": "نيويورك",
+        "position": { "top": "35%", "left": "20%" },
+        "services": ["immigration", "investment"],
+        "contact": "+1-555-0123",
+        "clients": 150
+      },
+      {
+        "id": 2,
+        "country": "ألمانيا",
+        "flag": "https://flagcdn.com/w40/de.png",
+        "city": "برلين",
+        "position": { "top": "25%", "left": "52%" },
+        "services": ["work_visa", "education"],
+        "contact": "+49-30-12345",
+        "clients": 200
+      },
+      {
+        "id": 3,
+        "country": "تركيا",
+        "flag": "https://flagcdn.com/w40/tr.png",
+        "city": "إسطنبول",
+        "position": { "top": "35%", "left": "58%" },
+        "services": ["residence", "real_estate"],
+        "contact": "+90-501-1308483",
+        "clients": 500
+      },
+      {
+        "id": 4,
+        "country": "إيران",
+        "flag": "https://flagcdn.com/w40/ir.png",
+        "city": "طهران",
+        "position": { "top": "32%", "left": "65%" },
+        "services": ["consultation", "documentation"],
+        "contact": "+98-933-5813533",
+        "clients": 300
+      },
+      {
+        "id": 5,
+        "country": "الإمارات العربية المتحدة",
+        "flag": "https://flagcdn.com/w40/ae.png",
+        "city": "دبي",
+        "position": { "top": "40%", "left": "68%" },
+        "services": ["business", "investment"],
+        "contact": "+971-4-1234567",
+        "clients": 180
+      },
+      {
+        "id": 6,
+        "country": "فرنسا",
+        "flag": "https://flagcdn.com/w40/fr.png",
+        "city": "باريس",
+        "position": { "top": "28%", "left": "48%" },
+        "services": ["education", "tourism"],
+        "contact": "+33-1-12345678",
+        "clients": 120
+      },
+      {
+        "id": 7,
+        "country": "السويد",
+        "flag": "https://flagcdn.com/w40/se.png",
+        "city": "ستوكهولم",
+        "position": { "top": "15%", "left": "55%" },
+        "services": ["work_permit", "family_reunion"],
+        "contact": "+46-8-1234567",
+        "clients": 90
+      },
+      {
+        "id": 8,
+        "country": "أستراليا",
+        "flag": "https://flagcdn.com/w40/au.png",
+        "city": "سيدني",
+        "position": { "top": "75%", "left": "85%" },
+        "services": ["skilled_migration", "student_visa"],
+        "contact": "+61-2-12345678",
+        "clients": 160
+      },
+      {
+        "id": 9,
+        "country": "الصين",
+        "flag": "https://flagcdn.com/w40/cn.png",
+        "city": "بكين",
+        "position": { "top": "30%", "left": "78%" },
+        "services": ["business_visa", "trade"],
+        "contact": "+86-10-12345678",
+        "clients": 110
+      },
+      {
+        "id": 10,
+        "country": "قبرص",
+        "flag": "https://flagcdn.com/w40/cy.png",
+        "city": "نيقوسيا",
+        "position": { "top": "38%", "left": "60%" },
+        "services": ["citizenship", "investment"],
+        "contact": "+357-22-123456",
+        "clients": 80
+      }
+    ]
+  },
+  "tr": {
+    "representatives": [
+      {
+        "id": 1,
+        "country": "ABD",
+        "flag": "https://flagcdn.com/w40/us.png",
+        "city": "New York",
+        "position": { "top": "35%", "left": "20%" },
+        "services": ["immigration", "investment"],
+        "contact": "+1-555-0123",
+        "clients": 150
+      },
+      {
+        "id": 2,
+        "country": "Almanya",
+        "flag": "https://flagcdn.com/w40/de.png",
+        "city": "Berlin",
+        "position": { "top": "25%", "left": "52%" },
+        "services": ["work_visa", "education"],
+        "contact": "+49-30-12345",
+        "clients": 200
+      },
+      {
+        "id": 3,
+        "country": "Türkiye",
+        "flag": "https://flagcdn.com/w40/tr.png",
+        "city": "İstanbul",
+        "position": { "top": "35%", "left": "58%" },
+        "services": ["residence", "real_estate"],
+        "contact": "+90-501-1308483",
+        "clients": 500
+      },
+      {
+        "id": 4,
+        "country": "İran",
+        "flag": "https://flagcdn.com/w40/ir.png",
+        "city": "Tahran",
+        "position": { "top": "32%", "left": "65%" },
+        "services": ["consultation", "documentation"],
+        "contact": "+98-933-5813533",
+        "clients": 300
+      },
+      {
+        "id": 5,
+        "country": "BAE",
+        "flag": "https://flagcdn.com/w40/ae.png",
+        "city": "Dubai",
+        "position": { "top": "40%", "left": "68%" },
+        "services": ["business", "investment"],
+        "contact": "+971-4-1234567",
+        "clients": 180
+      },
+      {
+        "id": 6,
+        "country": "Fransa",
+        "flag": "https://flagcdn.com/w40/fr.png",
+        "city": "Paris",
+        "position": { "top": "28%", "left": "48%" },
+        "services": ["education", "tourism"],
+        "contact": "+33-1-12345678",
+        "clients": 120
+      },
+      {
+        "id": 7,
+        "country": "İsveç",
+        "flag": "https://flagcdn.com/w40/se.png",
+        "city": "Stockholm",
+        "position": { "top": "15%", "left": "55%" },
+        "services": ["work_permit", "family_reunion"],
+        "contact": "+46-8-1234567",
+        "clients": 90
+      },
+      {
+        "id": 8,
+        "country": "Avustralya",
+        "flag": "https://flagcdn.com/w40/au.png",
+        "city": "Sydney",
+        "position": { "top": "75%", "left": "85%" },
+        "services": ["skilled_migration", "student_visa"],
+        "contact": "+61-2-12345678",
+        "clients": 160
+      },
+      {
+        "id": 9,
+        "country": "Çin",
+        "flag": "https://flagcdn.com/w40/cn.png",
+        "city": "Pekin",
+        "position": { "top": "30%", "left": "78%" },
+        "services": ["business_visa", "trade"],
+        "contact": "+86-10-12345678",
+        "clients": 110
+      },
+      {
+        "id": 10,
+        "country": "Kıbrıs",
+        "flag": "https://flagcdn.com/w40/cy.png",
+        "city": "Lefkoşa",
+        "position": { "top": "38%", "left": "60%" },
+        "services": ["citizenship", "investment"],
+        "contact": "+357-22-123456",
+        "clients": 80
+      }
+    ]
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "fa": {
+    "testimonials": [
+      {
+        "id": 1,
+        "name": "احسان کامیاب",
+        "service": "work_visa",
+        "rating": 4.8,
+        "avatar": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=150",
+        "text": "از اولین تماس با تیم آن‌ها، متوجه شدم که با یک گروه حرفه‌ای و دلسوز سروکار دارم. تمامی مراحل دریافت ویزای من با دقت و شفافیت انجام شد و هیچ مشکلی پیش نیامد. من از خدمات سریع و دقیقشان کاملاً راضی هستم و به همه توصیه می‌کنم که از این گروه استفاده کنند."
+      },
+      {
+        "id": 2,
+        "name": "مریم ترابی",
+        "service": "real_estate",
+        "rating": 4.9,
+        "avatar": "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=150",
+        "text": "من برای انتقال سرمایه و خرید ملک در ترکیه از خدمات این گروه استفاده کردم و واقعاً تحت تأثیر قرار گرفتم. تیم آن‌ها بسیار حرفه‌ای، دقیق و خوش‌برخورد است. همه کارها، از انتقال پول گرفته تا مذاکرات برای خرید ملک، به بهترین شکل ممکن انجام شد. از خدماتشان کاملاً راضی هستم."
+      },
+      {
+        "id": 3,
+        "name": "حمید درخشانفر",
+        "service": "company_registration",
+        "rating": 4.3,
+        "avatar": "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=150",
+        "text": "به کمک این گروه، توانستم شرکت خود را در ترکیه ثبت کنم و به‌سرعت کسب‌وکارم را گسترش دهم. تیم تخصصی و باتجربه‌شان تمام جزئیات قانونی و مالی را برای من مدیریت کردند و من فقط بر روی کسب‌وکارم تمرکز کردم. همکاری با این گروه یکی از بهترین تصمیمات زندگی من بود."
+      },
+      {
+        "id": 4,
+        "name": "مینا تهرانی",
+        "service": "student_visa",
+        "rating": 5.0,
+        "avatar": "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150",
+        "text": "من برای اخذ ویزای تحصیلی به این گروه مراجعه کردم و از همان ابتدا تا پایان فرآیند، همراهی کامل تیم را احساس کردم. علاوه بر این، آن‌ها نه تنها در تهیه مدارک بلکه در انتخاب بهترین گزینه‌ها برای آینده‌ام به من مشاوره دادند. واقعاً از انتخاب این گروه خوشحالم و آن‌ها را به همه دوستانم توصیه کرده‌ام."
+      }
+    ]
+  },
+  "en": {
+    "testimonials": [
+      {
+        "id": 1,
+        "name": "Ehsan Kamyab",
+        "service": "work_visa",
+        "rating": 4.8,
+        "avatar": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=150",
+        "text": "From the first call with their team, I realized I was dealing with a professional and dedicated group. All the steps of obtaining my visa were handled with precision and transparency, with no issues. I’m completely satisfied with their fast and accurate services and recommend them to everyone."
+      },
+      {
+        "id": 2,
+        "name": "Maryam Torabi",
+        "service": "real_estate",
+        "rating": 4.9,
+        "avatar": "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=150",
+        "text": "I used their services for transferring investment and purchasing property in Turkey, and I was truly impressed. Their team is highly professional, precise, and friendly. Everything, from money transfers to property negotiations, was handled perfectly. I’m completely satisfied with their services."
+      },
+      {
+        "id": 3,
+        "name": "Hamid Derakhshanfar",
+        "service": "company_registration",
+        "rating": 4.3,
+        "avatar": "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=150",
+        "text": "With their help, I was able to register my company in Turkey and quickly expand my business. Their expert and experienced team managed all the legal and financial details for me, allowing me to focus solely on my business. Working with this group was one of the best decisions of my life."
+      },
+      {
+        "id": 4,
+        "name": "Mina Tehrani",
+        "service": "student_visa",
+        "rating": 5.0,
+        "avatar": "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150",
+        "text": "I approached this group for a student visa, and I felt their full support from start to finish. Beyond assisting with documents, they also provided advice on the best options for my future. I’m truly happy with my choice and have recommended them to all my friends."
+      }
+    ]
+  },
+  "ar": {
+    "testimonials": [
+      {
+        "id": 1,
+        "name": "إحسان كامياب",
+        "service": "work_visa",
+        "rating": 4.8,
+        "avatar": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=150",
+        "text": "منذ الاتصال الأول بفريقهم، أدركت أنني أتعامل مع مجموعة محترفة ومتفانية. تمت جميع خطوات الحصول على تأشيرتي بدقة وشفافية دون أي مشاكل. أنا راضٍ تمامًا عن خدماتهم السريعة والدقيقة وأوصي الجميع بالتعامل معهم."
+      },
+      {
+        "id": 2,
+        "name": "مريم ترابي",
+        "service": "real_estate",
+        "rating": 4.9,
+        "avatar": "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=150",
+        "text": "استخدمت خدماتهم لنقل الاستثمار وشراء عقار في تركيا، وكنت مندهشًا حقًا. فريقهم محترف للغاية ودقيق وودود. تم التعامل مع كل شيء، من تحويل الأموال إلى مفاوضات العقار، بأفضل طريقة ممكنة. أنا راضٍ تمامًا عن خدماتهم."
+      },
+      {
+        "id": 3,
+        "name": "حميد درخشانفر",
+        "service": "company_registration",
+        "rating": 4.3,
+        "avatar": "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=150",
+        "text": "بمساعدتهم، تمكنت من تسجيل شركتي في تركيا وتوسيع أعمالي بسرعة. فريقهم المتخصص والمتمرس تعامل مع جميع التفاصيل القانونية والمالية بالنيابة عني، مما سمح لي بالتركيز على أعمالي فقط. التعاون مع هذه المجموعة كان أحد أفضل قرارات حياتي."
+      },
+      {
+        "id": 4,
+        "name": "مينا طهراني",
+        "service": "student_visa",
+        "rating": 5.0,
+        "avatar": "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150",
+        "text": "تقدمت إلى هذه المجموعة للحصول على تأشيرة دراسية، وشعرت بدعمهم الكامل من البداية إلى النهاية. بالإضافة إلى مساعدتهم في إعداد الوثائق، قدموا لي نصائح حول أفضل الخيارات لمستقبلي. أنا سعيد جدًا باختياري لهم وأوصيت بهم لجميع أصدقائي."
+      }
+    ]
+  },
+  "tr": {
+    "testimonials": [
+      {
+        "id": 1,
+        "name": "Ehsan Kamyab",
+        "service": "work_visa",
+        "rating": 4.8,
+        "avatar": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=150",
+        "text": "Ekipleriyle ilk temastan itibaren profesyonel ve özverili bir grupla çalıştığımı fark ettim. Vize alma sürecimin tüm adımları hassasiyet ve şeffaflıkla yürütüldü ve hiçbir sorun çıkmadı. Hızlı ve doğru hizmetlerinden tamamen memnunum ve herkese tavsiye ederim."
+      },
+      {
+        "id": 2,
+        "name": "Maryam Torabi",
+        "service": "real_estate",
+        "rating": 4.9,
+        "avatar": "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=150",
+        "text": "Türkiye’de yatırım transferi ve mülk satın alma için hizmetlerini kullandım ve gerçekten etkilendim. Ekipleri son derece profesyonel, titiz ve nazik. Para transferinden mülk görüşmelerine kadar her şey mükemmel bir şekilde yapıldı. Hizmetlerinden tamamen memnunum."
+      },
+      {
+        "id": 3,
+        "name": "Hamid Derakhshanfar",
+        "service": "company_registration",
+        "rating": 4.3,
+        "avatar": "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=150",
+        "text": "Onların yardımıyla Türkiye’de şirketimi kaydettim ve işimi hızla büyüttüm. Uzman ve deneyimli ekipleri, tüm yasal ve mali detayları benim için yönetti, böylece sadece işime odaklandım. Bu grupla çalışmak hayatımın en iyi kararlarından biriydi."
+      },
+      {
+        "id": 4,
+        "name": "Mina Tehrani",
+        "service": "student_visa",
+        "rating": 5.0,
+        "avatar": "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150",
+        "text": "Öğrenci vizesi almak için bu gruba başvurdum ve süreç boyunca ekiplerinin tam desteğini hissettim. Belgelerin hazırlanmasının yanı sıra, geleceğim için en iyi seçenekler konusunda da bana rehberlik ettiler. Bu grubu seçtiğim için çok mutluyum ve tüm arkadaşlarıma önerdim."
+      }
+    ]
+  }
+}

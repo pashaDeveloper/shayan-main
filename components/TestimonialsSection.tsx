@@ -1,54 +1,39 @@
-'use client';
+
 
 import React from 'react';
 import { Star, Quote } from 'lucide-react';
+import fa from '@/translations/fa.json';
+import en from '@/translations/en.json';
+import ar from '@/translations/ar.json';
+import tr from '@/translations/tr.json';
+import testimonialsData from '@/data/testimonials.json';
+import { TestimonialsData, TestimonialsTranslation } from '@/types/testimonials';
 
-const TestimonialsSection = () => {
-  const testimonials = [
-    {
-      id: 1,
-      name: 'احسان کامیاب',
-      service: 'ویزا کاری',
-      rating: 4.8,
-      avatar: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=150',
-      text: 'از اولین تماس با تیم آن‌ها، متوجه شدم که با یک گروه حرفه‌ای و دلسوز سروکار دارم. تمامی مراحل دریافت ویزای من با دقت و شفافیت انجام شد و هیچ مشکلی پیش نیامد. من از خدمات سریع و دقیقشان کاملاً راضی هستم و به همه توصیه می‌کنم که از این گروه استفاده کنند.'
-    },
-    {
-      id: 2,
-      name: 'مریم ترابی',
-      service: 'املاک',
-      rating: 4.9,
-      avatar: 'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=150',
-      text: 'من برای انتقال سرمایه و خرید ملک در ترکیه از خدمات این گروه استفاده کردم و واقعاً تحت تأثیر قرار گرفتم. تیم آن‌ها بسیار حرفه‌ای، دقیق و خوش‌برخورد است. همه کارها، از انتقال پول گرفته تا مذاکرات برای خرید ملک، به بهترین شکل ممکن انجام شد. از خدماتشان کاملاً راضی هستم.'
-    },
-    {
-      id: 3,
-      name: 'حمید درخشانفر',
-      service: 'ثبت شرکت',
-      rating: 4.3,
-      avatar: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=150',
-      text: 'به کمک این گروه، توانستم شرکت خود را در ترکیه ثبت کنم و به‌سرعت کسب‌وکارم را گسترش دهم. تیم تخصصی و باتجربه‌شان تمام جزئیات قانونی و مالی را برای من مدیریت کردند و من فقط بر روی کسب‌وکارم تمرکز کردم. همکاری با این گروه یکی از بهترین تصمیمات زندگی من بود.'
-    },
-    {
-      id: 4,
-      name: 'مینا تهرانی',
-      service: 'ویزا تحصیلی',
-      rating: 5.0,
-      avatar: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150',
-      text: 'من برای اخذ ویزای تحصیلی به این گروه مراجعه کردم و از همان ابتدا تا پایان فرآیند، همراهی کامل تیم را احساس کردم. علاوه بر این، آن‌ها نه تنها در تهیه مدارک بلکه در انتخاب بهترین گزینه‌ها برای آینده‌ام به من مشاوره دادند. واقعاً از انتخاب این گروه خوشحالم و آن‌ها را به همه دوستانم توصیه کرده‌ام.'
-    }
-  ];
+const translations = { fa, en, ar, tr } as {
+  [key: string]: { testimonials: TestimonialsTranslation };
+};
+
+type Props = {
+  lang: string;
+};
+
+const TestimonialsSection = ({ lang }: Props) => {
+  const currentLang = lang as keyof typeof translations;
+  const t = translations[currentLang]?.testimonials || translations.en.testimonials;
+  const testimonials = (
+    testimonialsData as TestimonialsData
+  )[currentLang]?.testimonials || testimonialsData.en.testimonials;
 
   return (
-    <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-900 transition-colors duration-300">
+    <section className="py-20 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-[#0F4C75] dark:text-white mb-4">
-            نظرات در مورد گروه شایسته و شایان
+            {t.sectionTitle}
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 mb-6">
-            مشتریان ما چه می‌گویند؟
+            {t.sectionSubtitle}
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-[#0F4C75] to-[#FFD700] mx-auto rounded-full"></div>
         </div>
@@ -77,7 +62,7 @@ const TestimonialsSection = () => {
                     {testimonial.name}
                   </h4>
                   <p className="text-gray-600 dark:text-gray-300 text-sm">
-                    {testimonial.service}
+                    {t.services[testimonial.service]}
                   </p>
                 </div>
               </div>
@@ -115,7 +100,7 @@ const TestimonialsSection = () => {
         {/* View All Button */}
         <div className="text-center mt-12">
           <button className="bg-gradient-to-r from-[#0F4C75] to-[#FFD700] text-white px-8 py-4 rounded-full font-semibold hover:from-[#FFD700] hover:to-[#0F4C75] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-            مشاهده تمامی نظرات مشتریان
+            {t.viewAll}
           </button>
         </div>
       </div>

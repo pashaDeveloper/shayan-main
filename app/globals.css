@@ -48,7 +48,7 @@
     --popover-foreground: 0 0% 98%;
     --primary: 0 0% 98%;
     --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
+--secondary: 217 91% 30%;
     --secondary-foreground: 0 0% 98%;
     --muted: 0 0% 14.9%;
     --muted-foreground: 0 0% 63.9%;
@@ -141,6 +141,9 @@
     transform: translateX(0);
   }
 }
+html, body {
+  overflow-x: hidden;
+}
 
 @keyframes zoomIn {
   from {
@@ -151,6 +154,14 @@
     opacity: 1;
     transform: scale(1);
   }
+}
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none; 
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none; 
 }
 
 
@@ -407,3 +418,4 @@ html {
     scroll-behavior: auto !important;
   }
 }
+

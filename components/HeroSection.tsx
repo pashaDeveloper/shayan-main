@@ -23,7 +23,7 @@ const HeroSection = () => {
         t("hero.slide1.features.2")
       ],
       backgroundImage:
-        "https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080",
+        "./img/hero/slide1/migration.webp",
       animatedImage: "./img/hero/slide1/model1.png",
       secondImage: "./img/hero/slide1/airplane.webp",
       gradient: "from-blue-900/80 to-indigo-900/80"
@@ -39,7 +39,7 @@ const HeroSection = () => {
         t("hero.slide2.features.2")
       ],
       backgroundImage:
-        "https://images.pexels.com/photos/378570/pexels-photo-378570.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080",
+        "./img/hero/slide2/Investment.webp",
       animatedImage: "./img/hero/slide2/model2.webp",
       secondImage: "./img/hero/slide2/world.webp",
 
@@ -57,7 +57,7 @@ const HeroSection = () => {
         t("hero.slide4.features.2")
       ],
       backgroundImage:
-        "https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080",
+          "./img/hero/slide3/tourism.webp",
       animatedImage: "./img/hero/slide3/model3.webp",
       secondImage: "./img/hero/slide3/pizza-tower.webp",
 
@@ -74,7 +74,7 @@ const HeroSection = () => {
         t("hero.slide5.features.2")
       ],
       backgroundImage:
-        "https://images.pexels.com/photos/132037/pexels-photo-132037.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080",
+        "./img/hero/slide4/commerce.webp",
       animatedImage: "./img/hero/slide4/model4.webp",
       secondImage: "./img/hero/slide4/basket.webp",
 
@@ -91,7 +91,7 @@ const HeroSection = () => {
         t("hero.slide6.features.2")
       ],
       backgroundImage:
-        "https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080",
+        "./img/hero/slide5/sell.webp",
       animatedImage: "./img/hero/slide5/model5.webp",
       secondImage: "./img/hero/slide5/real-state2.webp",
 
@@ -108,7 +108,8 @@ const HeroSection = () => {
         t("hero.slide7.features.2")
       ],
       backgroundImage:
-        "https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080",
+               "./img/hero/slide6/carbuy.webp",
+
       animatedImage: "./img/hero/slide6/model6.webp",
       secondImage: "./img/hero/slide6/car.webp",
 
@@ -125,7 +126,7 @@ const HeroSection = () => {
         t("hero.slide8.features.2")
       ],
       backgroundImage:
-        "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080",
+        "./img/hero/slide7/measuring.webp",
       animatedImage: "./img/hero/slide7/model7.webp",
       secondImage: "./img/hero/slide7/camera.webp",
 
@@ -142,7 +143,7 @@ const HeroSection = () => {
         t("hero.slide9.features.2")
       ],
       backgroundImage:
-        "https://images.pexels.com/photos/310452/pexels-photo-310452.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080",
+        "./img/hero/slide8/construct.webp",
       animatedImage: "./img/hero/slide8/model8.webp",
       secondImage: "./img/hero/slide8/building.webp",
 
@@ -159,7 +160,7 @@ const HeroSection = () => {
         t("hero.slide10.features.2")
       ],
       backgroundImage:
-        "https://images.pexels.com/photos/386148/pexels-photo-386148.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080",
+        "./img/hero/slide9/agency.webp",
       animatedImage: "./img/hero/slide9/model9.webp",
       secondImage: "./img/hero/slide9/notebook.webp",
 
@@ -176,7 +177,7 @@ const HeroSection = () => {
         t("hero.slide11.features.2")
       ],
       backgroundImage:
-        "https://images.pexels.com/photos/2835561/pexels-photo-2835561.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080",
+        "./img/hero/slide10/advertising.webp",
       animatedImage: "./img/hero/slide10/model10.webp",
       secondImage: "./img/hero/slide10/sheypoor.webp",
 
@@ -193,7 +194,7 @@ const HeroSection = () => {
         t("hero.slide12.features.2")
       ],
       backgroundImage:
-        "https://images.pexels.com/photos/105254/pexels-photo-105254.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080",
+        "./img/hero/slide11/educate.webp",
       animatedImage: "./img/hero/slide11/model11.webp",
       secondImage: "./img/hero/slide11/education.webp",
 

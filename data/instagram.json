@@ -1,0 +1,186 @@
+{
+  "fa": {
+    "posts": [
+      {
+        "id": 1,
+        "image": "https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "caption": "🇹🇷ترکیه🇹🇷 وقتی صحبت از اقامت ترکیه میشه، باید تصمیم درست بگیری!",
+        "likes": 245,
+        "hashtags": "#اقامت_ترکیه #مهاجرت_به_ترکیه"
+      },
+      {
+        "id": 2,
+        "image": "https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "caption": "🇩🇪آلمان منتظر شماست!🇩🇪 اقامت کاری راحت، سریع و قانونی",
+        "likes": 189,
+        "hashtags": "#اقامت_آلمان #ویزای_کاری_آلمان"
+      },
+      {
+        "id": 3,
+        "image": "https://images.pexels.com/photos/1388030/pexels-photo-1388030.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "caption": "تحصیل در ترکیه با کمترین هزینه و بهترین شرایط",
+        "likes": 156,
+        "hashtags": "#تحصیل_در_ترکیه #اقامت_تحصیلی"
+      },
+      {
+        "id": 4,
+        "image": "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "caption": "🇪🇺اروپا زیر پای شماست🇪🇺 اقامت کاری سه ساله کشور کرواسی",
+        "likes": 298,
+        "hashtags": "#مهاجرت #اروپا #ویزا"
+      },
+      {
+        "id": 5,
+        "image": "https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "caption": "برای شروع یک زندگی جدید در ترکیه، همراه با شایسته و شایان باشید!",
+        "likes": 167,
+        "hashtags": "#ترکیه #ایران #زندگی #اقامت"
+      },
+      {
+        "id": 6,
+        "image": "https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "caption": "⭐️ویزای شنگن⭐️ آیا آماده‌اید تا به اروپا سفر کنید؟",
+        "likes": 312,
+        "hashtags": "#ویزای_شنگن #سفر_به_اروپا #ویزا"
+      }
+    ]
+  },
+  "en": {
+    "posts": [
+      {
+        "id": 1,
+        "image": "https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "caption": "🇹🇷Turkey🇹🇷 When it comes to Turkey residency, make the right choice!",
+        "likes": 245,
+        "hashtags": "#TurkeyResidency #MigrateToTurkey"
+      },
+      {
+        "id": 2,
+        "image": "https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "caption": "🇩🇪Germany awaits you!🇩🇪 Easy, fast, and legal work residency",
+        "likes": 189,
+        "hashtags": "#GermanyResidency #GermanyWorkVisa"
+      },
+      {
+        "id": 3,
+        "image": "https://images.pexels.com/photos/1388030/pexels-photo-1388030.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "caption": "Study in Turkey with the lowest costs and best conditions",
+        "likes": 156,
+        "hashtags": "#StudyInTurkey #StudentResidency"
+      },
+      {
+        "id": 4,
+        "image": "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "caption": "🇪🇺Europe at your feet🇪🇺 Three-year work residency in Croatia",
+        "likes": 298,
+        "hashtags": "#Migration #Europe #Visa"
+      },
+      {
+        "id": 5,
+        "image": "https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "caption": "Start a new life in Turkey with Shayesteh & Shayan!",
+        "likes": 167,
+        "hashtags": "#Turkey #Iran #Life #Residency"
+      },
+      {
+        "id": 6,
+        "image": "https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "caption": "⭐️Schengen Visa⭐️ Ready to travel to Europe?",
+        "likes": 312,
+        "hashtags": "#SchengenVisa #TravelToEurope #Visa"
+      }
+    ]
+  },
+  "ar": {
+    "posts": [
+      {
+        "id": 1,
+        "image": "https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "caption": "🇹🇷تركيا🇹🇷 عندما يتعلق الأمر بالإقامة في تركيا، اتخذ القرار الصحيح!",
+        "likes": 245,
+        "hashtags": "#الإقامة_في_تركيا #الهجرة_إلى_تركيا"
+      },
+      {
+        "id": 2,
+        "image": "https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "caption": "🇩🇪ألمانيا في انتظارك!🇩🇪 إقامة عمل سهلة وسريعة وقانونية",
+        "likes": 189,
+        "hashtags": "#الإقامة_في_ألمانيا #تأشيرة_عمل_ألمانيا"
+      },
+      {
+        "id": 3,
+        "image": "https://images.pexels.com/photos/1388030/pexels-photo-1388030.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "caption": "الدراسة في تركيا بأقل التكاليف وأفضل الظروف",
+        "likes": 156,
+        "hashtags": "#الدراسة_في_تركيا #الإقامة_الدراسية"
+      },
+      {
+        "id": 4,
+        "image": "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "caption": "🇪🇺أوروبا تحت أقدامك🇪🇺 إقامة عمل لمدة ثلاث سنوات في كرواتيا",
+        "likes": 298,
+        "hashtags": "#الهجرة #أوروبا #تأشيرة"
+      },
+      {
+        "id": 5,
+        "image": "https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "caption": "ابدأ حياة جديدة في تركيا مع شايسته وشايان!",
+        "likes": 167,
+        "hashtags": "#تركيا #إيران #حياة #إقامة"
+      },
+      {
+        "id": 6,
+        "image": "https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "caption": "⭐️تأشيرة شنغن⭐️ هل أنت مستعد للسفر إلى أوروبا؟",
+        "likes": 312,
+        "hashtags": "#تأشيرة_شنغن #السفر_إلى_أوروبا #تأشيرة"
+      }
+    ]
+  },
+  "tr": {
+    "posts": [
+      {
+        "id": 1,
+        "image": "https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "caption": "🇹🇷Türkiye🇹🇷 Türkiye oturumu söz konusu olduğunda doğru kararı verin!",
+        "likes": 245,
+        "hashtags": "#TürkiyeOturumu #TürkiyeGöç"
+      },
+      {
+        "id": 2,
+        "image": "https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "caption": "🇩🇪Almanya sizi bekliyor!🇩🇪 Kolay, hızlı ve yasal çalışma izni",
+        "likes": 189,
+        "hashtags": "#AlmanyaOturumu #AlmanyaÇalışmaVizesi"
+      },
+      {
+        "id": 3,
+        "image": "https://images.pexels.com/photos/1388030/pexels-photo-1388030.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "caption": "Türkiye’de en düşük maliyetle ve en iyi koşullarda eğitim",
+        "likes": 156,
+        "hashtags": "#TürkiyeEğitim #ÖğrenciOturumu"
+      },
+      {
+        "id": 4,
+        "image": "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "caption": "🇪🇺Avrupa ayaklarınızın altında🇪🇺 Hırvatistan’da üç yıllık çalışma izni",
+        "likes": 298,
+        "hashtags": "#Göç #Avrupa #Vize"
+      },
+      {
+        "id": 5,
+        "image": "https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "caption": "Türkiye’de yeni bir hayat için Şayeste ve Şayan ile olun!",
+        "likes": 167,
+        "hashtags": "#Türkiye #İran #Yaşam #Oturum"
+      },
+      {
+        "id": 6,
+        "image": "https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "caption": "⭐️Schengen Vizesi⭐️ Avrupa’ya seyahat etmeye hazır mısınız?",
+        "likes": 312,
+        "hashtags": "#SchengenVizesi #AvrupaSeyahati #Vize"
+      }
+    ]
+  }
+}

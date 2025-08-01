@@ -1,0 +1,678 @@
+{
+  "fa": {
+    "items": [
+      {
+        "id": 1,
+        "src": "https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg?auto=compress&cs=tinysrgb&w=600&h=800&fit=crop",
+        "title": "اقامت در ترکیه",
+        "category": "اقامت",
+        "likes": 124,
+        "location": "استانبول",
+        "aspectRatio": "tall"
+      },
+      {
+        "id": 2,
+        "src": "https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
+        "title": "سرمایه‌گذاری در آلمان",
+        "category": "سرمایه‌گذاری",
+        "likes": 89,
+        "location": "برلین",
+        "aspectRatio": "wide"
+      },
+      {
+        "id": 3,
+        "src": "https://images.pexels.com/photos/1388030/pexels-photo-1388030.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+        "title": "تحصیل در ترکیه",
+        "category": "تحصیل",
+        "likes": 156,
+        "location": "آنکارا",
+        "aspectRatio": "square"
+      },
+      {
+        "id": 4,
+        "src": "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=600&h=900&fit=crop",
+        "title": "خرید ملک در کرواسی",
+        "category": "خرید ملک",
+        "likes": 203,
+        "location": "زاگرب",
+        "aspectRatio": "tall"
+      },
+      {
+        "id": 5,
+        "src": "https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
+        "title": "ویزای کاری آلمان",
+        "category": "ویزای کاری",
+        "likes": 167,
+        "location": "مونیخ",
+        "aspectRatio": "wide"
+      },
+      {
+        "id": 6,
+        "src": "https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&w=600&h=700&fit=crop",
+        "title": "ویزای شنگن",
+        "category": "ویزای شنگن",
+        "likes": 234,
+        "location": "اروپا",
+        "aspectRatio": "medium"
+      },
+      {
+        "id": 7,
+        "src": "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=600&h=500&fit=crop",
+        "title": "اقامت از طریق سرمایه‌گذاری",
+        "category": "سرمایه‌گذاری",
+        "likes": 145,
+        "location": "لیسبون",
+        "aspectRatio": "medium"
+      },
+      {
+        "id": 8,
+        "src": "https://images.pexels.com/photos/3778680/pexels-photo-3778680.jpeg?auto=compress&cs=tinysrgb&w=600&h=800&fit=crop",
+        "title": "خرید ملک در ترکیه",
+        "category": "خرید ملک",
+        "likes": 178,
+        "location": "آنتالیا",
+        "aspectRatio": "tall"
+      },
+      {
+        "id": 9,
+        "src": "https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+        "title": "تحصیل در اروپا",
+        "category": "تحصیل",
+        "likes": 289,
+        "location": "پاریس",
+        "aspectRatio": "square"
+      },
+      {
+        "id": 10,
+        "src": "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
+        "title": "ویزای کاری کرواسی",
+        "category": "ویزای کاری",
+        "likes": 195,
+        "location": "دوبروونیک",
+        "aspectRatio": "wide"
+      },
+      {
+        "id": 11,
+        "src": "https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&fit=crop",
+        "title": "اقامت از طریق تحصیل",
+        "category": "تحصیل",
+        "likes": 142,
+        "location": "استانبول",
+        "aspectRatio": "medium"
+      },
+      {
+        "id": 12,
+        "src": "https://images.pexels.com/photos/3184296/pexels-photo-3184296.jpeg?auto=compress&cs=tinysrgb&w=600&h=800&fit=crop",
+        "title": "سرمایه‌گذاری در پرتغال",
+        "category": "سرمایه‌گذاری",
+        "likes": 267,
+        "location": "پورتو",
+        "aspectRatio": "tall"
+      }
+    ],
+    "moreItems": [
+      {
+        "id": 13,
+        "src": "https://images.pexels.com/photos/3184301/pexels-photo-3184301.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+        "title": "اقامت از طریق خرید ملک",
+        "category": "خرید ملک",
+        "likes": 98,
+        "location": "آتن",
+        "aspectRatio": "square"
+      },
+      {
+        "id": 14,
+        "src": "https://images.pexels.com/photos/3184302/pexels-photo-3184302.jpeg?auto=compress&cs=tinysrgb&w=600&h=500&fit=crop",
+        "title": "ویزای کاری پرتغال",
+        "category": "ویزای کاری",
+        "likes": 187,
+        "location": "لیسبون",
+        "aspectRatio": "medium"
+      },
+      {
+        "id": 15,
+        "src": "https://images.pexels.com/photos/3184303/pexels-photo-3184303.jpeg?auto=compress&cs=tinysrgb&w=600&h=900&fit=crop",
+        "title": "اقامت در یونان",
+        "category": "اقامت",
+        "likes": 156,
+        "location": "سانتورینی",
+        "aspectRatio": "tall"
+      },
+      {
+        "id": 16,
+        "src": "https://images.pexels.com/photos/3184305/pexels-photo-3184305.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
+        "title": "تحصیل در آلمان",
+        "category": "تحصیل",
+        "likes": 234,
+        "location": "هامبورگ",
+        "aspectRatio": "wide"
+      },
+      {
+        "id": 17,
+        "src": "https://images.pexels.com/photos/3184307/pexels-photo-3184307.jpeg?auto=compress&cs=tinysrgb&w=600&h=700&fit=crop",
+        "title": "ویزای شنگن از پرتغال",
+        "category": "ویزای شنگن",
+        "likes": 145,
+        "location": "پورتو",
+        "aspectRatio": "medium"
+      },
+      {
+        "id": 18,
+        "src": "https://images.pexels.com/photos/3184308/pexels-photo-3184308.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+        "title": "سرمایه‌گذاری در ترکیه",
+        "category": "سرمایه‌گذاری",
+        "likes": 289,
+        "location": "ازمیر",
+        "aspectRatio": "square"
+      }
+    ],
+    "categories": ["همه", "اقامت", "سرمایه‌گذاری", "خرید ملک", "تحصیل", "ویزای کاری", "ویزای شنگن"]
+  },
+  "en": {
+    "items": [
+      {
+        "id": 1,
+        "src": "https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg?auto=compress&cs=tinysrgb&w=600&h=800&fit=crop",
+        "title": "Residency in Turkey",
+        "category": "Residency",
+        "likes": 124,
+        "location": "Istanbul",
+        "aspectRatio": "tall"
+      },
+      {
+        "id": 2,
+        "src": "https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
+        "title": "Investment in Germany",
+        "category": "Investment",
+        "likes": 89,
+        "location": "Berlin",
+        "aspectRatio": "wide"
+      },
+      {
+        "id": 3,
+        "src": "https://images.pexels.com/photos/1388030/pexels-photo-1388030.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+        "title": "Study in Turkey",
+        "category": "Study",
+        "likes": 156,
+        "location": "Ankara",
+        "aspectRatio": "square"
+      },
+      {
+        "id": 4,
+        "src": "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=600&h=900&fit=crop",
+        "title": "Property Purchase in Croatia",
+        "category": "Property Purchase",
+        "likes": 203,
+        "location": "Zagreb",
+        "aspectRatio": "tall"
+      },
+      {
+        "id": 5,
+        "src": "https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
+        "title": "Work Visa for Germany",
+        "category": "Work Visa",
+        "likes": 167,
+        "location": "Munich",
+        "aspectRatio": "wide"
+      },
+      {
+        "id": 6,
+        "src": "https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&w=600&h=700&fit=crop",
+        "title": "Schengen Visa",
+        "category": "Schengen Visa",
+        "likes": 234,
+        "location": "Europe",
+        "aspectRatio": "medium"
+      },
+      {
+        "id": 7,
+        "src": "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=600&h=500&fit=crop",
+        "title": "Residency through Investment",
+        "category": "Investment",
+        "likes": 145,
+        "location": "Lisbon",
+        "aspectRatio": "medium"
+      },
+      {
+        "id": 8,
+        "src": "https://images.pexels.com/photos/3778680/pexels-photo-3778680.jpeg?auto=compress&cs=tinysrgb&w=600&h=800&fit=crop",
+        "title": "Property Purchase in Turkey",
+        "category": "Property Purchase",
+        "likes": 178,
+        "location": "Antalya",
+        "aspectRatio": "tall"
+      },
+      {
+        "id": 9,
+        "src": "https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+        "title": "Study in Europe",
+        "category": "Study",
+        "likes": 289,
+        "location": "Paris",
+        "aspectRatio": "square"
+      },
+      {
+        "id": 10,
+        "src": "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
+        "title": "Work Visa for Croatia",
+        "category": "Work Visa",
+        "likes": 195,
+        "location": "Dubrovnik",
+        "aspectRatio": "wide"
+      },
+      {
+        "id": 11,
+        "src": "https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&fit=crop",
+        "title": "Residency through Study",
+        "category": "Study",
+        "likes": 142,
+        "location": "Istanbul",
+        "aspectRatio": "medium"
+      },
+      {
+        "id": 12,
+        "src": "https://images.pexels.com/photos/3184296/pexels-photo-3184296.jpeg?auto=compress&cs=tinysrgb&w=600&h=800&fit=crop",
+        "title": "Investment in Portugal",
+        "category": "Investment",
+        "likes": 267,
+        "location": "Porto",
+        "aspectRatio": "tall"
+      }
+    ],
+    "moreItems": [
+      {
+        "id": 13,
+        "src": "https://images.pexels.com/photos/3184301/pexels-photo-3184301.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+        "title": "Residency through Property Purchase",
+        "category": "Property Purchase",
+        "likes": 98,
+        "location": "Athens",
+        "aspectRatio": "square"
+      },
+      {
+        "id": 14,
+        "src": "https://images.pexels.com/photos/3184302/pexels-photo-3184302.jpeg?auto=compress&cs=tinysrgb&w=600&h=500&fit=crop",
+        "title": "Work Visa for Portugal",
+        "category": "Work Visa",
+        "likes": 187,
+        "location": "Lisbon",
+        "aspectRatio": "medium"
+      },
+      {
+        "id": 15,
+        "src": "https://images.pexels.com/photos/3184303/pexels-photo-3184303.jpeg?auto=compress&cs=tinysrgb&w=600&h=900&fit=crop",
+        "title": "Residency in Greece",
+        "category": "Residency",
+        "likes": 156,
+        "location": "Santorini",
+        "aspectRatio": "tall"
+      },
+      {
+        "id": 16,
+        "src": "https://images.pexels.com/photos/3184305/pexels-photo-3184305.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
+        "title": "Study in Germany",
+        "category": "Study",
+        "likes": 234,
+        "location": "Hamburg",
+        "aspectRatio": "wide"
+      },
+      {
+        "id": 17,
+        "src": "https://images.pexels.com/photos/3184307/pexels-photo-3184307.jpeg?auto=compress&cs=tinysrgb&w=600&h=700&fit=crop",
+        "title": "Schengen Visa from Portugal",
+        "category": "Schengen Visa",
+        "likes": 145,
+        "location": "Porto",
+        "aspectRatio": "medium"
+      },
+      {
+        "id": 18,
+        "src": "https://images.pexels.com/photos/3184308/pexels-photo-3184308.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+        "title": "Investment in Turkey",
+        "category": "Investment",
+        "likes": 289,
+        "location": "Izmir",
+        "aspectRatio": "square"
+      }
+    ],
+    "categories": ["All", "Residency", "Investment", "Property Purchase", "Study", "Work Visa", "Schengen Visa"]
+  },
+  "ar": {
+    "items": [
+      {
+        "id": 1,
+        "src": "https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg?auto=compress&cs=tinysrgb&w=600&h=800&fit=crop",
+        "title": "الإقامة في تركيا",
+        "category": "الإقامة",
+        "likes": 124,
+        "location": "إسطنبول",
+        "aspectRatio": "tall"
+      },
+      {
+        "id": 2,
+        "src": "https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
+        "title": "الاستثمار في ألمانيا",
+        "category": "الاستثمار",
+        "likes": 89,
+        "location": "برلين",
+        "aspectRatio": "wide"
+      },
+      {
+        "id": 3,
+        "src": "https://images.pexels.com/photos/1388030/pexels-photo-1388030.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+        "title": "الدراسة في تركيا",
+        "category": "الدراسة",
+        "likes": 156,
+        "location": "أنقرة",
+        "aspectRatio": "square"
+      },
+      {
+        "id": 4,
+        "src": "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=600&h=900&fit=crop",
+        "title": "شراء عقار في كرواتيا",
+        "category": "شراء عقار",
+        "likes": 203,
+        "location": "زغرب",
+        "aspectRatio": "tall"
+      },
+      {
+        "id": 5,
+        "src": "https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
+        "title": "تأشيرة عمل لألمانيا",
+        "category": "تأشيرة عمل",
+        "likes": 167,
+        "location": "ميونيخ",
+        "aspectRatio": "wide"
+      },
+      {
+        "id": 6,
+        "src": "https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&w=600&h=700&fit=crop",
+        "title": "تأشيرة شنغن",
+        "category": "تأشيرة شنغن",
+        "likes": 234,
+        "location": "أوروبا",
+        "aspectRatio": "medium"
+      },
+      {
+        "id": 7,
+        "src": "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=600&h=500&fit=crop",
+        "title": "الإقامة من خلال الاستثمار",
+        "category": "الاستثمار",
+        "likes": 145,
+        "location": "لشبونة",
+        "aspectRatio": "medium"
+      },
+      {
+        "id": 8,
+        "src": "https://images.pexels.com/photos/3778680/pexels-photo-3778680.jpeg?auto=compress&cs=tinysrgb&w=600&h=800&fit=crop",
+        "title": "شراء عقار في تركيا",
+        "category": "شراء عقار",
+        "likes": 178,
+        "location": "أنطاليا",
+        "aspectRatio": "tall"
+      },
+      {
+        "id": 9,
+        "src": "https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+        "title": "الدراسة في أوروبا",
+        "category": "الدراسة",
+        "likes": 289,
+        "location": "باريس",
+        "aspectRatio": "square"
+      },
+      {
+        "id": 10,
+        "src": "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
+        "title": "تأشيرة عمل لكرواتيا",
+        "category": "تأشيرة عمل",
+        "likes": 195,
+        "location": "دوبروفنيك",
+        "aspectRatio": "wide"
+      },
+      {
+        "id": 11,
+        "src": "https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&fit=crop",
+        "title": "الإقامة من خلال الدراسة",
+        "category": "الدراسة",
+        "likes": 142,
+        "location": "إسطنبول",
+        "aspectRatio": "medium"
+      },
+      {
+        "id": 12,
+        "src": "https://images.pexels.com/photos/3184296/pexels-photo-3184296.jpeg?auto=compress&cs=tinysrgb&w=600&h=800&fit=crop",
+        "title": "الاستثمار في البرتغال",
+        "category": "الاستثمار",
+        "likes": 267,
+        "location": "بورتو",
+        "aspectRatio": "tall"
+      }
+    ],
+    "moreItems": [
+      {
+        "id": 13,
+        "src": "https://images.pexels.com/photos/3184301/pexels-photo-3184301.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+        "title": "الإقامة من خلال شراء عقار",
+        "category": "شراء عقار",
+        "likes": 98,
+        "location": "أثينا",
+        "aspectRatio": "square"
+      },
+      {
+        "id": 14,
+        "src": "https://images.pexels.com/photos/3184302/pexels-photo-3184302.jpeg?auto=compress&cs=tinysrgb&w=600&h=500&fit=crop",
+        "title": "تأشيرة عمل للبرتغال",
+        "category": "تأشيرة عمل",
+        "likes": 187,
+        "location": "لشبونة",
+        "aspectRatio": "medium"
+      },
+      {
+        "id": 15,
+        "src": "https://images.pexels.com/photos/3184303/pexels-photo-3184303.jpeg?auto=compress&cs=tinysrgb&w=600&h=900&fit=crop",
+        "title": "الإقامة في اليونان",
+        "category": "الإقامة",
+        "likes": 156,
+        "location": "سانتوريني",
+        "aspectRatio": "tall"
+      },
+      {
+        "id": 16,
+        "src": "https://images.pexels.com/photos/3184305/pexels-photo-3184305.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
+        "title": "الدراسة في ألمانيا",
+        "category": "الدراسة",
+        "likes": 234,
+        "location": "هامبورغ",
+        "aspectRatio": "wide"
+      },
+      {
+        "id": 17,
+        "src": "https://images.pexels.com/photos/3184307/pexels-photo-3184307.jpeg?auto=compress&cs=tinysrgb&w=600&h=700&fit=crop",
+        "title": "تأشيرة شنغن من البرتغال",
+        "category": "تأشيرة شنغن",
+        "likes": 145,
+        "location": "بورتو",
+        "aspectRatio": "medium"
+      },
+      {
+        "id": 18,
+        "src": "https://images.pexels.com/photos/3184308/pexels-photo-3184308.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+        "title": "الاستثمار في تركيا",
+        "category": "الاستثمار",
+        "likes": 289,
+        "location": "إزمير",
+        "aspectRatio": "square"
+      }
+    ],
+    "categories": ["الكل", "الإقامة", "الاستثمار", "شراء عقار", "الدراسة", "تأشيرة عمل", "تأشيرة شنغن"]
+  },
+  "tr": {
+    "items": [
+      {
+        "id": 1,
+        "src": "https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg?auto=compress&cs=tinysrgb&w=600&h=800&fit=crop",
+        "title": "Türkiye’de Oturum",
+        "category": "Oturum",
+        "likes": 124,
+        "location": "İstanbul",
+        "aspectRatio": "tall"
+      },
+      {
+        "id": 2,
+        "src": "https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
+        "title": "Almanya’da Yatırım",
+        "category": "Yatırım",
+        "likes": 89,
+        "location": "Berlin",
+        "aspectRatio": "wide"
+      },
+      {
+        "id": 3,
+        "src": "https://images.pexels.com/photos/1388030/pexels-photo-1388030.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+        "title": "Türkiye’de Eğitim",
+        "category": "Eğitim",
+        "likes": 156,
+        "location": "Ankara",
+        "aspectRatio": "square"
+      },
+      {
+        "id": 4,
+        "src": "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=600&h=900&fit=crop",
+        "title": "Hırvatistan’da Gayrimenkul Satın Alma",
+        "category": "Gayrimenkul Satın Alma",
+        "likes": 203,
+        "location": "Zagreb",
+        "aspectRatio": "tall"
+      },
+      {
+        "id": 5,
+        "src": "https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
+        "title": "Almanya Çalışma Vizesi",
+        "category": "Çalışma Vizesi",
+        "likes": 167,
+        "location": "Münih",
+        "aspectRatio": "wide"
+      },
+      {
+        "id": 6,
+        "src": "https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&w=600&h=700&fit=crop",
+        "title": "Schengen Vizesi",
+        "category": "Schengen Vizesi",
+        "likes": 234,
+        "location": "Avrupa",
+        "aspectRatio": "medium"
+      },
+      {
+        "id": 7,
+        "src": "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=600&h=500&fit=crop",
+        "title": "Yatırım Yoluyla Oturum",
+        "category": "Yatırım",
+        "likes": 145,
+        "location": "Lizbon",
+        "aspectRatio": "medium"
+      },
+      {
+        "id": 8,
+        "src": "https://images.pexels.com/photos/3778680/pexels-photo-3778680.jpeg?auto=compress&cs=tinysrgb&w=600&h=800&fit=crop",
+        "title": "Türkiye’de Gayrimenkul Satın Alma",
+        "category": "Gayrimenkul Satın Alma",
+        "likes": 178,
+        "location": "Antalya",
+        "aspectRatio": "tall"
+      },
+      {
+        "id": 9,
+        "src": "https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+        "title": "Avrupa’da Eğitim",
+        "category": "Eğitim",
+        "likes": 289,
+        "location": "Paris",
+        "aspectRatio": "square"
+      },
+      {
+        "id": 10,
+        "src": "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
+        "title": "Hırvatistan Çalışma Vizesi",
+        "category": "Çalışma Vizesi",
+        "likes": 195,
+        "location": "Dubrovnik",
+        "aspectRatio": "wide"
+      },
+      {
+        "id": 11,
+        "src": "https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&w=600&h=750&fit=crop",
+        "title": "Eğitim Yoluyla Oturum",
+        "category": "Eğitim",
+        "likes": 142,
+        "location": "İstanbul",
+        "aspectRatio": "medium"
+      },
+      {
+        "id": 12,
+        "src": "https://images.pexels.com/photos/3184296/pexels-photo-3184296.jpeg?auto=compress&cs=tinysrgb&w=600&h=800&fit=crop",
+        "title": "Portekiz’de Yatırım",
+        "category": "Yatırım",
+        "likes": 267,
+        "location": "Porto",
+        "aspectRatio": "tall"
+      }
+    ],
+    "moreItems": [
+      {
+        "id": 13,
+        "src": "https://images.pexels.com/photos/3184301/pexels-photo-3184301.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+        "title": "Gayrimenkul Satın Alma Yoluyla Oturum",
+        "category": "Gayrimenkul Satın Alma",
+        "likes": 98,
+        "location": "Atina",
+        "aspectRatio": "square"
+      },
+      {
+        "id": 14,
+        "src": "https://images.pexels.com/photos/3184302/pexels-photo-3184302.jpeg?auto=compress&cs=tinysrgb&w=600&h=500&fit=crop",
+        "title": "Portekiz Çalışma Vizesi",
+        "category": "Çalışma Vizesi",
+        "likes": 187,
+        "location": "Lizbon",
+        "aspectRatio": "medium"
+      },
+      {
+        "id": 15,
+        "src": "https://images.pexels.com/photos/3184303/pexels-photo-3184303.jpeg?auto=compress&cs=tinysrgb&w=600&h=900&fit=crop",
+        "title": "Yunanistan’da Oturum",
+        "category": "Oturum",
+        "likes": 156,
+        "location": "Santorini",
+        "aspectRatio": "tall"
+      },
+      {
+        "id": 16,
+        "src": "https://images.pexels.com/photos/3184305/pexels-photo-3184305.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
+        "title": "Almanya’da Eğitim",
+        "category": "Eğitim",
+        "likes": 234,
+        "location": "Hamburg",
+        "aspectRatio": "wide"
+      },
+      {
+        "id": 16,
+        "src": "https://images.pexels.com/photos/3184307/pexels-photo-3184307.jpeg?auto=compress&cs=tinysrgb&w=600&h=700&fit=crop",
+        "title": "Portekiz’den Schengen Vizesi",
+        "category": "Schengen Vizesi",
+        "likes": 145,
+        "location": "Porto",
+        "aspectRatio": "medium"
+      },
+      {
+        "id": 18,
+        "src": "https://images.pexels.com/photos/3184308/pexels-photo-3184308.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+        "title": "Türkiye’de Yatırım",
+        "category": "Yatırım",
+        "likes": 289,
+        "location": "İzmir",
+        "aspectRatio": "square"
+      }
+    ],
+    "categories": ["Hepsi", "Oturum", "Yatırım", "Gayrimenkul Satın Alma", "Eğitim", "Çalışma Vizesi", "Schengen Vizesi"]
+  }
+}

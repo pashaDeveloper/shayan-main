@@ -22,6 +22,8 @@ import {
 } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useTheme } from "@/contexts/ThemeContext";
+import { useRouter, usePathname } from "next/navigation";
+import Link from "next/link";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -30,7 +32,8 @@ const Header = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
   const { isDark, toggleTheme } = useTheme();
-
+  const router = useRouter();
+  const pathname = usePathname();
   // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
@@ -110,7 +113,7 @@ const Header = () => {
         </div>
 
         {/* Main Header */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900 transition-all duration-300">
+        <div className=" px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900 transition-all duration-300">
           <div className="flex rtl:flex-row-reverse  items-center justify-between h-20">
             {/* Logo */}
             <div className="flex-shrink-0 group">
@@ -138,7 +141,7 @@ const Header = () => {
             <nav className="hidden lg:flex items-center">
               <div className="flex ltr:flex-row-reverse items-center bg-white/10 dark:bg-gray-800/50 backdrop-blur-sm rounded-full px-2 py-2 border border-gray-200/40 dark:border-gray-700/20">
                 {menuItems.map((item, index) => (
-                  <a
+                  <Link
                     key={item.key}
                     href={
                       item.key === "home"
@@ -155,7 +158,7 @@ const Header = () => {
                       <span className="text-base">{item.icon}</span>
                       {t(`header.${item.key}`)}{" "}
                     </span>
-                  </a>
+                  </Link>
                 ))}
               </div>
             </nav>
@@ -235,8 +238,13 @@ const Header = () => {
                         onClick={() => {
                           setLanguage(lang.code as any);
                           setIsLangOpen(false);
+
+                          const segments = pathname.split("/");
+                          segments[1] = lang.code; // فرض بر اینکه زبان همیشه در index 1 آدرس است
+                          const newPath = segments.join("/");
+                          router.push(newPath);
                         }}
-                        className="flex items-center w-full px-4 py-3 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+                        className="flex items-center w-full px-4 py-3 text-sm ..."
                       >
                         <span className="ltr:mr-3 rtl:ml-3 text-lg">
                           {lang.flag}

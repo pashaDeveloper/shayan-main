@@ -1,0 +1,190 @@
+{
+  "fa": {
+    "stats": [
+      {
+        "number": "6600",
+        "suffix": "هزار",
+        "labelKey": "servicesCount",
+        "icon": "CheckCircle",
+        "color": "from-blue-500 to-blue-600"
+      },
+      {
+        "number": "1000",
+        "suffix": "+",
+        "labelKey": "customersCount",
+        "icon": "Users",
+        "color": "from-green-500 to-green-600"
+      },
+      {
+        "number": "20",
+        "suffix": "+",
+        "labelKey": "countriesCount",
+        "icon": "Globe",
+        "color": "from-purple-500 to-purple-600"
+      },
+      {
+        "number": "10",
+        "suffix": "+ سال",
+        "labelKey": "experienceYears",
+        "icon": "Award",
+        "color": "from-orange-500 to-orange-600"
+      }
+    ],
+    "features": [
+      "داشتن تمامی مجوزها و گواهینامه های معتبر تایید شده",
+      "ارائه مشاوره حضوری و غیر حضوری",
+      "ارائه کلیه خدمات نقل و انتقال پول",
+      "دارا بودن تیم متخصص در تمامی خدمات",
+      "پایبندی به تکنولوژی و فناوری های روز",
+      "داشتن گواهینامه ها و استانداردهای لازم",
+      "ارائه خدمات دقیق، سریع، مطمئن و با کیفیت",
+      "پشتیبانی و پاسخگویی دقیق و حرفه ای",
+      "رضایت سنجی مبتنی بر استاندارد های بین المللی"
+    ],
+    "ratingCard": {
+      "rating": "9.6",
+      "text": "رضایت از ما"
+    }
+  },
+  "en": {
+    "stats": [
+      {
+        "number": "6600",
+        "suffix": "K",
+        "labelKey": "servicesCount",
+        "icon": "CheckCircle",
+        "color": "from-blue-500 to-blue-600"
+      },
+      {
+        "number": "1000",
+        "suffix": "+",
+        "labelKey": "customersCount",
+        "icon": "Users",
+        "color": "from-green-500 to-green-600"
+      },
+      {
+        "number": "20",
+        "suffix": "+",
+        "labelKey": "countriesCount",
+        "icon": "Globe",
+        "color": "from-purple-500 to-purple-600"
+      },
+      {
+        "number": "10",
+        "suffix": "+ Years",
+        "labelKey": "experienceYears",
+        "icon": "Award",
+        "color": "from-orange-500 to-orange-600"
+      }
+    ],
+    "features": [
+      "Possessing all valid and verified licenses and certificates",
+      "Providing in-person and remote consultations",
+      "Offering comprehensive money transfer services",
+      "Having a team of specialists in all services",
+      "Commitment to modern technology and innovations",
+      "Holding necessary certificates and standards",
+      "Providing precise, fast, reliable, and high-quality services",
+      "Professional and accurate support and responsiveness",
+      "Satisfaction assessment based on international standards"
+    ],
+    "ratingCard": {
+      "rating": "9.6",
+      "text": "Satisfaction with Us"
+    }
+  },
+  "ar": {
+    "stats": [
+      {
+        "number": "6600",
+        "suffix": "ألف",
+        "labelKey": "servicesCount",
+        "icon": "CheckCircle",
+        "color": "from-blue-500 to-blue-600"
+      },
+      {
+        "number": "1000",
+        "suffix": "+",
+        "labelKey": "customersCount",
+        "icon": "Users",
+        "color": "from-green-500 to-green-600"
+      },
+      {
+        "number": "20",
+        "suffix": "+",
+        "labelKey": "countriesCount",
+        "icon": "Globe",
+        "color": "from-purple-500 to-purple-600"
+      },
+      {
+        "number": "10",
+        "suffix": "+ سنوات",
+        "labelKey": "experienceYears",
+        "icon": "Award",
+        "color": "from-orange-500 to-orange-600"
+      }
+    ],
+    "features": [
+      "امتلاك جميع التراخيص والشهادات المعتمدة والموثقة",
+      "تقديم استشارات حضورية وعن بُعد",
+      "تقديم جميع خدمات تحويل الأموال",
+      "وجود فريق متخصص في جميع الخدمات",
+      "الالتزام بالتكنولوجيا والابتكارات الحديثة",
+      "امتلاك الشهادات والمعايير اللازمة",
+      "تقديم خدمات دقيقة وسريعة وموثوقة وعالية الجودة",
+      "دعم واستجابة دقيقة واحترافية",
+      "تقييم الرضا بناءً على المعايير الدولية"
+    ],
+    "ratingCard": {
+      "rating": "9.6",
+      "text": "الرضا عنا"
+    }
+  },
+  "tr": {
+    "stats": [
+      {
+        "number": "6600",
+        "suffix": "Bin",
+        "labelKey": "servicesCount",
+        "icon": "CheckCircle",
+        "color": "from-blue-500 to-blue-600"
+      },
+      {
+        "number": "1000",
+        "suffix": "+",
+        "labelKey": "customersCount",
+        "icon": "Users",
+        "color": "from-green-500 to-green-600"
+      },
+      {
+        "number": "20",
+        "suffix": "+",
+        "labelKey": "countriesCount",
+        "icon": "Globe",
+        "color": "from-purple-500 to-purple-600"
+      },
+      {
+        "number": "10",
+        "suffix": "+ Yıl",
+        "labelKey": "experienceYears",
+        "icon": "Award",
+        "color": "from-orange-500 to-orange-600"
+      }
+    ],
+    "features": [
+      "Tüm geçerli ve onaylı lisanslara ve sertifikalara sahip olma",
+      "Yüz yüze ve uzaktan danışmanlık hizmetleri sunma",
+      "Kapsamlı para transferi hizmetleri sunma",
+      "Tüm hizmetlerde uzman bir ekibe sahip olma",
+      "Modern teknoloji ve yeniliklere bağlılık",
+      "Gerekli sertifikalara ve standartlara sahip olma",
+      "Hassas, hızlı, güvenilir ve yüksek kaliteli hizmetler sunma",
+      "Profesyonel ve doğru destek ve yanıt verme",
+      "Uluslararası standartlara dayalı memnuniyet değerlendirmesi"
+    ],
+    "ratingCard": {
+      "rating": "9.6",
+      "text": "Bizden Memnuniyet"
+    }
+  }
+}

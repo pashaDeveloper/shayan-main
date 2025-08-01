@@ -1,50 +1,22 @@
-'use client';
 
 import React from 'react';
 import { Calendar, Eye, ArrowRight, ArrowLeft } from 'lucide-react';
-import { useLanguage } from '@/contexts/LanguageContext';
+import fa from '@/translations/fa.json';
+import en from '@/translations/en.json';
+import ar from '@/translations/ar.json';
+import tr from '@/translations/tr.json';
+import newsData from '@/data/news.json';
 
-const NewsSection = () => {
-  const { t, isRTL, language } = useLanguage();
+type Props = {
+  lang: string; 
+};
+const translations = { fa, en, ar, tr };
 
-  const news = [
-    {
-      id: 1,
-      title: 'تغییرات در سبک های مشاوره اخیر در حال حاضر',
-      excerpt: 'برنامه های مشاوره کسب و کار ما به تقسیم عملکرد کسب و کار شما به مشتریان و گروه های محصول کمک می کند تا دقیقا…',
-      date: '۲۸ آبان ۱۴۰۲',
-      views: 0,
-      image: 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=400',
-      category: 'مشاوره'
-    },
-    {
-      id: 2,
-      title: 'ما بیشتر کار می کنیم تا به شما کمک کنیم برند خود را منحصر به فرد کنید',
-      excerpt: 'برنامه های مشاوره کسب و کار ما به تقسیم عملکرد کسب و کار شما به مشتریان و گروه های محصول کمک می کند تا دقیقا…',
-      date: '۲۷ مهر ۱۴۰۲',
-      views: 0,
-      image: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=400',
-      category: 'برندینگ'
-    },
-    {
-      id: 3,
-      title: 'احیای مردم خود در رکود خرده فروشی',
-      excerpt: 'برنامه های مشاوره کسب و کار ما به تقسیم عملکرد کسب و کار شما به مشتریان و گروه های محصول کمک می کند تا دقیقا…',
-      date: '۲۷ مهر ۱۴۰۲',
-      views: 0,
-      image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=400',
-      category: 'بازاریابی'
-    },
-    {
-      id: 4,
-      title: 'هنگامی که می خواهید در خارج از کشور تحصیل کنید، ما به تحقق رویای شما کمک می کنیم',
-      excerpt: 'برنامه های مشاوره کسب و کار ما به تقسیم عملکرد کسب و کار شما به مشتریان و گروه های محصول کمک می کند تا دقیقا…',
-      date: '۲۷ مهر ۱۴۰۲',
-      views: 0,
-      image: 'https://images.pexels.com/photos/159844/pexels-photo-159844.jpeg?auto=compress&cs=tinysrgb&w=400',
-      category: 'تحصیل'
-    }
-  ];
+const NewsSection = ({ lang }: Props) => {
+  
+  const currentLang = lang as keyof typeof translations;
+  const newsT = translations[currentLang]?.news || translations.en.news;
+  const newsItems = newsData[currentLang]?.news || newsData.en.news;
 
   return (
     <section id="news" className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
@@ -52,17 +24,17 @@ const NewsSection = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-[#0F4C75] dark:text-white mb-4">
-            آخرین خبرها
+            {newsT.sectionTitle}
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 mb-6">
-            آخرین اخبارها تیم شایسته و شایان
+            {newsT.sectionSubtitle}
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-[#0F4C75] to-[#FFD700] mx-auto rounded-full"></div>
         </div>
 
         {/* News Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-          {news.map((article, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-8">
+          {newsItems.map((article, index) => (
             <div
               key={article.id}
               className="group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-600"
@@ -92,7 +64,7 @@ const NewsSection = () => {
                   </div>
                   <div className="flex items-center gap-2">
                     <Eye className="h-4 w-4" />
-                    <span>{article.views}</span>
+                    <span>0</span>
                   </div>
                 </div>
 
@@ -108,15 +80,13 @@ const NewsSection = () => {
 
                 {/* Read More Button */}
                 <a 
-                  href={`/${language}/news`}
+                  href={`/${lang}/news/${article.id}`}
                   className="flex items-center gap-2 text-[#0F4C75] dark:text-[#FFD700] hover:text-[#FFD700] font-semibold transition-colors duration-300 group"
                 >
-                  نمایش بیشتر
-                  {isRTL ? (
-                    <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform duration-300" />
-                  ) : (
-                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
-                  )}
+                  {newsT.readMore}
+               
+                    <ArrowLeft className="h-4 w-4 rtl:rotate-180 group-hover:-translate-x-1 transition-transform duration-300" />
+                  
                 </a>
               </div>
 
@@ -129,7 +99,7 @@ const NewsSection = () => {
         {/* View All News Button */}
         <div className="text-center mt-12">
           <button className="bg-gradient-to-r from-[#0F4C75] to-[#FFD700] text-white px-8 py-4 rounded-full font-semibold hover:from-[#FFD700] hover:to-[#0F4C75] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-            مشاهده همه اخبار
+            {newsT.viewAll}
           </button>
         </div>
       </div>

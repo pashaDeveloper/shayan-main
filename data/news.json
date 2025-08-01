@@ -1,0 +1,146 @@
+{
+  "fa": {
+    "news": [
+      {
+        "id": 1,
+        "title": "تغییرات در سبک‌های مشاوره اخیر در حال حاضر",
+        "excerpt": "برنامه‌های مشاوره کسب‌وکار ما به تقسیم عملکرد کسب‌وکار شما به مشتریان و گروه‌های محصول کمک می‌کند تا دقیقاً...",
+        "date": "۲۸ آبان ۱۴۰۲",
+        "category": "مشاوره",
+        "image": "/assets/news/2.webp"
+      },
+      {
+        "id": 2,
+        "title": "ما بیشتر کار می‌کنیم تا به شما کمک کنیم برند خود را منحصربه‌فرد کنید",
+        "excerpt": "برنامه‌های مشاوره کسب‌وکار ما به تقسیم عملکرد کسب‌وکار شما به مشتریان و گروه‌های محصول کمک می‌کند تا دقیقاً...",
+        "date": "۲۷ مهر ۱۴۰۲",
+        "category": "برندینگ",
+        "image": "/assets/news/1.webp"
+      },
+      {
+        "id": 3,
+        "title": "احیای مردم خود در رکود خرده‌فروشی",
+        "excerpt": "برنامه‌های مشاوره کسب‌وکار ما به تقسیم عملکرد کسب‌وکار شما به مشتریان و گروه‌های محصول کمک می‌کند تا دقیقاً...",
+        "date": "۲۷ مهر ۱۴۰۲",
+        "category": "بازاریابی",
+        "image": "/assets/news/3.webp"
+      },
+      {
+        "id": 4,
+        "title": "هنگامی که می‌خواهید در خارج از کشور تحصیل کنید، ما به تحقق رویای شما کمک می‌کنیم",
+        "excerpt": "برنامه‌های مشاوره کسب‌وکار ما به تقسیم عملکرد کسب‌وکار شما به مشتریان و گروه‌های محصول کمک می‌کند تا دقیقاً...",
+        "date": "۲۷ مهر ۱۴۰۲",
+        "category": "تحصیل",
+        "image": "/assets/news/4.webp"
+      }
+    ]
+  },
+  "en": {
+    "news": [
+      {
+        "id": 1,
+        "title": "Changes in Recent Consulting Styles",
+        "excerpt": "Our business consulting programs help segment your business performance into customers and product groups to precisely...",
+        "date": "19 Nov 2023",
+        "category": "Consulting",
+        "image": "/assets/news/2.webp"
+      },
+      {
+        "id": 2,
+        "title": "We Work Harder to Make Your Brand Unique",
+        "excerpt": "Our business consulting programs help segment your business performance into customers and product groups to precisely...",
+        "date": "18 Oct 2023",
+        "category": "Branding",
+        "image": "/assets/news/1.webp"
+      },
+      {
+        "id": 3,
+        "title": "Reviving Your People in Retail Downturn",
+        "excerpt": "Our business consulting programs help segment your business performance into customers and product groups to precisely...",
+        "date": "18 Oct 2023",
+        "category": "Marketing",
+        "image": "/assets/news/3.webp"
+      },
+      {
+        "id": 4,
+        "title": "We Help Make Your Study Abroad Dream Come True",
+        "excerpt": "Our business consulting programs help segment your business performance into customers and product groups to precisely...",
+        "date": "18 Oct 2023",
+        "category": "Education",
+        "image": "/assets/news/4.webp"
+      }
+    ]
+  },
+  "ar": {
+    "news": [
+      {
+        "id": 1,
+        "title": "التغييرات في أنماط الاستشارات الأخيرة",
+        "excerpt": "تساعد برامجنا الاستشارية في تقسيم أداء عملك إلى عملاء ومجموعات منتجات لتحديد...",
+        "date": "19 نوفمبر 2023",
+        "category": "استشارات",
+        "image": "/assets/news/2.webp"
+      },
+      {
+        "id": 2,
+        "title": "نعمل بجد أكثر لجعل علامتك التجارية فريدة",
+        "excerpt": "تساعد برامجنا الاستشارية في تقسيم أداء عملك إلى عملاء ومجموعات منتجات لتحديد...",
+        "date": "18 أكتوبر 2023",
+        "category": "العلامة التجارية",
+        "image": "/assets/news/1.webp"
+      },
+      {
+        "id": 3,
+        "title": "إحياء فريقك في الانخفاض التجاري",
+        "excerpt": "تساعد برامجنا الاستشارية في تقسيم أداء عملك إلى عملاء ومجموعات منتجات لتحديد...",
+        "date": "18 أكتوبر 2023",
+        "category": "التسويق",
+        "image": "/assets/news/3.webp"
+      },
+      {
+        "id": 4,
+        "title": "نساعدك في تحقيق حلم الدراسة في الخارج",
+        "excerpt": "تساعد برامجنا الاستشارية في تقسيم أداء عملك إلى عملاء ومجموعات منتجات لتحديد...",
+        "date": "18 أكتوبر 2023",
+        "category": "التعليم",
+        "image": "/assets/news/4.webp"
+      }
+    ]
+  },
+  "tr": {
+    "news": [
+      {
+        "id": 1,
+        "title": "Son Danışmanlık Stillerinde Değişiklikler",
+        "excerpt": "İş danışmanlığı programlarımız, iş performansınızı müşterilere ve ürün gruplarına bölerek tam olarak...",
+        "date": "19 Kasım 2023",
+        "category": "Danışmanlık",
+        "image": "/assets/news/2.webp"
+      },
+      {
+        "id": 2,
+        "title": "Markanızı Benzersiz Yapmak İçin Daha Fazla Çalışıyoruz",
+        "excerpt": "İş danışmanlığı programlarımız, iş performansınızı müşterilere ve ürün gruplarına bölerek tam olarak...",
+        "date": "18 Ekim 2023",
+        "category": "Markalaşma",
+        "image": "/assets/news/1.webp"
+      },
+      {
+        "id": 3,
+        "title": "Perakende Durgunluğunda Ekibinizi Canlandırma",
+        "excerpt": "İş danışmanlığı programlarımız, iş performansınızı müşterilere ve ürün gruplarına bölerek tam olarak...",
+        "date": "18 Ekim 2023",
+        "category": "Pazarlama",
+        "image": "/assets/news/3.webp"
+      },
+      {
+        "id": 4,
+        "title": "Yurtdışında Eğitim Hayalinizi Gerçekleştiriyoruz",
+        "excerpt": "İş danışمانlığı programlarımız, iş performansınızı müşterilere ve ürün gruplarına bölerek tam olarak...",
+        "date": "18 Ekim 2023",
+        "category": "Eğitim",
+        "image": "/assets/news/4.webp"
+      }
+    ]
+  }
+}

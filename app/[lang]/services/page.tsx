@@ -350,7 +350,7 @@ export default function ServicesPage({ params }: { params: { lang: string } }) {
         </section>
       </main>
 
-      <Footer />
+      <Footer  />
     </div>
   );
 }

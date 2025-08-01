@@ -1,10 +1,9 @@
-'use client';
 
 import React from 'react';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import StorySection from '@/components/StorySection';
-import ServicesSection from '@/components/ServicesSection';
+import ServicesSection from '@/components/services/page';
 import FeaturesSection from '@/components/FeaturesSection';
 import AboutSection from '@/components/AboutSection';
 import InstagramSection from '@/components/InstagramSection';
@@ -13,6 +12,7 @@ import WorldMapSection from '@/components/WorldMapSection';
 import NewsSection from '@/components/NewsSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
+import GallerySection  from '@/components/gallery-section';
 
 export default function Home({ params }: { params: { lang: string } }) {
   return (
@@ -21,16 +21,17 @@ export default function Home({ params }: { params: { lang: string } }) {
       <main>
         <HeroSection />
         <StorySection />
-        <ServicesSection />
+        <ServicesSection  lang={params.lang}  />
         <FeaturesSection />
-        <AboutSection />
-        <InstagramSection />
-        <TestimonialsSection />
-        <WorldMapSection />
-        <NewsSection />
-        <ContactSection />
+        <GallerySection lang={params.lang}  />
+        <AboutSection lang={params.lang}  />
+        <InstagramSection  lang={params.lang}/>
+        <TestimonialsSection lang={params.lang} />
+        <WorldMapSection  lang={params.lang}/>
+        <NewsSection lang={params.lang} />
+        <ContactSection lang={params.lang} />
       </main>
-      <Footer />
+      <Footer lang={params.lang}  />
     </div>
   );
 }

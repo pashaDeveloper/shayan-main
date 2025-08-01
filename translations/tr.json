@@ -1,6 +1,6 @@
 {
   "header": {
-    "home": "Ana Sayfa",
+    "home": "Ana",
     "about": "Hakkımızda",
     "services": "Hizmetler",
     "certificates": "Sertifikalar",
@@ -107,10 +107,20 @@
         "Çevrimiçi Erişim",
         "Geçerli Sertifikalar"
       ]
-    },
-    "heroTitle": "Şayeste ve Şayan Grubu ile Kolay Göç",
-    "heroSubtitle": "Göç",
-    "heroDescription": "Göç danışmanlığı, oturma izni, lisans alma ve daha fazlası dahil hizmetlerle hizmetinizdeyiz.",
+    }
+  },
+  "heroTitle": "Şayeste ve Şayan Grubu ile Kolay Göç",
+  "heroSubtitle": "Göç",
+  "heroDescription": "Göç danışmanlığı, oturma izni, lisans alma ve daha fazlası dahil hizmetlerle hizmetinizdeyiz.",
+  "story": {
+    "migration": "Göç",
+    "introduction": "Tanıtım",
+    "residency": "İkamet",
+    "visa": "Vize",
+    "tourism": "Turizm",
+    "business": "Ticaret"
+  },
+  "service": {
     "servicesTitle": "Şayeste ve Şayan Uluslararası Grup Hizmetleri",
     "immigration": "Göç",
     "investment": "Yatırım ve İstihdam",
@@ -125,22 +135,108 @@
     "advertising": "Reklam",
     "education": "Eğitim",
     "moreInfo": "Daha Fazla Bilgi",
-    "featuresTitle": "Şayeste ve Şayan Uluslararası Grup Özellikleri",
-    "featuresSubtitle": "En iyi hizmetleri sunmaya kararlıyız",
-    "feature1Title": "Modern Uluslararası Hizmetler ve Destek",
-    "feature1Description": "Küresel hizmetler ve sürekli destekle, nerede olursanız olun size farklı bir deneyim sunuyoruz.",
-    "feature2Title": "Profesyonel ve Uzman Ekip",
-    "feature2Description": "Ekibimiz, en iyi çözümleri sunmak için her zaman yanınızda olan deneyimli uzmanlardan oluşur.",
-    "feature3Title": "Modern Ekipman ve Teknoloji",
-    "feature3Description": "En son yenilikleri ve modern ekipmanları kullanarak kalite ve verimliliği maksimuma çıkarıyoruz.",
-    "feature4Title": "Müşteri Odaklılık ve Memnuniyet",
-    "feature4Description": "Memnuniyetiniz önceliğimizdir; kişiselleştirilmiş hizmetler ve benzersiz bir alışveriş deneyimi ile size saygı gösteriyoruz.",
-    "aboutTitle": "Şirketimiz Hakkında",
-    "aboutSubtitle": "İhtiyaçlarınızı karşılamanıza yardımcı oluyoruz!",
+    "notFound": "İstenen hizmet bulunamadı",
+    "about": "Bu hizmet hakkında",
+    "features": "Hizmetlerimizin özellikleri",
+    "ready": "Başlamaya hazır mısınız?",
+    "contactNow": "Hemen bizimle iletişime geçin ve ücretsiz danışmanlık alın",
+    "contactUs": "Bize Ulaşın",
+    "sendEmail": "E-posta Gönder"
+  },
+  "featuresTitle": "Şayeste ve Şayan Uluslararası Grup Özellikleri",
+  "featuresSubtitle": "En iyi hizmetleri sunmaya kararlıyız",
+  "feature1Title": "Modern Uluslararası Hizmetler ve Destek",
+  "feature1Description": "Küresel hizmetler ve sürekli destekle, nerede olursanız olun size farklı bir deneyim sunuyoruz.",
+  "feature2Title": "Profesyonel ve Uzman Ekip",
+  "feature2Description": "Ekibimiz, en iyi çözümleri sunmak için her zaman yanınızda olan deneyimli uzmanlardan oluşur.",
+  "feature3Title": "Modern Ekipman ve Teknoloji",
+  "feature3Description": "En son yenilikleri ve modern ekipmanları kullanarak kalite ve verimliliği maksimuma çıkarıyoruz.",
+  "feature4Title": "Müşteri Odaklılık ve Memnuniyet",
+  "feature4Description": "Memnuniyetiniz önceliğimizdir; kişiselleştirilmiş hizmetler ve benzersiz bir alışveriş deneyimi ile size saygı gösteriyoruz.",
+  "aboutTitle": "Şirketimiz Hakkında",
+  "aboutSubtitle": "İhtiyaçlarınızı karşılamanıza yardımcı oluyoruz!",
+  "servicesCount": "Tamamlanan Hizmetler",
+  "customersCount": "Memnun Müşteriler",
+  "countriesCount": "Kapsanan Ülkeler",
+  "experienceYears": "Yıllık Deneyim",
+
+  "gallery": {
+    "sectionTitle": "Görüntü Galerisi",
+    "sectionSubtitle": "Göç ve yatırım ile ilgili görüntü koleksiyonu",
+    "loadMore": "Daha Fazla Yükle",
+    "allImagesLoaded": "Tüm görüntüler görüntülendi",
+    "share": "Paylaş",
+    "download": "İndir"
+  },
+  "about": {
+    "aboutTitle": "Şayeste ve Şayan Hakkında",
+    "aboutSubtitle": "En iyi deneyimi sunmak için yanınızdayız",
+    "featuresTitle": "Neden Şayeste ve Şayan?",
     "servicesCount": "Tamamlanan Hizmetler",
     "customersCount": "Memnun Müşteriler",
     "countriesCount": "Kapsanan Ülkeler",
-    "experienceYears": "Yıllık Deneyim",
+    "experienceYears": "Deneyim Yılı"
+  },
+  "instagram": {
+    "sectionTitle": "Instagram’ımız",
+    "sectionSubtitle": "Faydalı içeriklerle Instagram’ımız",
+    "accountName": "2SH IGROUP",
+    "accountHandle": "@2shigroup",
+    "accountDescription": "Şayeste ve Şayan Uluslararası Grup Instagram’ı",
+    "viewOnInstagram": "Instagram’da Görüntüle",
+    "followOnInstagram": "Instagram’da Takip Et"
+  },
+  "testimonials": {
+    "sectionTitle": "Grubumuz Hakkında Görüşler",
+    "sectionSubtitle": "Müşterilerimiz ne diyor?",
+    "viewAll": "Tüm Müşteri Yorumlarını Görüntüle",
+    "services": {
+      "work_visa": "Çalışma Vizesi",
+      "real_estate": "Emlak",
+      "company_registration": "Şirket Kaydı",
+      "student_visa": "Öğrenci Vizesi"
+    }
+  },
+  "representatives": {
+    "sectionTitle": "Küresel Temsilcilerimiz",
+    "sectionSubtitle": "Daha iyi hizmetler için dünya çapında varlık",
+    "servicesLabel": "Hizmetler:",
+    "clientsLabel": "Müşteri",
+    "stats": {
+      "countries": "Ülke",
+      "activeClients": "Aktif Müşteri",
+      "support": "Destek",
+      "experience": "Yıl Deneyim"
+    },
+    "services": {
+      "immigration": "Göçmenlik",
+      "investment": "Yatırım",
+      "work_visa": "Çalışma Vizesi",
+      "education": "Eğitim",
+      "residence": "İkamet",
+      "real_estate": "Emlak",
+      "consultation": "Danışmanlık",
+      "documentation": "Belgeleme",
+      "business": "İş",
+      "tourism": "Turizm",
+      "work_permit": "Çalışma İzni",
+      "family_reunion": "Aile Birleşimi",
+      "skilled_migration": "Nitelikli Göç",
+      "student_visa": "Öğrenci Vizesi",
+      "business_visa": "İş Vizesi",
+      "trade": "Ticaret",
+      "citizenship": "Vatandaşlık"
+    }
+  },
+  "news": {
+    "sectionTitle": "Son Haberler",
+    "sectionSubtitle": "Ekibimizden en son gelişmelerle güncel kalın",
+    "readMore": "Devamını Oku",
+    "viewAll": "Tüm Haberlere Göz At",
+    "about": "Haberler Hakkında",
+    "features": "Özellikler"
+  },
+  "contact": {
     "contactTitle": "Hizmetinizdeyiz",
     "contactSubtitle": "Bizimle İletişime Geçin",
     "phone": "Direkt İletişim",
@@ -152,12 +248,24 @@
     "messagePlaceholder": "Mesajınızı buraya girin",
     "send": "2SHIGROUP'a Mesaj Gönder",
     "support247": "7/24 Destek Merkezi mevcuttur",
-    "footerTitle": "Şayeste ve Şayan Uluslararası Grup",
-    "serviceLinks": "Şayeste ve Şayan Hizmetleri",
-    "usefulLinks": "Faydalı Bağlantılar",
-    "contactUs": "Bizimle İletişime Geçin",
     "address": "Adres:",
     "addressText": "Türkiye, İstanbul, Batı İstanbul, E5 Otoyolu, Güzel Yurt Metrobüs Durağı, İdari Bina, 3. Kat",
-    "phoneNumbers": "Telefon Numaraları:"
+    "submit": "Gönder"
+  },
+  "footer": {
+    "footerTitle": "Shayesteh & Shayan Uluslararası Grubu",
+    "intro": "Shayesteh & Shayan Uluslararası Grubu, göçmenlik, yatırım, seyahat ve diğer uzmanlık alanlarında çeşitli hizmetler sunarak hedeflerinize ulaşmanızda yanınızdadır.",
+    "serviceLinks": "Hizmetlerimiz",
+    "usefulLinks": "Faydalı Bağlantılar",
+    "contactUs": "Bize Ulaşın",
+    "address": "Adres:",
+    "addressText": "Türkiye, İstanbul, Batı İstanbul, E5 Karayolu, Güzel Yurt Metrobüs Durağı, Ofis Binası, 3. Kat",
+    "phoneNumbers": "Telefon Numaraları:",
+    "ourRepresentatives": "Temsilcilerimiz",
+    "moreServices": "Diğer Hizmetler",
+    "privacy": "Gizlilik Politikası",
+    "terms": "Kullanım Şartları",
+    "website": "2shigroup.com",
+    "copyright": "© 2025 Shayesteh & Shayan Uluslararası Grubu. Tüm hakları saklıdır."
   }
 }
