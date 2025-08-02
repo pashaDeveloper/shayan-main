@@ -127,11 +127,11 @@ const Header = () => {
                   </div>
                 </div>
                 <div className="block">
-                  <div className="text-2xl font-bold bg-gradient-to-r from-[#0F4C75] to-[#FFD700] bg-clip-text text-transparent">
+                  <div className="md:text-2xl text-xl text-left font-bold bg-gradient-to-r from-[#0F4C75] to-[#FFD700] bg-clip-text text-transparent">
                     2SHIGROUP
                   </div>
-                  <div className="text-xs text-gray-500 dark:text-gray-400 -mt-1">
-                    International Services
+                  <div className="text-xs text-left text-gray-500 dark:text-gray-400 -mt-1">
+                    International
                   </div>
                 </div>
               </div>
@@ -219,12 +219,13 @@ const Header = () => {
               <div className="relative">
                 <button
                   onClick={() => setIsLangOpen(!isLangOpen)}
-                  className="flex items-center gap-2 px-3 py-2 bg-gray-100 dark:bg-gray-800/50 backdrop-blur-sm rounded-full text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-[#0F4C75] dark:hover:text-[#FFD700] hover:bg-white/20 dark:hover:bg-gray-700/50 transition-all duration-300 border border-gray-200/20 dark:border-gray-700/20"
+                    className="flex items-center justify-center aspect-square w-10 sm:w-auto px-0 sm:px-3 py-0 sm:py-2 bg-gray-100 dark:bg-gray-800/50  rounded-full text-sm font-medium text-gray-700 dark:text-gray-300 transition-all duration-300 border border-gray-200 dark:border-gray-700/20"
+
                 >
                   <span className="text-lg">{currentLang?.flag}</span>
                   <span className="hidden sm:block">{currentLang?.name}</span>
                   <ChevronDown
-                    className={`h-4 w-4 transition-transform duration-300 ${
+                    className={`h-4 w-4 hidden md:block transition-transform duration-300 ${
                       isLangOpen ? "rotate-180" : ""
                     }`}
                   />
