@@ -88,8 +88,8 @@ const Header = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center text-white justify-between h-10 text-sm">
               <div className="flex items-center gap-6 text-gray-600 dark:text-gray-300">
-                <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 hidden md:block bg-green-500 rounded-full animate-pulse"></span>
+                <div className="flex items-center gap-2 hidden md:block">
+                  <span className="w-2 h-2  bg-green-500 rounded-full animate-pulse"></span>
                   <span className="text-white">{t(`header.support`)}</span>
                 </div>
                 <div className="flex items-center gap-2">
