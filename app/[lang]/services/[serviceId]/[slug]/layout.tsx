@@ -16,6 +16,7 @@ export default function ServiceLayout({
   params: Params;
   children: React.ReactNode;
 }) {
+  const { lang } = params;
   return (
     <div className="min-h-screen relative bg-white dark:bg-gray-900 transition-colors duration-300">
       <Header />
@@ -26,7 +27,7 @@ export default function ServiceLayout({
         </aside>
       </div>
       <CallToActionSection />
-      <Footer />
+      <Footer lang={params.lang} />
     </div>
   );
 }

@@ -7,7 +7,7 @@ import { Calendar, Eye, ArrowRight, ArrowLeft, Search } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function NewsPage({ params }: { params: { lang: string } }) {
-  const { t, isRTL } = useLanguage();
+  const { t, isRTL,language } = useLanguage();
 
   const newsData = {
     fa: [
@@ -243,7 +243,7 @@ export default function NewsPage({ params }: { params: { lang: string } }) {
         </section>
       </main>
 
-      <Footer />
+      <Footer lang={language} />
     </div>
   );
 }

@@ -21,7 +21,7 @@ const t = translations[currentLang];
           {t.service?.notFound || "Service not found"}
         </h1>
       </section>
-      <Footer />
+      <Footer lang={currentLang} />
     </>
   );
 }
