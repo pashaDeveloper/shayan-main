@@ -228,7 +228,7 @@ const groupedStories = Object.values(
   };
 
   return (
-    <section className="py-5 bg-white dark:bg-black   overflow-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent">
+    <section className="py-5   overflow-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex gap-6 overflow-x-auto flex-nowrap py-4 px-2 sm:justify-center no-scrollbar">
           {groupedStories.map((story) => (

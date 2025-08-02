@@ -219,8 +219,17 @@ const Header = () => {
               <div className="relative">
                 <button
                   onClick={() => setIsLangOpen(!isLangOpen)}
-                    className="flex items-center justify-center aspect-square w-10 sm:w-auto px-0 sm:px-3 py-0 sm:py-2 bg-gray-100 dark:bg-gray-800/50  rounded-full text-sm font-medium text-gray-700 dark:text-gray-300 transition-all duration-300 border border-gray-200 dark:border-gray-700/20"
-
+                  className="  flex items-center justify-center 
+    w-10 aspect-square sm:w-auto sm:aspect-auto 
+    px-1 sm:px-3 py-1 sm:py-2 
+    bg-gray-100 dark:bg-gray-800/50 
+    backdrop-blur-sm rounded-full 
+    text-sm font-medium 
+    text-gray-700 dark:text-gray-300 
+    hover:text-[#0F4C75] dark:hover:text-[#FFD700] 
+    hover:bg-white/20 dark:hover:bg-gray-700/50 
+    transition-all duration-300 
+    border border-gray-200/20 dark:border-gray-700/20"
                 >
                   <span className="text-lg">{currentLang?.flag}</span>
                   <span className="hidden sm:block">{currentLang?.name}</span>
