@@ -22,8 +22,7 @@ const HeroSection = () => {
         t("hero.slide1.features.1"),
         t("hero.slide1.features.2")
       ],
-      backgroundImage:
-        "./img/hero/slide1/migration.webp",
+      backgroundImage: "./img/hero/slide1/migration.webp",
       animatedImage: "./img/hero/slide1/model1.png",
       secondImage: "./img/hero/slide1/airplane.webp",
       gradient: "from-blue-900/80 to-indigo-900/80"
@@ -38,8 +37,7 @@ const HeroSection = () => {
         t("hero.slide2.features.1"),
         t("hero.slide2.features.2")
       ],
-      backgroundImage:
-        "./img/hero/slide2/Investment.webp",
+      backgroundImage: "./img/hero/slide2/Investment.webp",
       animatedImage: "./img/hero/slide2/model2.webp",
       secondImage: "./img/hero/slide2/world.webp",
 
@@ -56,8 +54,7 @@ const HeroSection = () => {
         t("hero.slide4.features.1"),
         t("hero.slide4.features.2")
       ],
-      backgroundImage:
-          "./img/hero/slide3/tourism.webp",
+      backgroundImage: "./img/hero/slide3/tourism.webp",
       animatedImage: "./img/hero/slide3/model3.webp",
       secondImage: "./img/hero/slide3/pizza-tower.webp",
 
@@ -73,8 +70,7 @@ const HeroSection = () => {
         t("hero.slide5.features.1"),
         t("hero.slide5.features.2")
       ],
-      backgroundImage:
-        "./img/hero/slide4/commerce.webp",
+      backgroundImage: "./img/hero/slide4/commerce.webp",
       animatedImage: "./img/hero/slide4/model4.webp",
       secondImage: "./img/hero/slide4/basket.webp",
 
@@ -90,8 +86,7 @@ const HeroSection = () => {
         t("hero.slide6.features.1"),
         t("hero.slide6.features.2")
       ],
-      backgroundImage:
-        "./img/hero/slide5/sell.webp",
+      backgroundImage: "./img/hero/slide5/sell.webp",
       animatedImage: "./img/hero/slide5/model5.webp",
       secondImage: "./img/hero/slide5/real-state2.webp",
 
@@ -107,8 +102,7 @@ const HeroSection = () => {
         t("hero.slide7.features.1"),
         t("hero.slide7.features.2")
       ],
-      backgroundImage:
-               "./img/hero/slide6/carbuy.webp",
+      backgroundImage: "./img/hero/slide6/carbuy.webp",
 
       animatedImage: "./img/hero/slide6/model6.webp",
       secondImage: "./img/hero/slide6/car.webp",
@@ -125,8 +119,7 @@ const HeroSection = () => {
         t("hero.slide8.features.1"),
         t("hero.slide8.features.2")
       ],
-      backgroundImage:
-        "./img/hero/slide7/measuring.webp",
+      backgroundImage: "./img/hero/slide7/measuring.webp",
       animatedImage: "./img/hero/slide7/model7.webp",
       secondImage: "./img/hero/slide7/camera.webp",
 
@@ -142,8 +135,7 @@ const HeroSection = () => {
         t("hero.slide9.features.1"),
         t("hero.slide9.features.2")
       ],
-      backgroundImage:
-        "./img/hero/slide8/construct.webp",
+      backgroundImage: "./img/hero/slide8/construct.webp",
       animatedImage: "./img/hero/slide8/model8.webp",
       secondImage: "./img/hero/slide8/building.webp",
 
@@ -159,8 +151,7 @@ const HeroSection = () => {
         t("hero.slide10.features.1"),
         t("hero.slide10.features.2")
       ],
-      backgroundImage:
-        "./img/hero/slide9/agency.webp",
+      backgroundImage: "./img/hero/slide9/agency.webp",
       animatedImage: "./img/hero/slide9/model9.webp",
       secondImage: "./img/hero/slide9/notebook.webp",
 
@@ -176,8 +167,7 @@ const HeroSection = () => {
         t("hero.slide11.features.1"),
         t("hero.slide11.features.2")
       ],
-      backgroundImage:
-        "./img/hero/slide10/advertising.webp",
+      backgroundImage: "./img/hero/slide10/advertising.webp",
       animatedImage: "./img/hero/slide10/model10.webp",
       secondImage: "./img/hero/slide10/sheypoor.webp",
 
@@ -193,8 +183,7 @@ const HeroSection = () => {
         t("hero.slide12.features.1"),
         t("hero.slide12.features.2")
       ],
-      backgroundImage:
-        "./img/hero/slide11/educate.webp",
+      backgroundImage: "./img/hero/slide11/educate.webp",
       animatedImage: "./img/hero/slide11/model11.webp",
       secondImage: "./img/hero/slide11/education.webp",
 
@@ -369,46 +358,6 @@ const HeroSection = () => {
                             }`}
                         />
                       </div>
-
-                      {/* Overlay Stats */}
-                      {/* <div className="absolute bottom-6 left-6 right-6">
-                        <div className="bg-white/90 backdrop-blur-sm rounded-xl p-4">
-                          <div className="flex items-center justify-between">
-                            <div className="text-center">
-                              <div className="text-2xl font-bold text-[#0F4C75]">
-                                1000+
-                              </div>
-                              <div className="text-sm text-gray-600">
-                                مشتری موفق
-                              </div>
-                            </div>
-                            <div className="text-center">
-                              <div className="text-2xl font-bold text-[#0F4C75]">
-                                98%
-                              </div>
-                              <div className="text-sm text-gray-600">
-                                نرخ موفقیت
-                              </div>
-                            </div>
-                            <div className="text-center">
-                              <div className="text-2xl font-bold text-[#0F4C75]">
-                                24/7
-                              </div>
-                              <div className="text-sm text-gray-600">
-                                پشتیبانی
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div> */}
-                    </div>
-
-                    {/* Decorative Elements */}
-                    {/* <div className="absolute top-10 -right-6 w-12 h-12 bg-[#FFD700] rounded-full flex items-center justify-center animate-bounce">
-                      <span className="text-[#0F4C75] font-bold">✓</span>
-                    </div>*/}
-                    <div className="absolute bottom-20 -left-6 w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center animate-pulse">
-                      <span className="text-white text-2xl">🌟</span>
                     </div>
                   </div>
                 </div>
@@ -423,6 +372,7 @@ const HeroSection = () => {
             {/* Previous Button */}
             <button
               onClick={prevSlide}
+              aria-label="قبلی"
               className="w-10 h-10 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-all duration-300 group"
             >
               <ArrowLeft className="h-5 w-5 rtl:rotate-180 text-white group-hover:-translate-x-1 transition-transform duration-300" />
@@ -433,6 +383,8 @@ const HeroSection = () => {
               {slides.map((_, index) => (
                 <button
                   key={index}
+                    aria-label={`رفتن به اسلاید شماره ${index + 1}`}
+
                   onClick={() => goToSlide(index)}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
                     index === currentSlide
@@ -446,6 +398,7 @@ const HeroSection = () => {
             {/* Next Button */}
             <button
               onClick={nextSlide}
+              aria-label="بعدی"
               className="w-10 h-10 rtl:rotate-180 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-all duration-300 group"
             >
               <ArrowRight className="h-5 w-5 text-white group-hover:translate-x-1 transition-transform duration-300" />

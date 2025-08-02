@@ -169,6 +169,8 @@ const Header = () => {
               <div className="relative">
                 <button
                   onClick={() => setIsSearchOpen(!isSearchOpen)}
+                    aria-label={t("header.search")}
+
                   className="w-10 h-10 bg-gray-100 dark:bg-gray-800/50 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-700 dark:text-gray-300 hover:text-[#0F4C75] dark:hover:text-[#FFD700] hover:border-gray-200 dark:hover:bg-gray-700/50 transition-all duration-300 border border-gray-200/20 dark:border-gray-700/20"
                 >
                   <Search className="h-5 w-5" />
@@ -206,6 +208,7 @@ const Header = () => {
               {/* Theme Toggle */}
               <button
                 onClick={toggleTheme}
+                    aria-label={"تغییر تم"}
                 className="w-10 h-10 bg-gray-100 dark:bg-gray-800/50 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-700 dark:text-gray-300 hover:text-[#0F4C75] dark:hover:text-[#FFD700] hover:border-gray-200 dark:hover:bg-gray-700/50 transition-all duration-300 border border-gray-200/20 dark:border-gray-700/20"
               >
                 {isDark ? (
@@ -219,6 +222,8 @@ const Header = () => {
               <div className="relative">
                 <button
                   onClick={() => setIsLangOpen(!isLangOpen)}
+                                      aria-label={"تغییر زبان"}
+
                   className="  flex items-center justify-center 
     w-10 aspect-square sm:w-auto sm:aspect-auto 
     px-1 sm:px-3 py-1 sm:py-2 
