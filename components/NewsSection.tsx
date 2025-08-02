@@ -1,25 +1,27 @@
-
-import React from 'react';
-import { Calendar, Eye, ArrowRight, ArrowLeft } from 'lucide-react';
-import fa from '@/translations/fa.json';
-import en from '@/translations/en.json';
-import ar from '@/translations/ar.json';
-import tr from '@/translations/tr.json';
-import newsData from '@/data/news.json';
+import React from "react";
+import { Calendar, Eye, ArrowRight, ArrowLeft } from "lucide-react";
+import fa from "@/translations/fa.json";
+import en from "@/translations/en.json";
+import ar from "@/translations/ar.json";
+import tr from "@/translations/tr.json";
+import newsData from "@/data/news.json";
+import Image from "next/image";
 
 type Props = {
-  lang: string; 
+  lang: string;
 };
 const translations = { fa, en, ar, tr };
 
 const NewsSection = ({ lang }: Props) => {
-  
   const currentLang = lang as keyof typeof translations;
   const newsT = translations[currentLang]?.news || translations.en.news;
   const newsItems = newsData[currentLang]?.news || newsData.en.news;
 
   return (
-    <section id="news" className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
+    <section
+      id="news"
+      className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -41,13 +43,15 @@ const NewsSection = ({ lang }: Props) => {
             >
               {/* Article Image */}
               <div className="relative overflow-hidden h-48">
-                <img
+                <Image
                   src={article.image}
                   alt={article.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />
+
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                
+
                 {/* Category Badge */}
                 <div className="absolute top-4 right-4 bg-[#0F4C75] text-white px-3 py-1 rounded-full text-sm font-semibold">
                   {article.category}
@@ -79,14 +83,13 @@ const NewsSection = ({ lang }: Props) => {
                 </p>
 
                 {/* Read More Button */}
-                <a 
+                <a
                   href={`/${lang}/news/${article.id}`}
                   className="flex items-center gap-2 text-[#0F4C75] dark:text-[#FFD700] hover:text-[#FFD700] font-semibold transition-colors duration-300 group"
                 >
                   {newsT.readMore}
-               
-                    <ArrowLeft className="h-4 w-4 rtl:rotate-180 group-hover:-translate-x-1 transition-transform duration-300" />
-                  
+
+                  <ArrowLeft className="h-4 w-4 rtl:rotate-180 group-hover:-translate-x-1 transition-transform duration-300" />
                 </a>
               </div>
 

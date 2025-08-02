@@ -1,13 +1,15 @@
-
-
-import React from 'react';
-import { Star, Quote } from 'lucide-react';
-import fa from '@/translations/fa.json';
-import en from '@/translations/en.json';
-import ar from '@/translations/ar.json';
-import tr from '@/translations/tr.json';
-import testimonialsData from '@/data/testimonials.json';
-import { TestimonialsData, TestimonialsTranslation } from '@/types/testimonials';
+import React from "react";
+import { Star, Quote } from "lucide-react";
+import fa from "@/translations/fa.json";
+import en from "@/translations/en.json";
+import ar from "@/translations/ar.json";
+import tr from "@/translations/tr.json";
+import testimonialsData from "@/data/testimonials.json";
+import {
+  TestimonialsData,
+  TestimonialsTranslation
+} from "@/types/testimonials";
+import Image from "next/image";
 
 const translations = { fa, en, ar, tr } as {
   [key: string]: { testimonials: TestimonialsTranslation };
@@ -19,10 +21,11 @@ type Props = {
 
 const TestimonialsSection = ({ lang }: Props) => {
   const currentLang = lang as keyof typeof translations;
-  const t = translations[currentLang]?.testimonials || translations.en.testimonials;
-  const testimonials = (
-    testimonialsData as TestimonialsData
-  )[currentLang]?.testimonials || testimonialsData.en.testimonials;
+  const t =
+    translations[currentLang]?.testimonials || translations.en.testimonials;
+  const testimonials =
+    (testimonialsData as TestimonialsData)[currentLang]?.testimonials ||
+    testimonialsData.en.testimonials;
 
   return (
     <section className="py-5 transition-colors duration-300">
@@ -46,17 +49,20 @@ const TestimonialsSection = ({ lang }: Props) => {
               className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 relative overflow-hidden"
             >
               {/* Quote Icon */}
-              <div className="absolute top-6 right-6 text-[#FFD700] opacity-20">
+              <div className="absolute top-6 rtl:left-6 ltr:right-6 text-[#FFD700] opacity-20">
                 <Quote className="h-12 w-12" />
               </div>
 
               {/* Customer Info */}
               <div className="flex items-center gap-4 mb-6">
-                <img
+                <Image
                   src={testimonial.avatar}
                   alt={testimonial.name}
-                  className="w-16 h-16 rounded-full object-cover ring-4 ring-[#FFD700]/20"
+                  width={64}
+                  height={64}
+                  className="rounded-full w-16 h-16  object-cover ring-4 ring-[#FFD700]/20"
                 />
+
                 <div>
                   <h4 className="font-bold text-[#0F4C75] dark:text-white text-lg">
                     {testimonial.name}
@@ -75,8 +81,8 @@ const TestimonialsSection = ({ lang }: Props) => {
                       key={i}
                       className={`h-5 w-5 ${
                         i < Math.floor(testimonial.rating)
-                          ? 'text-yellow-400 fill-current'
-                          : 'text-gray-300'
+                          ? "text-yellow-400 fill-current"
+                          : "text-gray-300"
                       }`}
                     />
                   ))}

@@ -7,6 +7,8 @@ import ar from '@/translations/ar.json';
 import tr from '@/translations/tr.json';
 import representativesData from '@/data/representatives.json';
 import { RepresentativesData, RepresentativesTranslation } from '@/types/representatives';
+import Image from "next/image";
+
 const translations = { fa, en, ar, tr } as {
   [key: string]: { representatives: RepresentativesTranslation };
 };
@@ -70,11 +72,14 @@ const WorldMapSection = ({ lang }: Props) => {
                   <div className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl p-4 min-w-[250px] border border-gray-200 dark:border-gray-600">
                     {/* Country Header */}
                     <div className="flex items-center gap-3 mb-3">
-                      <img
-                        src={rep.flag}
-                        alt={rep.country}
-                        className="w-8 h-6 object-cover rounded"
-                      />
+                      <Image
+  src={rep.flag}
+  alt={rep.country}
+  width={32}
+  height={24}
+  className="object-cover rounded"
+/>
+
                       <div>
                         <h4 className="font-bold text-[#0F4C75] dark:text-white">
                           {rep.country}

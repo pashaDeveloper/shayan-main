@@ -4,7 +4,7 @@
       {
         "id": 1,
         "country": "آمریکا",
-        "flag": "https://flagcdn.com/w40/us.png",
+        "flag": "/assets/countries/us.png",
         "city": "نیویورک",
         "position": { "top": "35%", "left": "20%" },
         "services": ["immigration", "investment"],
@@ -14,7 +14,7 @@
       {
         "id": 2,
         "country": "آلمان",
-        "flag": "https://flagcdn.com/w40/de.png",
+        "flag": "/assets/countries/de.png",
         "city": "برلین",
         "position": { "top": "25%", "left": "52%" },
         "services": ["work_visa", "education"],
@@ -24,7 +24,7 @@
       {
         "id": 3,
         "country": "ترکیه",
-        "flag": "https://flagcdn.com/w40/tr.png",
+        "flag": "/assets/countries/tr.png",
         "city": "استانبول",
         "position": { "top": "35%", "left": "58%" },
         "services": ["residence", "real_estate"],
@@ -34,7 +34,7 @@
       {
         "id": 4,
         "country": "ایران",
-        "flag": "https://flagcdn.com/w40/ir.png",
+        "flag": "/assets/countries/ir.png",
         "city": "تهران",
         "position": { "top": "32%", "left": "65%" },
         "services": ["consultation", "documentation"],
@@ -44,7 +44,7 @@
       {
         "id": 5,
         "country": "امارات متحده عربی",
-        "flag": "https://flagcdn.com/w40/ae.png",
+        "flag": "/assets/countries/ae.png",
         "city": "دبی",
         "position": { "top": "40%", "left": "68%" },
         "services": ["business", "investment"],
@@ -54,7 +54,7 @@
       {
         "id": 6,
         "country": "فرانسه",
-        "flag": "https://flagcdn.com/w40/fr.png",
+        "flag": "/assets/countries/fr.png",
         "city": "پاریس",
         "position": { "top": "28%", "left": "48%" },
         "services": ["education", "tourism"],
@@ -64,7 +64,7 @@
       {
         "id": 7,
         "country": "سوئد",
-        "flag": "https://flagcdn.com/w40/se.png",
+        "flag": "/assets/countries/se.png",
         "city": "استکهلم",
         "position": { "top": "15%", "left": "55%" },
         "services": ["work_permit", "family_reunion"],
@@ -74,7 +74,7 @@
       {
         "id": 8,
         "country": "استرالیا",
-        "flag": "https://flagcdn.com/w40/au.png",
+        "flag": "/assets/countries/au.png",
         "city": "سیدنی",
         "position": { "top": "75%", "left": "85%" },
         "services": ["skilled_migration", "student_visa"],
@@ -84,7 +84,7 @@
       {
         "id": 9,
         "country": "چین",
-        "flag": "https://flagcdn.com/w40/cn.png",
+        "flag": "/assets/countries/cn.png",
         "city": "پکن",
         "position": { "top": "30%", "left": "78%" },
         "services": ["business_visa", "trade"],
@@ -94,7 +94,7 @@
       {
         "id": 10,
         "country": "قبرس",
-        "flag": "https://flagcdn.com/w40/cy.png",
+        "flag": "/assets/countries/cy.png",
         "city": "نیکوزیا",
         "position": { "top": "38%", "left": "60%" },
         "services": ["citizenship", "investment"],
@@ -108,7 +108,7 @@
       {
         "id": 1,
         "country": "USA",
-        "flag": "https://flagcdn.com/w40/us.png",
+        "flag": "/assets/countries/us.png",
         "city": "New York",
         "position": { "top": "35%", "left": "20%" },
         "services": ["immigration", "investment"],
@@ -118,7 +118,7 @@
       {
         "id": 2,
         "country": "Germany",
-        "flag": "https://flagcdn.com/w40/de.png",
+        "flag": "/assets/countries/de.png",
         "city": "Berlin",
         "position": { "top": "25%", "left": "52%" },
         "services": ["work_visa", "education"],
@@ -128,7 +128,7 @@
       {
         "id": 3,
         "country": "Turkey",
-        "flag": "https://flagcdn.com/w40/tr.png",
+        "flag": "/assets/countries/tr.png",
         "city": "Istanbul",
         "position": { "top": "35%", "left": "58%" },
         "services": ["residence", "real_estate"],
@@ -138,7 +138,7 @@
       {
         "id": 4,
         "country": "Iran",
-        "flag": "https://flagcdn.com/w40/ir.png",
+        "flag": "/assets/countries/ir.png",
         "city": "Tehran",
         "position": { "top": "32%", "left": "65%" },
         "services": ["consultation", "documentation"],
@@ -148,7 +148,7 @@
       {
         "id": 5,
         "country": "UAE",
-        "flag": "https://flagcdn.com/w40/ae.png",
+        "flag": "/assets/countries/ae.png",
         "city": "Dubai",
         "position": { "top": "40%", "left": "68%" },
         "services": ["business", "investment"],
@@ -158,7 +158,7 @@
       {
         "id": 6,
         "country": "France",
-        "flag": "https://flagcdn.com/w40/fr.png",
+        "flag": "/assets/countries/fr.png",
         "city": "Paris",
         "position": { "top": "28%", "left": "48%" },
         "services": ["education", "tourism"],
@@ -168,7 +168,7 @@
       {
         "id": 7,
         "country": "Sweden",
-        "flag": "https://flagcdn.com/w40/se.png",
+        "flag": "/assets/countries/se.png",
         "city": "Stockholm",
         "position": { "top": "15%", "left": "55%" },
         "services": ["work_permit", "family_reunion"],
@@ -178,7 +178,7 @@
       {
         "id": 8,
         "country": "Australia",
-        "flag": "https://flagcdn.com/w40/au.png",
+        "flag": "/assets/countries/au.png",
         "city": "Sydney",
         "position": { "top": "75%", "left": "85%" },
         "services": ["skilled_migration", "student_visa"],
@@ -188,7 +188,7 @@
       {
         "id": 9,
         "country": "China",
-        "flag": "https://flagcdn.com/w40/cn.png",
+        "flag": "/assets/countries/cn.png",
         "city": "Beijing",
         "position": { "top": "30%", "left": "78%" },
         "services": ["business_visa", "trade"],
@@ -198,7 +198,7 @@
       {
         "id": 10,
         "country": "Cyprus",
-        "flag": "https://flagcdn.com/w40/cy.png",
+        "flag": "/assets/countries/cy.png",
         "city": "Nicosia",
         "position": { "top": "38%", "left": "60%" },
         "services": ["citizenship", "investment"],
@@ -212,7 +212,7 @@
       {
         "id": 1,
         "country": "الولايات المتحدة",
-        "flag": "https://flagcdn.com/w40/us.png",
+        "flag": "/assets/countries/us.png",
         "city": "نيويورك",
         "position": { "top": "35%", "left": "20%" },
         "services": ["immigration", "investment"],
@@ -222,7 +222,7 @@
       {
         "id": 2,
         "country": "ألمانيا",
-        "flag": "https://flagcdn.com/w40/de.png",
+        "flag": "/assets/countries/de.png",
         "city": "برلين",
         "position": { "top": "25%", "left": "52%" },
         "services": ["work_visa", "education"],
@@ -232,7 +232,7 @@
       {
         "id": 3,
         "country": "تركيا",
-        "flag": "https://flagcdn.com/w40/tr.png",
+        "flag": "/assets/countries/tr.png",
         "city": "إسطنبول",
         "position": { "top": "35%", "left": "58%" },
         "services": ["residence", "real_estate"],
@@ -242,7 +242,7 @@
       {
         "id": 4,
         "country": "إيران",
-        "flag": "https://flagcdn.com/w40/ir.png",
+        "flag": "/assets/countries/ir.png",
         "city": "طهران",
         "position": { "top": "32%", "left": "65%" },
         "services": ["consultation", "documentation"],
@@ -252,7 +252,7 @@
       {
         "id": 5,
         "country": "الإمارات العربية المتحدة",
-        "flag": "https://flagcdn.com/w40/ae.png",
+        "flag": "/assets/countries/ae.png",
         "city": "دبي",
         "position": { "top": "40%", "left": "68%" },
         "services": ["business", "investment"],
@@ -262,7 +262,7 @@
       {
         "id": 6,
         "country": "فرنسا",
-        "flag": "https://flagcdn.com/w40/fr.png",
+        "flag": "/assets/countries/fr.png",
         "city": "باريس",
         "position": { "top": "28%", "left": "48%" },
         "services": ["education", "tourism"],
@@ -272,7 +272,7 @@
       {
         "id": 7,
         "country": "السويد",
-        "flag": "https://flagcdn.com/w40/se.png",
+        "flag": "/assets/countries/se.png",
         "city": "ستوكهولم",
         "position": { "top": "15%", "left": "55%" },
         "services": ["work_permit", "family_reunion"],
@@ -282,7 +282,7 @@
       {
         "id": 8,
         "country": "أستراليا",
-        "flag": "https://flagcdn.com/w40/au.png",
+        "flag": "/assets/countries/au.png",
         "city": "سيدني",
         "position": { "top": "75%", "left": "85%" },
         "services": ["skilled_migration", "student_visa"],
@@ -292,7 +292,7 @@
       {
         "id": 9,
         "country": "الصين",
-        "flag": "https://flagcdn.com/w40/cn.png",
+        "flag": "/assets/countries/cn.png",
         "city": "بكين",
         "position": { "top": "30%", "left": "78%" },
         "services": ["business_visa", "trade"],
@@ -302,7 +302,7 @@
       {
         "id": 10,
         "country": "قبرص",
-        "flag": "https://flagcdn.com/w40/cy.png",
+        "flag": "/assets/countries/cy.png",
         "city": "نيقوسيا",
         "position": { "top": "38%", "left": "60%" },
         "services": ["citizenship", "investment"],
@@ -316,7 +316,7 @@
       {
         "id": 1,
         "country": "ABD",
-        "flag": "https://flagcdn.com/w40/us.png",
+        "flag": "/assets/countries/us.png",
         "city": "New York",
         "position": { "top": "35%", "left": "20%" },
         "services": ["immigration", "investment"],
@@ -326,7 +326,7 @@
       {
         "id": 2,
         "country": "Almanya",
-        "flag": "https://flagcdn.com/w40/de.png",
+        "flag": "/assets/countries/de.png",
         "city": "Berlin",
         "position": { "top": "25%", "left": "52%" },
         "services": ["work_visa", "education"],
@@ -336,7 +336,7 @@
       {
         "id": 3,
         "country": "Türkiye",
-        "flag": "https://flagcdn.com/w40/tr.png",
+        "flag": "/assets/countries/tr.png",
         "city": "İstanbul",
         "position": { "top": "35%", "left": "58%" },
         "services": ["residence", "real_estate"],
@@ -346,7 +346,7 @@
       {
         "id": 4,
         "country": "İran",
-        "flag": "https://flagcdn.com/w40/ir.png",
+        "flag": "/assets/countries/ir.png",
         "city": "Tahran",
         "position": { "top": "32%", "left": "65%" },
         "services": ["consultation", "documentation"],
@@ -356,7 +356,7 @@
       {
         "id": 5,
         "country": "BAE",
-        "flag": "https://flagcdn.com/w40/ae.png",
+        "flag": "/assets/countries/ae.png",
         "city": "Dubai",
         "position": { "top": "40%", "left": "68%" },
         "services": ["business", "investment"],
@@ -366,7 +366,7 @@
       {
         "id": 6,
         "country": "Fransa",
-        "flag": "https://flagcdn.com/w40/fr.png",
+        "flag": "/assets/countries/fr.png",
         "city": "Paris",
         "position": { "top": "28%", "left": "48%" },
         "services": ["education", "tourism"],
@@ -376,7 +376,7 @@
       {
         "id": 7,
         "country": "İsveç",
-        "flag": "https://flagcdn.com/w40/se.png",
+        "flag": "/assets/countries/se.png",
         "city": "Stockholm",
         "position": { "top": "15%", "left": "55%" },
         "services": ["work_permit", "family_reunion"],
@@ -386,7 +386,7 @@
       {
         "id": 8,
         "country": "Avustralya",
-        "flag": "https://flagcdn.com/w40/au.png",
+        "flag": "/assets/countries/au.png",
         "city": "Sydney",
         "position": { "top": "75%", "left": "85%" },
         "services": ["skilled_migration", "student_visa"],
@@ -396,7 +396,7 @@
       {
         "id": 9,
         "country": "Çin",
-        "flag": "https://flagcdn.com/w40/cn.png",
+        "flag": "/assets/countries/cn.png",
         "city": "Pekin",
         "position": { "top": "30%", "left": "78%" },
         "services": ["business_visa", "trade"],
@@ -406,7 +406,7 @@
       {
         "id": 10,
         "country": "Kıbrıs",
-        "flag": "https://flagcdn.com/w40/cy.png",
+        "flag": "/assets/countries/cy.png",
         "city": "Lefkoşa",
         "position": { "top": "38%", "left": "60%" },
         "services": ["citizenship", "investment"],
