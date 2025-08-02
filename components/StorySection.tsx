@@ -88,7 +88,7 @@ const stories: Story[] = [
     media: "./assets/story/residency/1.jpg",
     author: t("story.author.maryam_rezaei"),
     date: "1403/01/12",
-    avatar: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg",
+    avatar: "/assets/story/admins/3.webp",
     color: "from-violet-500 to-violet-700",
     duration: 10,
   },

@@ -28,7 +28,7 @@ const InstagramSection = ({ lang }: Props) => {
   const isLoading = posts === undefined;
 
   return (
-    <section className="py-20 transition-colors duration-300">
+    <section className="py-5 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -57,7 +57,7 @@ const InstagramSection = ({ lang }: Props) => {
         <Swiper
           modules={[Pagination, Autoplay]}
           spaceBetween={24}
-          slidesPerView={1.5}
+          slidesPerView={1.1}
           autoplay={{ delay: 3500 }}
           pagination={{ clickable: true }}
           breakpoints={{
