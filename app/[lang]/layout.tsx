@@ -63,12 +63,6 @@ export default function RootLayout({
 
   return (
     <html lang={lang} dir={isRTL ? 'rtl' : 'ltr'}>
-      <head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap"
-          rel="stylesheet"
-        />
-      </head>
       <body className={inter.className} style={{ fontFamily: 'Vazirmatn, system-ui, sans-serif' }}>
         <ThemeProvider>
           <LanguageProvider initialLanguage={lang as any}>
