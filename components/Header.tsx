@@ -89,7 +89,7 @@ const Header = () => {
             <div className="flex items-center text-white justify-between h-10 text-sm">
               <div className="flex items-center gap-6 text-gray-600 dark:text-gray-300">
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                  <span className="w-2 h-2 hidden md:block bg-green-500 rounded-full animate-pulse"></span>
                   <span className="text-white">{t(`header.support`)}</span>
                 </div>
                 <div className="flex items-center gap-2">
@@ -226,8 +226,7 @@ const Header = () => {
     backdrop-blur-sm rounded-full 
     text-sm font-medium 
     text-gray-700 dark:text-gray-300 
-    hover:text-[#0F4C75] dark:hover:text-[#FFD700] 
-    hover:bg-white/20 dark:hover:bg-gray-700/50 
+   
     transition-all duration-300 
     border border-gray-200/20 dark:border-gray-700/20"
                 >
