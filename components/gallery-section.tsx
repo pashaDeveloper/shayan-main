@@ -1,18 +1,26 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import { Card } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
-import { Badge } from '@/components/ui/badge';
-import { Heart, Share2, Download, ZoomIn, X, ChevronLeft, ChevronRight } from 'lucide-react';
-import fa from '@/translations/fa.json';
-import en from '@/translations/en.json';
-import ar from '@/translations/ar.json';
-import tr from '@/translations/tr.json';
-import galleryData from '@/data/gallery.json';
-import { GalleryData, GalleryTranslation } from '@/types/gallery';
-import { cn } from '@/lib/utils';
+import React, { useState } from "react";
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Badge } from "@/components/ui/badge";
+import {
+  Heart,
+  Share2,
+  Download,
+  ZoomIn,
+  X,
+  ChevronLeft,
+  ChevronRight
+} from "lucide-react";
+import fa from "@/translations/fa.json";
+import en from "@/translations/en.json";
+import ar from "@/translations/ar.json";
+import tr from "@/translations/tr.json";
+import galleryData from "@/data/gallery.json";
+import { GalleryData, GalleryTranslation } from "@/types/gallery";
+import { cn } from "@/lib/utils";
 
 const translations = { fa, en, ar, tr } as {
   [key: string]: { gallery: GalleryTranslation };
@@ -25,16 +33,18 @@ type Props = {
 const GallerySection = ({ lang }: Props) => {
   const currentLang = lang as keyof typeof translations;
   const t = translations[currentLang]?.gallery || translations.en.gallery;
-  const { items, moreItems, categories } = (galleryData as GalleryData)[currentLang] || galleryData.en;
+  const { items, moreItems, categories } =
+    (galleryData as GalleryData)[currentLang] || galleryData.en;
   const [selectedCategory, setSelectedCategory] = useState(categories[0]);
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
   const [likedItems, setLikedItems] = useState<Set<number>>(new Set());
   const [showMore, setShowMore] = useState(false);
   const [allItems, setAllItems] = useState(items);
 
-  const filteredItems = selectedCategory === categories[0]
-    ? allItems
-    : allItems.filter(item => item.category === selectedCategory);
+  const filteredItems =
+    selectedCategory === categories[0]
+      ? allItems
+      : allItems.filter((item) => item.category === selectedCategory);
 
   const handleLoadMore = () => {
     if (!showMore) {
@@ -45,15 +55,15 @@ const GallerySection = ({ lang }: Props) => {
 
   const getAspectRatioClass = (aspectRatio: string) => {
     switch (aspectRatio) {
-      case 'tall':
-        return 'row-span-2';
-      case 'wide':
-        return 'col-span-2';
-      case 'medium':
-        return 'row-span-1';
-      case 'square':
+      case "tall":
+        return "row-span-2";
+      case "wide":
+        return "col-span-2";
+      case "medium":
+        return "row-span-1";
+      case "square":
       default:
-        return 'row-span-1';
+        return "row-span-1";
     }
   };
 
@@ -73,13 +83,15 @@ const GallerySection = ({ lang }: Props) => {
     navigator.share?.({ title: t.sectionTitle, url: window.location.href });
   };
 
-  const navigateImage = (direction: 'prev' | 'next') => {
+  const navigateImage = (direction: "prev" | "next") => {
     if (selectedImage === null) return;
 
-    const currentIndex = filteredItems.findIndex(item => item.id === selectedImage);
+    const currentIndex = filteredItems.findIndex(
+      (item) => item.id === selectedImage
+    );
     let newIndex;
 
-    if (direction === 'prev') {
+    if (direction === "prev") {
       newIndex = currentIndex > 0 ? currentIndex - 1 : filteredItems.length - 1;
     } else {
       newIndex = currentIndex < filteredItems.length - 1 ? currentIndex + 1 : 0;
@@ -106,12 +118,12 @@ const GallerySection = ({ lang }: Props) => {
           {categories.map((category) => (
             <Button
               key={category}
-              variant={selectedCategory === category ? 'default' : 'outline'}
+              variant={selectedCategory === category ? "default" : "outline"}
               className={cn(
-                'rounded-full py-1 transition-all h-8 duration-300 flex-shrink-0',
+                "rounded-full py-1 transition-all h-8 duration-300 flex-shrink-0",
                 selectedCategory === category
-                  ? 'bg-gradient-to-r from-blue-500 to-blue-600 text-white border-0 shadow-lg'
-                  : 'hover:bg-muted hover:border-primary/50'
+                  ? "bg-gradient-to-r from-blue-500 to-blue-600 text-white border-0 shadow-lg"
+                  : "hover:bg-muted hover:border-primary/50"
               )}
               onClick={() => setSelectedCategory(category)}
             >
@@ -126,8 +138,10 @@ const GallerySection = ({ lang }: Props) => {
             <Dialog key={item.id}>
               <DialogTrigger asChild>
                 <Card
+                  role="button"
+                  tabIndex={0}
                   className={cn(
-                    'group cursor-pointer overflow-hidden border-0 bg-card hover:shadow-lg transition-all duration-300',
+                    "group cursor-pointer overflow-hidden border-0 bg-card hover:shadow-lg transition-all duration-300",
                     getAspectRatioClass(item.aspectRatio)
                   )}
                   onClick={() => setSelectedImage(item.id)}
@@ -150,19 +164,23 @@ const GallerySection = ({ lang }: Props) => {
                     </div>
                     <div className="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                       <h3 className="font-bold text-lg mb-1">{item.title}</h3>
-                      <p className="text-sm text-white/80 mb-3">{item.location}</p>
+                      <p className="text-sm text-white/80 mb-3">
+                        {item.location}
+                      </p>
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-1 text-sm">
                           <Heart
                             className={cn(
-                              'w-4 h-4 cursor-pointer transition-colors',
+                              "w-4 h-4 cursor-pointer transition-colors",
                               likedItems.has(item.id)
-                                ? 'fill-red-500 text-red-500'
-                                : 'text-white hover:text-red-400'
+                                ? "fill-red-500 text-red-500"
+                                : "text-white hover:text-red-400"
                             )}
                             onClick={(e) => handleLike(item.id, e)}
                           />
-                          <span>{item.likes + (likedItems.has(item.id) ? 1 : 0)}</span>
+                          <span>
+                            {item.likes + (likedItems.has(item.id) ? 1 : 0)}
+                          </span>
                         </div>
                         <Button
                           size="sm"
@@ -193,7 +211,7 @@ const GallerySection = ({ lang }: Props) => {
                     variant="ghost"
                     size="icon"
                     className="absolute left-4 top-1/2 -translate-y-1/2 z-50 text-white hover:bg-white/20"
-                    onClick={() => navigateImage('prev')}
+                    onClick={() => navigateImage("prev")}
                   >
                     <ChevronRight className="w-8 h-8" />
                   </Button>
@@ -201,7 +219,7 @@ const GallerySection = ({ lang }: Props) => {
                     variant="ghost"
                     size="icon"
                     className="absolute right-4 top-1/2 -translate-y-1/2 z-50 text-white hover:bg-white/20"
-                    onClick={() => navigateImage('next')}
+                    onClick={() => navigateImage("next")}
                   >
                     <ChevronLeft className="w-8 h-8" />
                   </Button>
@@ -209,8 +227,16 @@ const GallerySection = ({ lang }: Props) => {
                     <div className="w-full h-full flex flex-col">
                       <div className="flex-1 flex items-center justify-center p-8">
                         <img
-                          src={filteredItems.find(item => item.id === selectedImage)?.src}
-                          alt={filteredItems.find(item => item.id === selectedImage)?.title}
+                          src={
+                            filteredItems.find(
+                              (item) => item.id === selectedImage
+                            )?.src
+                          }
+                          alt={
+                            filteredItems.find(
+                              (item) => item.id === selectedImage
+                            )?.title
+                          }
                           className="max-w-full max-h-full object-contain"
                         />
                       </div>
@@ -218,26 +244,41 @@ const GallerySection = ({ lang }: Props) => {
                         <div className="max-w-5xl mx-auto flex items-center justify-between">
                           <div>
                             <h3 className="text-2xl font-bold mb-2">
-                              {filteredItems.find(item => item.id === selectedImage)?.title}
+                              {
+                                filteredItems.find(
+                                  (item) => item.id === selectedImage
+                                )?.title
+                              }
                             </h3>
                             <p className="text-white/80">
-                              {filteredItems.find(item => item.id === selectedImage)?.location}
+                              {
+                                filteredItems.find(
+                                  (item) => item.id === selectedImage
+                                )?.location
+                              }
                             </p>
                           </div>
                           <div className="flex items-center gap-4">
                             <div className="flex items-center gap-2">
                               <Heart
                                 className={cn(
-                                  'w-5 h-5 cursor-pointer transition-colors',
+                                  "w-5 h-5 cursor-pointer transition-colors",
                                   selectedImage && likedItems.has(selectedImage)
-                                    ? 'fill-red-500 text-red-500'
-                                    : 'text-white hover:text-red-400'
+                                    ? "fill-red-500 text-red-500"
+                                    : "text-white hover:text-red-400"
                                 )}
-                                onClick={(e) => selectedImage && handleLike(selectedImage, e)}
+                                onClick={(e) =>
+                                  selectedImage && handleLike(selectedImage, e)
+                                }
                               />
                               <span>
-                                {(filteredItems.find(item => item.id === selectedImage)?.likes || 0) +
-                                 (selectedImage && likedItems.has(selectedImage) ? 1 : 0)}
+                                {(filteredItems.find(
+                                  (item) => item.id === selectedImage
+                                )?.likes || 0) +
+                                  (selectedImage &&
+                                  likedItems.has(selectedImage)
+                                    ? 1
+                                    : 0)}
                               </span>
                             </div>
                             <Button
