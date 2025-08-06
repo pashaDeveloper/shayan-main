@@ -1,4 +1,5 @@
 "use client";
+import { FloatingWhatsApp } from "react-floating-whatsapp";
 
 import React, { useState, useEffect } from "react";
 import {
@@ -80,6 +81,7 @@ const Header = () => {
         }`}
       >
         {/* Top Bar */}
+
         <div
           className={`border-b border-gray-200/10 bg-secondary dark:border-gray-700/10 transition-all duration-300 ${
             isScrolled ? "h-0 overflow-hidden opacity-0" : "h-auto opacity-100"
@@ -88,17 +90,28 @@ const Header = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center text-white justify-between h-10 text-sm">
               <div className="flex items-center gap-6 text-gray-600 dark:text-gray-300">
-                <div className="flex items-center gap-2 hidden md:block">
+                <div className="flex items-center gap-2  md:block">
                   <span className="w-2 h-2  bg-green-500 rounded-full animate-pulse"></span>
                   <span className="text-white">{t(`header.support`)}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span>📞</span>
-                  <span className="text-white">+90-501-1308483</span>
+                  <a
+                    href="tel:+905011308483"
+                    dir="ltr"
+                    className="text-white hover:underline ltr"
+                  >
+                    +90-501-1308483
+                  </a>
                 </div>
                 <div className="flex items-center gap-2">
                   <span>✉️</span>
-                  <span className="text-white">info@2shigroup.com</span>
+                  <a
+                    href="mailto:info@2shigroup.com"
+                    className="text-white hover:underline"
+                  >
+                    info@2shigroup.com
+                  </a>
                 </div>
               </div>
 
@@ -169,8 +182,7 @@ const Header = () => {
               <div className="relative">
                 <button
                   onClick={() => setIsSearchOpen(!isSearchOpen)}
-                    aria-label={t("header.search")}
-
+                  aria-label={t("header.search")}
                   className="w-10 h-10 bg-gray-100 dark:bg-gray-800/50 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-700 dark:text-gray-300 hover:text-[#0F4C75] dark:hover:text-[#FFD700] hover:border-gray-200 dark:hover:bg-gray-700/50 transition-all duration-300 border border-gray-200/20 dark:border-gray-700/20"
                 >
                   <Search className="h-5 w-5" />
@@ -208,7 +220,7 @@ const Header = () => {
               {/* Theme Toggle */}
               <button
                 onClick={toggleTheme}
-                    aria-label={"تغییر تم"}
+                aria-label={"تغییر تم"}
                 className="w-10 h-10 bg-gray-100 dark:bg-gray-800/50 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-700 dark:text-gray-300 hover:text-[#0F4C75] dark:hover:text-[#FFD700] hover:border-gray-200 dark:hover:bg-gray-700/50 transition-all duration-300 border border-gray-200/20 dark:border-gray-700/20"
               >
                 {isDark ? (
@@ -222,8 +234,7 @@ const Header = () => {
               <div className="relative">
                 <button
                   onClick={() => setIsLangOpen(!isLangOpen)}
-                                      aria-label={"تغییر زبان"}
-
+                  aria-label={"تغییر زبان"}
                   className="  flex items-center justify-center 
     w-10 aspect-square sm:w-auto sm:aspect-auto 
     px-1 sm:px-3 py-1 sm:py-2 

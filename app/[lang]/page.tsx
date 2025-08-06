@@ -13,13 +13,14 @@ import NewsSection from '@/components/NewsSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import GallerySection  from '@/components/gallery-section';
-
+import WhatsAppWidget from '@/components/WhatsAppWidget';
 export default function Home({ params }: { params: { lang: string } }) {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
       <Header />
       <main>
         <HeroSection />
+        <WhatsAppWidget />
         <StorySection />
         <ServicesSection  lang={params.lang}  />
         <FeaturesSection />

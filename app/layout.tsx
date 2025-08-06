@@ -4,60 +4,37 @@ import { Inter } from 'next/font/google';
 import { LanguageProvider } from '@/contexts/LanguageContext';
 import { ThemeProvider } from '@/contexts/ThemeContext';
 
+import { faMetadata } from '@/metadata/fa';
+import { enMetadata } from '@/metadata/en';
+import { trMetadata } from '@/metadata/tr';
+import { arMetadata } from '@/metadata/ar';
+
 const inter = Inter({ subsets: ['latin'] });
 
-export const metadata: Metadata = {
-  title: 'گروه بین‌المللی شایسته و شایان | خدمات مهاجرت و سرمایه‌گذاری | 2SHIGROUP',
-  description: 'گروه بین‌المللی شایسته و شایان ارائه‌دهنده خدمات مهاجرت، سرمایه‌گذاری، مسافرت، املاک، آموزش و سایر خدمات تخصصی در 10+ کشور جهان. مشاوره رایگان و پشتیبانی 24/7',
-  keywords: 'مهاجرت، سرمایه‌گذاری، مسافرت، املاک، تحصیل خارج، ویزا، اقامت، ترکیه، آلمان، کانادا، استرالیا، شایسته و شایان، 2shigroup',
-  authors: [{ name: 'Shaisteh va Shayan International Group' }],
-  creator: 'Shaisteh va Shayan International Group',
-  publisher: '2SHIGROUP',
-  robots: 'index, follow',
-  openGraph: {
-    type: 'website',
-    locale: 'fa_IR',
-    url: 'https://2shigroup.com',
-    siteName: 'گروه بین‌المللی شایسته و شایان',
-    title: 'گروه بین‌المللی شایسته و شایان | خدمات مهاجرت و سرمایه‌گذاری',
-    description: 'ارائه‌دهنده خدمات مهاجرت، سرمایه‌گذاری، مسافرت، املاک و آموزش در سراسر جهان',
-    images: [
-      {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'گروه بین‌المللی شایسته و شایان',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'گروه بین‌المللی شایسته و شایان | خدمات مهاجرت و سرمایه‌گذاری',
-    description: 'ارائه‌دهنده خدمات مهاجرت، سرمایه‌گذاری، مسافرت، املاک و آموزش در سراسر جهان',
-    images: ['/og-image.jpg'],
-  },
-  alternates: {
-    canonical: 'https://2shigroup.com',
-    languages: {
-      'fa-IR': 'https://2shigroup.com/fa',
-      'en-US': 'https://2shigroup.com/en',
-      'tr-TR': 'https://2shigroup.com/tr',
-      'ar-SA': 'https://2shigroup.com/ar',
-    },
-  },
-  verification: {
-    google: 'your-google-verification-code',
-    yandex: 'your-yandex-verification-code',
-  },
+const metadataMap: Record<string, Metadata> = {
+  fa: faMetadata,
+  en: enMetadata,
+  tr: trMetadata,
+  ar: arMetadata,
 };
+
+export async function generateMetadata({ params }: { params: { lang: string } }) {
+  const lang = params.lang || 'fa';
+  return metadataMap[lang] || faMetadata;
+}
 
 export default function RootLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: { lang: string };
 }) {
+  const lang = params.lang || 'fa';
+  const dir = lang === 'fa' || lang === 'ar' ? 'rtl' : 'ltr';
+
   return (
-    <html lang="fa" dir="rtl">
+    <html lang={lang} dir={dir}>
       <body className={inter.className} style={{ fontFamily: 'Vazirmatn, system-ui, sans-serif' }}>
         <ThemeProvider>
           <LanguageProvider>
