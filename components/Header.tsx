@@ -91,8 +91,8 @@ const Header = () => {
             <div className="flex items-center text-white justify-between h-10 text-sm">
               <div className="flex items-center gap-6 text-gray-600 dark:text-gray-300">
                 <div className="flex items-center gap-2  md:block">
-                  <span className="w-2 h-2  bg-green-500 rounded-full animate-pulse"></span>
-                  <span className="text-white">{t(`header.support`)}</span>
+                  <span className="w-2 h-2  bg-green-500 rounded-full animate-pulse  "></span>
+                  <span className="text-white hidden md:block">{t(`header.support`)}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span>📞</span>
