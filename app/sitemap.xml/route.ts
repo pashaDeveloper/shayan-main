@@ -21,26 +21,25 @@ function generateSitemapXml(): string {
 
       const alternates = languages
         .map(l => `<xhtml:link rel="alternate" hreflang="${l}" href="${baseUrl}/${l}${route.path}" />`)
-        .join('\n');
+        .join('');
 
-      urls.push(`
-  <url>
-    <loc>${fullUrl}</loc>
-    <lastmod>${lastmod}</lastmod>
-    <changefreq>${route.changeFrequency}</changefreq>
-    <priority>${route.priority}</priority>
-    ${alternates}
-  </url>`);
+      urls.push(
+`<url>
+  <loc>${fullUrl}</loc>
+  <lastmod>${lastmod}</lastmod>
+  <changefreq>${route.changeFrequency}</changefreq>
+  <priority>${route.priority}</priority>
+  ${alternates}
+</url>`);
     });
   });
 
-  return `<?xml version="1.0" encoding="UTF-8"?>
-<urlset
-  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml"
->
-${urls.join('\n')}
-</urlset>`;
+  return [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">',
+    ...urls,
+    '</urlset>'
+  ].join('\n');
 }
 
 export async function GET() {
