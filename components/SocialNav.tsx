@@ -26,7 +26,7 @@ const SocialNav = () => {
               className={`flex items-center h-full    w-full pr-[20%] border-b border-black/40 transition-all duration-300 ${social.color} text-white hover:w-[130px] md:hover:w-[180px]`}
             >
               <i className="absolute   left-3 rtl:right-3 text-[20px] md:text-[24px]">{social.icon}</i>
-              <span className="hidden   group-hover:block font-bold uppercase text-sm tracking-wide ltr:pl-[25%] rtl:pr-[25%]">
+              <span className="hidden   group-hover:block font-bold uppercase text-sm tracking-wide ltr:pl-[35%] rtl:pr-[30%]">
                 {social.name}
               </span>
             </a>
