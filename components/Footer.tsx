@@ -65,27 +65,35 @@ const Footer = ({ lang }: Props) => {
             <p className=" leading-relaxed mb-6">{t.footer.intro}</p>
 
             {/* Social Media */}
-            <div className="flex space-x-4">
+            <div className="flex flex-row gap-2">
               <a
-                href="#"
+                href="https://instagram.com/2shigroup"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#FFD700] hover:text-[#0F4C75] transition-all duration-300"
               >
                 <Instagram className="h-5 w-5" />
               </a>
               <a
-                href="#"
+                href="https://facebook.com/2shigroup"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#FFD700] hover:text-[#0F4C75] transition-all duration-300"
               >
                 <Facebook className="h-5 w-5" />
               </a>
               <a
-                href="#"
+                href="https://twitter.com/2shigroup"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#FFD700] hover:text-[#0F4C75] transition-all duration-300"
               >
                 <Twitter className="h-5 w-5" />
               </a>
               <a
-                href="#"
+                href="https://linkedin.com/company/2shigroup"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#FFD700] hover:text-[#0F4C75] transition-all duration-300"
               >
                 <Linkedin className="h-5 w-5" />
@@ -163,22 +171,6 @@ const Footer = ({ lang }: Props) => {
         </div>
 
         {/* Countries Section */}
-        <div className="mt-12 pt-8 border-t border-white/10">
-          <h4 className="text-lg font-bold mb-6 text-[#FFD700] text-center">
-            {t.footer.ourRepresentatives}
-          </h4>
-          <div className="flex flex-wrap justify-center items-center gap-4">
-            {countries.map((country, index) => (
-              <div
-                key={index}
-                className="flex items-center gap-2 bg-white/10 rounded-full px-4 py-2 hover:bg-[#FFD700] hover:text-[#0F4C75] transition-all duration-300"
-              >
-                <span className="text-xl">{country.flag}</span>
-                <span className="text-sm font-medium">{country.name}</span>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
 
       {/* Bottom Footer */}

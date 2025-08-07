@@ -1,5 +1,4 @@
 "use client";
-import { FloatingWhatsApp } from "react-floating-whatsapp";
 
 import React, { useState, useEffect } from "react";
 import {
@@ -315,7 +314,7 @@ const Header = () => {
       {/* Mobile Navigation Overlay */}
       {isMenuOpen && (
         <div
-          className="lg:hidden  fixed inset-0 z-40 bg-black/50 backdrop-blur-sm"
+          className="lg:hidden  fixed inset-0 z-50 bg-black/50 backdrop-blur-sm"
           onClick={() => setIsMenuOpen(false)}
         >
           <div
