@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 export const faMetadata: Metadata = {
+    metadataBase: new URL("https://2shigroup.com"),
   title: 'گروه بین‌المللی شایسته و شایان | خدمات مهاجرت و سرمایه‌گذاری | 2SHIGROUP',
   description:
     'گروه بین‌المللی شایسته و شایان ارائه‌دهنده خدمات مهاجرت، سرمایه‌گذاری، مسافرت، املاک، آموزش و سایر خدمات تخصصی در 10+ کشور جهان. مشاوره رایگان و پشتیبانی 24/7',

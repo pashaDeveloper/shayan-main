@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 export const arMetadata: Metadata = {
+      metadataBase: new URL("https://2shigroup.com"),
   title: 'مجموعة شايسته وشايان الدولية | خدمات الهجرة والاستثمار | 2SHIGROUP',
   description:
     'مجموعة شايسته وشايان الدولية تقدم خدمات الهجرة، الاستثمار، السفر، العقارات، التعليم، وخدمات متخصصة أخرى في أكثر من 10 دول حول العالم. استشارة مجانية ودعم 24/7.',

@@ -240,7 +240,7 @@ const HeroSection = () => {
 
         {/* Content Container */}
         <div className="relative z-10 flex items-center">
-          <div className="max-w-7xl mx-auto pt-44 ltr:pl-12 rtl:pr-12 px-4 sm:px-6 lg:px-8 w-full">
+          <div className="max-w-7xl mx-auto pt-52 md:ltr:pl-24 ltr:pl-12 md:rtl:pr-24 rtl:pr-12 px-4 sm:px-6 lg:px-8 w-full">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Text Content - Right Side */}
               <div
@@ -298,14 +298,9 @@ const HeroSection = () => {
                     className="flex flex-col sm:flex-row gap-4 animate-fade-in-up"
                     style={{ animationDelay: "0.8s" }}
                   >
-                    <button className="group bg-gradient-to-r from-[#FFD700] to-[#FFA500] text-[#0F4C75] px-8 py-4 rounded-full font-bold hover:from-[#FFA500] hover:to-[#FFD700] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center gap-2">
-                      <Play className="h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
-                      {t("hero.startNow")}
-                    </button>
-
+                   
                     <button className="group bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-[#0F4C75] transition-all duration-300 flex items-center justify-center gap-2">
-                      {t("hero.freeConsultation")}
-                      {isRTL ? (
+ {t("hero.startNow")}                      {isRTL ? (
                         <ArrowLeft className="h-5 w-5 group-hover:-translate-x-1 transition-transform duration-300" />
                       ) : (
                         <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />

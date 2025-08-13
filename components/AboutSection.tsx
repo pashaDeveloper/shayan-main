@@ -44,33 +44,7 @@ const AboutSection = ({ lang }: Props) => {
         </div>
 
         {/* Stats Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-          {stats.map((stat, index) => {
-            const IconComponent = iconMap[stat.icon];
-            return (
-              <div
-                key={index}
-                className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 text-center group"
-              >
-                <div
-                  className={`w-16 h-16 rounded-full bg-gradient-to-r ${stat.color} flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}
-                >
-                  <IconComponent className="h-8 w-8 text-white" />
-                </div>
-
-                <div className="text-3xl font-bold text-[#0F4C75] dark:text-white mb-2">
-                  {stat.number}
-                  <span className="text-[#FFD700]">{stat.suffix}</span>
-                </div>
-
-                <p className="text-gray-600 dark:text-gray-300 font-medium">
-                  {t[stat.labelKey]}
-                </p>
-              </div>
-            );
-          })}
-        </div>
-
+        
         {/* Features Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Features List */}

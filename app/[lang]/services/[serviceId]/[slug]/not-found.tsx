@@ -1,3 +1,5 @@
+'use client';
+import { useParams } from 'next/navigation';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import fa from "@/translations/fa.json";
@@ -7,11 +9,12 @@ import tr from "@/translations/tr.json";
 
 const translations = { fa, en, ar, tr };
 
-export default function NotFound({ params }: { params: { lang: string } }) {
-type Lang = 'fa' | 'en' | 'ar' | 'tr';
+export default function NotFound() {
+  const params = useParams();
+  type Lang = 'fa' | 'en' | 'ar' | 'tr';
+  const currentLang = params.lang as Lang;
+  const t = translations[currentLang];
 
-const currentLang = params.lang as Lang;
-const t = translations[currentLang];
   return (
     <>
       <Header />

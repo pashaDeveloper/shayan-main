@@ -2,10 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import {
-  Menu,
   X,
   Search,
-  Globe,
   ChevronDown,
   Sun,
   Moon,
@@ -18,23 +16,35 @@ import {
   Award,
   Image,
   Newspaper,
+  LogIn,
+  UserPlus,
   Phone
 } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useTheme } from "@/contexts/ThemeContext";
 import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
+import { useAuth } from "@/contexts/AuthContext";
+import AuthModal from './AuthModal';
+import UserProfile from './UserProfile';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
+  const [authModalMode, setAuthModalMode] = useState<"login" | "register">(
+    "login"
+  );
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
+
   const { language, setLanguage, t } = useLanguage();
   const { isDark, toggleTheme } = useTheme();
   const router = useRouter();
   const pathname = usePathname();
-  // Handle scroll effect
+  const { user } = useAuth();
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -61,7 +71,6 @@ const Header = () => {
       icon: <Award className="w-5 h-5" />
     },
     { key: "gallery", href: "#gallery", icon: <Image className="w-5 h-5" /> },
-    { key: "news", href: "#news", icon: <Newspaper className="w-5 h-5" /> },
     { key: "contact", href: "#contact", icon: <Phone className="w-5 h-5" /> }
   ];
   const terms = [
@@ -91,7 +100,9 @@ const Header = () => {
               <div className="flex items-center gap-6 text-gray-600 dark:text-gray-300">
                 <div className="flex items-center gap-2  md:block">
                   <span className="w-2 h-2  bg-green-500 rounded-full animate-pulse  "></span>
-                  <span className="text-white hidden md:block">{t(`header.support`)}</span>
+                  <span className="text-white hidden md:block">
+                    {t(`header.support`)}
+                  </span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span>📞</span>
@@ -116,8 +127,32 @@ const Header = () => {
 
               <div className="hidden md:flex items-center gap-4">
                 <div className="flex items-center gap-2">
-                  <Bell className="h-4 w-4 text-gray-500 hover:text-[#0F4C75] cursor-pointer transition-colors" />
-                  <User className="h-4 w-4 text-gray-500 hover:text-[#0F4C75] cursor-pointer transition-colors" />
+                  {user && (
+                    <Bell className="h-4 w-4 text-gray-200 hover:text-white cursor-pointer transition-colors" />
+                  )}
+                  {!user && (
+                    <div className="flex items-center gap-2">
+                      <button
+                        onClick={() => {
+                          setAuthModalMode("login");
+                          setIsAuthModalOpen(true);
+                        }}
+                        className="text-xs text-gray-100 hover:text-white transition-colors"
+                      >
+                        ورود
+                      </button>
+                      <span className="text-gray-400">|</span>
+                      <button
+                        onClick={() => {
+                          setAuthModalMode("register");
+                          setIsAuthModalOpen(true);
+                        }}
+                        className="text-xs text-gray-100 hover:text-white transition-colors"
+                      >
+                        ثبت نام
+                      </button>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -189,7 +224,7 @@ const Header = () => {
 
                 {/* Search Dropdown */}
                 {isSearchOpen && (
-                  <div className="absolute top-full right-[-150px] mt-6 w-80 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 p-4 animate-fade-in-up">
+                  <div className="absolute z-50 top-full right-[-100px] mt-6 w-80 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 p-4 animate-fade-in-up">
                     <div className="relative">
                       <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
                       <input
@@ -230,7 +265,7 @@ const Header = () => {
               </button>
 
               {/* Language Selector */}
-              <div className="relative">
+              <div className="relative hidden md:flex">
                 <button
                   onClick={() => setIsLangOpen(!isLangOpen)}
                   aria-label={"تغییر زبان"}
@@ -306,6 +341,91 @@ const Header = () => {
                   ></span>
                 </div>
               </button>
+            </div>
+          </div>
+          <hr className="border border-gray-300" />
+
+          <div className="md:hidden rtl:flex-row ltr:flex-row-reverse flex w-full py-1  justify-between bg-white">
+            <div className="relative">
+              <button
+                onClick={() => setIsLangOpen(!isLangOpen)}
+                aria-label={"تغییر زبان"}
+                className="  flex gap-x-2 items-center justify-center px-2  py-2 bg-gray-100 dark:bg-gray-800/50 backdrop-blur-sm rounded-full text-sm font-medium text-gray-700 dark:text-gray-300 z-40transition-all duration-300 border border-gray-200/20 dark:border-gray-700/20"
+              >
+                <span className="text-lg">{currentLang?.flag}</span>
+                <span className="block">{currentLang?.name}</span>
+                <ChevronDown
+                  className={`h-4 w-4   transition-transform duration-300 ${
+                    isLangOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+
+              {isLangOpen && (
+                <div className="absolute right-0  mt-2 w-48 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden animate-fade-in-up">
+                  {languages.map((lang) => (
+                    <button
+                      key={lang.code}
+                      onClick={() => {
+                        setLanguage(lang.code as any);
+                        setIsLangOpen(false);
+
+                        const segments = pathname.split("/");
+                        segments[1] = lang.code; // فرض بر اینکه زبان همیشه در index 1 آدرس است
+                        const newPath = segments.join("/");
+                        router.push(newPath);
+                      }}
+                      className="flex items-center w-full px-4 py-3 text-sm ..."
+                    >
+                      <span className="ltr:mr-3 rtl:ml-3 text-lg">
+                        {lang.flag}
+                      </span>
+                      <span className="font-medium">{lang.name}</span>
+                      {lang.code === language && (
+                        <div className="ltr:ml-auto rtl:mr-auto w-2 h-2 bg-[#0F4C75] rounded-full"></div>
+                      )}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+            <div className="relative">
+              {user ? (
+                <button
+                  onClick={() => setIsProfileOpen(true)}
+                  className="flex items-center gap-2 px-3 py-2 bg-white/10 dark:bg-gray-800/50 backdrop-blur-sm rounded-full text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-[#0F4C75] dark:hover:text-[#FFD700] hover:bg-white/20 dark:hover:bg-gray-700/50 transition-all duration-300 border border-gray-200/20 dark:border-gray-700/20"
+                >
+                  <div className="w-8 h-8 bg-gradient-to-r from-[#0F4C75] to-[#FFD700] rounded-full flex items-center justify-center">
+                    <User className="h-4 w-4 text-white" />
+                  </div>
+                  <span className=" block">
+                    {user.name.split(" ")[0]}
+                  </span>
+                </button>
+              ) : (
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() => {
+                      setAuthModalMode("login");
+                      setIsAuthModalOpen(true);
+                    }}
+                    className="flex items-center gap-2 px-3 py-2 bg-white/10 dark:bg-gray-800/50 backdrop-blur-sm rounded-full text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-[#0F4C75] dark:hover:text-[#FFD700] hover:bg-white/20 dark:hover:bg-gray-700/50 transition-all duration-300 border border-gray-200/20 dark:border-gray-700/20"
+                  >
+                    <LogIn className="h-4 w-4" />
+                    <span className=" sm:block">ورود</span>
+                  </button>
+                  <button
+                    onClick={() => {
+                      setAuthModalMode("register");
+                      setIsAuthModalOpen(true);
+                    }}
+                    className="flex items-center gap-2 px-3 py-2 bg-gradient-to-r from-[#0F4C75] to-[#FFD700] text-white rounded-full text-sm font-medium hover:from-[#FFD700] hover:to-[#0F4C75] transition-all duration-300"
+                  >
+                    <UserPlus className="h-4 w-4" />
+                    <span className=" sm:block">ثبت نام</span>
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -395,6 +515,17 @@ const Header = () => {
           onClick={() => setIsSearchOpen(false)}
         />
       )}
+      <AuthModal
+        isOpen={isAuthModalOpen}
+        onClose={() => setIsAuthModalOpen(false)}
+        initialMode={authModalMode}
+      />
+      
+      {/* User Profile Modal */}
+      <UserProfile
+        isOpen={isProfileOpen}
+        onClose={() => setIsProfileOpen(false)}
+      />
     </>
   );
 };

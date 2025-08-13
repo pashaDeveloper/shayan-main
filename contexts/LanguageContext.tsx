@@ -15,8 +15,9 @@ interface LanguageContextType {
 }
 const translations: Record<Language, Record<string, any>> = { fa, en, tr, ar };
 
-
+ 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+
 
 export function LanguageProvider({ 
   children, 

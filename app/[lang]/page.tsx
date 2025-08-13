@@ -20,12 +20,10 @@ export default function Home({ params }: { params: { lang: string } }) {
           <StorySection />
           <ServicesSection lang={params.lang} />
           <FeaturesSection />
-          <GallerySection lang={params.lang} />
           <AboutSection lang={params.lang} />
           <InstagramSection lang={params.lang} />
           <TestimonialsSection lang={params.lang} />
           <WorldMapSection lang={params.lang} />
-          <NewsSection lang={params.lang} />
           <ContactSection lang={params.lang} />
         </main>
       </Main>

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 export const enMetadata: Metadata = {
+      metadataBase: new URL("https://2shigroup.com"),
   title: 'Shaisteh & Shayan International Group | Immigration & Investment Services | 2SHIGROUP',
   description:
     'Shaisteh & Shayan International Group offers immigration, investment, travel, real estate, education, and other specialized services in 10+ countries worldwide. Free consultation and 24/7 support.',

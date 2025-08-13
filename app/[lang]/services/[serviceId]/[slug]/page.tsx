@@ -1,16 +1,52 @@
 import React from "react";
-import { CheckCircle} from "lucide-react";
 import serviceDetails from "@/data/services.json";
 import fa from "@/translations/fa.json";
 import en from "@/translations/en.json";
 import ar from "@/translations/ar.json";
 import tr from "@/translations/tr.json";
 import { notFound } from "next/navigation";
+import { 
+  Reply,
+  CheckCircle,
+} from 'lucide-react';
 
 type Params = {
   lang: string;
   serviceId: string;
 };
+interface ServiceRequest {
+  id: string;
+  name: string;
+  email: string;
+  phone: string;
+  serviceType: string;
+  message: string;
+  status: 'pending' | 'processing' | 'completed' | 'cancelled';
+  date: string;
+}
+
+interface Comment {
+  id: string;
+  author: string;
+  email: string;
+  rating: number;
+  comment: string;
+  date: string;
+  likes: number;
+  replies: Reply[];
+  isLiked?: boolean;
+}
+
+interface Reply {
+  id: string;
+  author: string;
+  email: string;
+  comment: string;
+  date: string;
+  isAdmin?: boolean;
+}
+
+
 const translations = { fa, en, ar, tr };
 
 export default function ServiceDetailPage({ params }: { params: Params }) {
