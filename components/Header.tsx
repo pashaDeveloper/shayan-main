@@ -32,6 +32,8 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrollingUp, setIsScrollingUp] = useState(true); // اضافه کردن state برای جهت اسکرول
+  const [lastScrollY, setLastScrollY] = useState(0); // ذخیره موقعیت قبلی اسکرول
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const [authModalMode, setAuthModalMode] = useState<"login" | "register">(
@@ -47,11 +49,14 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      const currentScrollY = window.scrollY;
+      setIsScrolled(currentScrollY > 20);
+      setIsScrollingUp(currentScrollY < lastScrollY || currentScrollY < 20); // اگر به بالا اسکرول شود یا در بالای صفحه باشد
+      setLastScrollY(currentScrollY);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [lastScrollY]);
 
   const languages = [
     { code: "fa", name: "فارسی", flag: "🇮🇷" },
@@ -89,7 +94,6 @@ const Header = () => {
         }`}
       >
         {/* Top Bar */}
-
         <div
           className={`border-b border-gray-200/10 bg-secondary dark:border-gray-700/10 transition-all duration-300 ${
             isScrolled ? "h-0 overflow-hidden opacity-0" : "h-auto opacity-100"
@@ -98,8 +102,8 @@ const Header = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center text-white justify-between h-10 text-sm">
               <div className="flex items-center gap-6 text-gray-600 dark:text-gray-300">
-                <div className="flex items-center gap-2  md:block">
-                  <span className="w-2 h-2  bg-green-500 rounded-full animate-pulse  "></span>
+                <div className="flex items-center gap-2 md:block">
+                  <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
                   <span className="text-white hidden md:block">
                     {t(`header.support`)}
                   </span>
@@ -160,8 +164,14 @@ const Header = () => {
         </div>
 
         {/* Main Header */}
-        <div className=" px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900 transition-all duration-300">
-          <div className="flex rtl:flex-row-reverse  items-center justify-between h-20">
+        <div className="px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900 transition-all duration-300">
+     <div
+  className={`flex rtl:flex-row-reverse items-center justify-between transition-all duration-300 ease-in-out
+    ${isScrolled && !isScrollingUp 
+      ? "h-0 opacity-0 overflow-hidden pointer-events-none" 
+      : "h-20 opacity-100"
+    }`}
+>
             {/* Logo */}
             <div className="flex-shrink-0 group">
               <div className="flex rtl:flex-row-reverse items-center gap-3">
@@ -269,14 +279,13 @@ const Header = () => {
                 <button
                   onClick={() => setIsLangOpen(!isLangOpen)}
                   aria-label={"تغییر زبان"}
-                  className="  flex items-center justify-center 
+                  className="flex items-center justify-center 
     w-10 aspect-square sm:w-auto sm:aspect-auto 
     px-1 sm:px-3 py-1 sm:py-2 
     bg-gray-100 dark:bg-gray-800/50 
     backdrop-blur-sm rounded-full 
     text-sm font-medium 
     text-gray-700 dark:text-gray-300 
-   
     transition-all duration-300 
     border border-gray-200/20 dark:border-gray-700/20"
                 >
@@ -290,7 +299,7 @@ const Header = () => {
                 </button>
 
                 {isLangOpen && (
-                  <div className="absolute right-0  mt-2 w-48 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden animate-fade-in-up">
+                  <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden animate-fade-in-up">
                     {languages.map((lang) => (
                       <button
                         key={lang.code}
@@ -343,26 +352,31 @@ const Header = () => {
               </button>
             </div>
           </div>
-          <hr className="border border-gray-300" />
+          <hr className={`border md:hidden border-gray-300 ${
+              isScrolled && !isScrollingUp ? "h-0 overflow-hidden hidden" : " opacity-100"
+            }`} />
 
-          <div className="md:hidden rtl:flex-row ltr:flex-row-reverse flex w-full py-1  justify-between bg-white">
+          {/* Mobile Second Line */}
+          <div
+            className={`md:hidden rtl:flex-row items-center ltr:flex-row-reverse flex w-full py-1 justify-between bg-white transition-all duration-300 `}
+          >
             <div className="relative">
               <button
                 onClick={() => setIsLangOpen(!isLangOpen)}
                 aria-label={"تغییر زبان"}
-                className="  flex gap-x-2 items-center justify-center px-2  py-2 bg-gray-100 dark:bg-gray-800/50 backdrop-blur-sm rounded-full text-sm font-medium text-gray-700 dark:text-gray-300 z-40transition-all duration-300 border border-gray-200/20 dark:border-gray-700/20"
+                className="flex gap-x-2 items-center justify-center px-2 py- advises bg-gray-100 dark:bg-gray-800/50 backdrop-blur-sm rounded-full text-sm font-medium text-gray-700 dark:text-gray-300 z-40 transition-all duration-300 border border-gray-200/20 dark:border-gray-700/20"
               >
                 <span className="text-lg">{currentLang?.flag}</span>
                 <span className="block">{currentLang?.name}</span>
                 <ChevronDown
-                  className={`h-4 w-4   transition-transform duration-300 ${
+                  className={`h-4 w-4 transition-transform duration-300 ${
                     isLangOpen ? "rotate-180" : ""
                   }`}
                 />
               </button>
 
               {isLangOpen && (
-                <div className="absolute right-0  mt-2 w-48 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden animate-fade-in-up">
+                <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden animate-fade-in-up">
                   {languages.map((lang) => (
                     <button
                       key={lang.code}
@@ -398,7 +412,7 @@ const Header = () => {
                   <div className="w-8 h-8 bg-gradient-to-r from-[#0F4C75] to-[#FFD700] rounded-full flex items-center justify-center">
                     <User className="h-4 w-4 text-white" />
                   </div>
-                  <span className=" block">
+                  <span className="block">
                     {user.name.split(" ")[0]}
                   </span>
                 </button>
@@ -412,7 +426,7 @@ const Header = () => {
                     className="flex items-center gap-2 px-3 py-2 bg-white/10 dark:bg-gray-800/50 backdrop-blur-sm rounded-full text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-[#0F4C75] dark:hover:text-[#FFD700] hover:bg-white/20 dark:hover:bg-gray-700/50 transition-all duration-300 border border-gray-200/20 dark:border-gray-700/20"
                   >
                     <LogIn className="h-4 w-4" />
-                    <span className=" sm:block">ورود</span>
+                    <span className="sm:block">ورود</span>
                   </button>
                   <button
                     onClick={() => {
@@ -422,7 +436,7 @@ const Header = () => {
                     className="flex items-center gap-2 px-3 py-2 bg-gradient-to-r from-[#0F4C75] to-[#FFD700] text-white rounded-full text-sm font-medium hover:from-[#FFD700] hover:to-[#0F4C75] transition-all duration-300"
                   >
                     <UserPlus className="h-4 w-4" />
-                    <span className=" sm:block">ثبت نام</span>
+                    <span className="sm:block">ثبت نام</span>
                   </button>
                 </div>
               )}
@@ -434,7 +448,7 @@ const Header = () => {
       {/* Mobile Navigation Overlay */}
       {isMenuOpen && (
         <div
-          className="lg:hidden  fixed inset-0 z-50 bg-black/50 backdrop-blur-sm"
+          className="lg:hidden fixed inset-0 z-50 bg-black/50 backdrop-blur-sm"
           onClick={() => setIsMenuOpen(false)}
         >
           <div
