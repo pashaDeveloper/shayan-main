@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { UserPlus, Mail, Lock, User, Phone, Eye, EyeOff, Loader2, ArrowRight } from 'lucide-react';
-import { UserController } from '@/lib/controllers/UserController';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function UserRegisterPage() {
@@ -51,36 +50,7 @@ export default function UserRegisterPage() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    if (!validateForm()) return;
 
-    setIsLoading(true);
-
-    try {
-      const user = await UserController.createUser({
-        name: formData.name,
-        email: formData.email,
-        phone: formData.phone,
-        password: formData.password,
-        language: language as any
-      });
-
-      // Auto login after registration
-      localStorage.setItem('userSession', JSON.stringify({
-        user,
-        token: `user_${user.id}_${Date.now()}`,
-        expiresAt: Date.now() + (24 * 60 * 60 * 1000)
-      }));
-
-      router.push('/dashboard/user');
-    } catch (err: any) {
-      setErrors({ general: err.message || 'خطایی رخ داده است' });
-    } finally {
-      setIsLoading(false);
-    }
-  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -105,7 +75,7 @@ export default function UserRegisterPage() {
 
         {/* Register Form */}
         <div className="bg-white rounded-2xl shadow-xl p-8">
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form  className="space-y-6">
             {/* General Error */}
             {errors.general && (
               <div className="bg-red-50 border border-red-200 rounded-lg p-4">

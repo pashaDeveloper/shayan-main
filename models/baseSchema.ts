@@ -17,5 +17,4 @@ export const BaseSchema = new Schema<IBaseSchema>(
     isDeleted: { type: Boolean, default: false },
     deletedAt: { type: Date, default: null },
   },
-  { timestamps: true }
 );
