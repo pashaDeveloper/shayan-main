@@ -25,7 +25,6 @@ function WhatsAppWidget({ lang }: Props) {
         phoneNumber="+905011308483"
         chatMessage={t.whatsapp.chatMessage}
         allowEsc
-        allowClickAway
         notification
         notificationSound
         avatar="/assets/icon.jpg"

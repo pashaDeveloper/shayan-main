@@ -25,8 +25,8 @@ import { useTheme } from "@/contexts/ThemeContext";
 import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
 import { useAuth } from "@/contexts/AuthContext";
-import AuthModal from './AuthModal';
-import UserProfile from './UserProfile';
+import AuthModal from "./AuthModal";
+import UserProfile from "./UserProfile";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -136,25 +136,20 @@ const Header = () => {
                   )}
                   {!user && (
                     <div className="flex items-center gap-2">
-                      <button
-                        onClick={() => {
-                          setAuthModalMode("login");
-                          setIsAuthModalOpen(true);
-                        }}
-                        className="text-xs text-gray-100 hover:text-white transition-colors"
+                      <Link
+                        href={"/auth//user/signin"}
+                        className="text-xs flex gap-x-1 text-gray-100 hover:text-white transition-colors"
                       >
-                        ورود
-                      </button>
+                        <LogIn className="h-4 w-4" />
+                        <span className="sm:block">ورود</span>
+                      </Link>
                       <span className="text-gray-400">|</span>
-                      <button
-                        onClick={() => {
-                          setAuthModalMode("register");
-                          setIsAuthModalOpen(true);
-                        }}
+                      <Link
+                        href={"/auth//user/signin"}
                         className="text-xs text-gray-100 hover:text-white transition-colors"
                       >
                         ثبت نام
-                      </button>
+                      </Link>
                     </div>
                   )}
                 </div>
@@ -165,13 +160,14 @@ const Header = () => {
 
         {/* Main Header */}
         <div className="px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900 transition-all duration-300">
-     <div
-  className={`flex rtl:flex-row-reverse items-center justify-between transition-all duration-300 ease-in-out
-    ${isScrolled && !isScrollingUp 
-      ? "h-0 opacity-0 overflow-hidden pointer-events-none" 
-      : "h-20 opacity-100"
+          <div
+            className={`flex rtl:flex-row-reverse items-center justify-between transition-all duration-300 ease-in-out
+    ${
+      isScrolled && !isScrollingUp
+        ? "h-0 opacity-0 overflow-hidden pointer-events-none"
+        : "h-20 opacity-100"
     }`}
->
+          >
             {/* Logo */}
             <div className="flex-shrink-0 group">
               <div className="flex rtl:flex-row-reverse items-center gap-3">
@@ -352,9 +348,13 @@ const Header = () => {
               </button>
             </div>
           </div>
-          <hr className={`border md:hidden border-gray-300 ${
-              isScrolled && !isScrollingUp ? "h-0 overflow-hidden hidden" : " opacity-100"
-            }`} />
+          <hr
+            className={`border md:hidden border-gray-300 ${
+              isScrolled && !isScrollingUp
+                ? "h-0 overflow-hidden hidden"
+                : " opacity-100"
+            }`}
+          />
 
           {/* Mobile Second Line */}
           <div
@@ -412,32 +412,24 @@ const Header = () => {
                   <div className="w-8 h-8 bg-gradient-to-r from-[#0F4C75] to-[#FFD700] rounded-full flex items-center justify-center">
                     <User className="h-4 w-4 text-white" />
                   </div>
-                  <span className="block">
-                    {user.name.split(" ")[0]}
-                  </span>
+                  <span className="block">{user.name.split(" ")[0]}</span>
                 </button>
               ) : (
                 <div className="flex items-center gap-2">
-                  <button
-                    onClick={() => {
-                      setAuthModalMode("login");
-                      setIsAuthModalOpen(true);
-                    }}
+                  <Link
+                    href={"/auth//user/signin"}
                     className="flex items-center gap-2 px-3 py-2 bg-white/10 dark:bg-gray-800/50 backdrop-blur-sm rounded-full text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-[#0F4C75] dark:hover:text-[#FFD700] hover:bg-white/20 dark:hover:bg-gray-700/50 transition-all duration-300 border border-gray-200/20 dark:border-gray-700/20"
                   >
                     <LogIn className="h-4 w-4" />
                     <span className="sm:block">ورود</span>
-                  </button>
-                  <button
-                    onClick={() => {
-                      setAuthModalMode("register");
-                      setIsAuthModalOpen(true);
-                    }}
+                  </Link>
+                  <Link
+                    href={"/auth//user/signin"}
                     className="flex items-center gap-2 px-3 py-2 bg-gradient-to-r from-[#0F4C75] to-[#FFD700] text-white rounded-full text-sm font-medium hover:from-[#FFD700] hover:to-[#0F4C75] transition-all duration-300"
                   >
                     <UserPlus className="h-4 w-4" />
                     <span className="sm:block">ثبت نام</span>
-                  </button>
+                  </Link>
                 </div>
               )}
             </div>
@@ -534,7 +526,7 @@ const Header = () => {
         onClose={() => setIsAuthModalOpen(false)}
         initialMode={authModalMode}
       />
-      
+
       {/* User Profile Modal */}
       <UserProfile
         isOpen={isProfileOpen}

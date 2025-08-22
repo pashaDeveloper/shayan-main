@@ -409,6 +409,10 @@ html {
 .dark .focus-visible:focus {
   outline-color: #ffd700;
 }
+input:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
 
 /* High Contrast Mode Support */
 @media (prefers-contrast: high) {

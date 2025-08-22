@@ -19,8 +19,8 @@ export async function generateMetadata({
   const { lang } = params;
 
   const titles = {
-    fa: "گروه بین‌المللی شایسته و شایان | خدمات مهاجرت و سرمایه‌گذاری | 2SHIGROUP",
-    en: "Shaisteh va Shayan International Group | Immigration & Investment Services | 2SHIGROUP",
+    fa: "گروه بین‌المللی شایسته و شایان | مهاجرت، سرمایه‌گذاری و خدمات بین‌المللی | 2SHIGROUP",
+    en: "Shayesteh va Shayan International Group | Immigration & Investment Services | 2SHIGROUP",
     tr: "Şayeste ve Şayan Uluslararası Grup | Göç ve Yatırım Hizmetleri | 2SHIGROUP",
     ar: "مجموعة شايستي وشايان الدولية | خدمات الهجرة والاستثمار | 2SHIGROUP"
   };
@@ -46,17 +46,40 @@ export async function generateMetadata({
         ar: "https://2shigroup.com/ar"
       }
     },
-    openGraph: {
-      locale:
-        lang === "fa"
-          ? "fa_IR"
-          : lang === "en"
-          ? "en_US"
-          : lang === "tr"
-          ? "tr_TR"
-          : "ar_SA",
-      url: `https://2shigroup.com/${lang}`
+    keywords: [
+  "گروه شایسته و شایان",
+  "شرکت شایسته و شایان",
+  "شایسته و شایان",
+  "مهاجرت شایسته و شایان",
+  "سرمایه‌گذاری شایسته و شایان",
+  "2SHIGROUP"
+],
+  openGraph: {
+  locale:
+    lang === "fa"
+      ? "fa_IR"
+      : lang === "en"
+      ? "en_US"
+      : lang === "tr"
+      ? "tr_TR"
+      : "ar_SA",
+  url: `https://2shigroup.com/${lang}`,
+  images: [
+    {
+      url: "/img/shayan-large.jpg",
+      width: 2400,
+      height: 1260,
+      alt: "2SHIGROUP Large Preview"
+    },
+    {
+      url: "/img/shayan-small.jpg",
+      width: 1200,
+      height: 630,
+      alt: "2SHIGROUP Small Preview"
     }
+  ]
+}
+
   };
 }
 

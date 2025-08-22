@@ -20,7 +20,7 @@ import ar from "@/translations/ar.json";
 import tr from "@/translations/tr.json";
 import galleryData from "@/data/gallery.json";
 import { GalleryData, GalleryTranslation } from "@/types/gallery";
-import { cn } from "@/lib/utils";
+import { cn } from "@/libs/utils";
 
 const translations = { fa, en, ar, tr } as {
   [key: string]: { gallery: GalleryTranslation };
