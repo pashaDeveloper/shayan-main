@@ -24,7 +24,6 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
 import { useAuth } from "@/contexts/AuthContext";
-import AuthModal from "./AuthModal";
 import UserProfile from "./UserProfile";
 import { AuthProvider } from "@/contexts/AuthContext";
 import Dashboard from "./icons/Dashboard";
@@ -539,11 +538,7 @@ const Header = () => {
           onClick={() => setIsSearchOpen(false)}
         />
       )}
-      <AuthModal
-        isOpen={isAuthModalOpen}
-        onClose={() => setIsAuthModalOpen(false)}
-        initialMode={authModalMode}
-      />
+
 
       {/* User Profile Modal */}
       <UserProfile

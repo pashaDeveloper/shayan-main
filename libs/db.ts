@@ -7,7 +7,8 @@ const connectDB = async (): Promise<void> => {
       throw new Error("MongoDB connection string (ATLAS_URI) is missing in .env");
     }
 
-    const conn = await connect(process.env.ATLAS_URI);
+    const conn = await connect(process.env.ATLAS_URI, {
+      dbName: process.env.DB_NAME,});
 
     console.log(`✅ MongoDB Connected: ${conn.connection.host}`);
   } catch (error: any) {
