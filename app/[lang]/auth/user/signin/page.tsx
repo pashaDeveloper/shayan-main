@@ -102,11 +102,6 @@ export default function SignInPage() {
     }, 1500);
   };
 
-  const handleBackToSignIn = () => {
-    setCurrentStep("signin");
-    phoneForm.reset();
-    emailForm.reset();
-  };
 
   if (currentStep === "otp") {
     return (
@@ -168,7 +163,7 @@ export default function SignInPage() {
       <div className="absolute inset-0 bg-black/40" />
 
       <div className="w-full max-w-md">
-        <Card className="shadow-xl border-0 scale-110 bg-white/95 backdrop-blur-sm">
+        <Card className="shadow-xl border-0 md:scale-110 bg-white/95 backdrop-blur-sm">
           <CardHeader className="space-y-4 text-center pb-6">
             <div className="mx-auto inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-full mb-6 ">
               <Shield className="h-10 w-10 text-white" />

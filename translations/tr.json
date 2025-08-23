@@ -14,7 +14,9 @@
     "callNow": "Hemen Ara",
     "contactUs": "📞 Bize Ulaşın",
     "mainMenu": "Ana Menü",
-    "support": "Canlı Destek"
+    "support": "Canlı Destek",
+    "signin": "Giriş Yap",
+    "register": "Kayıt Ol"
   },
   "hero": {
     "startNow": "Hemen Başla",

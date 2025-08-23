@@ -1,7 +1,6 @@
 import NextAuth, { NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import { signInGoogleUser } from "@/controllers/userAuth.controller";
-
 const options: NextAuthOptions = {
   providers: [
     GoogleProvider({
@@ -37,7 +36,7 @@ const options: NextAuthOptions = {
         });
 
         console.log("Google signup result:", result);
-        return result.success; // true یا false برمی‌گرده
+        return result.success; 
       } catch (err) {
         console.error("OAuth signup error:", err);
         return false;

@@ -18,7 +18,9 @@
     "callNow": "Call Now",
     "contactUs": "📞 Contact Us",
     "mainMenu": "Main Menu",
-    "support": "Online Support"
+    "support": "Online Support",
+     "signin": "Sign In",
+    "register": "Register"
   },
 
   "hero": {

@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { User, Settings, LogOut, Edit, Save, X } from 'lucide-react';
+import { User, LogOut, Edit, Save, X } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -10,10 +10,23 @@ interface UserProfileProps {
   onClose: () => void;
 }
 
+// ✅ اینو بعداً می‌تونی به API وصل کنی
+async function updateProfile(data: { name: string; email: string; phone: string }) {
+  try {
+    console.log("Updating profile...", data);
+    await new Promise(res => setTimeout(res, 1500)); // شبیه‌سازی API call
+    return true;
+  } catch (err) {
+    console.error(err);
+    return false;
+  }
+}
+
 const UserProfile = ({ isOpen, onClose }: UserProfileProps) => {
-  const { user, logout, updateProfile, isLoading } = useAuth();
+  const { user, logout } = useAuth();
   const { language } = useLanguage();
   const [isEditing, setIsEditing] = useState(false);
+  const [isLoading, setIsLoading] = useState(false); // ✅ اضافه شد
   const [formData, setFormData] = useState({
     name: user?.name || '',
     email: user?.email || '',
@@ -28,10 +41,12 @@ const UserProfile = ({ isOpen, onClose }: UserProfileProps) => {
   };
 
   const handleSave = async () => {
+    setIsLoading(true);
     const success = await updateProfile(formData);
     if (success) {
       setIsEditing(false);
     }
+    setIsLoading(false);
   };
 
   const handleCancel = () => {
@@ -59,11 +74,11 @@ const UserProfile = ({ isOpen, onClose }: UserProfileProps) => {
           >
             <X className="h-4 w-4" />
           </button>
-          
+
           <div className="text-center">
-            <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 overflow-hidden">
               {user.avatar ? (
-                <img src={user.avatar} alt={user.name} className="w-full h-full rounded-full object-cover" />
+                <img src={user.avatar} alt={user.name} className="w-full h-full object-cover" />
               ) : (
                 <User className="h-10 w-10" />
               )}
@@ -71,10 +86,9 @@ const UserProfile = ({ isOpen, onClose }: UserProfileProps) => {
             <h2 className="text-2xl font-bold mb-1">{user.name}</h2>
             <p className="text-blue-100 text-sm">{user.email}</p>
             <div className="inline-block bg-white/20 px-3 py-1 rounded-full text-xs mt-2">
-              {user.role === 'admin' 
+              {user.role === 'admin'
                 ? (language === 'fa' ? 'مدیر' : 'Admin')
-                : (language === 'fa' ? 'کاربر' : 'User')
-              }
+                : (language === 'fa' ? 'کاربر' : 'User')}
             </div>
           </div>
         </div>
@@ -93,7 +107,8 @@ const UserProfile = ({ isOpen, onClose }: UserProfileProps) => {
                   name="name"
                   value={formData.name}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[#0F4C75] focus:border-transparent dark:bg-gray-700 dark:text-white"
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg 
+                             focus:ring-2 focus:ring-[#0F4C75] focus:border-transparent dark:bg-gray-700 dark:text-white"
                 />
               ) : (
                 <div className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 rounded-lg text-gray-900 dark:text-white">
@@ -126,23 +141,14 @@ const UserProfile = ({ isOpen, onClose }: UserProfileProps) => {
                   name="phone"
                   value={formData.phone}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[#0F4C75] focus:border-transparent dark:bg-gray-700 dark:text-white"
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg 
+                             focus:ring-2 focus:ring-[#0F4C75] focus:border-transparent dark:bg-gray-700 dark:text-white"
                 />
               ) : (
                 <div className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 rounded-lg text-gray-900 dark:text-white">
                   {user.phone || (language === 'fa' ? 'وارد نشده' : 'Not provided')}
                 </div>
               )}
-            </div>
-
-            {/* Member Since */}
-            <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                {language === 'fa' ? 'عضو از تاریخ' : 'Member Since'}
-              </label>
-              <div className="w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 rounded-lg text-gray-900 dark:text-white">
-                {new Date(user.createdAt).toLocaleDateString(language === 'fa' ? 'fa-IR' : 'en-US')}
-              </div>
             </div>
           </div>
 
@@ -153,14 +159,20 @@ const UserProfile = ({ isOpen, onClose }: UserProfileProps) => {
                 <button
                   onClick={handleSave}
                   disabled={isLoading}
-                  className="flex-1 bg-gradient-to-r from-green-500 to-green-600 text-white py-3 rounded-lg font-semibold hover:from-green-600 hover:to-green-700 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50"
+                  className="flex-1 bg-gradient-to-r from-green-500 to-green-600 text-white py-3 rounded-lg font-semibold 
+                             hover:from-green-600 hover:to-green-700 transition-all duration-300 flex items-center justify-center gap-2 
+                             disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <Save className="h-4 w-4" />
-                  {language === 'fa' ? 'ذخیره' : 'Save'}
+                  {isLoading
+                    ? (language === 'fa' ? 'در حال ذخیره...' : 'Saving...')
+                    : (language === 'fa' ? 'ذخیره' : 'Save')}
                 </button>
                 <button
                   onClick={handleCancel}
-                  className="flex-1 bg-gray-500 text-white py-3 rounded-lg font-semibold hover:bg-gray-600 transition-all duration-300 flex items-center justify-center gap-2"
+                  disabled={isLoading}
+                  className="flex-1 bg-gray-500 text-white py-3 rounded-lg font-semibold 
+                             hover:bg-gray-600 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50"
                 >
                   <X className="h-4 w-4" />
                   {language === 'fa' ? 'لغو' : 'Cancel'}
@@ -169,7 +181,8 @@ const UserProfile = ({ isOpen, onClose }: UserProfileProps) => {
             ) : (
               <button
                 onClick={() => setIsEditing(true)}
-                className="w-full bg-gradient-to-r from-[#0F4C75] to-[#FFD700] text-white py-3 rounded-lg font-semibold hover:from-[#FFD700] hover:to-[#0F4C75] transition-all duration-300 flex items-center justify-center gap-2"
+                className="w-full bg-gradient-to-r from-[#0F4C75] to-[#FFD700] text-white py-3 rounded-lg font-semibold 
+                           hover:from-[#FFD700] hover:to-[#0F4C75] transition-all duration-300 flex items-center justify-center gap-2"
               >
                 <Edit className="h-4 w-4" />
                 {language === 'fa' ? 'ویرایش پروفایل' : 'Edit Profile'}

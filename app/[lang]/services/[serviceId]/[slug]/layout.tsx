@@ -1,8 +1,10 @@
+
 import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CallToActionSection from "@/components/CallToActionSection";
 import Relatives from "@/components/services/Relatives";
+import {ShareButtons} from "@/components/ShareButtons";
 import Feedback  from "./Feedback";
 
 type Params = {
@@ -29,6 +31,7 @@ export default function ServiceLayout({
           <Feedback  lang={lang} serviceId={"3"}/>
         </main>
         <aside className="col-span-3">
+          <ShareButtons/>
           <Relatives lang={params.lang} />
         </aside>
       </div>
