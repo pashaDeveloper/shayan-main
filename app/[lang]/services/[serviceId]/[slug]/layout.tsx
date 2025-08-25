@@ -31,7 +31,10 @@ export default function ServiceLayout({
           <Feedback  lang={lang} serviceId={"3"}/>
         </main>
         <aside className="col-span-3">
+          <div className="md:mt-104 ">
+
           <ShareButtons/>
+          </div>
           <Relatives lang={params.lang} />
         </aside>
       </div>

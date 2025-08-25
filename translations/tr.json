@@ -16,7 +16,13 @@
     "mainMenu": "Ana Menü",
     "support": "Canlı Destek",
     "signin": "Giriş Yap",
-    "register": "Kayıt Ol"
+    "register": "Kayıt Ol",
+    "theme": "Tema Değiştir",
+    "changeLan": "Dil Değiştir",
+    "menubar": "Menü Çubuğu",
+    "nofication": "Bildirimler",
+    "dashboard": "Kontrol Paneli",
+    "profile": "Profil"
   },
   "hero": {
     "startNow": "Hemen Başla",
@@ -270,7 +276,7 @@
     "website": "2shigroup.com",
     "copyright": "© 2025 Shayesteh & Shayan Uluslararası Grubu. Tüm hakları saklıdır."
   },
-   "whatsapp": {
+  "whatsapp": {
     "accountName": "Web Sitesi Destek",
     "chatMessage": "Merhaba 👋\nSize yardımcı olmaktan memnuniyet duyarım. Herhangi bir sorunuzu sorabilirsiniz."
   }

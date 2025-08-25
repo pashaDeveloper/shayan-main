@@ -1,7 +1,9 @@
 'use client';
 import React, { useState } from "react";
-import { Star, Send, User, ThumbsUp, Reply, Shield, MessageCircle } from "lucide-react";
+import { Star, Send, User, ThumbsUp, Reply, Shield, MessageCircle, ArrowLeft } from "lucide-react";
 import { useAuth } from '@/contexts/AuthContext';
+import { signIn } from "next-auth/react";
+import { Button } from "@/components/ui/button";
 
 type Comment = {
   id: string;
@@ -103,7 +105,17 @@ export default function Feedback({ comments: initialComments, serviceId }: Props
         </form>
       ) : (
         <div className="mb-8 p-6 bg-yellow-50 border border-yellow-200 rounded-lg">
-          <p className="text-yellow-800">برای ثبت نظر ابتدا وارد حساب کاربری خود شوید.</p>
+           <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => signIn("google", { callbackUrl: "/" })}
+                className=""
+              >
+                <ArrowLeft className="h-4 w-4" />
+              </Button>
+          <p className="text-yellow-800"> 
+            برای ثبت نظر ابتدا وارد حساب کاربری خود شوید.
+            </p>
         </div>
       )}
 

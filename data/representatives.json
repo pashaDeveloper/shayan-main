@@ -6,7 +6,7 @@
         "country": "آمریکا",
         "flag": "/assets/countries/us.png",
         "city": "نیویورک",
-        "position": { "top": "35%", "left": "20%" },
+        "position": { "top": "35%", "left": "28%" },
         "services": ["immigration", "investment"],
         "contact": "+1-555-0123",
         "clients": 150

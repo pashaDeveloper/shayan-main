@@ -14,15 +14,15 @@ const ThemeToggle: React.FC = () => {
       className="w-10 h-10 bg-gray-100 dark:bg-gray-800/50 backdrop-blur-sm 
                  rounded-full flex items-center justify-center 
                  text-gray-700 dark:text-gray-300 
-                 hover:text-[#0F4C75] dark:hover:text-[#FFD700] 
+                 hover:text-[#FFD700] dark:hover:text-[#FFD700] 
                  hover:border-gray-200 dark:hover:bg-gray-700/50 
                  transition-all duration-300 
                  border border-gray-200/20 dark:border-gray-700/20"
     >
       {isDark ? (
-        <Sun className="h-5 w-5" />
+        <Sun className="h-5 w-5  hover:text-red-500 dark:hover:text-[#FFD700]" />
       ) : (
-        <Moon className="h-5 w-5" />
+        <Moon className="h-5 w-5  hover:text-red-500 dark:hover:text-[#FFD700]" />
       )}
     </button>
   );

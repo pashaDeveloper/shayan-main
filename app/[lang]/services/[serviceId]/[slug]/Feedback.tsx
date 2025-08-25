@@ -1,7 +1,27 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { Star, Send, User, ThumbsUp, Reply, Shield } from "lucide-react";
+import {
+  Star,
+  Send,
+  User,
+  ThumbsUp,
+  Reply,
+  Shield,
+  ArrowLeft,
+  ArrowUp
+} from "lucide-react";
 import { useAuth } from "@/contexts/AuthContext";
+import { signIn } from "next-auth/react";
+import { Button } from "@/components/ui/button";
+import { usePathname } from "next/navigation";
+import { useForm, Controller, SubmitHandler } from "react-hook-form";
+import { toast } from "react-hot-toast";
+import {
+  useAddReviewMutation,
+  useReplyReviewMutation,
+  useLikeReviewMutation,
+  useGetReviewsQuery
+} from "@/services/review/reviewApi";
 
 type Comment = {
   id: string;
@@ -19,31 +39,48 @@ type params = {
   serviceId: string;
   lang: string;
 };
+type FormValues = {
+  rating: number;
+  review: string;
+  serviceId: String;
+  userId: String;
 
+};
 export default function Feedback({ serviceId, lang }: params) {
   const { user } = useAuth();
+  const { register, handleSubmit, control } = useForm<FormValues>();
   const [comments, setComments] = useState<Comment[]>([]);
-  const [newComment, setNewComment] = useState({ comment: "", rating: 0 });
   const [replyTo, setReplyTo] = useState<string | null>(null);
   const [replyText, setReplyText] = useState("");
+  const pathname = usePathname();
+  const [addReview, { isLoading, data, error }] = useAddReviewMutation();
+
+  const onSubmit: SubmitHandler<FormValues> = async (formData) => {
+    console.log("📌 formData:", formData);
+
+    addReview(formData).unwrap();
+  };
 
   useEffect(() => {
-    fetch(`/api/comments?serviceId=${serviceId}`)
-      .then((res) => res.json())
-      .then((data) => setComments(data));
-  }, [serviceId]);
+    const toastId = "add-revie";
+console.log(data)
+    if (isLoading) {
+      toast.loading("در حال ورود...", { id: toastId });
+    }
+    if (data && data.success) {
+      toast.success(data.message, { id: toastId });
+    }
+    if (data && !data.success) {
+      toast.error(data.message, { id: toastId });
+    }
 
-  const handleCommentSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    const res = await fetch("/api/comments", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ serviceId, ...newComment })
-    });
-    const saved = await res.json();
-    setComments([saved, ...comments]);
-    setNewComment({ comment: "", rating: 0 });
-  };
+    if (error) {
+      const err = error as any;
+      toast.error(err?.data?.message || err?.data?.error || "خطا در ثبت نظر", {
+        id: toastId
+      });
+    }
+  }, [isLoading, data, error]);
 
   const handleLike = (commentId: string) => {
     setComments(
@@ -84,41 +121,54 @@ export default function Feedback({ serviceId, lang }: params) {
       {/* فرم ثبت کامنت */}
       {user ? (
         <form
-          onSubmit={handleCommentSubmit}
+          onSubmit={handleSubmit(onSubmit)}
           className="mb-8 p-6 bg-gray-50 rounded-lg"
         >
           <h3 className="text-lg font-semibold mb-4">نظر خود را بنویسید</h3>
-
-          {/* انتخاب امتیاز */}
-          <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              امتیاز شما:
-            </label>
-            <div className="flex gap-1">
-              {[1, 2, 3, 4, 5].map((star) => (
-                <button
-                  key={star}
-                  type="button"
-                  onClick={() => setNewComment({ ...newComment, rating: star })}
-                  className="focus:outline-none"
-                >
-                  <Star
-                    className={`w-6 h-6 ${
-                      star <= newComment.rating
-                        ? "text-yellow-400 fill-current"
-                        : "text-gray-300"
-                    }`}
-                  />
-                </button>
-              ))}
-            </div>
-          </div>
-
+          <input
+            value={user.id}
+            className="hidden"
+            {...register("userId", { required: true })}
+          />
+          <input
+            value={serviceId}
+            className="hidden"
+            {...register("serviceId", { required: true })}
+          />
+          <input
+            value={serviceId}
+            className="hidden"
+            {...register("serviceId", { required: true })}
+          />
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            امتیاز شما:
+          </label>
+          <Controller
+            name="rating"
+            control={control}
+            render={({ field }) => (
+              <div className="flex gap-1">
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <button
+                    key={star}
+                    type="button"
+                    onClick={() => field.onChange(star)}
+                    className="focus:outline-none"
+                  >
+                    <Star
+                      className={`w-6 h-6 ${
+                        star <= field.value
+                          ? "text-yellow-400 fill-current"
+                          : "text-gray-300"
+                      }`}
+                    />
+                  </button>
+                ))}
+              </div>
+            )}
+          />
           <textarea
-            value={newComment.comment}
-            onChange={(e) =>
-              setNewComment({ ...newComment, comment: e.target.value })
-            }
+            {...register("review", { required: true })}
             placeholder="نظر خود را بنویسید..."
             className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent mb-4"
             rows={4}
@@ -135,9 +185,17 @@ export default function Feedback({ serviceId, lang }: params) {
         </form>
       ) : (
         <div className="mb-8 p-6 bg-yellow-50 border border-yellow-200 rounded-lg">
-          <p className="text-yellow-800">
-            برای ثبت نظر ابتدا وارد حساب کاربری خود شوید.
-          </p>
+          <span className="text-yellow-800 flex items-center">
+            برای ثبت نظر ابتدا وارد
+            <Button
+              className="text-yellow-800 relative font-bold px-1 flex flex-col items-center"
+              onClick={() => signIn("google", { callbackUrl: pathname })}
+            >
+              حساب کاربری
+              <ArrowUp className="h-4 w-4 absolute top-8 mt-1 text-yellow-800 animate-bounce" />
+            </Button>
+            خود شوید.
+          </span>
         </div>
       )}
 

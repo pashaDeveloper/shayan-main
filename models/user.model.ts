@@ -1,7 +1,7 @@
 // models/user.model.ts
 import { Schema, model, models, Document, Types } from "mongoose";
 import { genSaltSync, hashSync, compare } from "bcryptjs";
-import { BaseSchema, IBaseSchema } from "./baseSchema";
+import { BaseSchema, IBaseSchema } from "./baseSchema.model";
 import connectDB from "@/libs/db";
 connectDB();
 

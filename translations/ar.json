@@ -16,7 +16,13 @@
     "mainMenu": "القائمة الرئيسية",
     "support": "الدعم المباشر",
     "signin": "تسجيل الدخول",
-    "register": "تسجيل"
+    "register": "تسجيل",
+    "theme": "تغيير المظهر",
+    "changeLan": "تغيير اللغة",
+    "menubar": "شريط القوائم",
+    "nofication": "الإشعارات",
+    "dashboard": "لوحة التحكم",
+    "profile": "الملف الشخصي"
   },
 
   "hero": {

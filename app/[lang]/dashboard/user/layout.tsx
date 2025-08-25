@@ -11,12 +11,12 @@ import {
   Bell,
   Menu,
   X,
-  Sun,
-  Moon
+
 } from "lucide-react";
 import { AuthProvider } from "@/contexts/AuthContext";
 import { useAuth } from "@/contexts/AuthContext";
 import ThemeToggle from "@/components/ThemeToggle";
+import toast from "react-hot-toast";
 
 export default function UserDashboardLayout({
   children
@@ -27,12 +27,25 @@ export default function UserDashboardLayout({
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isDark, setIsDark] = useState(false);
   const { user, isLoggedIn, logout } = useAuth();
-
   const handleLogout = () => {
     logout();
     router.push("");
   };
+  useEffect(() => {
+    if (!user) {
+      toast.error("لطفا ابتدا وارد شوید", {
+      
+      });
 
+      const timer = setTimeout(() => {
+        router.push("../auth/user/signin");
+      }, 3000);
+
+      return () => clearTimeout(timer);
+    }else{
+      toast.success(`${user.name} خوش آمدید`);
+    }
+  }, [user, router]);
   const menuItems = [
     { icon: Home, label: "داشبورد", href: "/dashboard/user" },
     { icon: User, label: "پروفایل", href: "/dashboard/user/profile" },

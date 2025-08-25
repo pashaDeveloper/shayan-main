@@ -32,7 +32,7 @@
     --card-foreground: 0 0% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
+    --primary: #5D1A75;
     --primary-foreground: 0 0% 98%;
     --secondary: 284 64% 28%;
     --secondary-foreground: 0 0% 9%;
@@ -409,7 +409,7 @@ html {
 .dark .focus-visible:focus {
   outline-color: #ffd700;
 }
-input:focus {
+input:focus, textarea:focus {
   outline: none !important;
   box-shadow: none !important;
 }

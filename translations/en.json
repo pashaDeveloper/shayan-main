@@ -19,8 +19,14 @@
     "contactUs": "📞 Contact Us",
     "mainMenu": "Main Menu",
     "support": "Online Support",
-     "signin": "Sign In",
-    "register": "Register"
+    "signin": "Sign In",
+    "register": "Register",
+    "theme": "Change Theme",
+    "changeLan": "Change Language",
+    "menubar": "Menu Bar",
+    "nofication": "Notifications",
+    "dashboard": "Dashboard",
+    "profile": "Profile"
   },
 
   "hero": {
@@ -176,7 +182,7 @@
   "customersCount": "Satisfied Customers",
   "countriesCount": "Countries Covered",
   "experienceYears": "Years of Experience",
-  
+
   "gallery": {
     "sectionTitle": "Image Gallery",
     "sectionSubtitle": "A collection of images related to migration and investment",
@@ -184,8 +190,7 @@
     "allImagesLoaded": "All images displayed",
     "share": "Share",
     "download": "Download"
-  
-},
+  },
   "about": {
     "aboutTitle": "About Shayesteh & Shayan",
     "aboutSubtitle": "We are by your side to provide the best experience",
@@ -286,7 +291,7 @@
     "website": "2shigroup.com",
     "copyright": "© 2025 Shayesteh & Shayan International Group. All rights reserved."
   },
-   "whatsapp": {
+  "whatsapp": {
     "accountName": "Website Support",
     "chatMessage": "Hello 👋\nI'm happy to help. Feel free to ask any questions."
   }

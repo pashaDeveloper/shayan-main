@@ -1,19 +1,11 @@
-
-
 import React from "react";
 import LoadImage from "../image/LoadImage";
 
 const Screen = () => {
   return (
-    <section className="flex justify-center items-center h-screen w-screen bg-white">
-      <LoadImage
-        src="/loading.gif"
-        alt="loading"
-        height={300}
-        width={300}
-        className=""
-      />
-    </section>
+    <div className="flex items-center justify-center h-64">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-red-500"></div>
+      </div>
   );
 };
 

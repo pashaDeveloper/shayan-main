@@ -8,6 +8,10 @@ import { faMetadata } from "@/metadata/fa";
 import { enMetadata } from "@/metadata/en";
 import { trMetadata } from "@/metadata/tr";
 import { arMetadata } from "@/metadata/ar";
+import Providers from "./providers";
+import { Toaster } from "react-hot-toast";
+import AdminPersist from "@/components/persistent/AdminPersist";
+import { AuthProvider } from "@/contexts/AuthContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -57,9 +61,16 @@ export default function RootLayout({
         className={inter.className}
         style={{ fontFamily: "Vazirmatn, system-ui, sans-serif" }}
       >
-          <ThemeProvider>
-            <LanguageProvider>{children}</LanguageProvider>
-          </ThemeProvider>
+        <ThemeProvider>
+          <LanguageProvider>
+            <Providers>
+              <AdminPersist>
+                <Toaster />
+                <AuthProvider>{children}</AuthProvider>
+              </AdminPersist>
+            </Providers>
+          </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

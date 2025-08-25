@@ -7,7 +7,7 @@ export const shigroupApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: `${process.env.NEXT_PUBLIC_BASE_URL}/api`,
   }),
-  tagTypes: ["User","Favorite", "Review"],
+  tagTypes: ["User","Favorite", "Review","Admin"],
   refetchOnMountOrArgChange: true,
   endpoints: () => ({}),
 });

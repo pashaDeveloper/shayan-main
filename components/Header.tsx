@@ -14,7 +14,7 @@ import {
   Users,
   Zap,
   Award,
-  Image,
+  Image as Gallery,
   Newspaper,
   LogIn,
   UserPlus,
@@ -28,7 +28,8 @@ import UserProfile from "./UserProfile";
 import { AuthProvider } from "@/contexts/AuthContext";
 import Dashboard from "./icons/Dashboard";
 import ThemeToggle from "./ThemeToggle";
-
+import Image from "next/image";
+import { BeautifulTooltip } from "./ui/beautiful-tooltip";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
@@ -36,17 +37,12 @@ const Header = () => {
   const [isScrollingUp, setIsScrollingUp] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
-  const [authModalMode, setAuthModalMode] = useState<"login" | "register">(
-    "login"
-  );
   const [isProfileOpen, setIsProfileOpen] = useState(false);
 
   const { language, setLanguage, t } = useLanguage();
   const router = useRouter();
   const pathname = usePathname();
   const { user, isLoggedIn, status } = useAuth();
-
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -68,14 +64,14 @@ const Header = () => {
   const currentLang = languages.find((lang) => lang.code === language);
   const menuItems = [
     { key: "home", href: "#home", icon: <Home className="w-5 h-5" /> },
-    { key: "about", href: "#about", icon: <Users className="w-5 h-5" /> },
     { key: "services", href: "#services", icon: <Zap className="w-5 h-5" /> },
     {
       key: "certificates",
       href: "#certificates",
       icon: <Award className="w-5 h-5" />
     },
-    { key: "gallery", href: "#gallery", icon: <Image className="w-5 h-5" /> },
+    { key: "gallery", href: "#gallery", icon: <Gallery className="w-5 h-5" /> },
+    { key: "about", href: "#about", icon: <Users className="w-5 h-5" /> },
     { key: "contact", href: "#contact", icon: <Phone className="w-5 h-5" /> }
   ];
   const terms = [
@@ -96,7 +92,7 @@ const Header = () => {
         >
           {/* Top Bar */}
           <div
-            className={`border-b border-gray-200/10 bg-secondary dark:border-gray-700/10 transition-all duration-300 ${
+            className={`border-b border-gray-200/10 bg-secondary dark:border-gray-700/10 transition-all py-1 duration-300 ${
               isScrolled
                 ? "h-0 overflow-hidden opacity-0"
                 : "h-auto opacity-100"
@@ -113,22 +109,34 @@ const Header = () => {
                   </div>
                   <div className="flex items-center gap-2">
                     <span>📞</span>
-                    <a
-                      href="tel:+905011308483"
-                      dir="ltr"
-                      className="text-white hover:underline ltr"
+                    <BeautifulTooltip
+                      content={t("+90-552-6855552 +98-933-581353")}
+                      color={"secondary"}
+                      side="top"
                     >
-                      +90-501-1308483
-                    </a>
+                      <a
+                        href="tel:+905011308483"
+                        dir="ltr"
+                        className="text-white hover:underline ltr"
+                      >
+                        +90-501-1308483
+                      </a>
+                    </BeautifulTooltip>
                   </div>
                   <div className="flex items-center gap-2">
                     <span>✉️</span>
-                    <a
-                      href="mailto:info@2shigroup.com"
-                      className="text-white hover:underline"
+                    <BeautifulTooltip
+                      content={t("2shigroup@gmail.com")}
+                      color={"secondary"}
+                      side="top"
                     >
-                      info@2shigroup.com
-                    </a>
+                      <a
+                        href="mailto:info@2shigroup.com"
+                        className="text-white hover:underline"
+                      >
+                        info@2shigroup.com
+                      </a>
+                    </BeautifulTooltip>
                   </div>
                 </div>
 
@@ -136,13 +144,48 @@ const Header = () => {
                   <div className="flex items-center  gap-2">
                     {user && (
                       <>
-                        <Bell className="h-4 w-4 text-gray-200 hover:text-white cursor-pointer transition-colors" />
-                        <img
-                          src={user?.image || "/default-avatar.png"}
-                          alt={user?.name || "User"}
-                          className="w-8 h-8 rounded-full shadow-lg"
-                        />
-                        <span>{user?.name}</span>
+                        <BeautifulTooltip
+                          content={t("header.nofication")}
+                          color={"secondary"}
+                          side="top"
+                        >
+                          <span className="rounded-full flex items-center justify-center bg-gray-100/10  p-2  cursor-pointer duration-300 hover:bg-gray-100/30 transition-colors">
+                            <Bell className="h-5 w-5  hover:text-red-500 dark:hover:text-[#FFD700]  text-gray-200" />
+                          </span>
+                        </BeautifulTooltip>
+                        <BeautifulTooltip
+                          content={t("header.dashboard")}
+                          color={"secondary"}
+                          side="top"
+                        >
+                          <Link
+                            href={`/${language}/dashboard/user`}
+                            className="rounded-full flex items-center justify-center bg-gray-100/10  p-2 hover:bg-gray-100/30 transition-colors duration-300 cursor-pointer "
+                          >
+                            <Dashboard className=" hover:text-red-500 dark:hover:text-[#FFD700] w-5 h-5text-gray-200" />
+                          </Link>
+                        </BeautifulTooltip>
+                        <BeautifulTooltip
+                          content={t("header.profile")}
+                          color={"secondary"}
+                          side="top"
+                        >
+                          <button
+                            onClick={() => setIsProfileOpen(true)}
+                            className="flex gap-x-2 items-center"
+                          >
+                            <Image
+                              src={user?.image || "/default-avatar.jpg"}
+                              width={150}
+                              height={150}
+                              alt={user?.name || "User"}
+                              className="w-10 h-10 rounded-full shadow-lg"
+                            />
+                            <span className=" hover:text-red-500 dark:hover:text-[#FFD700]">
+                              {user?.name}
+                            </span>
+                          </button>
+                        </BeautifulTooltip>
                       </>
                     )}
                     {!user && (
@@ -183,8 +226,16 @@ const Header = () => {
               <div className="flex-shrink-0 group">
                 <div className="flex rtl:flex-row-reverse items-center gap-3">
                   <div className="relative">
-                    <div className="w-12 h-12 bg-gradient-to-r from-[#0F4C75] to-[#FFD700] rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110">
-                      <span className="text-white font-bold text-xl">2S</span>
+                    <div className="w-14 h-14  flex items-center justify-center rounded-lg  shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110">
+                      <span className="text-white font-bold text-xl">
+                        <Image
+                          alt="logo"
+                          src={"/logo.png"}
+                          width={200}
+                          height={200}
+                          className=""
+                        />
+                      </span>
                     </div>
                     <div className="absolute -top-1 -right-1 w-4 h-4 bg-[#FFD700] rounded-full flex items-center justify-center">
                       <span className="text-[#0F4C75] text-xs font-bold">
@@ -193,10 +244,10 @@ const Header = () => {
                     </div>
                   </div>
                   <div className="block">
-                    <div className="md:text-2xl text-xl text-left font-bold bg-gradient-to-r from-[#0F4C75] to-[#FFD700] bg-clip-text text-transparent">
+                    <div className="md:text-2xl text-xl text-left font-bold bg-gradient-to-r from-[#5D1A75] to-red-500 bg-clip-text text-transparent">
                       2SHIGROUP
                     </div>
-                    <div className="text-xs text-left text-gray-500 dark:text-gray-400 -mt-1">
+                    <div className="text-xs text-left text-[#FFD700] dark:text-[#FFD700] -mt-1 ">
                       International
                     </div>
                   </div>
@@ -204,42 +255,57 @@ const Header = () => {
               </div>
 
               {/* Desktop Navigation */}
-              <nav className="hidden lg:flex items-center">
-                <div className="flex ltr:flex-row-reverse items-center bg-white/10 dark:bg-gray-800/50 backdrop-blur-sm rounded-full px-2 py-2 border border-gray-200/40 dark:border-gray-700/20">
-                  {menuItems.map((item, index) => (
-                    <Link
-                      key={item.key}
-                      href={
-                        item.key === "home"
-                          ? `/${language}`
-                          : item.key === "news"
-                          ? `/${language}/news`
-                          : item.key === "services"
-                          ? `/${language}/services`
-                          : item.href
-                      }
-                      className="group relative px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-[#0F4C75] dark:hover:text-[#FFD700] transition-all duration-300 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700/50"
-                    >
-                      <span className="flex items-center gap-2">
-                        <span className="text-base">{item.icon}</span>
-                        {t(`header.${item.key}`)}{" "}
-                      </span>
-                    </Link>
-                  ))}
-                </div>
-              </nav>
+             <nav className="hidden lg:flex items-center">
+  <div className="flex ltr:flex-row-reverse items-center bg-white/10 dark:bg-gray-800/50 backdrop-blur-sm gap-x-1 rounded-full px-2 py-2 border border-gray-200/40 dark:border-gray-700/20">
+    {menuItems.map((item) => (
+      <Link
+        key={item.key}
+        href={
+          item.key === "home"
+            ? `/${language}`
+            : item.key === "news"
+            ? `/${language}/news`
+            : item.key === "services"
+            ? `/${language}/services`
+            : item.key === "certificates"
+            ? `/${language}/certificates`
+            : item.key === "gallery"
+            ? `/${language}/gallery`
+            : item.href
+        }
+        className="group relative px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 
+                   hover:text-[#0F4C75] dark:hover:text-[#FFD700] 
+                   transition-all duration-300 rounded-full
+                   hover:bg-gray-100 dark:hover:bg-gray-700/50
+                   focus:bg-gray-100 dark:focus:bg-gray-700"
+      >
+        <span className="flex items-center gap-2">
+          <span className="text-base">{item.icon}</span>
+          {t(`header.${item.key}`)}
+        </span>
+      </Link>
+    ))}
+  </div>
+</nav>
+
 
               {/* Right Side Actions */}
               <div className="flex rtl:flex-row-reverse items-center gap-3">
                 {/* Search */}
                 <div className="relative">
-                  <button
-                    onClick={() => setIsSearchOpen(!isSearchOpen)}
-                    aria-label={t("header.search")}
-                    className="w-10 h-10 bg-gray-100 dark:bg-gray-800/50 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-700 dark:text-gray-300 hover:text-[#0F4C75] dark:hover:text-[#FFD700] hover:border-gray-200 dark:hover:bg-gray-700/50 transition-all duration-300 border border-gray-200/20 dark:border-gray-700/20"
+                  <BeautifulTooltip
+                    content={t("header.search")}
+                    color={"secondary"}
+                    side="top"
                   >
-                    <Search className="h-5 w-5" />
-                  </button>
+                    <button
+                      onClick={() => setIsSearchOpen(!isSearchOpen)}
+                      aria-label={t("header.search")}
+                      className="w-10 h-10 bg-gray-100 dark:bg-gray-800/50 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-700 dark:text-gray-300 hover:text-[#0F4C75] dark:hover:text-[#FFD700] hover:border-gray-200 dark:hover:bg-gray-700/50 transition-all duration-300 border border-gray-200/20 dark:border-gray-700/20"
+                    >
+                      <Search className="h-5 w-5" />
+                    </button>
+                  </BeautifulTooltip>
 
                   {/* Search Dropdown */}
                   {isSearchOpen && (
@@ -272,13 +338,25 @@ const Header = () => {
 
                 {/* Theme Toggle */}
 
-                <ThemeToggle />
-                {/* Language Selector */}
+                <BeautifulTooltip
+                  content={t("header.theme")}
+                  color={"secondary"}
+                  side="top"
+                >
+                  <ThemeToggle />
+
+                  {/* Language Selector */}
+                </BeautifulTooltip>
                 <div className="relative hidden md:flex">
-                  <button
-                    onClick={() => setIsLangOpen(!isLangOpen)}
-                    aria-label={"تغییر زبان"}
-                    className="flex items-center justify-center 
+                  <BeautifulTooltip
+                    content={t("header.changeLan")}
+                    color={"secondary"}
+                    side="top"
+                  >
+                    <button
+                      onClick={() => setIsLangOpen(!isLangOpen)}
+                      aria-label={"تغییر زبان"}
+                      className="flex items-center justify-center 
     w-10 aspect-square sm:w-auto sm:aspect-auto 
     px-1 sm:px-3 py-1 sm:py-2 
     bg-gray-100 dark:bg-gray-800/50 
@@ -287,15 +365,18 @@ const Header = () => {
     text-gray-700 dark:text-gray-300 
     transition-all duration-300 
     border border-gray-200/20 dark:border-gray-700/20"
-                  >
-                    <span className="text-lg">{currentLang?.flag}</span>
-                    <span className="hidden sm:block">{currentLang?.name}</span>
-                    <ChevronDown
-                      className={`h-4 w-4 hidden md:block transition-transform duration-300 ${
-                        isLangOpen ? "rotate-180" : ""
-                      }`}
-                    />
-                  </button>
+                    >
+                      <span className="text-lg">{currentLang?.flag}</span>
+                      <span className="hidden sm:block">
+                        {currentLang?.name}
+                      </span>
+                      <ChevronDown
+                        className={`h-4 w-4 hidden md:block transition-transform duration-300 ${
+                          isLangOpen ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+                  </BeautifulTooltip>
 
                   {isLangOpen && (
                     <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden animate-fade-in-up">
@@ -327,28 +408,34 @@ const Header = () => {
                 </div>
 
                 {/* Mobile Menu Button */}
-                <button
-                  onClick={() => setIsMenuOpen(!isMenuOpen)}
-                  className="lg:hidden w-10 h-10 bg-white/10 dark:bg-gray-800/50 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-700 dark:text-gray-300 hover:text-[#0F4C75] dark:hover:text-[#FFD700] hover:bg-white/20 dark:hover:bg-gray-700/50 transition-all duration-300 border border-gray-200/20 dark:border-gray-700/20"
+                <BeautifulTooltip
+                  content={t("header.menubar")}
+                  color={"secondary"}
+                  side="top"
                 >
-                  <div className="relative w-6 h-6">
-                    <span
-                      className={`absolute block h-0.5 w-6 bg-current transform transition-all duration-300 ${
-                        isMenuOpen ? "rotate-45 top-3" : "top-1"
-                      }`}
-                    ></span>
-                    <span
-                      className={`absolute block h-0.5 w-6 bg-current transform transition-all duration-300 top-3 ${
-                        isMenuOpen ? "opacity-0" : "opacity-100"
-                      }`}
-                    ></span>
-                    <span
-                      className={`absolute block h-0.5 w-6 bg-current transform transition-all duration-300 ${
-                        isMenuOpen ? "-rotate-45 top-3" : "top-5"
-                      }`}
-                    ></span>
-                  </div>
-                </button>
+                  <button
+                    onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    className="lg:hidden w-10 h-10 bg-white/10 dark:bg-gray-800/50 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-700 dark:text-gray-300 hover:text-[#0F4C75] dark:hover:text-[#FFD700] hover:bg-white/20 dark:hover:bg-gray-700/50 transition-all duration-300 border border-gray-200/20 dark:border-gray-700/20"
+                  >
+                    <div className="relative w-6 h-6">
+                      <span
+                        className={`absolute block h-0.5 w-6 bg-current transform transition-all duration-300 ${
+                          isMenuOpen ? "rotate-45 top-3" : "top-1"
+                        }`}
+                      ></span>
+                      <span
+                        className={`absolute block h-0.5 w-6 bg-current transform transition-all duration-300 top-3 ${
+                          isMenuOpen ? "opacity-0" : "opacity-100"
+                        }`}
+                      ></span>
+                      <span
+                        className={`absolute block h-0.5 w-6 bg-current transform transition-all duration-300 ${
+                          isMenuOpen ? "-rotate-45 top-3" : "top-5"
+                        }`}
+                      ></span>
+                    </div>
+                  </button>
+                </BeautifulTooltip>
               </div>
             </div>
             <hr
@@ -364,19 +451,25 @@ const Header = () => {
               className={`md:hidden rtl:flex-row items-center ltr:flex-row-reverse flex w-full py-1 justify-between   transition-all duration-300 `}
             >
               <div className="relative">
-                <button
-                  onClick={() => setIsLangOpen(!isLangOpen)}
-                  aria-label={"تغییر زبان"}
-                  className="flex gap-x-2 items-center justify-center px-2 py- advises bg-gray-100 dark:bg-gray-800/50 backdrop-blur-sm rounded-full text-sm font-medium text-gray-700 dark:text-gray-300 z-40 transition-all duration-300 border border-gray-200/20 dark:border-gray-700/20"
+                <BeautifulTooltip
+                  content={t("header.changeLang")}
+                  color={"secondary"}
+                  side="top"
                 >
-                  <span className="text-lg">{currentLang?.flag}</span>
-                  <span className="block">{currentLang?.name}</span>
-                  <ChevronDown
-                    className={`h-4 w-4 transition-transform duration-300 ${
-                      isLangOpen ? "rotate-180" : ""
-                    }`}
-                  />
-                </button>
+                  <button
+                    onClick={() => setIsLangOpen(!isLangOpen)}
+                    aria-label={"تغییر زبان"}
+                    className="flex gap-x-2 items-center justify-center px-2 py- advises bg-gray-100 dark:bg-gray-800/50 backdrop-blur-sm rounded-full text-sm font-medium text-gray-700 dark:text-gray-300 z-40 transition-all duration-300 border border-gray-200/20 dark:border-gray-700/20"
+                  >
+                    <span className="text-lg">{currentLang?.flag}</span>
+                    <span className="block">{currentLang?.name}</span>
+                    <ChevronDown
+                      className={`h-4 w-4 transition-transform duration-300 ${
+                        isLangOpen ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                </BeautifulTooltip>
 
                 {isLangOpen && (
                   <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden animate-fade-in-up">
@@ -409,27 +502,46 @@ const Header = () => {
               <div className="relative">
                 {user ? (
                   <div className="flex items-center justify-center gap-x-2">
-                    <span className="rounded-full flex items-center justify-center bg-gray-100 dark:bg-gray-800 p-2 hover:bg-gray-200 cursor-pointer dark:hover:bg-gray-700">
-                      <Bell className="h-6 w-6  cursor-pointer transition-colors text-gray-800 dark:text-gray-200" />
-                    </span>
-
-                    <Link
-                      href={`/${language}/dashboard/user`}
-                      className="rounded-full flex items-center justify-center bg-gray-100 dark:bg-gray-800 p-2 hover:bg-gray-200 cursor-pointer dark:hover:bg-gray-700"
+                    <BeautifulTooltip
+                      content={t("header.nofication")}
+                      color={"secondary"}
+                      side="top"
                     >
-                      <Dashboard className="text-gray-800 dark:text-gray-200" />
-                    </Link>
-                    <button
-                      onClick={() => setIsProfileOpen(true)}
-                      className="flex gap-x-2 items-center"
+                      <span className="rounded-full flex items-center justify-center bg-gray-100 h dark:bg-gray-800 p-2 hover:bg-gray-200 cursor-pointer dark:hover:bg-gray-700">
+                        <Bell className="h-6 w-6  hover:text-red-500 dark:hover:text-[#FFD700] cursor-pointer transition-colors text-gray-800 dark:text-gray-200" />
+                      </span>
+                    </BeautifulTooltip>
+                    <BeautifulTooltip
+                      content={t("header.dashboard")}
+                      color={"secondary"}
+                      side="top"
                     >
-                      <img
-                        src={user?.image || "/default-avatar.png"}
-                        alt={user?.name || "User"}
-                        className="w-9 h-9 rounded-full shadow-lg"
-                      />
-                      <span className="block">{user.name.split(" ")[0]}</span>
-                    </button>
+                      <Link
+                        href={`/${language}/dashboard/user`}
+                        className="rounded-full flex items-center justify-center bg-gray-100  dark:bg-gray-800 p-2 hover:bg-gray-200 cursor-pointer dark:hover:bg-gray-700"
+                      >
+                        <Dashboard className="text-gray-800 dark:text-gray-200  hover:text-red-500 dark:hover:text-[#FFD700]" />
+                      </Link>
+                    </BeautifulTooltip>
+                    <BeautifulTooltip
+                      content={t("header.profile")}
+                      color={"secondary"}
+                      side="top"
+                    >
+                      <button
+                        onClick={() => setIsProfileOpen(true)}
+                        className="flex gap-x-2 items-center"
+                      >
+                        <Image
+                          width={150}
+                          height={150}
+                          src={user?.image || "/default-avatar.png"}
+                          alt={user?.name || "User"}
+                          className="w-9 h-9 rounded-full shadow-lg"
+                        />
+                        <span className="block">{user.name.split(" ")[0]}</span>
+                      </button>
+                    </BeautifulTooltip>
                   </div>
                 ) : (
                   <div className="flex items-center gap-2">
@@ -502,7 +614,7 @@ const Header = () => {
                       ? `/${language}/services`
                       : item.href
                   }
-                  className="flex items-center gap-4 px-4 py-3 text-gray-700 dark:text-gray-300 hover:text-[#0F4C75] dark:hover:text-[#FFD700] hover:bg-gray-50 dark:hover:bg-gray-800 rounded-xl transition-all duration-300 group"
+                  className="flex items-center gap-4 px-4 py-3 text-gray-700 dark:text-gray-300 hover:text-[#0F4C75] dark:hover:text-[#FFD700] focus:bg-gray-50 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-xl transition-all duration-300 group"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <span className="text-xl group-hover:scale-110 transition-transform duration-300">
@@ -538,7 +650,6 @@ const Header = () => {
           onClick={() => setIsSearchOpen(false)}
         />
       )}
-
 
       {/* User Profile Modal */}
       <UserProfile

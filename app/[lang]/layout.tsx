@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { ThemeProvider } from "@/contexts/ThemeContext";
-import { AuthProvider } from "@/contexts/AuthContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -101,7 +100,7 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <LanguageProvider initialLanguage={lang as any}>
-            <AuthProvider>{children}</AuthProvider>
+          {children}
           </LanguageProvider>
         </ThemeProvider>
       </body>

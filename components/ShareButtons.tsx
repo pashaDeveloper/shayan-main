@@ -83,7 +83,7 @@ export function ShareButtons({
             className="w-full justify-start hover:bg-blue-50 hover:border-blue-200 hover:text-sky-600"
             onClick={() => openShareWindow(shareLinks.telegram)}
           >
-            <FaTelegramPlane className="w-4 h-4 ml-2 text-sky-600" />
+            <FaTelegramPlane className="w-4 h-4 rtl:ml-2 ltr:mr-2 text-sky-600" />
             تلگرام
           </Button>
 
@@ -93,7 +93,7 @@ export function ShareButtons({
             className="w-full justify-start hover:bg-green-50 hover:border-green-200 hover:text-green-600"
             onClick={() => openShareWindow(shareLinks.whatsapp)}
           >
-            <FaWhatsapp className="w-4 h-4 ml-2 text-green-600" />
+            <FaWhatsapp className="w-4 h-4 rtl:ml-2 ltr:mr-2 text-green-600" />
             واتس‌اپ
           </Button>
 
@@ -103,7 +103,7 @@ export function ShareButtons({
             className="w-full justify-start hover:bg-pink-50 hover:border-pink-200 hover:text-pink-500"
             onClick={() => openShareWindow(shareLinks.instagram)}
           >
-            <FaInstagram className="w-4 h-4 ml-2 text-pink-500" />
+            <FaInstagram className="w-4 h-4 rtl:ml-2 ltr:mr-2 text-pink-500" />
             اینستاگرام
           </Button>
 
@@ -113,7 +113,7 @@ export function ShareButtons({
             className="w-full justify-start hover:bg-blue-50 hover:border-blue-200 hover:text-blue-600"
             onClick={() => openShareWindow(shareLinks.facebook)}
           >
-            <Facebook className="w-4 h-4 ml-2 text-blue-600" />
+            <Facebook className="w-4 h-4 rtl:ml-2 ltr:mr-2 text-blue-600" />
             فیس‌بوک
           </Button>
 
@@ -123,7 +123,7 @@ export function ShareButtons({
             className="w-full justify-start hover:bg-blue-50 hover:border-blue-400 hover:text-blue-500"
             onClick={() => openShareWindow(shareLinks.twitter)}
           >
-            <Twitter className="w-4 h-4 ml-2 text-blue-500" />
+            <Twitter className="w-4 h-4 rtl:ml-2 ltr:mr-2 text-blue-500" />
             توییتر
           </Button>
 
@@ -133,7 +133,7 @@ export function ShareButtons({
             className="w-full justify-start hover:bg-blue-50 hover:border-blue-700 hover:text-blue-700"
             onClick={() => openShareWindow(shareLinks.linkedin)}
           >
-            <Linkedin className="w-4 h-4 ml-2 text-blue-700" />
+            <Linkedin className="w-4 h-4 rtl:ml-2 ltr:mr-2 text-blue-700" />
             لینکدین
           </Button>
 
@@ -145,12 +145,12 @@ export function ShareButtons({
           >
             {copied ? (
               <>
-                <Check className="w-4 h-4 ml-2 text-green-600" />
+                <Check className="w-4 h-4 rtl:ml-2 ltr:mr-2 text-green-600" />
                 کپی شد!
               </>
             ) : (
               <>
-                <Copy className="w-4 h-4 ml-2" />
+                <Copy className="w-4 h-4 rtl:ml-2 ltr:mr-2" />
                 کپی لینک
               </>
             )}

@@ -1,356 +1,149 @@
-'use client';
+"use client"
+import React, { useState } from "react";
+import { CheckCircle } from "lucide-react";
+import servicesData from "@/data/services.json";
+import Main from "@/layouts/Main";
+import Link from "next/link";
 
-import React from 'react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import { ArrowRight, ArrowLeft, CheckCircle, Star } from 'lucide-react';
-import { useLanguage } from '@/contexts/LanguageContext';
+type Lang = "fa" | "en" | "ar" | "tr";
 
 export default function ServicesPage({ params }: { params: { lang: string } }) {
-  const { t, isRTL, language } = useLanguage();
+  const lang = (params.lang as Lang) || "fa";
+  const allServices = servicesData[lang]?.services || [];
 
-  const servicesData = {
-    fa: [
-      {
-        id: 'immigration',
-        title: 'خدمات مهاجرت',
-        description: 'مشاوره کامل مهاجرت به کشورهای مختلف با بهترین شرایط',
-        image: 'https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg?auto=compress&cs=tinysrgb&w=800',
-        features: [
-          'مشاوره رایگان اولیه',
-          'بررسی شرایط مهاجرت',
-          'تهیه مدارک مورد نیاز',
-          'پیگیری تا دریافت ویزا',
-          'خدمات پس از مهاجرت'
-        ],
-        countries: ['ترکیه', 'آلمان', 'کانادا', 'استرالیا', 'سوئد'],
-        price: 'از 500 یورو',
-        rating: 4.9,
-        clients: 1200
-      },
-      {
-        id: 'investment',
-        title: 'سرمایه‌گذاری و اشتغال',
-        description: 'فرصت‌های سرمایه‌گذاری مطمئن در کشورهای مختلف',
-        image: 'https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg?auto=compress&cs=tinysrgb&w=800',
-        features: [
-          'تحلیل بازار سرمایه‌گذاری',
-          'مشاوره حقوقی و مالی',
-          'ثبت شرکت در خارج',
-          'اخذ مجوزهای کسب‌وکار',
-          'پشتیبانی مالی و حسابداری'
-        ],
-        countries: ['ترکیه', 'آلمان', 'امارات', 'قبرس', 'فرانسه'],
-        price: 'از 1000 یورو',
-        rating: 4.8,
-        clients: 800
-      },
-      {
-        id: 'realestate',
-        title: 'خرید و فروش املاک',
-        description: 'خدمات کامل املاک در بهترین مناطق کشورهای مختلف',
-        image: 'https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=800',
-        features: [
-          'بازدید مجازی و حضوری',
-          'مشاوره قیمت و منطقه',
-          'انجام کلیه امور حقوقی',
-          'تسهیلات وام و پرداخت',
-          'مدیریت املاک'
-        ],
-        countries: ['ترکیه', 'آلمان', 'قبرس', 'امارات'],
-        price: 'کمیسیون 2%',
-        rating: 4.7,
-        clients: 950
-      },
-      {
-        id: 'education',
-        title: 'خدمات آموزشی',
-        description: 'راهنمایی کامل برای تحصیل در بهترین دانشگاه‌های جهان',
-        image: 'https://images.pexels.com/photos/159844/pexels-photo-159844.jpeg?auto=compress&cs=tinysrgb&w=800',
-        features: [
-          'انتخاب رشته و دانشگاه',
-          'تهیه مدارک تحصیلی',
-          'آمادگی آزمون‌های زبان',
-          'درخواست بورسیه',
-          'اخذ ویزای تحصیلی'
-        ],
-        countries: ['کانادا', 'آلمان', 'استرالیا', 'ترکیه', 'فرانسه'],
-        price: 'از 300 یورو',
-        rating: 4.9,
-        clients: 1500
-      }
-    ],
-    en: [
-      {
-        id: 'immigration',
-        title: 'Immigration Services',
-        description: 'Complete immigration consultation to different countries with the best conditions',
-        image: 'https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg?auto=compress&cs=tinysrgb&w=800',
-        features: [
-          'Free initial consultation',
-          'Immigration conditions assessment',
-          'Required documents preparation',
-          'Follow-up until visa receipt',
-          'Post-immigration services'
-        ],
-        countries: ['Turkey', 'Germany', 'Canada', 'Australia', 'Sweden'],
-        price: 'From €500',
-        rating: 4.9,
-        clients: 1200
-      },
-      {
-        id: 'investment',
-        title: 'Investment & Employment',
-        description: 'Secure investment opportunities in different countries',
-        image: 'https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg?auto=compress&cs=tinysrgb&w=800',
-        features: [
-          'Investment market analysis',
-          'Legal and financial consultation',
-          'Company registration abroad',
-          'Business license acquisition',
-          'Financial and accounting support'
-        ],
-        countries: ['Turkey', 'Germany', 'UAE', 'Cyprus', 'France'],
-        price: 'From €1000',
-        rating: 4.8,
-        clients: 800
-      },
-      {
-        id: 'realestate',
-        title: 'Real Estate Buy & Sell',
-        description: 'Complete real estate services in the best areas of different countries',
-        image: 'https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=800',
-        features: [
-          'Virtual and in-person viewing',
-          'Price and area consultation',
-          'All legal procedures',
-          'Loan and payment facilities',
-          'Property management'
-        ],
-        countries: ['Turkey', 'Germany', 'Cyprus', 'UAE'],
-        price: '2% Commission',
-        rating: 4.7,
-        clients: 950
-      },
-      {
-        id: 'education',
-        title: 'Educational Services',
-        description: 'Complete guidance for studying at the world\'s best universities',
-        image: 'https://images.pexels.com/photos/159844/pexels-photo-159844.jpeg?auto=compress&cs=tinysrgb&w=800',
-        features: [
-          'Program and university selection',
-          'Academic documents preparation',
-          'Language test preparation',
-          'Scholarship applications',
-          'Student visa acquisition'
-        ],
-        countries: ['Canada', 'Germany', 'Australia', 'Turkey', 'France'],
-        price: 'From €300',
-        rating: 4.9,
-        clients: 1500
-      }
-    ],
-    tr: [
-      {
-        id: 'immigration',
-        title: 'Göç Hizmetleri',
-        description: 'Farklı ülkelere en iyi şartlarla tam göç danışmanlığı',
-        image: 'https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg?auto=compress&cs=tinysrgb&w=800',
-        features: [
-          'Ücretsiz ilk danışmanlık',
-          'Göç şartları değerlendirmesi',
-          'Gerekli belgelerin hazırlanması',
-          'Vize alınana kadar takip',
-          'Göç sonrası hizmetler'
-        ],
-        countries: ['Türkiye', 'Almanya', 'Kanada', 'Avustralya', 'İsveç'],
-        price: '500€\'dan başlayan',
-        rating: 4.9,
-        clients: 1200
-      },
-      {
-        id: 'investment',
-        title: 'Yatırım ve İstihdam',
-        description: 'Farklı ülkelerde güvenli yatırım fırsatları',
-        image: 'https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg?auto=compress&cs=tinysrgb&w=800',
-        features: [
-          'Yatırım piyasası analizi',
-          'Hukuki ve mali danışmanlık',
-          'Yurtdışında şirket kuruluşu',
-          'İş lisansı alımı',
-          'Mali ve muhasebe desteği'
-        ],
-        countries: ['Türkiye', 'Almanya', 'BAE', 'Kıbrıs', 'Fransa'],
-        price: '1000€\'dan başlayan',
-        rating: 4.8,
-        clients: 800
-      }
-    ],
-    ar: [
-      {
-        id: 'immigration',
-        title: 'خدمات الهجرة',
-        description: 'استشارة هجرة كاملة إلى دول مختلفة بأفضل الشروط',
-        image: 'https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg?auto=compress&cs=tinysrgb&w=800',
-        features: [
-          'استشارة أولية مجانية',
-          'تقييم شروط الهجرة',
-          'إعداد الوثائق المطلوبة',
-          'المتابعة حتى الحصول على التأشيرة',
-          'خدمات ما بعد الهجرة'
-        ],
-        countries: ['تركيا', 'ألمانيا', 'كندا', 'أستراليا', 'السويد'],
-        price: 'من 500 يورو',
-        rating: 4.9,
-        clients: 1200
-      },
-      {
-        id: 'investment',
-        title: 'الاستثمار والتوظيف',
-        description: 'فرص استثمارية آمنة في دول مختلفة',
-        image: 'https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg?auto=compress&cs=tinysrgb&w=800',
-        features: [
-          'تحليل سوق الاستثمار',
-          'استشارة قانونية ومالية',
-          'تسجيل الشركات في الخارج',
-          'الحصول على تراخيص الأعمال',
-          'الدعم المالي والمحاسبي'
-        ],
-        countries: ['تركيا', 'ألمانيا', 'الإمارات', 'قبرص', 'فرنسا'],
-        price: 'من 1000 يورو',
-        rating: 4.8,
-        clients: 800
-      }
-    ]
-  };
+  const [searchTerm, setSearchTerm] = useState("");
 
-  const currentServices = servicesData[params.lang as keyof typeof servicesData] || servicesData.fa;
+  // فیلتر سرویس‌ها بر اساس عنوان و ویژگی‌ها
+  const filteredServices = allServices.filter(
+    (service) =>
+      service.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      service.features.some((feature: string) =>
+        feature.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+  );
+
+  const slugify = (text: string) =>
+    text
+      .toString()
+      .toLowerCase()
+      .trim()
+      .replace(/\s+/g, "-")
+      .replace(/[^\w\u0600-\u06FF\-]+/g, "")
+      .replace(/\-\-+/g, "-");
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
-      <Header />
-      
-      <main className="pt-20">
-        {/* Hero Section */}
-        <section className="bg-gradient-to-r from-[#0F4C75] to-[#1e3a8a] py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              {params.lang === 'fa' ? 'خدمات ما' : 
-               params.lang === 'en' ? 'Our Services' :
-               params.lang === 'tr' ? 'Hizmetlerimiz' :
-               'خدماتنا'}
-            </h1>
-            <p className="text-xl text-blue-100 mb-8">
-              {params.lang === 'fa' ? 'ارائه خدمات تخصصی و حرفه‌ای در زمینه‌های مختلف' :
-               params.lang === 'en' ? 'Providing specialized and professional services in various fields' :
-               params.lang === 'tr' ? 'Çeşitli alanlarda uzman ve profesyonel hizmetler sunuyoruz' :
-               'تقديم خدمات متخصصة ومهنية في مجالات مختلفة'}
-            </p>
-          </div>
-        </section>
+    <Main params={{ lang }}>
+      <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
+        <main className="pt-20 flex flex-col gap-y-10">
+          {/* Hero Section */}
+    <section
+  className="relative bg-gradient-to-r from-[#0F4C75] to-[#1e3a8a] py-20 bg-cover bg-center bg-no-repeat"
+  style={{
+    backgroundImage: "url('/assets/service/1.webp')"
+  }}
+>
+  {/* Overlay با شفافیت */}
+  <div className="absolute inset-0 bg-[#5D1A75] "></div>
 
-        {/* Services Grid */}
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              {currentServices.map((service) => (
-                <div
-                  key={service.id}
-                  className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
-                >
-                  {/* Service Image */}
-                  <div className="relative h-64 overflow-hidden">
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <h2 className="text-2xl font-bold text-white mb-2">{service.title}</h2>
-                      <div className="flex items-center gap-4 text-white/80 text-sm">
-                        <div className="flex items-center gap-1">
-                          <Star className="h-4 w-4 text-yellow-400 fill-current" />
-                          <span>{service.rating}</span>
+  <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+      {lang === "fa" ? "خدمات ما" : "Our Services"}
+    </h1>
+    <p className="text-xl text-blue-100 mb-8">
+      {lang === "fa"
+        ? "ارائه خدمات تخصصی و حرفه‌ای در زمینه‌های مختلف"
+        : "Providing specialized and professional services in various fields"}
+    </p>
+  </div>
+</section>
+<section className="flex justify-center items-center" >
+ <input
+                type="text"
+                placeholder={
+                  lang === "fa"
+                    ? "جستجوی سرویس..."
+                    : lang === "en"
+                    ? "Search services..."
+                    : lang === "tr"
+                    ? "Hizmetlerde ara..."
+                    : "ابحث عن الخدمات..."
+                }
+                className="w-full max-w-md mx-auto px-4 py-2 rounded-md text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
+</section>
+          {/* Services Grid */}
+          <section className="py-5">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              {filteredServices.length === 0 ? (
+                <p className="text-center text-gray-500 dark:text-gray-400">
+                  {lang === "fa"
+                    ? "هیچ سرویسی پیدا نشد."
+                    : lang === "en"
+                    ? "No services found."
+                    : lang === "tr"
+                    ? "Hiç hizmet bulunamadı."
+                    : "لم يتم العثور على خدمات."}
+                </p>
+              ) : (
+                <div className="grid grid-cols-1 lg:grid-cols-4 gap-3">
+                  {filteredServices.map((service) => (
+                  <Link
+  key={service.serviceId}
+  href={`/${lang}/services/${service.serviceId}/${slugify(service.title)}`}
+  className="group relative block bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
+>
+                      {/* Service Image */}
+                      <div className="relative h-64 overflow-hidden">
+                        <img
+                          src={service.image}
+                          alt={service.title}
+                          className="w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div className="absolute bottom-4 left-4 right-4">
+                          <h2 className="text-2xl font-bold text-white mb-2">
+                            {service.title}
+                          </h2>
                         </div>
-                        <span>•</span>
-                        <span>{service.clients} {params.lang === 'fa' ? 'مشتری' : params.lang === 'en' ? 'clients' : params.lang === 'tr' ? 'müşteri' : 'عميل'}</span>
                       </div>
-                    </div>
-                  </div>
 
-                  {/* Service Content */}
-                  <div className="p-8">
-                    <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-                      {service.description}
-                    </p>
+                      {/* Service Content */}
+                      <div className="p-6">
+                        <p className="text-lg font-medium text-gray-600 dark:text-gray-300 mb-4">
+                          {service.subtitle}
+                        </p>
 
-                    {/* Features */}
-                    <div className="mb-6">
-                      <h3 className="text-lg font-bold text-[#0F4C75] dark:text-white mb-4">
-                        {params.lang === 'fa' ? 'ویژگی‌ها:' :
-                         params.lang === 'en' ? 'Features:' :
-                         params.lang === 'tr' ? 'Özellikler:' :
-                         'المميزات:'}
-                      </h3>
-                      <ul className="space-y-2">
-                        {service.features.map((feature, index) => (
-                          <li key={index} className="flex items-center gap-3">
-                            <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
-                            <span className="text-gray-700 dark:text-gray-300">{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                        {/* Features */}
+                        <ul className="space-y-2">
+                          {service.features
+                            .slice(0, 4)
+                            .map((feature: string, index: number) => (
+                              <li
+                                key={index}
+                                className="flex items-start gap-2 text-gray-700 dark:text-gray-200"
+                              >
+                                <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                                <span>{feature}</span>
+                              </li>
+                            ))}
 
-                    {/* Countries */}
-                    <div className="mb-6">
-                      <h3 className="text-lg font-bold text-[#0F4C75] dark:text-white mb-4">
-                        {params.lang === 'fa' ? 'کشورهای تحت پوشش:' :
-                         params.lang === 'en' ? 'Covered Countries:' :
-                         params.lang === 'tr' ? 'Kapsanan Ülkeler:' :
-                         'البلدان المشمولة:'}
-                      </h3>
-                      <div className="flex flex-wrap gap-2">
-                        {service.countries.map((country, index) => (
-                          <span
-                            key={index}
-                            className="px-3 py-1 bg-[#0F4C75]/10 dark:bg-[#FFD700]/20 text-[#0F4C75] dark:text-[#FFD700] rounded-full text-sm"
-                          >
-                            {country}
-                          </span>
-                        ))}
+                          {service.features.length > 4 && (
+                            <li className="flex items-start gap-2 text-gray-500 dark:text-gray-400">
+                              <span className="ml-6">...</span>
+                            </li>
+                          )}
+                        </ul>
                       </div>
-                    </div>
-
-                    {/* Price and CTA */}
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <span className="text-2xl font-bold text-[#0F4C75] dark:text-[#FFD700]">
-                          {service.price}
-                        </span>
-                      </div>
-                      <button className="bg-gradient-to-r from-[#0F4C75] to-[#FFD700] text-white px-6 py-3 rounded-lg font-semibold hover:from-[#FFD700] hover:to-[#0F4C75] transition-all duration-300 flex items-center gap-2">
-                        {params.lang === 'fa' ? 'درخواست مشاوره' :
-                         params.lang === 'en' ? 'Request Consultation' :
-                         params.lang === 'tr' ? 'Danışmanlık Talep Et' :
-                         'طلب استشارة'}
-                        {isRTL ? (
-                          <ArrowLeft className="h-4 w-4" />
-                        ) : (
-                          <ArrowRight className="h-4 w-4" />
-                        )}
-                      </button>
-                    </div>
-                  </div>
+                    </Link>
+                  ))}
                 </div>
-              ))}
+              )}
             </div>
-          </div>
-        </section>
-      </main>
-
-      <Footer lang={language}  />
-    </div>
+          </section>
+        </main>
+      </div>
+    </Main>
   );
 }

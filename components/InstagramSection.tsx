@@ -38,18 +38,7 @@ const InstagramSection = ({ lang }: Props) => {
               {t.sectionTitle}
             </h2>
           </div>
-          {/* <p className="text-xl text-gray-600 dark:text-gray-300 mb-4">
-            {t.sectionSubtitle}
-          </p>
-          <div className="text-lg font-semibold text-pink-600 mb-2">
-            {t.accountName}
-          </div>
-          <div className="text-pink-500 mb-4">
-            {t.accountHandle}
-          </div>
-          <p className="text-gray-600 dark:text-gray-300">
-            {t.accountDescription}
-          </p> */}
+
           <div className="w-24 h-1 bg-gradient-to-r from-pink-500 to-purple-500 mx-auto rounded-full mt-6"></div>
         </div>
 

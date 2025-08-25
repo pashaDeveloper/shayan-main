@@ -94,7 +94,7 @@ function Relatives({ lang }: Props) {
   ];
 
   return (
-    <div className="sticky top-48 space-y-4 md:py-[430px] pb-20 px-4">
+    <div className="sticky top-48 space-y-4 md:py-10 pb-20 px-4">
       <div className="text-center ">
         <h3 className="text-xl font-bold text-[#0F4C75] mb-4">
           {t.service.servicesTitle}

@@ -6,9 +6,10 @@ interface LoadImageProps extends Omit<ImageProps, "src" | "alt"> {
   alt: string;
   height: number;
   width: number;
+  className:string;
 }
 
-const LoadImage: React.FC<LoadImageProps> = ({ src, alt, height, width, ...rest }) => {
+const LoadImage: React.FC<LoadImageProps> = ({ src, alt, height,className, width, ...rest }) => {
   function toBase64(str: string) {
     if (typeof window === "undefined") {
       return Buffer.from(str).toString("base64"); 
@@ -28,6 +29,7 @@ const LoadImage: React.FC<LoadImageProps> = ({ src, alt, height, width, ...rest 
       alt={alt}
       height={height}
       width={width}
+      className={className}
       placeholder="blur"
       blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(20, 10))}`}
       {...rest}

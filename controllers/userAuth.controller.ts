@@ -21,7 +21,6 @@ interface AuthRequest extends NextApiRequest {
 export async function signInGoogleUser(body: OAuthUserBody) {
   try {
     let user = await User.findOne({ email: body.email });
-
     if (!user) {
       user = await User.create({
         name: body.name,
@@ -33,13 +32,11 @@ export async function signInGoogleUser(body: OAuthUserBody) {
         status: "active",
       });
     }
-
     const accessToken = generateAccessToken({
-      _id: user._id.toString(),
+      _id: user._id,
       name: user.name,
       email: user.email,
     });
-console.log(accessToken)
     return {
       success: true,
       message: "ورود با گوگل با موفقیت انجام شد",
@@ -47,6 +44,7 @@ console.log(accessToken)
       user,
     };
   } catch (error: any) {
+    console.log(error.message)
     return { success: false, message: error.message };
   }
 }

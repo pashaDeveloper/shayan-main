@@ -93,11 +93,11 @@ export default function ServiceDetailPage({ params }: { params: Params }) {
                 {t.service.about}
               </h2>
               <div
-                className="text-gray-600 dark:text-gray-300 leading-relaxed text-lg mb-8"
+                className="text-gray-600 dark:text-gray-300  text-lg mb-8"
                 dangerouslySetInnerHTML={{ __html: service.description }}
               />
               <div
-                className="text-gray-600 dark:text-gray-300 leading-relaxed text-lg mb-8"
+                className="text-gray-600 dark:text-gray-300 text-lg mb-8"
                 dangerouslySetInnerHTML={{ __html: service.whyUs ?? "" }}
               />
             

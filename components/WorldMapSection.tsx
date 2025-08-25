@@ -27,7 +27,7 @@ const WorldMapSection = ({ lang }: Props) => {
   return (
     <section
       id="representatives"
-      className="py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-300"
+      className="pt-20  transition-colors duration-300"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
@@ -45,11 +45,13 @@ const WorldMapSection = ({ lang }: Props) => {
         <div className="relative rounded-3xl overflow-hidden mb-12">
           {/* World Map SVG */}
           <div
-            className="relative h-[600px]"
-            style={{
-              backgroundImage: "url(/svg/bg.svg)",
-              backgroundPosition: "20% 80%"
-            }}
+            className="relative w-screen h-112 md:h-160"
+           style={{
+    backgroundImage: "url(/img/word.png)",
+    backgroundPosition: "center", 
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover" 
+  }}
           >
             {/* Representative Markers */}
             {representatives.map((rep, index) => (
@@ -64,13 +66,11 @@ const WorldMapSection = ({ lang }: Props) => {
                     <MapPin className="h-6 w-6 text-green-500" />
                   </div>
                   {/* Ripple Effect */}
-                  <div className="absolute inset-0 w-8 h-8 bg-green-500 rounded-full animate-ping opacity-30"></div>
+                  <div className="absolute inset-0 w-6 h-6 bg-green-500 rounded-full animate-ping opacity-30"></div>
                 </div>
 
-                {/* Info Card */}
-                <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                {/* <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
                   <div className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl p-4 min-w-[250px] border border-gray-200 dark:border-gray-600">
-                    {/* Country Header */}
                     <div className="flex items-center gap-3 mb-3">
                       <Image
   src={rep.flag}
@@ -90,7 +90,6 @@ const WorldMapSection = ({ lang }: Props) => {
                       </div>
                     </div>
 
-                    {/* Services */}
                     <div className="mb-3">
                       <p className="text-xs font-semibold text-gray-500 dark:text-gray-400 mb-1">
                         {repT.servicesLabel}
@@ -107,26 +106,11 @@ const WorldMapSection = ({ lang }: Props) => {
                       </div>
                     </div>
 
-                    {/* Stats */}
-                    <div className="flex items-center justify-between text-sm">
-                      <div className="flex items-center gap-1">
-                        <Users className="h-3 w-3 text-[#FFD700]" />
-                        <span className="text-gray-600 dark:text-gray-300">
-                          {rep.clients} {repT.clientsLabel}
-                        </span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <Phone className="h-3 w-3 text-[#0F4C75] dark:text-[#FFD700]" />
-                        <span className="text-gray-600 dark:text-gray-300 text-xs">
-                          {rep.contact}
-                        </span>
-                      </div>
-                    </div>
+                   
 
-                    {/* Arrow */}
                     <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-white dark:border-t-gray-800"></div>
                   </div>
-                </div>
+                </div> */}
               </div>
             ))}
           </div>

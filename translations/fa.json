@@ -20,7 +20,13 @@
     "mainMenu": "منوی اصلی",
     "support": "پشتیبانی آنلاین",
     "signin":"ورود",
-    "register":"ثبت نام"
+    "register":"ثبت نام",
+    "menubar": "نوار منو",
+    "theme": "تغییر تم",
+    "changeLan": "تغییر زبان",
+    "nofication": "اعلانات",
+    "dashboard": "داشبورد",
+    "profile": "پروفایل"
   },
   "hero": {
     "startNow": "شروع کن",

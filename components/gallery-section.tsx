@@ -106,7 +106,6 @@ const GallerySection = ({ lang }: Props) => {
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            {t.sectionTitle}
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             {t.sectionSubtitle}
