@@ -650,6 +650,12 @@ const Header = () => {
                       ? `/${language}/news`
                       : item.key === "services"
                       ? `/${language}/services`
+                      : item.key === "gallery"
+                      ? `/${language}/gallery`
+                      : item.key === "contact"
+                      ? `/${language}/contact`
+                      : item.key === "about"
+                      ? `/${language}/about`
                       : item.href
                   }
                   className="flex items-center gap-4 px-4 py-3 text-gray-700 dark:text-gray-300 hover:text-[#0F4C75] dark:hover:text-[#FFD700] focus:bg-gray-50 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-xl transition-all duration-300 group"
