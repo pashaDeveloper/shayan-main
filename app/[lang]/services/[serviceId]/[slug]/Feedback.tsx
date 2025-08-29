@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import {
   Star,
   Send,
@@ -23,99 +23,62 @@ import {
   useGetReviewsQuery
 } from "@/services/review/reviewApi";
 
-type Comment = {
-  id: string;
-  author: string;
-  comment: string;
-  rating: number;
-  date: string;
-  likes: number;
-  isLiked?: boolean;
-  replies: Comment[];
-  isAdmin?: boolean;
-};
+
 
 type params = {
-  serviceId: string;
+  targetId: any;
+  targetModel:string;
   lang: string;
 };
 type FormValues = {
   rating: number;
   review: string;
-  serviceId: String;
+  targetId: any;
   userId: String;
-
+  targetModel: String;
 };
-export default function Feedback({ serviceId, lang }: params) {
+export default function Feedback({ targetId,targetModel, lang }: params) {
   const { user } = useAuth();
-  const { register, handleSubmit, control } = useForm<FormValues>();
-  const [comments, setComments] = useState<Comment[]>([]);
+  const { register, handleSubmit, control, reset } = useForm<FormValues>();
   const [replyTo, setReplyTo] = useState<string | null>(null);
   const [replyText, setReplyText] = useState("");
   const pathname = usePathname();
   const [addReview, { isLoading, data, error }] = useAddReviewMutation();
-
+  const { data: reviewsData, isLoading: reviewsLoading } = useGetReviewsQuery({
+    targetId:targetId,
+    targetModel: targetModel
+  });
+const comments = useMemo(() => reviewsData?.reviews || [], [reviewsData]);
   const onSubmit: SubmitHandler<FormValues> = async (formData) => {
-    console.log("📌 formData:", formData);
-
     addReview(formData).unwrap();
   };
-
   useEffect(() => {
-    const toastId = "add-revie";
-console.log(data)
+    const toastAddId = "add-review";
     if (isLoading) {
-      toast.loading("در حال ورود...", { id: toastId });
+      toast.loading("در حال  ثبت نظر...", { id: toastAddId });
     }
+
     if (data && data.success) {
-      toast.success(data.message, { id: toastId });
+      toast.success(data.message, { id: toastAddId });
+      reset();
     }
     if (data && !data.success) {
-      toast.error(data.message, { id: toastId });
+      toast.error(data.message, { id: toastAddId });
     }
 
     if (error) {
       const err = error as any;
       toast.error(err?.data?.message || err?.data?.error || "خطا در ثبت نظر", {
-        id: toastId
+        id: toastAddId
       });
     }
   }, [isLoading, data, error]);
 
-  const handleLike = (commentId: string) => {
-    setComments(
-      comments.map((c) =>
-        c.id === commentId
-          ? {
-              ...c,
-              isLiked: !c.isLiked,
-              likes: c.isLiked ? c.likes - 1 : c.likes + 1
-            }
-          : c
-      )
-    );
-  };
-
-  const handleReply = async (parentId: string) => {
-    const res = await fetch("/api/comments/reply", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ serviceId, parentId, comment: replyText })
-    });
-    const savedReply = await res.json();
-    setComments(
-      comments.map((c) =>
-        c.id === parentId ? { ...c, replies: [...c.replies, savedReply] } : c
-      )
-    );
-    setReplyText("");
-    setReplyTo(null);
-  };
 
   return (
     <div className="bg-white rounded-xl shadow-lg p-8">
       <h2 className="text-2xl font-bold mb-6 flex items-center">
-        نظرات و امتیازها ({comments.length})
+        نظرات و امتیازها ({comments?.length})
       </h2>
 
       {/* فرم ثبت کامنت */}
@@ -131,14 +94,14 @@ console.log(data)
             {...register("userId", { required: true })}
           />
           <input
-            value={serviceId}
+            value={targetId}
             className="hidden"
-            {...register("serviceId", { required: true })}
+            {...register("targetId", { required: true })}
           />
           <input
-            value={serviceId}
+            value={targetModel}
             className="hidden"
-            {...register("serviceId", { required: true })}
+            {...register("targetModel", { required: true })}
           />
           <label className="block text-sm font-medium text-gray-700 mb-2">
             امتیاز شما:
@@ -201,9 +164,9 @@ console.log(data)
 
       {/* نمایش کامنت‌ها */}
       <div className="space-y-6">
-        {comments.map((comment) => (
+        {comments?.map((comment) => (
           <div
-            key={comment.id}
+            key={comment._id}
             className="border-b border-gray-200 pb-6 last:border-b-0"
           >
             <div className="flex items-start justify-between mb-3">
@@ -213,7 +176,7 @@ console.log(data)
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-800">
-                    {comment.author}
+                    {comment.creator.name}
                   </h4>
                   <div className="flex items-center">
                     {[...Array(5)].map((_, i) => (
@@ -227,7 +190,7 @@ console.log(data)
                       />
                     ))}
                     <span className="mr-2 text-sm text-gray-500">
-                      {new Date(comment.date).toLocaleDateString("fa-IR")}
+                      {new Date(comment?.createdAt).toLocaleDateString("fa-IR")}
                     </span>
                   </div>
                 </div>
@@ -238,16 +201,15 @@ console.log(data)
 
             <div className="flex items-center gap-4 mr-13">
               <button
-                onClick={() => handleLike(comment.id)}
                 className={`flex items-center gap-1 text-sm ${
-                  comment.isLiked ? "text-blue-600" : "text-gray-500"
+                  comment.likes.length>0 ? "text-blue-600" : "text-gray-500"
                 } hover:text-blue-600 transition-colors`}
               >
                 <ThumbsUp className="w-4 h-4" /> {comment.likes}
               </button>
               <button
                 onClick={() =>
-                  setReplyTo(replyTo === comment.id ? null : comment.id)
+                  setReplyTo(replyTo === comment._id ? null : comment._id)
                 }
                 className="flex items-center gap-1 text-sm text-gray-500 hover:text-blue-600 transition-colors"
               >
@@ -256,7 +218,7 @@ console.log(data)
             </div>
 
             {/* فرم پاسخ */}
-            {replyTo === comment.id && user && (
+            {replyTo === comment._id && user && (
               <div className="mt-4 mr-13">
                 <textarea
                   value={replyText}
@@ -266,10 +228,7 @@ console.log(data)
                   rows={3}
                 />
                 <div className="flex gap-2">
-                  <button
-                    onClick={() => handleReply(comment.id)}
-                    className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm"
-                  >
+                  <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm">
                     ثبت پاسخ
                   </button>
                   <button
@@ -283,9 +242,9 @@ console.log(data)
             )}
 
             {/* نمایش پاسخ‌ها */}
-            {comment.replies.length > 0 && (
+            {/* {comment?.replies?.length > 0 && (
               <div className="mt-4 mr-13 space-y-4">
-                {comment.replies.map((reply) => (
+                {comment.replies.map((reply:any) => (
                   <div key={reply.id} className="bg-gray-50 p-4 rounded-lg">
                     <div className="flex items-center mb-2">
                       <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center ml-2">
@@ -315,7 +274,7 @@ console.log(data)
                   </div>
                 ))}
               </div>
-            )}
+            )} */}
           </div>
         ))}
       </div>

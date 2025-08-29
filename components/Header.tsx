@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import {
   X,
   Search,
@@ -30,6 +30,7 @@ import Dashboard from "./icons/Dashboard";
 import ThemeToggle from "./ThemeToggle";
 import Image from "next/image";
 import { BeautifulTooltip } from "./ui/beautiful-tooltip";
+import { useSearchServicesQuery } from "@/services/service/servicesApi";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
@@ -38,30 +39,53 @@ const Header = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const { language, setLanguage, t } = useLanguage();
   const router = useRouter();
   const pathname = usePathname();
   const { user, isLoggedIn, status } = useAuth();
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      setIsScrolled(currentScrollY > 20);
-      setIsScrollingUp(currentScrollY < lastScrollY || currentScrollY < 20); // اگر به بالا اسکرول شود یا در بالای صفحه باشد
-      setLastScrollY(currentScrollY);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
-
   const languages = [
     { code: "fa", name: "فارسی", flag: "🇮🇷" },
     { code: "en", name: "English", flag: "🇺🇸" },
     { code: "tr", name: "Türkçe", flag: "🇹🇷" },
     { code: "ar", name: "العربية", flag: "🇸🇦" }
   ];
-
   const currentLang = languages.find((lang) => lang.code === language);
+  const slugify = (text: string) =>
+    text
+      .toString()
+      .toLowerCase()
+      .trim()
+      .replace(/\s+/g, "-")
+      .replace(/[^\w\u0600-\u06FF\-]+/g, "")
+      .replace(/\-\-+/g, "-");
+
+  const {
+    data: searchData,
+    isLoading: searchLoading,
+    error
+  } = useSearchServicesQuery(
+    {
+      q: searchQuery,
+      language: currentLang?.code
+    },
+    { skip: !searchQuery.trim() }
+  );
+  const searchList = useMemo(() => searchData?.services || [], [searchData]);
+  console.log("searchList", searchList);
+  console.log("error", error);
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      setIsScrolled(currentScrollY > 20);
+      setIsScrollingUp(currentScrollY < lastScrollY || currentScrollY < 20);
+      setLastScrollY(currentScrollY);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
+
   const menuItems = [
     { key: "home", href: "#home", icon: <Home className="w-5 h-5" /> },
     { key: "services", href: "#services", icon: <Zap className="w-5 h-5" /> },
@@ -255,39 +279,38 @@ const Header = () => {
               </div>
 
               {/* Desktop Navigation */}
-             <nav className="hidden lg:flex items-center">
-  <div className="flex ltr:flex-row-reverse items-center bg-white/10 dark:bg-gray-800/50 backdrop-blur-sm gap-x-1 rounded-full px-2 py-2 border border-gray-200/40 dark:border-gray-700/20">
-    {menuItems.map((item) => (
-      <Link
-        key={item.key}
-        href={
-          item.key === "home"
-            ? `/${language}`
-            : item.key === "news"
-            ? `/${language}/news`
-            : item.key === "services"
-            ? `/${language}/services`
-            : item.key === "certificates"
-            ? `/${language}/certificates`
-            : item.key === "gallery"
-            ? `/${language}/gallery`
-            : item.href
-        }
-        className="group relative px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 
+              <nav className="hidden lg:flex items-center">
+                <div className="flex ltr:flex-row-reverse items-center bg-white/10 dark:bg-gray-800/50 backdrop-blur-sm gap-x-1 rounded-full px-2 py-2 border border-gray-200/40 dark:border-gray-700/20">
+                  {menuItems.map((item) => (
+                    <Link
+                      key={item.key}
+                      href={
+                        item.key === "home"
+                          ? `/${language}`
+                          : item.key === "news"
+                          ? `/${language}/news`
+                          : item.key === "services"
+                          ? `/${language}/services`
+                          : item.key === "certificates"
+                          ? `/${language}/certificates`
+                          : item.key === "gallery"
+                          ? `/${language}/gallery`
+                          : item.href
+                      }
+                      className="group relative px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 
                    hover:text-[#0F4C75] dark:hover:text-[#FFD700] 
                    transition-all duration-300 rounded-full
                    hover:bg-gray-100 dark:hover:bg-gray-700/50
                    focus:bg-gray-100 dark:focus:bg-gray-700"
-      >
-        <span className="flex items-center gap-2">
-          <span className="text-base">{item.icon}</span>
-          {t(`header.${item.key}`)}
-        </span>
-      </Link>
-    ))}
-  </div>
-</nav>
-
+                    >
+                      <span className="flex items-center gap-2">
+                        <span className="text-base">{item.icon}</span>
+                        {t(`header.${item.key}`)}
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              </nav>
 
               {/* Right Side Actions */}
               <div className="flex rtl:flex-row-reverse items-center gap-3">
@@ -315,22 +338,33 @@ const Header = () => {
                         <input
                           type="text"
                           placeholder={t("header.search")}
+                          value={searchQuery}
+                          onChange={(e) => setSearchQuery(e.target.value)}
                           className="w-full pl-10 pr-4 py-3 bg-gray-50 dark:bg-gray-700 outline-none rounded-xl border-0 focus:ring-2 focus:ring-bg-gray-100 focus:bg-white dark:focus:bg-gray-600 transition-all duration-300"
                           autoFocus
                         />
                       </div>
                       <div className="mt-4 space-y-2">
-                        <div className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                          {t("header.popularSearches")}
-                        </div>
-                        {terms.map((term, index) => (
-                          <button
-                            key={index}
-                            className="block w-full text-left px-3 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors"
-                          >
-                            {term}
-                          </button>
-                        ))}
+                        {searchLoading && (
+                          <div className="text-sm text-gray-500">
+                            Loading...
+                          </div>
+                        )}
+                        {searchList.length > 0 && (
+                          <div className="mt-4">
+                            {searchList.map((service: any) => (
+                              <Link
+                                key={service.serviceId}
+                                href={`/${language}/services/${
+                                  service.serviceId
+                                }/${slugify(service.title)}`}
+                                className="block w-full text-left px-3 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors"
+                              >
+                                {service.title}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
                       </div>
                     </div>
                   )}

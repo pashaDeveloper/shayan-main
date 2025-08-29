@@ -22,5 +22,4 @@ export const BaseSchema = new Schema<IBaseSchema>(
       default: null,
     },
   },
-  { _id: false }
 );

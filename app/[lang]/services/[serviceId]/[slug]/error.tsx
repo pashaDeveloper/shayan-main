@@ -27,7 +27,7 @@ export default function Error({
 
   return (
     <>
-      <div className="min-h-screen flex flex-col items-center justify-center text-center bg-red-50 dark:bg-red-900 text-red-800 dark:text-red-200 p-8">
+      <div className="min-h-screen col-span-12 flex flex-col items-center justify-center text-center ext-red-200 p-8">
         <h1 className="text-3xl font-bold mb-4">
           {t.service?.notFound || "Service not found"}
         </h1>

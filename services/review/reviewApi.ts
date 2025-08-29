@@ -1,26 +1,48 @@
 import { shigroupApi } from "../2shigroup";
 
 export interface ReviewBody {
-  serviceId: string;
-  comment: string;
+  targetId: string;
+  targetModel: any;
+  review: string;
   rating: number;
 }
 
 export interface ReplyBody {
-  serviceId: string;
+  targetId: string;
+  targetModel: string;
   parentId: string;
-  comment: string;
+  review: string;
 }
-export interface AuthResponse {
-  accessToken: string;
-  message: string;
-  success: boolean;
 
+interface Review {
+  _id: string;
+  reviewId: number;
+  targetModel: string;
+  target: string;
+  creator: {
+    _id: string;
+    name: string;
+    avatar: {
+      url: string;
+      public_id: string;
+      originalName: string;
+    };
+  };
+  parentId?: string | null;
+  comment: string;
+  rating: number;
+  status: "pending" | "approved" | "rejected";
+  isDeleted: boolean;
+  likes: string[];
+  createdAt: string;
+  updatedAt: string;
+  replies?: Review[]; // برای پاسخ‌ها
 }
+
+
 export const reviewApi = shigroupApi.injectEndpoints({
   endpoints: (builder) => ({
-    // Add Review
-    addReview: builder.mutation<AuthResponse, any>({
+    addReview: builder.mutation<{ success: boolean; message: string }, ReviewBody>({
       query: (body) => ({
         url: "/review/add",
         method: "POST",
@@ -29,8 +51,7 @@ export const reviewApi = shigroupApi.injectEndpoints({
       invalidatesTags: ["Review"]
     }),
 
-    // Reply Review
-    replyReview: builder.mutation<any, ReplyBody>({
+    replyReview: builder.mutation<{ success: boolean; message: string }, ReplyBody>({
       query: (body) => ({
         url: "/review/reply",
         method: "POST",
@@ -39,8 +60,7 @@ export const reviewApi = shigroupApi.injectEndpoints({
       invalidatesTags: ["Review"]
     }),
 
-    // Like Review
-    likeReview: builder.mutation<any, { reviewId: string }>({
+    likeReview: builder.mutation<{ success: boolean; message: string }, { reviewId: string }>({
       query: ({ reviewId }) => ({
         url: `/review/like/${reviewId}`,
         method: "PATCH"
@@ -48,16 +68,15 @@ export const reviewApi = shigroupApi.injectEndpoints({
       invalidatesTags: ["Review"]
     }),
 
-    // Get Reviews
-    getReviews: builder.query<any[], { serviceId: string }>({
-      query: ({ serviceId }) => ({
-        url: `/review/${serviceId}`,
+    getReviews: builder.query<{ success: boolean; message: string; reviews: Review[] }, { targetId: string; targetModel: string }>({
+      query: ({ targetId, targetModel }) => ({
+        url: `/review/get-all/${targetId}?targetModel=${targetModel}`,
         method: "GET"
       }),
       providesTags: ["Review"]
-    }),
+    })
   }),
-  overrideExisting: false,
+  overrideExisting: false
 });
 
 export const {

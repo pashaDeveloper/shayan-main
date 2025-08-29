@@ -7,7 +7,6 @@ import upload from "@/middleware/upload.middleware";
 export async function POST(req: NextRequest) {
   try {
    const body = await req.json(); 
-   console.log(body)
     const result = await signupAdmin({ body } as any);
 
     return NextResponse.json(result, {

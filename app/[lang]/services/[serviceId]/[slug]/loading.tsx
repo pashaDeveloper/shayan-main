@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function Loading() {
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
+    <div className="min-h-screen col-span-12 bg-white dark:bg-gray-900 transition-colors duration-300">
       {/* Header Skeleton */}
       <div className="h-20 bg-gray-100 dark:bg-gray-800 animate-pulse"></div>
       

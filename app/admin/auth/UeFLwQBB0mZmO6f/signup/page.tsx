@@ -12,7 +12,6 @@ import { RootState } from "@/app/store";
 const Signup = () => {
 
   const admin = useSelector((state: RootState) => state.admin);
-  console.log("sidebar",admin)
   return (
     <section className="w-screen relative h-screen overflow-hidden flex justify-center items-center p-4 ">
  

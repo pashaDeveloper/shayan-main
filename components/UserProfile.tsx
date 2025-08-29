@@ -13,7 +13,6 @@ interface UserProfileProps {
 // ✅ اینو بعداً می‌تونی به API وصل کنی
 async function updateProfile(data: { name: string; email: string; phone: string }) {
   try {
-    console.log("Updating profile...", data);
     await new Promise(res => setTimeout(res, 1500)); // شبیه‌سازی API call
     return true;
   } catch (err) {

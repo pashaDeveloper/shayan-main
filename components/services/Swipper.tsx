@@ -10,7 +10,8 @@ import "swiper/css/pagination";
 import Link from "next/link";
 
 interface Service {
-  id: string;
+  _id: any;
+  serviceId: any;
   title: string;
   image: string;
   color?: string;
@@ -32,7 +33,7 @@ const Swipper: React.FC<SwipperProps> = ({ services }) => {
       .replace(/[^\w\u0600-\u06FF\-]+/g, "")
       .replace(/\-\-+/g, "-");
 
-const isLoading = services === undefined;
+  const isLoading = services === undefined;
 
   return (
     <Swiper
@@ -44,11 +45,11 @@ const isLoading = services === undefined;
       breakpoints={{
         640: { slidesPerView: 2 },
         1024: { slidesPerView: 3 },
-        1280: { slidesPerView: 4 },
+        1280: { slidesPerView: 4 }
       }}
       className="!my-5 !pb-16 !mb-8 md:!py-10 !h-fit"
     >
-      {isLoading
+      {isLoading || services.length === 0
         ? Array.from({ length: 4 }).map((_, index) => (
             <SwiperSlide key={index}>
               <div className="animate-pulse bg-white dark:bg-gray-800 rounded overflow-hidden shadow-md">
@@ -60,9 +61,11 @@ const isLoading = services === undefined;
             </SwiperSlide>
           ))
         : services.map((service) => (
-            <SwiperSlide key={service.id}>
+            <SwiperSlide key={service._id}>
               <Link
-                href={`/${language}/services/${service.id}/${slugify(service.title)}`}
+                href={`/${language}/services/${service.serviceId}/${slugify(
+                  service.title
+                )}`}
                 className="group relative block bg-white dark:bg-gray-800 rounded overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
               >
                 <div className="relative h-48 overflow-hidden">

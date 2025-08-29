@@ -6,6 +6,7 @@ import connectDB from "@/libs/db";
 connectDB();
 
 export interface IUser extends Document, IBaseSchema {
+  googleId: string;
   name: string;
   email: string;
   avatar: {
@@ -27,6 +28,7 @@ export interface IUser extends Document, IBaseSchema {
 }
 
 const userSchema = new Schema<IUser>({
+  googleId: { type: String,  maxLength: 100 },
   name: { type: String, required: true, maxLength: 100 },
   email: { type: String, required: true, unique: true },
   password: { type: String },

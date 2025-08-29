@@ -7,9 +7,7 @@ import AboutSection from "@/components/AboutSection";
 import InstagramSection from "@/components/InstagramSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import WorldMapSection from "@/components/WorldMapSection";
-import NewsSection from "@/components/NewsSection";
 import ContactSection from "@/components/ContactSection";
-import GallerySection from "@/components/gallery-section";
 import Main from "@/layouts/Main";
 export default function Home({ params }: { params: { lang: string } }) {
   return (

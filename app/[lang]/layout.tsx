@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { ThemeProvider } from "@/contexts/ThemeContext";
+import { Toaster } from "react-hot-toast";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -100,6 +101,8 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <LanguageProvider initialLanguage={lang as any}>
+                  <Toaster />
+
           {children}
           </LanguageProvider>
         </ThemeProvider>

@@ -1,7 +1,5 @@
 'use client';
 import { useParams } from 'next/navigation';
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import fa from "@/translations/fa.json";
 import en from "@/translations/en.json";
 import ar from "@/translations/ar.json";
@@ -17,14 +15,12 @@ export default function NotFound() {
 
   return (
     <>
-      <Header />
-      <section className="relative py-20 bg-gradient-to-r from-[#0F4C75] to-[#1e3a8a] overflow-hidden">
+      <section  className="relative inset-0  top-0 h-96 w-screen  bg-gradient-to-r from-[#0F4C75] to-[#1e3a8a] overflow-hidden">
         <div className="absolute inset-0 bg-black/20" />
         <h1 className="mt-28 justify-center text-white flex text-7xl text-center w-full">
           {t.service?.notFound || "Service not found"}
         </h1>
       </section>
-      <Footer lang={currentLang} />
     </>
   );
 }

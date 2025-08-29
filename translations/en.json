@@ -29,107 +29,89 @@
     "profile": "Profile"
   },
 
+
   "hero": {
     "startNow": "Start Now",
     "freeConsultation": "Free Consultation",
     "stats": {
-      "customers": "Successful Clients",
+      "customers": "Successful Customers",
       "successRate": "Success Rate",
       "support": "Support"
     },
     "slide1": {
-      "title": "Easy Immigration with Shayesteh & Shayan Group",
-      "subtitle": "Professional Immigration Services",
-      "description": "We offer immigration consultation, residency, permits, and full case tracking.",
-      "features": ["Free Consultation", "Full Follow-up", "Success Guarantee"]
+      "title": "Easy Migration with Shaisteh and Shayan Group",
+      "subtitle": "Professional Migration Services",
+      "description": "We provide services including migration consultation, residency, permit acquisition, and full case follow-up.",
+      "features": ["Free Consultation", "Full Follow-Up", "Success Guarantee"]
     },
     "slide2": {
       "title": "Secure Investment Worldwide",
       "subtitle": "Golden Investment Opportunities",
-      "description": "Offering exclusive investment and employment opportunities in top countries.",
-      "features": ["Secure Investment", "High Returns", "Expert Advice"]
+      "description": "We offer exclusive opportunities for investment and employment in the best countries worldwide.",
+      "features": ["Secure Investment", "High Returns", "Expert Consultation"]
     },
     "slide3": {
-      "title": "Worry-Free Travel & Tourism",
-      "subtitle": "Travel & Leisure Agency",
-      "description": "Travel anywhere in the world quickly with excellent services.",
-      "features": [
-        "Luxury Tours",
-        "Affordable Prices",
-        "Comprehensive Services"
-      ]
-    },
-    "slide4": {
-      "title": "Travel & Leisure Agency",
-      "subtitle": "Shayesteh & Shayan with You Even on Travel",
-      "description": "Travel anywhere in the world quickly with excellent services.",
+      "title": "Travel and Tourism Agency",
+      "subtitle": "Shaisteh and Shayan with You Even on Travel",
+      "description": "Travel to any part of the world in the shortest time and receive excellent services.",
       "features": ["Travel Support", "Precise Planning", "Unique Experience"]
     },
+    "slide4": {
+      "title": "Commerce and Online Store",
+      "subtitle": "Exceptional Trade with Shaisteh and Shayan",
+      "description": "Get the best options for buying, selling, and supplying high-quality goods in online markets.",
+      "features": ["Fast Delivery", "High Variety", "Competitive Prices"]
+    },
     "slide5": {
-      "title": "Commerce & Online Store",
-      "subtitle": "Unmatched Trade with Shayesteh & Shayan",
-      "description": "Get the best options for buying, selling, and sourcing quality goods online.",
-      "features": ["Fast Delivery", "Wide Variety", "Competitive Pricing"]
+      "title": "Real Estate Buying, Selling, and Renting",
+      "subtitle": "Shaisteh and Shayan with You in Real Estate",
+      "description": "With our professional consultation and appraisal services, the best options are yours.",
+      "features": ["Legal Consultation", "Accurate Appraisal", "Support Until Contract Signing"]
     },
     "slide6": {
-      "title": "Real Estate Buying, Selling, & Renting",
-      "subtitle": "Shayesteh & Shayan with You in Real Estate",
-      "description": "With our expert consultation and assessments, get the best real estate options.",
-      "features": [
-        "Legal Advice",
-        "Accurate Valuation",
-        "Support Until Contract"
-      ]
-    },
-    "slide7": {
-      "title": "Vehicles Buying, Selling, & Renting",
-      "subtitle": "Shayesteh & Shayan in Auto Trade",
-      "description": "Find the best options for buying, selling, or renting vehicles.",
+      "title": "Vehicle Buying, Selling, and Renting",
+      "subtitle": "Shaisteh and Shayan with You in Vehicle Transactions",
+      "description": "Get the best options for buying, selling, and renting the vehicles you want.",
       "features": ["Vehicle Variety", "Technical Inspection", "Fair Pricing"]
     },
+    "slide7": {
+      "title": "Shaisteh and Shayan Diverse Services",
+      "subtitle": "Shaisteh and Shayan with You in Various Services",
+      "description": "Professional and experienced team in various service areas",
+      "features": ["Modern Infrastructure", "Technical Inspection", "Satisfaction Guarantee", "Full Support"]
+    },
     "slide8": {
-      "title": "Surveying Services",
-      "subtitle": "Shayesteh & Shayan in Analysis & Surveying",
-      "description": "Best project options for surveying and design analysis.",
-      "features": [
-        "High Accuracy",
-        "Modern Equipment",
-        "Professional Reporting"
-      ]
+      "title": "Surveying",
+      "subtitle": "Shaisteh and Shayan with You in Surveying and Planning",
+      "description": "Get the best options for executing surveying projects for analysis and design.",
+      "features": ["High Accuracy", "Modern Equipment", "Professional Reporting"]
     },
     "slide9": {
-      "title": "Construction & Contracting",
-      "subtitle": "Shayesteh & Shayan with You in Construction",
-      "description": "Get the best contracting services for your construction projects.",
-      "features": [
-        "Project Management",
-        "Quality Assurance",
-        "Precise Scheduling"
-      ]
+      "title": "Construction and Contracting",
+      "subtitle": "Shaisteh and Shayan with You in Construction",
+      "description": "Get the best contracting services for construction projects.",
+      "features": ["Project Management", "Quality Assurance", "Precise Scheduling"]
     },
     "slide10": {
       "title": "Agencies",
-      "subtitle": "Shayesteh & Shayan’s Official Agencies Info",
-      "description": "Get updated and accurate info from experienced representatives.",
-      "features": ["Wide Access", "Official Agents", "Fast Response"]
+      "subtitle": "Shaisteh and Shayan Agency Information",
+      "description": "Get accurate and up-to-date information to meet your needs from skilled agents.",
+      "features": ["Wide Access", "Official Agents", "Quick Response"]
     },
     "slide11": {
       "title": "Advertising",
-      "subtitle": "Shayesteh & Shayan Meets Your Marketing Needs",
+      "subtitle": "Shaisteh and Shayan Meeting Your Advertising Needs",
       "description": "Get the best options for effective advertising and marketing strategies.",
-      "features": ["Targeted Strategy", "Media Ads", "Quick Results"]
+      "features": ["Targeted Strategy", "Media Advertising", "Fast Results"]
     },
     "slide12": {
       "title": "Education",
-      "subtitle": "Shayesteh & Shayan Meets Your Learning Needs",
-      "description": "Get the best courses and learning programs available.",
-      "features": [
-        "Professional Instructors",
-        "Online Access",
-        "Accredited Certificates"
-      ]
+      "subtitle": "Shaisteh and Shayan Meeting Your Educational Needs",
+      "description": "Get the best educational courses and learning programs.",
+      "features": ["Professional Instructors", "Online Access", "Certified Diplomas"]
     }
-  },
+  }
+,
   "heroTitle": "Easy Immigration with Shaisteh va Shayan Group",
   "heroSubtitle": "Immigration",
   "heroDescription": "We are at your service with services including immigration consulting, residence permits, licensing and more.",

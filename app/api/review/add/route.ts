@@ -1,6 +1,5 @@
-// app/api/user/me/route.ts
 import { NextRequest, NextResponse } from "next/server";
-import { verify } from "@/middleware/verifyUser.middleware";
+import { verifyAuth } from "@/middleware/verifyUser.middleware";
 import { addReview } from "@/controllers/review.controller";
 
 // Define response types for better type safety
@@ -15,8 +14,7 @@ export async function POST(
   req: NextRequest
 ): Promise<NextResponse<ApiResponse>> {
   try {
-    console.log(req)
-    const user = await verify(req);
+    const user = await verifyAuth(req);
     if (!user) {
       return NextResponse.json(
         { success: false, message: "احراز هویت ناموفق", user: null },
@@ -24,7 +22,6 @@ export async function POST(
       );
     }
     const body = await req.json();
-    console.log(body);
     const result = await addReview(body);
 
     if (!result.success) {

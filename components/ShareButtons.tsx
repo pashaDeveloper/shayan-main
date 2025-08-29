@@ -69,7 +69,7 @@ export function ShareButtons({
   if (!currentUrl) return null;
 
   return (
-    <Card className="border-0 bg-card sticky top-24">
+    <Card className="border-0 bg-card shadow-md sticky top-24">
       <CardContent className="p-6">
         <div className="flex items-center gap-2 mb-4">
           <Share2 className="w-5 h-5 text-primary" />

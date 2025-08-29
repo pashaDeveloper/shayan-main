@@ -10,92 +10,39 @@ const getTranslations = (lang: string) => {
   return translations[lang as keyof typeof translations] || en;
 };
 type Props = {
-  lang: string; 
+  lang: string;
+};
+type Service = {
+  _id: any;
+  serviceId: any;
+  title: string;
+  image: string;
+  color: string;
 };
 
-export default function ServicesSection({ lang }: Props) {
+async function fetchServices(lang: string): Promise<Service[]> {
+  try {
+    const baseUrl = process.env.API_URL;
+    const response = await fetch(`${baseUrl}/service/get-all/?lang=${lang}`, {
+      cache: "no-store"
+    });
+    if (!response.ok) {
+      throw new Error("Failed to fetch services");
+    }
+    const data = await response.json();
+    return data.services || [];
+  } catch (error) {
+    console.error("Error fetching services:", error);
+    return [];
+  }
+}
+
+export default async function ServicesSection({ lang }: Props) {
   const t = getTranslations(lang);
 
-const services = [
-    {
-      id: "1",
-      title: t.service.immigration,
-      image: "/assets/service/1.webp",
-      color: "from-blue-500 to-blue-700"
-    },
-    {
-      id: "2",
-      title: t.service.investment,
-      image: "/assets/service/2.webp",
-      color: "from-green-500 to-green-700"
-    },
-    {
-      id: "3",
-      title: t.service.travel,
-      image: "/assets/service/3.webp",
-      color: "from-purple-500 to-purple-700"
-    },
-    {
-      id: "4",
-      title: t.service.commerce,
-      image: "/assets/service/4.webp",
-      color: "from-orange-500 to-orange-700"
-    },
-    {
-      id: "5",
-      title: t.service.realEstate,
-      image: "/assets/service/5.webp",
-      color: "from-red-500 to-red-700"
-    },
-    {
-      id: "6",
-      title: t.service.vehicles,
-      image: "/assets/service/6.webp",
-      color: "from-indigo-500 to-indigo-700"
-    },
-    {
-      id: "7",
-      title: t.service.generalServices,
-      image: "/assets/service/7.webp",
-      color: "from-teal-500 to-teal-700"
-    },
-    {
-      id: "8",
-      title: t.service.surveying,
-      image: "/assets/service/8.webp",
-      color: "from-cyan-500 to-cyan-700"
-    },
-    {
-      id: "9",
-      title: t.service.construction,
-      image: "/assets/service/9.webp",
-      color: "from-yellow-500 to-yellow-700"
-    },
-    {
-      id: "10",
-      title: t.service.representatives,
-      image: "/assets/service/10.webp",
-      color: "from-pink-500 to-pink-700"
-    },
-    {
-      id: "11",
-      title: t.service.advertising,
-      image: "/assets/service/11.webp",
-      color: "from-lime-500 to-lime-700"
-    },
-    {
-      id: "12",
-      title: t.service.education,
-      image: "/assets/service/12.webp",
-      color: "from-emerald-500 to-emerald-700"
-    }
-  ];
-
+  const services = await fetchServices(lang);
   return (
-    <section
-      id="services"
-      className="  transition-colors duration-300"
-    >
+    <section id="services" className="  transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center ">
           <h2 className="text-4xl font-bold text-[#0F4C75] mb-4">
@@ -108,5 +55,4 @@ const services = [
       </div>
     </section>
   );
-};
-
+}

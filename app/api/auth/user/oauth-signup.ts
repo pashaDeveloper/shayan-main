@@ -2,7 +2,6 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { signInGoogleUser } from "@/controllers/userAuth.controller";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-          console.log("awdawdawd")
 
     if (req.method === "POST") {
     try {

@@ -28,6 +28,7 @@ const options: NextAuthOptions = {
     async signIn({ user }) {
       try {
         const result = await signInGoogleUser({
+          id:user.id,
           name: user.name!,
           email: user.email!,
           avatar: user.image!,
@@ -35,7 +36,6 @@ const options: NextAuthOptions = {
           providerId: user.id
         });
 
-        console.log("Google signup result:", result);
         return result.success; 
       } catch (err) {
         console.error("OAuth signup error:", err);

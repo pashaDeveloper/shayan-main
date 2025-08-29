@@ -4,192 +4,206 @@ import React, { useState, useEffect } from "react";
 import { ArrowRight, ArrowLeft, Play, CheckCircle } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Image from "next/image";
+import Link from "next/link";
 
-const HeroSection = () => {
-  const { t, isRTL } = useLanguage();
+const HeroSection: React.FC = () => {
+  const { t, isRTL, language } = useLanguage();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [isLoaded, setIsLoaded] = useState(false);
+  const slugify = (text: string) =>
+    text
+      .toString()
+      .toLowerCase()
+      .trim()
+      .replace(/\s+/g, "-")
+      .replace(/[^\w\u0600-\u06FF\-]+/g, "")
+      .replace(/\-\-+/g, "-");
 
-  const slides = [
-    {
-      id: 1,
-      title: t("hero.slide1.title"),
-      subtitle: t("hero.slide1.subtitle"),
-      description: t("hero.slide1.description"),
-      features: [
-        t("hero.slide1.features.0"),
-        t("hero.slide1.features.1"),
-        t("hero.slide1.features.2")
-      ],
-      backgroundImage: "./img/hero/slide1/migration.webp",
-      animatedImage: "./img/hero/slide1/model1.png",
-      secondImage: "./img/hero/slide1/airplane.webp",
-      gradient: "from-blue-900/80 to-indigo-900/80"
-    },
-    {
-      id: 2,
-      title: t("hero.slide2.title"),
-      subtitle: t("hero.slide2.subtitle"),
-      description: t("hero.slide2.description"),
-      features: [
-        t("hero.slide2.features.0"),
-        t("hero.slide2.features.1"),
-        t("hero.slide2.features.2")
-      ],
-      backgroundImage: "./img/hero/slide2/Investment.webp",
-      animatedImage: "./img/hero/slide2/model2.webp",
-      secondImage: "./img/hero/slide2/world.webp",
+const slides = [
+  {
+    id: 1,
+    title: t('hero.slide1.title'),
+    subtitle: t('hero.slide1.subtitle'),
+    description: t('hero.slide1.description'),
+    features: [
+      t('hero.slide1.features.0'),
+      t('hero.slide1.features.1'),
+      t('hero.slide1.features.2'),
+    ],
+    backgroundImage: './img/hero/slide1/migration.webp',
+    animatedImage: './img/hero/slide1/model1.png',
+    secondImage: './img/hero/slide1/airplane.webp',
+    gradient: 'from-blue-900/80 to-indigo-900/80',
+  },
+  {
+    id: 2,
+    title: t('hero.slide2.title'),
+    subtitle: t('hero.slide2.subtitle'),
+    description: t('hero.slide2.description'),
+    features: [
+      t('hero.slide2.features.0'),
+      t('hero.slide2.features.1'),
+      t('hero.slide2.features.2'),
+    ],
+    backgroundImage: './img/hero/slide2/Investment.webp',
+    animatedImage: './img/hero/slide2/model2.webp',
+    secondImage: './img/hero/slide2/world.webp',
+    gradient: 'from-green-900/80 to-emerald-900/80',
+  },
+ {
+    id: 3,
+    title: t('hero.slide3.title'),
+    subtitle: t('hero.slide3.subtitle'),
+    description: t('hero.slide3.description'),
+    features: [
+      t('hero.slide2.features.0'),
+      t('hero.slide2.features.1'),
+      t('hero.slide2.features.2'),
+    ],
+    backgroundImage: './img/hero/slide3/tourism.webp',
+    animatedImage: './img/hero/slide3/model3.webp',
+    secondImage: './img/hero/slide3/pizza-tower.webp',
+    gradient: 'from-blue-900/80 to-yellow-900/80',
+  },
 
-      gradient: "from-green-900/80 to-emerald-900/80"
-    },
-
-    {
-      id: 4,
-      title: t("hero.slide4.title"),
-      subtitle: t("hero.slide4.subtitle"),
-      description: t("hero.slide4.description"),
-      features: [
-        t("hero.slide4.features.0"),
-        t("hero.slide4.features.1"),
-        t("hero.slide4.features.2")
-      ],
-      backgroundImage: "./img/hero/slide3/tourism.webp",
-      animatedImage: "./img/hero/slide3/model3.webp",
-      secondImage: "./img/hero/slide3/pizza-tower.webp",
-
-      gradient: "from-yellow-900/80 to-orange-900/80"
-    },
-    {
-      id: 5,
-      title: t("hero.slide5.title"),
-      subtitle: t("hero.slide5.subtitle"),
-      description: t("hero.slide5.description"),
-      features: [
-        t("hero.slide5.features.0"),
-        t("hero.slide5.features.1"),
-        t("hero.slide5.features.2")
-      ],
-      backgroundImage: "./img/hero/slide4/commerce.webp",
-      animatedImage: "./img/hero/slide4/model4.webp",
-      secondImage: "./img/hero/slide4/basket.webp",
-
-      gradient: "from-teal-900/80 to-cyan-900/80"
-    },
-    {
-      id: 6,
-      title: t("hero.slide6.title"),
-      subtitle: t("hero.slide6.subtitle"),
-      description: t("hero.slide6.description"),
-      features: [
-        t("hero.slide6.features.0"),
-        t("hero.slide6.features.1"),
-        t("hero.slide6.features.2")
-      ],
-      backgroundImage: "./img/hero/slide5/sell.webp",
-      animatedImage: "./img/hero/slide5/model5.webp",
-      secondImage: "./img/hero/slide5/real-state2.webp",
-
-      gradient: "from-gray-900/80 to-zinc-900/80"
-    },
-    {
-      id: 7,
-      title: t("hero.slide7.title"),
-      subtitle: t("hero.slide7.subtitle"),
-      description: t("hero.slide7.description"),
-      features: [
-        t("hero.slide7.features.0"),
-        t("hero.slide7.features.1"),
-        t("hero.slide7.features.2")
-      ],
-      backgroundImage: "./img/hero/slide6/carbuy.webp",
-
-      animatedImage: "./img/hero/slide6/model6.webp",
-      secondImage: "./img/hero/slide6/car.webp",
-
-      gradient: "from-red-900/80 to-rose-900/80"
-    },
-    {
-      id: 8,
-      title: t("hero.slide8.title"),
-      subtitle: t("hero.slide8.subtitle"),
-      description: t("hero.slide8.description"),
-      features: [
-        t("hero.slide8.features.0"),
-        t("hero.slide8.features.1"),
-        t("hero.slide8.features.2")
-      ],
-      backgroundImage: "./img/hero/slide7/measuring.webp",
-      animatedImage: "./img/hero/slide7/model7.webp",
-      secondImage: "./img/hero/slide7/camera.webp",
-
-      gradient: "from-lime-900/80 to-green-900/80"
-    },
-    {
-      id: 9,
-      title: t("hero.slide9.title"),
-      subtitle: t("hero.slide9.subtitle"),
-      description: t("hero.slide9.description"),
-      features: [
-        t("hero.slide9.features.0"),
-        t("hero.slide9.features.1"),
-        t("hero.slide9.features.2")
-      ],
-      backgroundImage: "./img/hero/slide8/construct.webp",
-      animatedImage: "./img/hero/slide8/model8.webp",
-      secondImage: "./img/hero/slide8/building.webp",
-
-      gradient: "from-indigo-900/80 to-fuchsia-900/80"
-    },
-    {
-      id: 10,
-      title: t("hero.slide10.title"),
-      subtitle: t("hero.slide10.subtitle"),
-      description: t("hero.slide10.description"),
-      features: [
-        t("hero.slide10.features.0"),
-        t("hero.slide10.features.1"),
-        t("hero.slide10.features.2")
-      ],
-      backgroundImage: "./img/hero/slide9/agency.webp",
-      animatedImage: "./img/hero/slide9/model9.webp",
-      secondImage: "./img/hero/slide9/notebook.webp",
-
-      gradient: "from-sky-900/80 to-blue-900/80"
-    },
-    {
-      id: 11,
-      title: t("hero.slide11.title"),
-      subtitle: t("hero.slide11.subtitle"),
-      description: t("hero.slide11.description"),
-      features: [
-        t("hero.slide11.features.0"),
-        t("hero.slide11.features.1"),
-        t("hero.slide11.features.2")
-      ],
-      backgroundImage: "./img/hero/slide10/advertising.webp",
-      animatedImage: "./img/hero/slide10/model10.webp",
-      secondImage: "./img/hero/slide10/sheypoor.webp",
-
-      gradient: "from-stone-900/80 to-neutral-900/80"
-    },
-    {
-      id: 12,
-      title: t("hero.slide12.title"),
-      subtitle: t("hero.slide12.subtitle"),
-      description: t("hero.slide12.description"),
-      features: [
-        t("hero.slide12.features.0"),
-        t("hero.slide12.features.1"),
-        t("hero.slide12.features.2")
-      ],
-      backgroundImage: "./img/hero/slide11/educate.webp",
-      animatedImage: "./img/hero/slide11/model11.webp",
-      secondImage: "./img/hero/slide11/education.webp",
-
-      gradient: "from-orange-900/80 to-red-900/80"
-    }
-  ];
+  {
+    id: 4,
+    title: t('hero.slide4.title'), // Fixed from slide5
+    subtitle: t('hero.slide4.subtitle'),
+    description: t('hero.slide4.description'),
+    features: [
+      t('hero.slide4.features.0'),
+      t('hero.slide4.features.1'),
+      t('hero.slide4.features.2'),
+    ],
+    backgroundImage: './img/hero/slide4/commerce.webp',
+    animatedImage: './img/hero/slide4/model4.webp',
+    secondImage: './img/hero/slide4/basket.webp',
+    gradient: 'from-teal-900/80 to-cyan-900/80',
+  },
+  {
+    id: 5,
+    title: t('hero.slide6.title'), // Fixed from slide6
+    subtitle: t('hero.slide6.subtitle'),
+    description: t('hero.slide5.description'),
+    features: [
+      t('hero.slide5.features.0'),
+      t('hero.slide5.features.1'),
+      t('hero.slide5.features.2'),
+    ],
+    backgroundImage: './img/hero/slide5/sell.webp',
+    animatedImage: './img/hero/slide5/model5.webp',
+    secondImage: './img/hero/slide5/real-state2.webp',
+    gradient: 'from-gray-900/80 to-zinc-900/80',
+  },
+  {
+    id: 6,
+    title: t('hero.slide6.title'), // Fixed from slide7
+    subtitle: t('hero.slide6.subtitle'),
+    description: t('hero.slide6.description'),
+    features: [
+      t('hero.slide6.features.0'),
+      t('hero.slide6.features.1'),
+      t('hero.slide6.features.2'),
+    ],
+    backgroundImage: './img/hero/slide6/carbuy.webp',
+    animatedImage: './img/hero/slide6/model6.webp',
+    secondImage: './img/hero/slide6/car.webp',
+    gradient: 'from-red-900/80 to-rose-900/80',
+  },
+  {
+    id: 7,
+    title: t('hero.slide7.title'), // Fixed duplicate id and keys
+    subtitle: t('hero.slide7.subtitle'),
+    description: t('hero.slide7.description'),
+    features: [
+      t('hero.slide7.features.0'),
+      t('hero.slide7.features.1'),
+      t('hero.slide7.features.2'),
+      t('hero.slide7.features.3'), // Added to match 4 features
+    ],
+    backgroundImage: './img/hero/slide7/general.webp',
+    animatedImage: './img/hero/slide7/model7.webp',
+    secondImage: './img/hero/slide7/services.webp',
+    gradient: 'from-purple-900/80 to-violet-900/80', // Adjusted for uniqueness
+  },
+  {
+    id: 8,
+    title: t('hero.slide8.title'),
+    subtitle: t('hero.slide8.subtitle'),
+    description: t('hero.slide8.description'),
+    features: [
+      t('hero.slide8.features.0'),
+      t('hero.slide8.features.1'),
+      t('hero.slide8.features.2'),
+    ],
+    backgroundImage: './img/hero/slide8/measuring.webp',
+    animatedImage: './img/hero/slide8/model8.webp',
+    secondImage: './img/hero/slide8/camera.webp',
+    gradient: 'from-lime-900/80 to-green-900/80',
+  },
+  {
+    id: 9,
+    title: t('hero.slide9.title'),
+    subtitle: t('hero.slide9.subtitle'),
+    description: t('hero.slide9.description'),
+    features: [
+      t('hero.slide9.features.0'),
+      t('hero.slide9.features.1'),
+      t('hero.slide9.features.2'),
+    ],
+    backgroundImage: './img/hero/slide9/construct.webp',
+    animatedImage: './img/hero/slide9/model9.webp',
+    secondImage: './img/hero/slide9/building.webp',
+    gradient: 'from-indigo-900/80 to-fuchsia-900/80',
+  },
+  {
+    id: 10,
+    title: t('hero.slide10.title'),
+    subtitle: t('hero.slide10.subtitle'),
+    description: t('hero.slide10.description'),
+    features: [
+      t('hero.slide10.features.0'),
+      t('hero.slide10.features.1'),
+      t('hero.slide10.features.2'),
+    ],
+    backgroundImage: './img/hero/slide10/agency.webp',
+    animatedImage: './img/hero/slide10/model10.webp',
+    secondImage: './img/hero/slide10/notebook.webp',
+    gradient: 'from-sky-900/80 to-blue-900/80',
+  },
+  {
+    id: 11,
+    title: t('hero.slide11.title'),
+    subtitle: t('hero.slide11.subtitle'),
+    description: t('hero.slide11.description'),
+    features: [
+      t('hero.slide11.features.0'),
+      t('hero.slide11.features.1'),
+      t('hero.slide11.features.2'),
+    ],
+    backgroundImage: './img/hero/slide11/advertising.webp',
+    animatedImage: './img/hero/slide11/model11.webp',
+    secondImage: './img/hero/slide11/sheypoor.webp',
+    gradient: 'from-stone-900/80 to-neutral-900/80',
+  },
+  {
+    id: 12,
+    title: t('hero.slide12.title'),
+    subtitle: t('hero.slide12.subtitle'),
+    description: t('hero.slide12.description'),
+    features: [
+      t('hero.slide12.features.0'),
+      t('hero.slide12.features.1'),
+      t('hero.slide12.features.2'),
+    ],
+    backgroundImage: './img/hero/slide12/educate.webp',
+    animatedImage: './img/hero/slide12/model12.webp',
+    secondImage: './img/hero/slide12/education.webp',
+    gradient: 'from-orange-900/80 to-red-900/80',
+  },
+];
 
   // Auto-play functionality
   useEffect(() => {
@@ -261,7 +275,7 @@ const HeroSection = () => {
 
                   {/* Main Title */}
                   <h1
-                    className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight animate-fade-in-up"
+                    className="text-4xl whitespace-nowrap md:text-3xl text-now lg:text-5xl font-bold mb-6 leading-tight animate-fade-in-up"
                     style={{ animationDelay: "0.2s" }}
                   >
                     {currentSlideData.title}
@@ -298,14 +312,19 @@ const HeroSection = () => {
                     className="flex flex-col sm:flex-row gap-4 animate-fade-in-up"
                     style={{ animationDelay: "0.8s" }}
                   >
-                   
-                    <button className="group bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-[#0F4C75] transition-all duration-300 flex items-center justify-center gap-2">
- {t("hero.startNow")}                      {isRTL ? (
+                    <Link
+                      href={`/${language}/services/${
+                        currentSlideData.id
+                      }/${slugify(currentSlideData.title)}`}
+                      className="group bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-[#0F4C75] transition-all duration-300 flex items-center justify-center gap-2"
+                    >
+                      {t("hero.startNow")}{" "}
+                      {isRTL ? (
                         <ArrowLeft className="h-5 w-5 group-hover:-translate-x-1 transition-transform duration-300" />
                       ) : (
                         <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
                       )}
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -378,8 +397,7 @@ const HeroSection = () => {
               {slides.map((_, index) => (
                 <button
                   key={index}
-                    aria-label={`رفتن به اسلاید شماره ${index + 1}`}
-
+                  aria-label={`رفتن به اسلاید شماره ${index + 1}`}
                   onClick={() => goToSlide(index)}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
                     index === currentSlide
@@ -411,8 +429,6 @@ const HeroSection = () => {
             }}
           />
         </div>
-
-       
       </div>
 
       <style jsx>{`

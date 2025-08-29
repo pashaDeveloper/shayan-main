@@ -24,8 +24,9 @@
     "dashboard": "Kontrol Paneli",
     "profile": "Profil"
   },
+
   "hero": {
-    "startNow": "Hemen Başla",
+    "startNow": "Şimdi Başla",
     "freeConsultation": "Ücretsiz Danışmanlık",
     "stats": {
       "customers": "Başarılı Müşteriler",
@@ -33,88 +34,76 @@
       "support": "Destek"
     },
     "slide1": {
-      "title": "Şayeste ve Şayan Grubu ile Kolay Göç",
-      "subtitle": "Profesyonel Göç Hizmetleri",
-      "description": "Göç danışmanlığı, oturma izni, ruhsat alımı ve dosya takibi dahil hizmetlerimizle yanınızdayız.",
+      "title": "Şayeste ve Şayan ile Kolay Göçmenlik",
+      "subtitle": "Profesyonel Göçmenlik Hizmetleri",
+      "description": "Göçmenlik danışmanlığı, oturum izni, izin alımı ve dosya takibi dahil hizmetlerimizle yanınızdayız.",
       "features": ["Ücretsiz Danışmanlık", "Tam Takip", "Başarı Garantisi"]
     },
     "slide2": {
-      "title": "Dünyanın Her Yerinde Güvenli Yatırım",
+      "title": "Dünya Çapında Güvenli Yatırım",
       "subtitle": "Altın Yatırım Fırsatları",
-      "description": "Dünyanın en iyi ülkelerinde özel yatırım ve istihdam fırsatları sunuyoruz.",
+      "description": "Dünyanın en iyi ülkelerinde yatırım ve istihdam için özel fırsatlar sunuyoruz.",
       "features": ["Güvenli Yatırım", "Yüksek Getiri", "Uzman Danışmanlık"]
     },
     "slide3": {
-      "title": "Sorunsuz Seyahat ve Turizm",
-      "subtitle": "Seyahat ve Eğlence Acentesi",
-      "description": "Dünyanın her yerine en hızlı şekilde seyahat edin ve kaliteli hizmet alın.",
-      "features": ["Lüks Turlar", "Uygun Fiyat", "Eksiksiz Hizmet"]
+      "title": "Seyahat ve Turizm Acentesi",
+      "subtitle": "Şayeste ve Şayan Seyahatte Yanınızda",
+      "description": "Dünyanın her noktasına en hızlı şekilde seyahat edin ve mükemmel hizmetler alın.",
+      "features": ["Seyahat Desteği", "Hassas Planlama", "Farklı Bir Deneyim"]
     },
     "slide4": {
-      "title": "Seyahat ve Eğlence Acentesi",
-      "subtitle": "Seyahatlerinizde Şayeste ve Şayan Yanınızda",
-      "description": "Dünyanın her yerine en hızlı şekilde seyahat edin ve kaliteli hizmet alın.",
-      "features": ["Seyahat Desteği", "Detaylı Planlama", "Farklı Bir Deneyim"]
+      "title": "Ticaret ve Online Mağaza",
+      "subtitle": "Şayeste ve Şayan ile Benzersiz Ticaret",
+      "description": "Online pazarlarda yüksek kaliteli ürünlerin alımı, satımı ve tedariki için en iyi seçenekleri alın.",
+      "features": ["Hızlı Teslimat", "Yüksek Çeşitlilik", "Rekabetçi Fiyatlar"]
     },
     "slide5": {
-      "title": "Ticaret ve Online Mağaza",
-      "subtitle": "Şayeste ve Şayan ile Eşsiz Ticaret",
-      "description": "Online pazarlarda kaliteli ürünlerin alım, satım ve temininde en iyi seçenekleri sunuyoruz.",
-      "features": ["Hızlı Teslimat", "Geniş Çeşitlilik", "Rekabetçi Fiyatlar"]
+      "title": "Emlak Alım, Satım ve Kiralama",
+      "subtitle": "Şayeste ve Şayan Emlakta Yanınızda",
+      "description": "Profesyonel danışmanlık ve ekspertiz hizmetlerimizle en iyi seçenekler sizin için.",
+      "features": ["Hukuki Danışmanlık", "Hassas Değerlendirme", "Sözleşme Sürecine Destek"]
     },
     "slide6": {
-      "title": "Gayrimenkul Alım, Satım ve Kiralama",
-      "subtitle": "Gayrimenkulde Yanınızda Şayeste ve Şayan",
-      "description": "Profesyonel danışmanlık ve ekspertiz hizmetlerimizle en iyi seçenekler sizin için.",
-      "features": [
-        "Hukuki Danışmanlık",
-        "Doğru Değerlendirme",
-        "Sözleşmeye Kadar Destek"
-      ]
+      "title": "Araç Alım, Satım ve Kiralama",
+      "subtitle": "Şayeste ve Şayan Araç Alım Satımında Yanınızda",
+      "description": "İstediğiniz araçların alım, satım ve kiralama için en iyi seçenekleri alın.",
+      "features": ["Araç Çeşitliliği", "Teknik İnceleme", "Adil Fiyatlandırma"]
     },
     "slide7": {
-      "title": "Araç Alım, Satım ve Kiralama",
-      "subtitle": "Araç Alım Satımında Yanınızda Şayeste ve Şayan",
-      "description": "İstediğiniz araçların en iyi alım, satım ve kiralama seçeneklerini sunuyoruz.",
-      "features": ["Araç Çeşitliliği", "Teknik Kontrol", "Adil Fiyatlandırma"]
+      "title": "Şayeste ve Şayan Çeşitli Hizmetler",
+      "subtitle": "Çeşitli Hizmetlerde Şayeste ve Şayan Yanınızda",
+      "description": "Farklı alanlarda profesyonel ve deneyimli ekip",
+      "features": ["Modern Altyapı", "Teknik İnceleme", "Memnuniyet Garantisi", "Tam Destek"]
     },
     "slide8": {
-      "title": "Haritalama",
-      "subtitle": "Şayeste ve Şayan ile Haritalama ve İnceleme",
-      "description": "Analiz ve tasarım için en iyi haritalama proje çözümlerini sunuyoruz.",
-      "features": [
-        "Yüksek Hassasiyet",
-        "Modern Ekipmanlar",
-        "Profesyonel Raporlama"
-      ]
+      "title": "Haritacılık",
+      "subtitle": "Şayeste ve Şayan Haritacılık ve Planlamada Yanınızda",
+      "description": "Analiz ve tasarım için haritacılık projelerinin uygulanmasında en iyi seçenekleri alın.",
+      "features": ["Yüksek Hassasiyet", "Modern Ekipman", "Profesyonel Raporlama"]
     },
     "slide9": {
       "title": "İnşaat ve Müteahhitlik",
-      "subtitle": "İnşaatta Yanınızda Şayeste ve Şayan",
-      "description": "İnşaat projelerinde en iyi müteahhitlik hizmetlerini sunuyoruz.",
-      "features": ["Proje Yönetimi", "Kalite Garantisi", "Doğru Zamanlama"]
+      "subtitle": "Şayeste ve Şayan İnşaatta Yanınızda",
+      "description": "İnşaat projeleri için en iyi müteahhitlik hizmetlerini alın.",
+      "features": ["Proje Yönetimi", "Kalite Garantisi", "Hassas Zamanlama"]
     },
     "slide10": {
       "title": "Temsilcilikler",
-      "subtitle": "Şayeste ve Şayan Temsilci Bilgileri",
-      "description": "Uzman temsilcilerimizden güncel ve doğru bilgileri edinin.",
+      "subtitle": "Şayeste ve Şayan Temsilcilik Bilgileri",
+      "description": "İhtiyaçlarınızı karşılamak için güncel ve doğru bilgiler alın.",
       "features": ["Geniş Erişim", "Resmi Temsilciler", "Hızlı Yanıt"]
     },
     "slide11": {
-      "title": "Reklam",
-      "subtitle": "Şayeste ve Şayan ile Etkili Reklam",
-      "description": "Etkili reklam çözümleri ve pazarlama stratejileri sunuyoruz.",
-      "features": ["Hedef Odaklı Strateji", "Medya Reklamları", "Hızlı Sonuç"]
+      "title": "Reklamcılık",
+      "subtitle": "Şayeste ve Şayan Reklam İhtiyaçlarınızı Karşılıyor",
+      "description": "Etkili reklam ve pazarlama stratejileri için en iyi seçenekleri alın.",
+      "features": ["Hedef Odaklı Strateji", "Medyada Reklam", "Hızlı Sonuçlar"]
     },
     "slide12": {
       "title": "Eğitim",
-      "subtitle": "Şayeste ve Şayan ile Eğitim İhtiyaçlarınıza Çözüm",
-      "description": "En iyi eğitim programları ve öğrenim fırsatlarını sunuyoruz.",
-      "features": [
-        "Profesyonel Eğitmenler",
-        "Çevrimiçi Erişim",
-        "Geçerli Sertifikalar"
-      ]
+      "subtitle": "Şayeste ve Şayan Eğitim İhtiyaçlarınızı Karşılıyor",
+      "description": "En iyi eğitim kursları ve öğrenim programlarını alın.",
+      "features": ["Profesyonel Eğitmenler", "Online Erişim", "Geçerli Sertifikalar"]
     }
   },
   "heroTitle": "Şayeste ve Şayan Grubu ile Kolay Göç",

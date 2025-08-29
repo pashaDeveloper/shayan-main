@@ -12,7 +12,7 @@ function Main({
   params: { lang: string };
 }) {
   return (
-    <div>
+    <div className="relative">
       <Header />
 
       <SocialNav />

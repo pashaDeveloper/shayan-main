@@ -18,7 +18,6 @@ const AdminPersist: React.FC<AdminPersistProps> = ({ children }) => {
   const dispatch = useDispatch<AppDispatch>();
  useEffect(() => {
   if (admin?._id) {
-    console.log("admin ready", admin);
     dispatch(addAdmin(admin));
   }
 
