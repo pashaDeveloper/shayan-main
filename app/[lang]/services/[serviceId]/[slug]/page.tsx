@@ -9,7 +9,7 @@ type Params = {
   serviceId: any;
 };
 
-function page({ params }: { params: Params; children: React.ReactNode }) {
+export default function Page({ params }: { params: Params }) {
   return (
     <>
       <main className="col-span-9">
@@ -23,4 +23,3 @@ function page({ params }: { params: Params; children: React.ReactNode }) {
   );
 }
 
-export default page;

@@ -29,7 +29,7 @@ async function fetchServiceById(lang: string, serviceId: string): Promise<Servic
   try {
     const baseUrl = process.env.API_URL;
     const response = await fetch(`${baseUrl}/service/get/${serviceId}?lang=${lang}`, {
-      cache: "no-store"
+  cache: "force-cache",
     });
     if (!response.ok) {
       throw new Error("Failed to fetch service");
