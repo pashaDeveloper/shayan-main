@@ -9,11 +9,14 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import WorldMapSection from "@/components/WorldMapSection";
 import ContactSection from "@/components/ContactSection";
 import Main from "@/layouts/Main";
+import SocialNav from "@/components/SocialNav";
 export default function Home({ params }: { params: { lang: string } }) {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
       <Main params={params}>
         <main>
+          <SocialNav />
+
           <HeroSection />
           <StorySection />
           <ServicesSection lang={params.lang} />

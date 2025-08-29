@@ -71,7 +71,7 @@ const SocialNav = () => {
   ];
 
   return (
-    <nav className="fixed rtl:left-0 ltr:right-0 z-40 top-1/2 -translate-y-1/2 w-[40px] shadow-lg transition-all duration-300 md:w-[60px] rounded-full ">
+    <nav className="fixed  z-40 top-1/2 -translate-y-1/2 w-[40px] shadow-lg transition-all duration-300 md:w-[60px] rounded-full ">
       <ul>
         {socialLinks.map((social, index) => (
           <li

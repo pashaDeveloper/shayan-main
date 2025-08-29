@@ -1,6 +1,5 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import SocialNav from "@/components/SocialNav";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
 import React from "react";
 
@@ -12,10 +11,9 @@ function Main({
   params: { lang: string };
 }) {
   return (
-    <div className="relative">
+    <div className="relative max-w-7xl">
       <Header />
 
-      <SocialNav />
       {children}
       <WhatsAppWidget lang={params.lang} />
       <Footer lang={params.lang} />
