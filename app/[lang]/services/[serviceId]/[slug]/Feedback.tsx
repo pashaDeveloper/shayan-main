@@ -22,12 +22,11 @@ import {
   useLikeReviewMutation,
   useGetReviewsQuery
 } from "@/services/review/reviewApi";
-
-
+import Image from "next/image";
 
 type params = {
   targetId: any;
-  targetModel:string;
+  targetModel: string;
   lang: string;
 };
 type FormValues = {
@@ -37,7 +36,7 @@ type FormValues = {
   userId: String;
   targetModel: String;
 };
-export default function Feedback({ targetId,targetModel, lang }: params) {
+export default function Feedback({ targetId, targetModel, lang }: params) {
   const { user } = useAuth();
   const { register, handleSubmit, control, reset } = useForm<FormValues>();
   const [replyTo, setReplyTo] = useState<string | null>(null);
@@ -45,10 +44,10 @@ export default function Feedback({ targetId,targetModel, lang }: params) {
   const pathname = usePathname();
   const [addReview, { isLoading, data, error }] = useAddReviewMutation();
   const { data: reviewsData, isLoading: reviewsLoading } = useGetReviewsQuery({
-    targetId:targetId,
+    targetId: targetId,
     targetModel: targetModel
   });
-const comments = useMemo(() => reviewsData?.reviews || [], [reviewsData]);
+  const comments = useMemo(() => reviewsData?.reviews || [], [reviewsData]);
   const onSubmit: SubmitHandler<FormValues> = async (formData) => {
     addReview(formData).unwrap();
   };
@@ -73,7 +72,6 @@ const comments = useMemo(() => reviewsData?.reviews || [], [reviewsData]);
       });
     }
   }, [isLoading, data, error]);
-
 
   return (
     <div className="bg-white rounded-xl shadow-lg p-8">
@@ -171,8 +169,14 @@ const comments = useMemo(() => reviewsData?.reviews || [], [reviewsData]);
           >
             <div className="flex items-start justify-between mb-3">
               <div className="flex items-center">
-                <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center ml-3">
-                  <User className="w-5 h-5 text-blue-600" />
+                <div className="w-10 h-10 shadow-md rounded-full flex items-center justify-center ml-3">
+                  <Image
+                    width={150}
+                    height={150}
+                    src={comment?.creator?.avatar.url || "/default-avatar.png"}
+                    alt={comment?.creator?.name || "User"}
+                    className="w-9 h-9 rounded-full shadow-lg"
+                  />{" "}
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-800">
@@ -202,7 +206,7 @@ const comments = useMemo(() => reviewsData?.reviews || [], [reviewsData]);
             <div className="flex items-center gap-4 mr-13">
               <button
                 className={`flex items-center gap-1 text-sm ${
-                  comment.likes.length>0 ? "text-blue-600" : "text-gray-500"
+                  comment.likes.length > 0 ? "text-blue-600" : "text-gray-500"
                 } hover:text-blue-600 transition-colors`}
               >
                 <ThumbsUp className="w-4 h-4" /> {comment.likes}

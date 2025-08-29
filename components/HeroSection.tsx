@@ -121,12 +121,12 @@ const slides = [
       t('hero.slide7.features.0'),
       t('hero.slide7.features.1'),
       t('hero.slide7.features.2'),
-      t('hero.slide7.features.3'), // Added to match 4 features
+      t('hero.slide7.features.3'),
     ],
-    backgroundImage: './img/hero/slide7/general.webp',
-    animatedImage: './img/hero/slide7/model7.webp',
-    secondImage: './img/hero/slide7/services.webp',
-    gradient: 'from-purple-900/80 to-violet-900/80', // Adjusted for uniqueness
+    backgroundImage: './img/hero/slide7/services.jpg',
+    animatedImage: './img/hero/slide7/model7.png',
+    secondImage: './img/hero/slide7/stethoscope.png',
+    gradient: 'from-purple-900/80 to-violet-900/80', 
   },
   {
     id: 8,

@@ -15,7 +15,7 @@ type Service = {
 async function fetchServices(lang: string): Promise<Service[]> {
   try {
     const baseUrl = process.env.API_URL;
-    const response = await fetch(`${baseUrl}/service/get/?lang=${lang}`, {
+    const response = await fetch(`${baseUrl}/service/get-all/?lang=${lang}`, {
       cache: "no-store",
     });
     if (!response.ok) throw new Error("Failed to fetch services");

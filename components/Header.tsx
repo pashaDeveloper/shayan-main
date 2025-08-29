@@ -295,6 +295,10 @@ const Header = () => {
                           ? `/${language}/certificates`
                           : item.key === "gallery"
                           ? `/${language}/gallery`
+                          : item.key === "about"
+                          ? `/${language}/about`
+                          : item.key === "contact"
+                          ? `/${language}/contact`
                           : item.href
                       }
                       className="group relative px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 
