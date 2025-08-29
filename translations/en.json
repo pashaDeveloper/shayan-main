@@ -276,5 +276,45 @@
   "whatsapp": {
     "accountName": "Website Support",
     "chatMessage": "Hello 👋\nI'm happy to help. Feel free to ask any questions."
+  },
+   "auth": {
+    "phoneMin": "Phone number must be at least 10 digits",
+    "phoneInvalid": "Invalid phone number format",
+    "emailInvalid": "Please enter a valid email",
+    "emailRequired": "Email is required",
+    "redirectGoogle": "Redirecting to Google...",
+    "failedGoogle": "Google sign-in failed",
+    "otpSentPhone": "OTP code has been sent to your phone",
+    "otpSentEmail": "OTP code has been sent to your email",
+    "otpFailed": "Failed to send OTP",
+    "verified": "Successfully verified! Redirecting...",
+    "verifyOTP": "Verify OTP",
+    "sentCodeTo": "4-digit code sent to",
+    "otpResent": "OTP code resent",
+    "welcomeBack": "Welcome back",
+    "signInContinue": "Sign in to continue",
+    "signInGoogle": "Sign in with Google",
+    "orContinueWith": "Or continue with",
+    "mobile": "Mobile",
+    "email": "Email",
+    "phoneNumber": "Phone number",
+    "emailAddress": "Email address",
+    "sending": "Sending...",
+    "continue": "Continue",
+    "agreeTerms": "By continuing, you agree to",
+    "termsOfService": "Terms of Service",
+    "and": "and",
+    "privacyPolicy": "Privacy Policy"
+  },
+   "share": {
+    "title": "Share",
+    "telegram": "Telegram",
+    "whatsapp": "WhatsApp",
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "twitter": "Twitter",
+    "linkedin": "LinkedIn",
+    "copyLink": "Copy Link",
+    "copied": "Copied!"
   }
 }

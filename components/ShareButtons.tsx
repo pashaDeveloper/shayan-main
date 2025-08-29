@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Share2, Facebook, Twitter, Linkedin, Copy, Check } from "lucide-react";
 import { useEffect, useState } from "react";
 import { FaTelegramPlane, FaWhatsapp, FaInstagram } from "react-icons/fa";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface ShareButtonsProps {
   url?: string;
@@ -15,15 +16,15 @@ export function ShareButtons({
   url,
   title = "مطلب جالب از سفر ایران",
 }: ShareButtonsProps) {
+  const { language, setLanguage, t } = useLanguage();
   const [currentUrl, setCurrentUrl] = useState<string>("");
+  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
       setCurrentUrl(url || window.location.href);
     }
   }, [url]);
-
-  const [copied, setCopied] = useState(false);
 
   const shareLinks = {
     telegram: `https://t.me/share/url?url=${encodeURIComponent(
@@ -34,7 +35,7 @@ export function ShareButtons({
     )}`,
     instagram: `https://www.instagram.com/?url=${encodeURIComponent(
       currentUrl
-    )}`, // اینستاگرام لینک مستقیم نداره
+    )}`,
     facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
       currentUrl
     )}`,
@@ -73,71 +74,64 @@ export function ShareButtons({
       <CardContent className="p-6">
         <div className="flex items-center gap-2 mb-4">
           <Share2 className="w-5 h-5 text-primary" />
-          <h3 className="text-lg font-bold text-foreground">اشتراک‌گذاری</h3>
+          <h3 className="text-lg font-bold text-foreground">{t("share.title")}</h3>
         </div>
 
         <div className="space-y-3">
-          {/* Telegram */}
           <Button
             variant="outline"
             className="w-full justify-start hover:bg-blue-50 hover:border-blue-200 hover:text-sky-600"
             onClick={() => openShareWindow(shareLinks.telegram)}
           >
             <FaTelegramPlane className="w-4 h-4 rtl:ml-2 ltr:mr-2 text-sky-600" />
-            تلگرام
+            {t("share.telegram")}
           </Button>
 
-          {/* WhatsApp */}
           <Button
             variant="outline"
             className="w-full justify-start hover:bg-green-50 hover:border-green-200 hover:text-green-600"
             onClick={() => openShareWindow(shareLinks.whatsapp)}
           >
             <FaWhatsapp className="w-4 h-4 rtl:ml-2 ltr:mr-2 text-green-600" />
-            واتس‌اپ
+            {t("share.whatsapp")}
           </Button>
 
-          {/* Instagram */}
           <Button
             variant="outline"
             className="w-full justify-start hover:bg-pink-50 hover:border-pink-200 hover:text-pink-500"
             onClick={() => openShareWindow(shareLinks.instagram)}
           >
             <FaInstagram className="w-4 h-4 rtl:ml-2 ltr:mr-2 text-pink-500" />
-            اینستاگرام
+            {t("share.instagram")}
           </Button>
 
-          {/* Facebook */}
           <Button
             variant="outline"
             className="w-full justify-start hover:bg-blue-50 hover:border-blue-200 hover:text-blue-600"
             onClick={() => openShareWindow(shareLinks.facebook)}
           >
             <Facebook className="w-4 h-4 rtl:ml-2 ltr:mr-2 text-blue-600" />
-            فیس‌بوک
+            {t("share.facebook")}
           </Button>
 
-          {/* Twitter */}
           <Button
             variant="outline"
             className="w-full justify-start hover:bg-blue-50 hover:border-blue-400 hover:text-blue-500"
             onClick={() => openShareWindow(shareLinks.twitter)}
           >
             <Twitter className="w-4 h-4 rtl:ml-2 ltr:mr-2 text-blue-500" />
-            توییتر
+            {t("share.twitter")}
           </Button>
 
-          {/* LinkedIn */}
           <Button
             variant="outline"
             className="w-full justify-start hover:bg-blue-50 hover:border-blue-700 hover:text-blue-700"
             onClick={() => openShareWindow(shareLinks.linkedin)}
           >
             <Linkedin className="w-4 h-4 rtl:ml-2 ltr:mr-2 text-blue-700" />
-            لینکدین
+            {t("share.linkedin")}
           </Button>
 
-          {/* Copy Link */}
           <Button
             variant="outline"
             className="w-full justify-start hover:bg-gray-50 hover:border-gray-200 hover:text-gray-700"
@@ -146,12 +140,12 @@ export function ShareButtons({
             {copied ? (
               <>
                 <Check className="w-4 h-4 rtl:ml-2 ltr:mr-2 text-green-600" />
-                کپی شد!
+                {t("share.copied")}
               </>
             ) : (
               <>
                 <Copy className="w-4 h-4 rtl:ml-2 ltr:mr-2" />
-                کپی لینک
+                {t("share.copyLink")}
               </>
             )}
           </Button>

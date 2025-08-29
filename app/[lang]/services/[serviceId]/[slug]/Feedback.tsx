@@ -74,7 +74,7 @@ export default function Feedback({ targetId, targetModel, lang }: params) {
   }, [isLoading, data, error]);
 
   return (
-    <div className="bg-white rounded-xl shadow-lg p-8">
+    <div className="bg-white rounded-xl shadow-lg px-2 py-8">
       <h2 className="text-2xl font-bold mb-6 flex items-center">
         نظرات و امتیازها ({comments?.length})
       </h2>
@@ -145,7 +145,7 @@ export default function Feedback({ targetId, targetModel, lang }: params) {
           </button>
         </form>
       ) : (
-        <div className="mb-8 p-6 bg-yellow-50 border border-yellow-200 rounded-lg">
+        <div className="mb-8 py-6 rtl:pr-8 ltr:pl-8  bg-yellow-50 border border-yellow-200 rounded-lg">
           <span className="text-yellow-800 flex items-center">
             برای ثبت نظر ابتدا وارد
             <Button

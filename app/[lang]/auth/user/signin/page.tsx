@@ -20,20 +20,18 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Separator } from "@/components/ui/separator";
 import { Chrome, Phone, Mail, ArrowLeft, Shield } from "lucide-react";
 import OTPVerification from "@/components/auth/OTPVerification";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 // Validation schemas
 const phoneSchema = z.object({
   phone: z
     .string()
-    .min(10, "Phone number must be at least 10 digits")
-    .regex(/^[0-9+\-\s\(\)]+$/, "Invalid phone number format")
+    .min(10, "auth.phoneMin") // translation key
+    .regex(/^[0-9+\-\s\(\)]+$/, "auth.phoneInvalid")
 });
 
 const emailSchema = z.object({
-  email: z
-    .string()
-    .email("Please enter a valid email address")
-    .min(1, "Email is required")
+  email: z.string().email("auth.emailInvalid").min(1, "auth.emailRequired")
 });
 
 type PhoneForm = z.infer<typeof phoneSchema>;
@@ -43,6 +41,8 @@ type AuthStep = "signin" | "otp";
 type AuthMethod = "phone" | "email";
 
 export default function SignInPage() {
+  const { t } = useLanguage();
+
   const [currentStep, setCurrentStep] = useState<AuthStep>("signin");
   const [authMethod, setAuthMethod] = useState<AuthMethod>("phone");
   const [contactInfo, setContactInfo] = useState("");
@@ -60,59 +60,53 @@ export default function SignInPage() {
   const handleGoogleSignIn = async () => {
     try {
       await signIn("google", { callbackUrl: "/" });
-      toast.success("Redirecting to Google...");
+      toast.success(t("auth.redirectGoogle"));
     } catch (error) {
-      toast.error("Failed to sign in with Google");
+      toast.error(t("auth.failedGoogle"));
     }
   };
 
   const handlePhoneSubmit = async (data: PhoneForm) => {
     try {
-      // Simulate API call
       await new Promise((resolve) => setTimeout(resolve, 1000));
-
       setContactInfo(data.phone);
       setAuthMethod("phone");
       setCurrentStep("otp");
-      toast.success("OTP sent to your phone number");
+      toast.success(t("auth.otpSentPhone"));
     } catch (error) {
-      toast.error("Failed to send OTP");
+      toast.error(t("auth.otpFailed"));
     }
   };
 
   const handleEmailSubmit = async (data: EmailForm) => {
     try {
-      // Simulate API call
       await new Promise((resolve) => setTimeout(resolve, 1000));
-
       setContactInfo(data.email);
       setAuthMethod("email");
       setCurrentStep("otp");
-      toast.success("OTP sent to your email");
+      toast.success(t("auth.otpSentEmail"));
     } catch (error) {
-      toast.error("Failed to send OTP");
+      toast.error(t("auth.otpFailed"));
     }
   };
 
   const handleOTPSuccess = () => {
-    toast.success("Successfully verified! Redirecting...");
-    // Redirect to dashboard or home page
+    toast.success(t("auth.verified"));
     setTimeout(() => {
       window.location.href = "/";
     }, 1500);
   };
 
-
   if (currentStep === "otp") {
     return (
-      <div className="min-h-screen  bg-gradient-to-br from-blue-50 via-white to-indigo-50 flex items-center justify-center p-4">
-        <div className="w-full max-w-md ">
-          <Card className="shadow-xl border-0  bg-white/95 backdrop-blur-sm">
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 flex items-center justify-center p-4">
+        <div className="w-full max-w-md">
+          <Card className="shadow-xl border-0 bg-white/95 backdrop-blur-sm">
             <CardHeader className="space-y-4 text-center pb-6">
               <Button
                 variant="ghost"
                 size="sm"
-                onClick={() => signIn("google", { callbackUrl: "/" })}
+                onClick={() => setCurrentStep("signin")}
                 className="absolute left-4 top-4 p-2"
               >
                 <ArrowLeft className="h-4 w-4" />
@@ -126,12 +120,12 @@ export default function SignInPage() {
               </div>
               <div>
                 <CardTitle className="text-2xl font-bold text-gray-900">
-                  Verify OTP
+                  {t("auth.verifyOTP")}
                 </CardTitle>
                 <CardDescription className="text-gray-600 mt-2">
-                  We've sent a 4-digit code to{" "}
+                  {t("auth.sentCodeTo")}{" "}
                   <span className="font-medium text-gray-900">
-                    {authMethod === "phone" ? contactInfo : contactInfo}
+                    {contactInfo}
                   </span>
                 </CardDescription>
               </div>
@@ -139,9 +133,7 @@ export default function SignInPage() {
             <CardContent>
               <OTPVerification
                 onSuccess={handleOTPSuccess}
-                onResend={() => {
-                  toast.success(`OTP resent to your ${authMethod}`);
-                }}
+                onResend={() => toast.success(t("auth.otpResent"))}
               />
             </CardContent>
           </Card>
@@ -154,14 +146,13 @@ export default function SignInPage() {
     <div
       style={{
         backgroundImage: "url('/img/login.jpg')",
-        backgroundSize: "cover", // تصویر کل صفحه رو بپوشونه
-        backgroundPosition: "center", // وسط تصویر باشه
+        backgroundSize: "cover",
+        backgroundPosition: "center",
         backgroundRepeat: "no-repeat"
       }}
-      className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 flex items-center justify-center p-4"
+      className="min-h-screen flex items-center justify-center p-4"
     >
       <div className="absolute inset-0 bg-black/40" />
-
       <div className="w-full max-w-md">
         <Card className="shadow-xl border-0 md:scale-110 bg-white/95 backdrop-blur-sm">
           <CardHeader className="space-y-4 text-center pb-6">
@@ -170,23 +161,20 @@ export default function SignInPage() {
             </div>
             <div>
               <CardTitle className="text-2xl font-bold text-gray-900">
-                Welcome back
+                {t("auth.welcomeBack")}
               </CardTitle>
               <CardDescription className="text-gray-600 mt-2">
-                Sign in to your account to continue
+                {t("auth.signInContinue")}
               </CardDescription>
             </div>
           </CardHeader>
-
           <CardContent className="space-y-6">
-            {/* Google Sign In */}
             <Button
               onClick={handleGoogleSignIn}
-              variant="outline"
-              className="w-full h-12 text-gray-700 border-gray-200 hover:bg-gray-50 hover:border-gray-300 transition-all duration-200"
+              className="w-full h-12 flex items-center justify-center bg-red-600 text-white hover:bg-red-700 transition-all duration-200 rounded-md"
             >
-              <Chrome className="mr-3 h-5 w-5" />
-              Sign in with Google
+              <Chrome className="ltr:mr-2 rtl:ml-2 h-5 w-5" />
+              {t("auth.signInGoogle")}
             </Button>
 
             <div className="relative">
@@ -194,13 +182,12 @@ export default function SignInPage() {
                 <Separator className="w-full" />
               </div>
               <div className="relative flex justify-center text-xs uppercase">
-                <span className="bg-white px-4 text-gray-500 font-medium">
-                  Or continue with
+                <span className="bg-yellow-400 px-4 text-white font-medium">
+                  {t("auth.orContinueWith")}
                 </span>
               </div>
             </div>
 
-            {/* Tabs for Phone/Email */}
             <Tabs defaultValue="phone" className="w-full">
               <TabsList className="grid w-full grid-cols-2 h-11">
                 <TabsTrigger
@@ -208,14 +195,14 @@ export default function SignInPage() {
                   className="data-[state=active]:bg-blue-600 data-[state=active]:text-white"
                 >
                   <Phone className="mr-2 h-4 w-4" />
-                  Mobile
+                  {t("auth.mobile")}
                 </TabsTrigger>
                 <TabsTrigger
                   value="email"
                   className="data-[state=active]:bg-blue-600 data-[state=active]:text-white"
                 >
                   <Mail className="mr-2 h-4 w-4" />
-                  Email
+                  {t("auth.email")}
                 </TabsTrigger>
               </TabsList>
 
@@ -229,7 +216,7 @@ export default function SignInPage() {
                       htmlFor="phone"
                       className="text-sm font-medium text-gray-700"
                     >
-                      Phone Number
+                      {t("auth.phoneNumber")}
                     </Label>
                     <Input
                       id="phone"
@@ -240,18 +227,18 @@ export default function SignInPage() {
                     />
                     {phoneForm.formState.errors.phone && (
                       <p className="text-sm text-red-600">
-                        {phoneForm.formState.errors.phone.message}
+                        {t(phoneForm.formState.errors.phone.message || "")}
                       </p>
                     )}
                   </div>
                   <Button
                     type="submit"
-                    className="w-full h-12 bg-blue-600 hover:bg-blue-700 transition-colors duration-200"
+                    className="w-full h-12 bg-blue-600 hover:bg-blue-700 transition-colors duration-200 text-white"
                     disabled={phoneForm.formState.isSubmitting}
                   >
                     {phoneForm.formState.isSubmitting
-                      ? "Sending..."
-                      : "Continue"}
+                      ? t("auth.sending")
+                      : t("auth.continue")}
                   </Button>
                 </form>
               </TabsContent>
@@ -266,7 +253,7 @@ export default function SignInPage() {
                       htmlFor="email"
                       className="text-sm font-medium text-gray-700"
                     >
-                      Email Address
+                      {t("auth.emailAddress")}
                     </Label>
                     <Input
                       id="email"
@@ -277,7 +264,7 @@ export default function SignInPage() {
                     />
                     {emailForm.formState.errors.email && (
                       <p className="text-sm text-red-600">
-                        {emailForm.formState.errors.email.message}
+                        {t(emailForm.formState.errors.email.message || "")}
                       </p>
                     )}
                   </div>
@@ -287,8 +274,8 @@ export default function SignInPage() {
                     disabled={emailForm.formState.isSubmitting}
                   >
                     {emailForm.formState.isSubmitting
-                      ? "Sending..."
-                      : "Continue"}
+                      ? t("auth.sending")
+                      : t("auth.continue")}
                   </Button>
                 </form>
               </TabsContent>
@@ -296,13 +283,13 @@ export default function SignInPage() {
 
             <div className="text-center">
               <p className="text-xs text-gray-500">
-                By continuing, you agree to our{" "}
+                {t("auth.agreeTerms")}{" "}
                 <a href="#" className="text-blue-600 hover:underline">
-                  Terms of Service
+                  {t("auth.termsOfService")}
                 </a>{" "}
-                and{" "}
+                {t("auth.and")}{" "}
                 <a href="#" className="text-blue-600 hover:underline">
-                  Privacy Policy
+                  {t("auth.privacyPolicy")}
                 </a>
               </p>
             </div>

@@ -73,8 +73,7 @@ const Header = () => {
     { skip: !searchQuery.trim() }
   );
   const searchList = useMemo(() => searchData?.services || [], [searchData]);
-  console.log("searchList", searchList);
-  console.log("error", error);
+
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;

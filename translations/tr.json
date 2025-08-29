@@ -268,5 +268,45 @@
   "whatsapp": {
     "accountName": "Web Sitesi Destek",
     "chatMessage": "Merhaba 👋\nSize yardımcı olmaktan memnuniyet duyarım. Herhangi bir sorunuzu sorabilirsiniz."
+  },
+  "auth": {
+    "phoneMin": "Telefon numarası en az 10 haneli olmalıdır",
+    "phoneInvalid": "Geçersiz telefon numarası formatı",
+    "emailInvalid": "Lütfen geçerli bir e-posta adresi girin",
+    "emailRequired": "E-posta zorunludur",
+    "redirectGoogle": "Google'a yönlendiriliyorsunuz...",
+    "failedGoogle": "Google ile giriş başarısız oldu",
+    "otpSentPhone": "OTP kodu telefon numaranıza gönderildi",
+    "otpSentEmail": "OTP kodu e-posta adresinize gönderildi",
+    "otpFailed": "OTP gönderimi başarısız oldu",
+    "verified": "Başarıyla doğrulandı! Yönlendiriliyorsunuz...",
+    "verifyOTP": "OTP Doğrula",
+    "sentCodeTo": "4 haneli kod gönderildi",
+    "otpResent": "OTP kodu yeniden gönderildi",
+    "welcomeBack": "Tekrar hoş geldiniz",
+    "signInContinue": "Devam etmek için hesabınıza giriş yapın",
+    "signInGoogle": "Google ile giriş yap",
+    "orContinueWith": "veya şununla devam et",
+    "mobile": "Mobil",
+    "email": "E-posta",
+    "phoneNumber": "Telefon Numarası",
+    "emailAddress": "E-posta Adresi",
+    "sending": "Gönderiliyor...",
+    "continue": "Devam",
+    "agreeTerms": "Devam ederek, siz kabul etmiş olursunuz",
+    "termsOfService": "Hizmet Şartları",
+    "and": "ve",
+    "privacyPolicy": "Gizlilik Politikası"
+  },
+  "share": {
+    "title": "Paylaş",
+    "telegram": "Telegram",
+    "whatsapp": "WhatsApp",
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "twitter": "Twitter",
+    "linkedin": "LinkedIn",
+    "copyLink": "Linki Kopyala",
+    "copied": "Kopyalandı!"
   }
 }

@@ -273,5 +273,45 @@
   "whatsapp": {
     "accountName": "پشتیبان وبسایت",
     "chatMessage": "سلام 👋\nخوشحال می‌شم کمکتون کنم. هر سوالی دارید بپرسید."
+  },
+   "auth": {
+    "phoneMin": "شماره تلفن باید حداقل ۱۰ رقم باشد",
+    "phoneInvalid": "فرمت شماره تلفن نامعتبر است",
+    "emailInvalid": "لطفاً یک ایمیل معتبر وارد کنید",
+    "emailRequired": "ایمیل الزامی است",
+    "redirectGoogle": "در حال هدایت به گوگل...",
+    "failedGoogle": "ورود با گوگل انجام نشد",
+    "otpSentPhone": "کد OTP به شماره تلفن شما ارسال شد",
+    "otpSentEmail": "کد OTP به ایمیل شما ارسال شد",
+    "otpFailed": "ارسال OTP با خطا مواجه شد",
+    "verified": "با موفقیت تایید شد! در حال هدایت...",
+    "verifyOTP": "تایید OTP",
+    "sentCodeTo": "کد ۴ رقمی به",
+    "otpResent": "کد OTP مجدداً ارسال شد",
+    "welcomeBack": "خوش آمدید",
+    "signInContinue": "برای ادامه وارد حساب خود شوید",
+    "signInGoogle": "ورود با گوگل",
+    "orContinueWith": "یا ادامه با",
+    "mobile": "موبایل",
+    "email": "ایمیل",
+    "phoneNumber": "شماره تلفن",
+    "emailAddress": "آدرس ایمیل",
+    "sending": "در حال ارسال...",
+    "continue": "ادامه",
+    "agreeTerms": "با ادامه، شما با",
+    "termsOfService": "شرایط سرویس",
+    "and": "و",
+    "privacyPolicy": "سیاست حفظ حریم خصوصی موافقت می‌کنید"
+  },
+   "share": {
+    "title": "اشتراک‌گذاری",
+    "telegram": "تلگرام",
+    "whatsapp": "واتس‌اپ",
+    "instagram": "اینستاگرام",
+    "facebook": "فیس‌بوک",
+    "twitter": "توییتر",
+    "linkedin": "لینکدین",
+    "copyLink": "کپی لینک",
+    "copied": "کپی شد!"
   }
 }
