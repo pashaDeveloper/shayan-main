@@ -11,7 +11,7 @@ function Main({
   params: { lang: string };
 }) {
   return (
-    <div className="relative max-w-7xl">
+    <div className="relative ">
       <Header />
 
       {children}

@@ -246,7 +246,7 @@ const Header = () => {
     }`}
             >
               {/* Logo */}
-              <div className="flex-shrink-0 group">
+              <Link href={'/'} className="flex-shrink-0 group">
                 <div className="flex rtl:flex-row-reverse items-center gap-3">
                   <div className="relative">
                     <div className="w-14 h-14  flex items-center justify-center rounded-lg  shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110">
@@ -275,7 +275,7 @@ const Header = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </Link>
 
               {/* Desktop Navigation */}
               <nav className="hidden lg:flex items-center">
@@ -616,9 +616,17 @@ const Header = () => {
             <div className="p-6 border-b border-gray-200 dark:border-gray-700">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-r from-[#0F4C75] to-[#FFD700] rounded-lg flex items-center justify-center">
-                    <span className="text-white font-bold">2S</span>
-                  </div>
+                   <div className="w-14 h-14  flex items-center justify-center rounded-lg  shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110">
+                      <span className="text-white font-bold text-xl">
+                        <Image
+                          alt="logo"
+                          src={"/logo.png"}
+                          width={200}
+                          height={200}
+                          className=""
+                        />
+                      </span>
+                    </div>
                   <div>
                     <div className="font-bold text-[#0F4C75] dark:text-white">
                       2SHIGROUP
