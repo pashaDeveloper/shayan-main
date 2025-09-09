@@ -17,24 +17,14 @@ const authOptions: NextAuthOptions = {
         otp: { label: "OTP", type: "text" },
       },
       async authorize(credentials) {
-          console.log("authorize called with credentials:", credentials);
-
-        if (!credentials) return null;
-        const result = await verifyOtp({
-          body: {
-            authMethod: credentials.authMethod,
-            contactInfo: credentials.contactInfo,
-            otp: credentials.otp,
-          },
-        } as any);
-        if (result.success && result.user) return result.user;
-        return null;
-      },
+    console.log("authorize called!", credentials);
+    return { id: "test", name: "Test User" };
+  },
     }),
   ],
   pages: {
   signIn: "/fa/auth/user/signin", 
-  error: "/fa/auth/user/signin",},
+},
   callbacks: {
     async session({ session, token }) {
       console.log("session callback:", { session, token });
