@@ -35,14 +35,17 @@ const authOptions: NextAuthOptions = {
   },
   callbacks: {
     async session({ session, token }) {
+      console.log("session callback:", { session, token });
       if (session.user && token.uid) session.user.id = token.uid;
       return session;
     },
     async jwt({ token, user }) {
+      console.log("jwt callback:", { token, user });
       if (user) token.uid = user.id;
       return token;
     },
     async signIn({ user, account }) {
+      console.log("signIn callback:", { user, account });
       if (account?.provider === "google") {
         try {
           const result = await signInGoogleUser({
@@ -62,9 +65,10 @@ const authOptions: NextAuthOptions = {
       return true;
     },
   },
-  // Use type assertion to satisfy TS
   session: { strategy: "jwt" as SessionStrategy },
 };
+
+console.log("authOptions object:", authOptions);
 
 const handler = NextAuth(authOptions);
 

@@ -78,12 +78,12 @@ export default function OTPVerification({ authMethod, contactInfo }: OTPVerifica
     }
 
     setLoading(true)
-    const result = await signIn("OTP", {
-      redirect: false,
-      authMethod,
-      contactInfo,
-      otp: otpString
-    })
+  const result = await signIn("OTP", {
+  redirect: false,
+  authMethod,
+  contactInfo,
+  otp: otpString
+} as any) as { ok: boolean; error?: string } | undefined;
 
     setLoading(false)
     setOtp(['', '', '', ''])

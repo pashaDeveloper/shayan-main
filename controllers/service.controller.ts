@@ -45,7 +45,6 @@ export async function getServices({ lang }: { lang: string }): Promise<ApiServic
 // دریافت یک سرویس
 export async function getService({ serviceId, lang }: { serviceId: string; lang: string }): Promise<ApiServiceResponse> {
   try {
-    console.log("awdawdawdawdaw",serviceId)
     const service = await Service.findOne({
       serviceId,
       language: lang || "en",
