@@ -17,6 +17,8 @@ const authOptions: NextAuthOptions = {
         otp: { label: "OTP", type: "text" },
       },
       async authorize(credentials) {
+          console.log("authorize called with credentials:", credentials);
+
         if (!credentials) return null;
         const result = await verifyOtp({
           body: {
