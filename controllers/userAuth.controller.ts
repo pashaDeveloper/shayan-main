@@ -320,3 +320,49 @@ export async function emailLogin(req: AuthRequest): Promise<AuthResponse> {
     };
   }
 }
+
+
+export async function verifyOtp(req: AuthRequest): Promise<AuthResponse> {
+  try {
+    const { email, code } = req.body as { email: string; code: string };
+
+    if (!email || !code) {
+      return { success: false, message: "ایمیل و کد الزامی است" };
+    }
+
+    const otpRecord = await Verify.findOne({ email, code });
+    if (!otpRecord) {
+      return { success: false, message: "کد تأیید نامعتبر است" };
+    }
+
+    if (otpRecord.expiresAt < new Date()) {
+      return { success: false, message: "کد تأیید منقضی شده است" };
+    }
+
+    const user = await User.findOne({ email });
+    if (!user) {
+      return { success: false, message: "کاربر یافت نشد" };
+    }
+
+    // فعال کردن کاربر
+    user.status = "active";
+    await user.save();
+
+    // حذف OTP بعد از استفاده
+    await otpRecord.deleteOne();
+
+    return {
+      success: true,
+      message: "کاربر فعال شد و ورود با موفقیت انجام شد",
+      user: {
+        id: user._id.toString(),
+        name: user.name,
+        email: user.email,
+        phone: user.phone,
+      },
+    };
+  } catch (error: any) {
+    console.error("خطا در کنترلر verifyOtp:", error);
+    return { success: false, message: error.message || "خطای سرور" };
+  }
+}
