@@ -9,7 +9,7 @@ export interface IVerify extends Document {
   email?: string;
   code: string;
   templateName: string;
-  clientReferenceId: string;
+  clientReferenceId: any;
   createdAt: Date;
   expiresAt: Date;
 }
@@ -19,9 +19,9 @@ const verifySchema = new Schema<IVerify>({
   email: { type: String, required: false, index: true },
   code: { type: String, required: true },
   templateName: { type: String, required: true },
-  clientReferenceId: { type: String, required: true, unique: true },
+  clientReferenceId: { type: Schema.Types.ObjectId, ref: "User", required: true },
   createdAt: { type: Date, default: Date.now },
-  expiresAt: { type: Date, required: true, index: { expires: "10m" } }, // TTL index for auto-deletion after 10 minutes
+  expiresAt: { type: Date, required: true, index: { expires: "10m" } },
 });
 
 // Custom validation to ensure at least one of phone or email is provided

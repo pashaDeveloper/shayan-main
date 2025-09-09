@@ -295,7 +295,16 @@
     "failedGoogle": "Google ile oturum açma başarısız",
     "otpResent": "OTP tekrar gönderildi",
     "success": "Başarılı",
-    "error": "Bir hata oluştu"
+    "error": "Bir hata oluştu",
+       "enter_all_digits": "Lütfen tüm rakamları giriniz.",
+    "invalid_otp": "Girdiğiniz kod geçersiz.",
+    "verification_failed": "Doğrulama başarısız oldu. Lütfen tekrar deneyin.",
+    "verifying": "Doğrulanıyor...",
+    "verify_otp": "Kodu Doğrula",
+    "didnt_receive_code": "Kodu almadınız mı?",
+    "resend_code": "Kodu Tekrar Gönder",
+    "resend_in": "{seconds} saniye içinde tekrar gönder",
+    "demo_info": "Demo için, 0000 dışında herhangi bir 4 haneli kod kullanabilirsiniz."
   },
   "share": {
     "title": "Paylaş",

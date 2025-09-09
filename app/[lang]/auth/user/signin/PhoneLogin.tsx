@@ -22,7 +22,7 @@ export default function PhoneLogin({ form, setAuthMethod, setContactInfo, setCur
 
   useEffect(() => {
     if (phoneLoading) {
-      toast.loading(t("10") ?? "Loading...", { id: "signup" });
+      toast.loading(t("wait") ?? "Loading...", { id: "signup" });
     }
 
     if (phoneData?.success) {

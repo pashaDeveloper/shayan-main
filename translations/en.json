@@ -303,7 +303,16 @@
     "failedGoogle": "Failed to sign in with Google",
     "otpResent": "OTP resent",
     "success": "Success",
-    "error": "An error occurred"
+    "error": "An error occurred",
+      "enter_all_digits": "Please enter all the digits.",
+    "invalid_otp": "The code you entered is invalid.",
+    "verification_failed": "Verification failed. Please try again.",
+    "verifying": "Verifying...",
+    "verify_otp": "Verify Code",
+    "didnt_receive_code": "Didn’t receive the code?",
+    "resend_code": "Resend Code",
+    "resend_in": "Resend in {seconds} seconds",
+    "demo_info": "For demo purposes, use any 4-digit code except 0000."
   },
    "share": {
     "title": "Share",

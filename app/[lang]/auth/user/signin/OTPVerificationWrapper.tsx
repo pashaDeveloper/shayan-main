@@ -51,8 +51,8 @@ export default function OTPVerificationWrapper({
           </CardHeader>
           <CardContent>
             <OTPVerification
-              onSuccess={onSuccess}
-              onResend={() => toast.success(t("auth.otpResent") ?? "OTP resent")}
+             contactInfo={contactInfo}
+              authMethod={authMethod}
             />
           </CardContent>
         </Card>

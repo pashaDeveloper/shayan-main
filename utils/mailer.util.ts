@@ -2,30 +2,35 @@ import nodemailer from "nodemailer";
 
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
-  port: 465,
-  secure: true,
+  port: 587,
+  secure: false,
   auth: {
-    user: process.env.SMTP_USER, 
-    pass: process.env.SMTP_PASS, 
-  },
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASS
+  }
 });
 
 export async function sendOtpEmail(email: string, otpCode: string) {
   const htmlTemplate = `
-  <div style="font-family: Arial, sans-serif; text-align: center; padding: 20px; background: #f9f9f9;">
+  <div dir="rtl" style="font-family: Arial, sans-serif; text-align: center; padding: 20px; background: #f9f9f9;">
     <div style="max-width: 400px; margin: auto; background: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
       <!-- Logo -->
-      <img src="https://2shigroup.com/banner.jpg" alt="وبسایت شایسته و شایان" style="width: 100px; margin-bottom: 15px;" />
+      <img src="https://2shigroup.com/banner.jpg" alt="وبسایت شایسته و شایان" style="width: 100%; margin-bottom: 15px;" />
       
-      <!-- Title -->
-      <h2 style="color: #333;">🔑 کد تأیید ورود به وبسایت شایسته و شایان</h2>
+
       
-      <!-- Greeting -->
-      <p style="font-size: 16px; color: #555;">سلام 👋</p>
-      <p style="font-size: 16px; color: #555;">
-        برای ورود به حساب کاربری خود در <strong>وبسایت شایسته و شایان</strong>، لطفاً کد زیر را وارد کنید:
-      </p>
-      
+<p style="font-size: 16px; color: #888;">سلام 👋</p>
+<p style="font-size: 16px; color: #888; margin: 5px 0;">
+  برای ورود به حساب کاربری خود
+</p>
+<p style="font-size: 16px; color: #007bff; margin: 5px 0;">
+  در <strong>وبسایت رسمی شرکت شایسته و شایان</strong>
+</p>
+<p style="font-size: 16px; color: #888; margin: 5px 0;">
+  لطفاً کد زیر را وارد کنید:
+</p>
+
+
       <!-- OTP -->
       <h1 style="font-size: 32px; color: #007bff; letter-spacing: 5px; margin: 20px 0;">${otpCode}</h1>
       
@@ -39,7 +44,7 @@ export async function sendOtpEmail(email: string, otpCode: string) {
       اگر شما این درخواست را انجام نداده‌اید، این پیام را نادیده بگیرید.
     </p>
     <p style="font-size: 13px; color: #555; margin-top: 10px;">
-      🌐 <a href="https://shayesteh-shayan.com" style="color: #007bff; text-decoration: none;">وبسایت شایسته و شایان</a>
+      🌐 <a href="https://2shigroup.com" style="color: #007bff; text-decoration: none;">وبسایت شایسته و شایان</a>
     </p>
   </div>
   `;
@@ -47,7 +52,8 @@ export async function sendOtpEmail(email: string, otpCode: string) {
   await transporter.sendMail({
     from: `"وبسایت شایسته و شایان" <${process.env.SMTP_USER}>`,
     to: email,
-    subject: "کد تأیید ورود - وبسایت شایسته و شایان",
-    html: htmlTemplate,
+    subject: `کد تأیید شما: ${otpCode}`,
+    text: `کد ورود شما: ${otpCode}`,
+    html: htmlTemplate
   });
 }

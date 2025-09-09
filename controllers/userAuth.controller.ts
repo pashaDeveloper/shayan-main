@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from "uuid";
 import Verify from "@/models/verify.model";
 import { ghasedak } from "@/utils/sms.util";
 import crypto from "crypto";
-import {sendOtpEmail} from '@/utils/mailer.util'
+import { sendOtpEmail } from "@/utils/mailer.util";
 interface OAuthUserBody {
   id: string;
   name: string;
@@ -270,30 +270,30 @@ export async function emailLogin(req: AuthRequest): Promise<AuthResponse> {
     }
 
     // Generate OTP
-    const otpCode = Math.floor(100000 + Math.random() * 900000).toString();
-    const clientReferenceId = uuidv4();
+ const otpCode = Math.floor(1000 + Math.random() * 9000).toString();
     const expiresAt = new Date(Date.now() + 10 * 60 * 1000);
 
-    await Verify.create({
+    try {
+          await Verify.create({
       email,
       code: otpCode,
       templateName: "newOTP",
-      clientReferenceId,
+      clientReferenceId:user._id,
       expiresAt
     });
+    } catch (error:any) {
+      console.error("خطا در ارسال ایمیل OTP:", error.message);
+      return {
+        success: false,
+        message: "خطا در ثبت کد تایید. لطفاً دوباره تلاش کنید"
+      };
+    }
 
-    const otpEmailCommand = {
-      sendDate: new Date().toISOString(),
-      receptors: [{ email, clientReferenceId }],
-      templateName: "newOTP",
-      inputs: [{ param: "Code", value: otpCode }],
-      udh: true
-    };
 
     try {
-  await sendOtpEmail(email, otpCode);
-
+      await sendOtpEmail(email, otpCode);
     } catch (smsError: any) {
+      console.error("خطا در ارسال ایمیل OTP:", smsError);
       return {
         success: false,
         message: "خطا در ارسال کد تأیید. لطفاً دوباره تلاش کنید"
@@ -311,6 +311,7 @@ export async function emailLogin(req: AuthRequest): Promise<AuthResponse> {
       }
     };
   } catch (error: any) {
+    console.error("خطا در کنترلر emailLogin:", error.message);
     if (error.code === 11000) {
       return { success: false, message: "این ایمیل قبلاً ثبت شده است" };
     }
@@ -321,35 +322,62 @@ export async function emailLogin(req: AuthRequest): Promise<AuthResponse> {
   }
 }
 
-
 export async function verifyOtp(req: AuthRequest): Promise<AuthResponse> {
   try {
-    const { email, code } = req.body as { email: string; code: string };
+    const { authMethod, contactInfo, otp } = req.body as { authMethod: "email" | "phone"; contactInfo: string; otp: string };
 
-    if (!email || !code) {
-      return { success: false, message: "ایمیل و کد الزامی است" };
+    console.log("ورودی دریافت‌شده:", { authMethod, contactInfo, otp });
+
+    if (!authMethod || !contactInfo || !otp) {
+      console.log("ورودی ناقص است");
+      return { success: false, message: "اطلاعات ورودی ناقص است" };
     }
 
-    const otpRecord = await Verify.findOne({ email, code });
+    let query: any = {};
+    if (authMethod === "email") {
+      query.email = contactInfo;
+      query.code = otp;
+    } else if (authMethod === "phone") {
+      query.phone = contactInfo;
+      query.code = otp;
+    } else {
+      console.log("نوع ورود نامعتبر:", authMethod);
+      return { success: false, message: "نوع ورود نامعتبر است" };
+    }
+
+    const otpRecord = await Verify.findOne(query);
+    console.log("OTP پیدا شد؟", otpRecord);
+
     if (!otpRecord) {
+      console.log("کد تأیید نامعتبر است");
       return { success: false, message: "کد تأیید نامعتبر است" };
     }
 
     if (otpRecord.expiresAt < new Date()) {
+      console.log("کد منقضی شده است");
       return { success: false, message: "کد تأیید منقضی شده است" };
     }
 
-    const user = await User.findOne({ email });
+    let userQuery: any = {};
+    if (authMethod === "email") userQuery.email = contactInfo;
+    else userQuery.phone = contactInfo;
+
+    const user = await User.findOne(userQuery);
+    console.log("کاربر پیدا شد؟", user);
+
     if (!user) {
+      console.log("کاربر یافت نشد");
       return { success: false, message: "کاربر یافت نشد" };
     }
 
     // فعال کردن کاربر
     user.status = "active";
     await user.save();
+    console.log("کاربر فعال شد");
 
     // حذف OTP بعد از استفاده
     await otpRecord.deleteOne();
+    console.log("OTP حذف شد");
 
     return {
       success: true,
@@ -358,8 +386,8 @@ export async function verifyOtp(req: AuthRequest): Promise<AuthResponse> {
         id: user._id.toString(),
         name: user.name,
         email: user.email,
-        phone: user.phone,
-      },
+        phone: user.phone
+      }
     };
   } catch (error: any) {
     console.error("خطا در کنترلر verifyOtp:", error);

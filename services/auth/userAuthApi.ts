@@ -46,6 +46,14 @@ export const authApi = shigroupApi.injectEndpoints({
       })
     }),
 
+   otpVerify: builder.mutation<AuthResponse, { authMethod:string,contactInfo:string, otp: string }>({
+      query: (body) => ({
+        url: "/auth/verify-otp",
+        method: "POST",
+        body
+      })
+    }),
+
     // persist user
     persistUser: builder.query<AuthResponse, void>({
       query: () => ({
@@ -65,6 +73,7 @@ export const authApi = shigroupApi.injectEndpoints({
 export const {
   usePhoneLoginMutation,
   useEmailLoginMutation,
+  useOtpVerifyMutation,
   useForgotPasswordMutation,
   usePersistUserQuery
 } = authApi;

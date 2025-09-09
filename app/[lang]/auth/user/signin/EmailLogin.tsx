@@ -26,14 +26,14 @@ export default function EmailLogin({ form, setAuthMethod, setContactInfo, setCur
   
   useEffect(() => {
     if (emailLoading) {
-      toast.loading(t("10") ?? "Loading...", { id: "signup" });
+      toast.loading(t("auth.wait") ?? "Loading...", { id: "signup" });
     }
 
     if (emailData?.success) {
       toast.success(emailData?.message ?? t("auth.success") ?? "Success", { id: "signup" });
       setTimeout(() => {
-        setContactInfo(emailData.user?.phone ?? "");
-        setAuthMethod("phone");
+        setContactInfo(emailData.user?.email ?? "");
+        setAuthMethod("email");
         setCurrentStep("otp");
       }, 1000);
     }
@@ -48,12 +48,9 @@ export default function EmailLogin({ form, setAuthMethod, setContactInfo, setCur
   }, [emailLoading, emailData, emailError, setContactInfo, setAuthMethod, setCurrentStep, t]);
 
   const handleSubmit = async (formData: EmailFormData) => {
-    try {
+ 
       await emailSignin({ email: formData.email }).unwrap();
-      toast.success(t("auth.otpSentEmail") ?? "OTP sent to email");
-    } catch (error) {
-      toast.error(t("auth.otpFailed") ?? "Failed to send OTP");
-    }
+    
   };
 
   return (
