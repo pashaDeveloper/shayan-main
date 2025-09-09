@@ -1,6 +1,11 @@
 import { NextApiRequest } from "next";
 import User, { IUser } from "@/models/user.model";
 import generateAccessToken from "@/utils/jwt.util";
+import { v4 as uuidv4 } from "uuid";
+import Verify from "@/models/verify.model";
+import { ghasedak } from "@/utils/sms.util";
+import crypto from "crypto";
+import {sendOtpEmail} from '@/utils/mailer.util'
 interface OAuthUserBody {
   id: string;
   name: string;
@@ -30,7 +35,7 @@ export async function signInGoogleUser(body: OAuthUserBody) {
         avatar: body.avatar
           ? { url: body.avatar, public_id: "google", originalName: "google" }
           : undefined,
-        password: Math.random().toString(36).slice(-8),
+        password: crypto.randomBytes(8).toString("hex"),
         status: "active",
         provider: body.provider,
         providerId: body.providerId
@@ -161,5 +166,157 @@ export async function persistUser(req: AuthRequest) {
     }
   } catch (error: any) {
     return { success: false, message: error.message };
+  }
+}
+
+interface AuthResponse {
+  success: boolean;
+  message: string;
+  accessToken?: string;
+  user?: {
+    id: string;
+    name: string;
+    email: string;
+    phone?: string;
+  };
+}
+
+interface AuthBody {
+  email?: string;
+  phone?: string;
+  password?: string;
+  name?: string;
+}
+
+export async function phoneLogin(req: AuthRequest): Promise<AuthResponse> {
+  try {
+    const { phone } = req.body as AuthBody;
+    if (!phone) {
+      return { success: false, message: "شماره تلفن الزامی است" };
+    }
+    const phoneRegex = /^\+?\d{10,15}$/;
+    if (!phoneRegex.test(phone)) {
+      return { success: false, message: "شماره تلفن نامعتبر است" };
+    }
+    let user = await User.findOne({ phone });
+    if (!user) {
+      user = new User({
+        phone,
+        password: crypto.randomBytes(8).toString("hex"),
+        status: "inactive"
+      });
+
+      await user.save();
+    }
+
+    // Generate OTP
+    const otpCode = Math.floor(1000 + Math.random() * 900000).toString();
+    const clientReferenceId = uuidv4();
+    const expiresAt = new Date(Date.now() + 10 * 60 * 1000);
+
+    await Verify.create({
+      phone,
+      code: otpCode,
+      templateName: "newOTP",
+      clientReferenceId,
+      expiresAt
+    });
+
+    // Send OTP via Ghasedak
+    const otpSmsCommand = {
+      sendDate: new Date().toISOString(),
+      receptors: [{ mobile: phone, clientReferenceId }],
+      templateName: "newOTP",
+      inputs: [{ param: "Code", value: otpCode }],
+      udh: true
+    };
+
+    await ghasedak.sendOtpSms(otpSmsCommand);
+
+    return {
+      success: true,
+      message: "کد تأیید به شماره تلفن ارسال شد",
+      user: {
+        id: user._id.toString(),
+        name: user.name,
+        email: user.email,
+        phone: user.phone
+      }
+    };
+  } catch (error: any) {
+    return { success: false, message: error.message };
+  }
+}
+
+export async function emailLogin(req: AuthRequest): Promise<AuthResponse> {
+  try {
+    const { email } = req.body as AuthBody;
+    if (!email) {
+      return { success: false, message: "آدرس ایمیل الزامی است" };
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return { success: false, message: "آدرس ایمیل نامعتبر است" };
+    }
+    let user = await User.findOne({ email });
+    if (!user) {
+      const tempPassword = crypto.randomBytes(8).toString("hex");
+      user = new User({
+        email,
+        password: tempPassword,
+        status: "inactive"
+      });
+      await user.save();
+    }
+
+    // Generate OTP
+    const otpCode = Math.floor(100000 + Math.random() * 900000).toString();
+    const clientReferenceId = uuidv4();
+    const expiresAt = new Date(Date.now() + 10 * 60 * 1000);
+
+    await Verify.create({
+      email,
+      code: otpCode,
+      templateName: "newOTP",
+      clientReferenceId,
+      expiresAt
+    });
+
+    const otpEmailCommand = {
+      sendDate: new Date().toISOString(),
+      receptors: [{ email, clientReferenceId }],
+      templateName: "newOTP",
+      inputs: [{ param: "Code", value: otpCode }],
+      udh: true
+    };
+
+    try {
+  await sendOtpEmail(email, otpCode);
+
+    } catch (smsError: any) {
+      return {
+        success: false,
+        message: "خطا در ارسال کد تأیید. لطفاً دوباره تلاش کنید"
+      };
+    }
+
+    return {
+      success: true,
+      message: "کد تأیید به ایمیل ارسال شد",
+      user: {
+        id: user._id.toString(),
+        name: user.name,
+        email: user.email,
+        phone: user.phone
+      }
+    };
+  } catch (error: any) {
+    if (error.code === 11000) {
+      return { success: false, message: "این ایمیل قبلاً ثبت شده است" };
+    }
+    return {
+      success: false,
+      message: error.message || "خطای سرور"
+    };
   }
 }

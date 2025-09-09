@@ -29,8 +29,8 @@ export interface IUser extends Document, IBaseSchema {
 
 const userSchema = new Schema<IUser>({
   googleId: { type: String,  maxLength: 100 },
-  name: { type: String, required: true, maxLength: 100 },
-  email: { type: String, required: true, unique: true },
+  name: { type: String, maxLength: 100 },
+  email: { type: String, unique: true },
   password: { type: String },
   phone: { type: String, unique: true, sparse: true },
   status: { type: String, enum: ["active", "inactive"], default: "active" },

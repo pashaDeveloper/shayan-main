@@ -8,8 +8,10 @@ interface AuthBody {
 }
 
 interface AuthResponse {
-  accessToken: string;
-  user: {
+  success: boolean; // Add success property
+  message?: string; // Add message property (optional, as it’s used conditionally)
+  accessToken?: string; // Make optional if not always returned
+  user?: {
     id: string;
     name: string;
     email: string;
@@ -19,24 +21,29 @@ interface AuthResponse {
 
 export const authApi = shigroupApi.injectEndpoints({
   endpoints: (builder) => ({
-
-
     // signin
-    signin: builder.mutation<AuthResponse, AuthBody>({
+    phoneLogin: builder.mutation<AuthResponse, AuthBody>({
       query: (body) => ({
-        url: "/auth/user/signin",
+        url: "/user/phone-login",
         method: "POST",
-        body,
-      }),
+        body
+      })
     }),
-
+    // signin
+    emailLogin: builder.mutation<AuthResponse, AuthBody>({
+      query: (body) => ({
+        url: "/user/email-login",
+        method: "POST",
+        body
+      })
+    }),
     // forgot password
     forgotPassword: builder.mutation<{ message: string }, AuthBody>({
       query: (body) => ({
         url: "/auth/user/forgot-password",
         method: "PATCH",
-        body,
-      }),
+        body
+      })
     }),
 
     // persist user
@@ -45,18 +52,19 @@ export const authApi = shigroupApi.injectEndpoints({
         url: "/auth/user/me",
         method: "GET",
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-        },
+          Authorization: `Bearer ${localStorage.getItem("accessToken")}`
+        }
       }),
-      providesTags: ["User", "Review"],
-    }),
+      providesTags: ["User", "Review"]
+    })
   }),
-  overrideExisting: false,
+  overrideExisting: false
 });
 
 // export hooks
 export const {
-  useSigninMutation,
+  usePhoneLoginMutation,
+  useEmailLoginMutation,
   useForgotPasswordMutation,
-  usePersistUserQuery,
+  usePersistUserQuery
 } = authApi;
