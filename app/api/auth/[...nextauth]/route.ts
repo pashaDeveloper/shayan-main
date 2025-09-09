@@ -1,75 +1,50 @@
-import NextAuth, { NextAuthOptions, SessionStrategy } from "next-auth";
+import NextAuth, { NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
-import CredentialsProvider from "next-auth/providers/credentials";
-import { signInGoogleUser, verifyOtp } from "@/controllers/userAuth.controller";
-
-const authOptions: NextAuthOptions = {
+import { signInGoogleUser } from "@/controllers/userAuth.controller";
+const options: NextAuthOptions = {
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID!,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
-    }),
-    CredentialsProvider({
-      name: "OTP",
-      credentials: {
-        authMethod: { label: "Auth Method", type: "text" },
-        contactInfo: { label: "Email or Phone", type: "text" },
-        otp: { label: "OTP", type: "text" },
-      },
-      async authorize(credentials) {
-        if (!credentials) return null;
-        const result = await verifyOtp({
-          body: {
-            authMethod: credentials.authMethod,
-            contactInfo: credentials.contactInfo,
-            otp: credentials.otp,
-          },
-        } as any);
-        if (result.success && result.user) return result.user;
-        return null;
-      },
-    }),
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET!
+    })
   ],
   pages: {
-    signIn: "/auth/user/signin",
+    signIn: "/auth/user/signin"
   },
   callbacks: {
     async session({ session, token }) {
-      console.log("session callback:", { session, token });
-      if (session.user && token.uid) session.user.id = token.uid;
+      if (session.user) {
+        session.user.id = token.uid as string;
+      }
       return session;
     },
-    async jwt({ token, user }) {
-      console.log("jwt callback:", { token, user });
-      if (user) token.uid = user.id;
+
+    async jwt({ user, token }) {
+      if (user) {
+        token.uid = user.id;
+      }
       return token;
     },
-    async signIn({ user, account }) {
-      console.log("signIn callback:", { user, account });
-      if (account?.provider === "google") {
-        try {
-          const result = await signInGoogleUser({
-            id: user.id,
-            name: user.name!,
-            email: user.email!,
-            avatar: user.image!,
-            provider: "google",
-            providerId: user.id,
-          });
-          return result.success;
-        } catch (err) {
-          console.error("OAuth signup error:", err);
-          return false;
-        }
+    async signIn({ user }) {
+      try {
+        const result = await signInGoogleUser({
+          id:user.id,
+          name: user.name!,
+          email: user.email!,
+          avatar: user.image!,
+          provider: "google",
+          providerId: user.id
+        });
+
+        return result.success; 
+      } catch (err) {
+        console.error("OAuth signup error:", err);
+        return false;
       }
-      return true;
-    },
-  },
-  session: { strategy: "jwt" as SessionStrategy },
+    }
+  }
 };
 
-console.log("authOptions object:", authOptions);
-
-const handler = NextAuth(authOptions);
+const handler = NextAuth(options);
 
 export { handler as GET, handler as POST };
