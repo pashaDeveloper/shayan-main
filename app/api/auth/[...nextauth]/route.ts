@@ -31,8 +31,8 @@ const authOptions: NextAuthOptions = {
     }),
   ],
   pages: {
-    signIn: "/auth/user/signin",
-  },
+  signIn: "/fa/auth/user/signin", 
+  error: "/fa/auth/user/signin",},
   callbacks: {
     async session({ session, token }) {
       console.log("session callback:", { session, token });
