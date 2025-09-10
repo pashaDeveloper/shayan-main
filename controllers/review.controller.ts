@@ -14,9 +14,14 @@ interface ReviewBody {
 
 export async function addReview(body: ReviewBody) {
   try {
-    const user = await User.findOne({
-      $or: [{ googleId: body.userId }]
-    });
+    console.log("addReview body:", body);
+const user = await User.findOne({
+  $or: [
+    { googleId: body.userId }, 
+    { _id: body.userId }
+  ]
+});
+
     if (!user) {
       return {
         success: false,

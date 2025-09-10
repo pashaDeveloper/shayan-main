@@ -51,7 +51,6 @@ export default async function ServiceDetailPage({ params }: { params: Params }) 
   if (!service) {
     return notFound();
   }
-
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
