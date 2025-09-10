@@ -102,7 +102,7 @@ const Header = () => {
     t("header.popularTerms.investment"),
     t("header.popularTerms.residenceInGermany")
   ];
-
+console.log("user in header:", user);
   return (
     <>
       <AuthProvider>

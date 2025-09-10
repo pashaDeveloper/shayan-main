@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input'
 import { toast } from "react-hot-toast";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useRouter } from "next/navigation";
-import { signIn } from "next-auth/react";
+import { signIn ,useSession } from "next-auth/react";
 
 interface OTPVerificationProps {
   authMethod: "phone" | "email";
@@ -21,6 +21,7 @@ export default function OTPVerification({ authMethod, contactInfo }: OTPVerifica
   const inputRefs = useRef<(HTMLInputElement | null)[]>([])
   const router = useRouter()
   const [loading, setLoading] = useState(false)
+const { data: session, status, update } = useSession();
 
   useEffect(() => {
     inputRefs.current[0]?.focus()
@@ -91,7 +92,8 @@ export default function OTPVerification({ authMethod, contactInfo }: OTPVerifica
 
     if (result?.ok) {
       toast.success(t("auth.success") ?? "ورود موفقیت‌آمیز")
-      router.push("/") // ریدایرکت بعد از موفقیت
+        await update();
+      router.push("/") 
     } else {
       toast.error(t("auth.error") ?? "کد اشتباه یا منقضی شده است")
     }

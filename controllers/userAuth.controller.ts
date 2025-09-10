@@ -264,7 +264,8 @@ export async function emailLogin(req: AuthRequest): Promise<AuthResponse> {
       user = new User({
         email,
         password: tempPassword,
-        status: "inactive"
+        status: "inactive",
+        name: email.split("@")[0]
       });
       await user.save();
     }
@@ -375,19 +376,19 @@ export async function verifyOtp(req: AuthRequest): Promise<AuthResponse> {
     await user.save();
     console.log("کاربر فعال شد");
 
-    // حذف OTP بعد از استفاده
-    await otpRecord.deleteOne();
-    console.log("OTP حذف شد");
-
+    const accessToken = generateAccessToken({
+      _id: user._id,
+      name: user.name,
+      email: user.email
+    });
+console.log("توکن دسترسی ایجاد شد");
+console.log("توکن دسترسی:", accessToken);
+console.log("کاربر:", user);
     return {
       success: true,
       message: "کاربر فعال شد و ورود با موفقیت انجام شد",
-      user: {
-        id: user._id.toString(),
-        name: user.name,
-        email: user.email,
-        phone: user.phone
-      }
+      accessToken,
+      user
     };
   } catch (error: any) {
     console.error("خطا در کنترلر verifyOtp:", error);
