@@ -572,7 +572,7 @@ console.log("user in header:", user);
                         <Image
                           width={150}
                           height={150}
-                          src={user?.image || "/default-avatar.png"}
+                          src={user?.image || "/default-avatar.jpg"}
                           alt={user?.name || "User"}
                           className="w-9 h-9 rounded-full shadow-lg"
                         />

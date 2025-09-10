@@ -275,7 +275,7 @@ const slides = [
 
                   {/* Main Title */}
                   <h1
-                    className="text-4xl whitespace-nowrap md:text-3xl text-now lg:text-5xl font-bold mb-6 leading-tight animate-fade-in-up"
+                    className="text-3xl whitespace-nowrap md:text-3xl text-now lg:text-5xl font-bold mb-6 leading-tight animate-fade-in-up"
                     style={{ animationDelay: "0.2s" }}
                   >
                     {currentSlideData.title}
