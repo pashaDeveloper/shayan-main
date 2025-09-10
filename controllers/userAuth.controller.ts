@@ -229,14 +229,14 @@ try {
 }
 
   const otpSmsCommand = {
-    sendDate: '2024-07-09T20:03:25.658Z',
+    sendDate:new Date().toISOString(),
     receptors: [
       {
         mobile: phone, 
         clientReferenceId: user._id.toString()
       }
     ],
-    templateName: 'Ghasedak', 
+    templateName: 'official', 
     inputs: [
       {
         param: 'Code', 
