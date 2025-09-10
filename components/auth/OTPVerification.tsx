@@ -83,7 +83,7 @@ const { data: session, status, update } = useSession();
   redirect: false,
   authMethod,
   contactInfo,
-  otp: otpString
+  otp: otpString,
 } as any) as { ok: boolean; error?: string } | undefined;
 
     setLoading(false)
@@ -93,7 +93,7 @@ const { data: session, status, update } = useSession();
     if (result?.ok) {
       toast.success(t("auth.success") ?? "ورود موفقیت‌آمیز")
         await update();
-      router.push("/") 
+window.location.href = "/";
     } else {
       toast.error(t("auth.error") ?? "کد اشتباه یا منقضی شده است")
     }
