@@ -203,35 +203,60 @@ export async function phoneLogin(req: AuthRequest): Promise<AuthResponse> {
       user = new User({
         phone,
         password: crypto.randomBytes(8).toString("hex"),
-        status: "inactive"
+        status: "inactive",
+        name:phone
       });
 
       await user.save();
     }
 
     // Generate OTP
-    const otpCode = Math.floor(1000 + Math.random() * 900000).toString();
-    const clientReferenceId = uuidv4();
+    const otpCode = Math.floor(1000 + Math.random() * 9000).toString();
     const expiresAt = new Date(Date.now() + 10 * 60 * 1000);
 
     await Verify.create({
       phone,
       code: otpCode,
       templateName: "newOTP",
-      clientReferenceId,
+      clientReferenceId: user._id,
       expiresAt
     });
+try {
+  const account = await ghasedak.getAccountInformation();
+  console.log("Ghasedak account info:", account);
+} catch (err:any) {
+  console.error("Error getting account info:", err.message);
+}
 
-    // Send OTP via Ghasedak
-    const otpSmsCommand = {
-      sendDate: new Date().toISOString(),
-      receptors: [{ mobile: phone, clientReferenceId }],
-      templateName: "newOTP",
-      inputs: [{ param: "Code", value: otpCode }],
-      udh: true
-    };
+  const otpSmsCommand = {
+    sendDate: '2024-07-09T20:03:25.658Z',
+    receptors: [
+      {
+        mobile: phone, 
+        clientReferenceId: user._id.toString()
+      }
+    ],
+    templateName: 'Ghasedak', 
+    inputs: [
+      {
+        param: 'Code', 
+        value: otpCode 
+      },
+      {
+        param: 'Name', 
+        value: 'strddisng' 
+      }
+    ],
+    udh: true
+  };
+  
+  try {
+    const otpSmsResponse = await ghasedak.sendOtpSms(otpSmsCommand); 
+ console.log("otpSmsResponse",otpSmsResponse)
+  } catch (error:any) {
+    console.error('Error sending OTP SMS:', error.message);
+  }
 
-    await ghasedak.sendOtpSms(otpSmsCommand);
 
     return {
       success: true,
@@ -271,25 +296,24 @@ export async function emailLogin(req: AuthRequest): Promise<AuthResponse> {
     }
 
     // Generate OTP
- const otpCode = Math.floor(1000 + Math.random() * 9000).toString();
+    const otpCode = Math.floor(1000 + Math.random() * 9000).toString();
     const expiresAt = new Date(Date.now() + 10 * 60 * 1000);
 
     try {
-          await Verify.create({
-      email,
-      code: otpCode,
-      templateName: "newOTP",
-      clientReferenceId:user._id,
-      expiresAt
-    });
-    } catch (error:any) {
+      await Verify.create({
+        email,
+        code: otpCode,
+        templateName: "newOTP",
+        clientReferenceId: user._id,
+        expiresAt
+      });
+    } catch (error: any) {
       console.error("خطا در ارسال ایمیل OTP:", error.message);
       return {
         success: false,
         message: "خطا در ثبت کد تایید. لطفاً دوباره تلاش کنید"
       };
     }
-
 
     try {
       await sendOtpEmail(email, otpCode);
@@ -325,7 +349,11 @@ export async function emailLogin(req: AuthRequest): Promise<AuthResponse> {
 
 export async function verifyOtp(req: AuthRequest): Promise<AuthResponse> {
   try {
-    const { authMethod, contactInfo, otp } = req.body as { authMethod: "email" | "phone"; contactInfo: string; otp: string };
+    const { authMethod, contactInfo, otp } = req.body as {
+      authMethod: "email" | "phone";
+      contactInfo: string;
+      otp: string;
+    };
 
     console.log("ورودی دریافت‌شده:", { authMethod, contactInfo, otp });
 
@@ -381,9 +409,9 @@ export async function verifyOtp(req: AuthRequest): Promise<AuthResponse> {
       name: user.name,
       email: user.email
     });
-console.log("توکن دسترسی ایجاد شد");
-console.log("توکن دسترسی:", accessToken);
-console.log("کاربر:", user);
+    console.log("توکن دسترسی ایجاد شد");
+    console.log("توکن دسترسی:", accessToken);
+    console.log("کاربر:", user);
     return {
       success: true,
       message: "کاربر فعال شد و ورود با موفقیت انجام شد",
