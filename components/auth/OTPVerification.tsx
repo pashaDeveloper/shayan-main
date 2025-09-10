@@ -78,7 +78,7 @@ export default function OTPVerification({ authMethod, contactInfo }: OTPVerifica
     }
 
     setLoading(true)
-  const result = await signIn("OTP", {
+  const result = await signIn("credentials", {
   redirect: false,
   authMethod,
   contactInfo,

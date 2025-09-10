@@ -2,7 +2,7 @@ import NextAuth, { NextAuthOptions, SessionStrategy } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { signInGoogleUser, verifyOtp } from "@/controllers/userAuth.controller";
-
+console.log("NextAuth handler invoked");
 const authOptions: NextAuthOptions = {
   providers: [
     GoogleProvider({
